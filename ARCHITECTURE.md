@@ -73,25 +73,31 @@ A hand-made, design-faithful conversion in
 - Add more conversions any time; the pipeline adopts them on the next run.
   Use `--force` to refresh an adopted chapter after editing its manual file.
 
-## Design system — "Forge, light edition"
+## Design system — "Violet glass" (zoyasenglish.ai.studio reference)
 
 Defined once in `assets/css/main.css` and inlined at build time into every
-chapter page (web views and PDFs cannot drift apart).
+chapter page (web views and PDFs cannot drift apart). Converges on the
+owner's reference implementation of the same brand: soft lavender ground,
+dark-violet hero, glass panels, rounded corners, one violet brand with subtle
+per-chapter hue shifts.
 
 | Token | Value |
 | --- | --- |
-| Ground | `#fafaf7` warm paper |
-| Ink | `#17181a` near-black |
-| Spark | `#b5f030` electric lime (CTAs, kickers, hover glow) |
-| Lines | `#e6e4da` / `#d4d2c6` (sharp 0-radius corners everywhere) |
-| Display type | *Space Grotesk* (uppercase, tight tracking) |
-| Body type | *Inter Tight* (weight 300) |
-| Chapter accents | 8 `data-theme` families: slate · ink · clay · sage · plum · mist · ember · moss |
+| Ground | `#FAF8FD` lavender-white |
+| Ink | `#292233` dark plum |
+| Brand gradient | `#654A93 → #8E6BB8` (buttons, brand marks, icon tiles) |
+| Deep accent | `#381E57` (headings, emphasis) |
+| Hero / footer depth | `#2A1838→#381E57→#170E24` gradient, `#EADBFA` text |
+| Tints | `#EADBFA`, `#F1ECF9`, `#F2EDF8` · Lines `#E8E1F2`/`#DDD2EE` |
+| Display type | *Nunito* (800–900) · Chrome/body: *Plus Jakarta Sans* · Study prose: *Lora* (serif) |
+| Surfaces | `.glass-panel` blur cards, `rounded-2xl/3xl`, pill chips/buttons, soft violet shadows |
 
-Inherited from the FORGE inspiration (near-black→paper inversion): scrolling
-ticker strip, animated stat counters, lime-glow hover cards, sharp editorial
-grids. The `@media print` block keeps the strict A4 contract: no orphaned
-headings, no split `.tip-box`/`tr`, `thead` repeats, color-exact output.
+Reference features now baked in: rotating learner-wish quotes (portfolio),
+daily-habit tracker with localStorage states (dashboard), and a read-aloud
+"Listen" button on every chapter page (Web Speech API, en-GB, no deps).
+
+The `@media print` block keeps the strict A4 contract: no orphaned headings,
+no split `.tip-box`/`tr`, `thead` repeats, color-exact output.
 
 ## Pipeline operations
 

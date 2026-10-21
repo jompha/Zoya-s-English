@@ -54,14 +54,25 @@ significant session. Newest entries last.
 ## Design history
 
 - v1: warm editorial glass (Fraunces/Inter, slate-blue, rounded glass cards).
-- **v2 (current, 2026-10-21): "Forge, light edition"** — the owner supplied the
-  FORGE fitness-site prompt (dark + lime) as inspiration and asked for a light
-  re-skin. System: paper `#fafaf7`, ink `#17181a`, lime `#b5f030`, sharp
-  corners, Space Grotesk uppercase display + Inter Tight, ticker strip,
-  animated stat counters, lime-glow hover cards. 8 `data-theme` accent
-  families retained; strict A4 print guards untouched.
-- Gotcha: uppercase display means printed headings OCR in CAPS — the
-  self-test sentinel check must be case-insensitive.
+- v2 (2026-10-21): "Forge, light edition" — the owner supplied the FORGE
+  fitness-site prompt (dark + lime) as inspiration; re-skinned to paper/ink/
+  lime sharpness with Space Grotesk.
+- **v3 (current, 2026-10-21): "Violet glass"** — the owner built their own
+  reference implementation at zoyasenglish.ai.studio (React/Tailwind) and
+  asked for the redesign to match it. Extracted system from the deployed
+  bundle: Nunito display + Plus Jakarta Sans chrome + Lora study prose;
+  `#FAF8FD` ground / `#292233` ink; brand gradient `#654A93→#8E6BB8`; deep
+  `#381E57`; dark-violet hero + footer; lavender glass panels; per-chapter
+  accents remapped to violet-family hues (THEME_ACCENTS); rose for warning
+  tones. Reference features ported: learner-wish rotator, daily-habit
+  checklist (localStorage), Listen button on chapter pages (Web Speech API).
+- Privacy note: the reference site publishes the trainer's identity details
+  (Tech@Home role, England English-Literature/DfE-2015 credentials, 100+
+  learners, 5.0/5.0 rating) — mirror those on the portfolio. The résumé PDF
+  remains private/off-repo. If the owner wants anonymization, change is
+  index.html copy only.
+- Gotcha: uppercase/vitrine display styles change printed glyphs; the
+  self-test sentinel check is case-insensitive for this reason.
 
 ## Open items
 

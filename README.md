@@ -73,21 +73,23 @@ The script re-executes itself inside `.venv` automatically, caches per-chapter f
 | **Serial numbering** | Source filenames carry zero-padded serial prefixes — `001 - …`, `002 - …` — which set module order/numbering. Renames are safe: cached extractions migrate by normalized slug; orphaned chapters are archived to `pipeline/attic/` |
 | Chapter naming | Filenames refine titles and module numbering; bare numbers > 40 in a filename are word counts, never module numbers |
 | **Manual conversions** | A hand-made HTML in `Study-Material/manually-converted/` matched to a source filename (prefix ignored) is adopted verbatim as the chapter page and printed margin-0 — drop one in and rerun the pipeline |
-| Per-chapter design language | Auto-assigned deterministically; pin one by dropping a sidecar `My-Chapter.pdf` → `My-Chapter.json` with `{"theme": "clay", "title": "…", "subtitle": "…"}` |
+| Per-chapter design language | Auto-assigned deterministically (violet-family accents); pin one by dropping a sidecar `My-Chapter.pdf` → `My-Chapter.json` with `{"theme": "clay", "title": "…", "subtitle": "…"}` |
 | Chapter themes | `slate` · `ink` · `clay` · `sage` · `plum` · `mist` · `ember` · `moss` |
 | Dashboard grid | Never hand-edit inside the `<!-- MATERIALS:START -->…<!-- MATERIALS:END -->` markers of `materials.html` — the indexer owns that region |
 
-## Design system — "Forge, light edition"
+## Design system — "Violet glass" (zoyasenglish.ai.studio reference)
 
 Defined once in **`assets/css/main.css`** and inlined at build time into every chapter page, so web views and PDFs never drift apart:
 
 | Token | Value |
 | --- | --- |
-| Ground | `#fafaf7` warm paper |
-| Body ink | `#17181a` near-black |
-| Spark accent | `#b5f030` electric lime — CTAs, kickers, hover glow (per-chapter accents from the 8 theme families) |
-| Display type | *Space Grotesk* (uppercase, tight tracking) · Body type: *Inter Tight* |
-| Surfaces | sharp 0-radius cards, hairline borders, lime-glow hover states, ticker & animated stat counters |
+| Ground | `#FAF8FD` lavender-white |
+| Ink | `#292233` dark plum (headings `#381E57`) |
+| Brand gradient | `#654A93 → #8E6BB8` — buttons, brand mark, icon tiles |
+| Hero & footer | deep-violet gradient (`#2A1838→#381E57→#170E24`) with `#EADBFA` text |
+| Display type | *Nunito* (800–900) · Body chrome: *Plus Jakarta Sans* · Study prose: *Lora* serif |
+| Surfaces | glass blur panels, `rounded-3xl` softness, pill chips/buttons, soft violet shadows |
+| Signature widgets | rotating learner-wish quotes · daily-habit tracker (localStorage) · read-aloud "Listen" button on every chapter (Web Speech API) |
 
 The `@media print` block enforces a strict A4 pagination contract:
 
