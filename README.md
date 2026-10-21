@@ -94,7 +94,6 @@ The `@media print` block enforces a strict A4 pagination contract:
 ├── index.html                        # Portfolio homepage (Zoya)
 ├── materials.html                    # Dynamic learning dashboard
 ├── Photo-Zoya.jpeg                   # Portfolio portrait
-├── Zoya-Portfolio.pdf                # Résumé (academic, print-ready)
 ├── assets/css/main.css               # Master layout stylesheet (web + print)
 ├── materials/                        # AUTO — compiled chapter HTML + A4 PDFs
 ├── pipeline/

@@ -5,6 +5,9 @@ pipeline/logs/
 pipeline/extracted/
 pipeline/selftest_tmp/
 pipeline/.state.json
+
+# Contains personal information — never published.
+Zoya-Portfolio.pdf
 .DS_Store
 node_modules/
 
