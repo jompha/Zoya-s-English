@@ -7,3 +7,6 @@ pipeline/selftest_tmp/
 pipeline/.state.json
 .DS_Store
 node_modules/
+
+# Raw teaching assets stay local: the polished rebuilds in materials/ are what ships.
+Study-Material/
