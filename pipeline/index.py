@@ -51,20 +51,21 @@ def scan_chapters(materials_dir: Path | None = None) -> list[dict]:
     for html_path in sorted(directory.glob("*.html")):
         soup = BeautifulSoup(html_path.read_text(encoding="utf-8"), "html.parser")
         article = soup.find("article", class_="chapter-doc")
-        if article is None:
-            continue
-        meta_script = soup.find("script", id="doc-meta")
-        if meta_script is not None:
-            try:
-                meta = json.loads(meta_script.string or "{}")
-            except Exception:  # noqa: BLE001
-                meta = {}
-        title_element = soup.find("h1", class_="doc-title")
-        kicker = soup.select_one(".doc-kicker")
-        pdf_path = directory / f"{html_path.stem}.pdf"
 
-        chapters.append(
-            {
+        def _meta() -> dict:
+            script = soup.find("script", id="doc-meta")
+            if script is None:
+                return {}
+            try:
+                return json.loads(script.string or "{}")
+            except Exception:  # noqa: BLE001 — malformed meta stays non-fatal
+                return {}
+
+        if article is not None:
+            meta = _meta()
+            title_element = soup.find("h1", class_="doc-title")
+            kicker = soup.select_one(".doc-kicker")
+            chapter_data = {
                 "slug": article.get("data-chapter") or html_path.stem,
                 "theme": article.get("data-theme") or "slate",
                 "number": meta.get("number"),
@@ -72,10 +73,31 @@ def scan_chapters(materials_dir: Path | None = None) -> list[dict]:
                 "title": title_element.get_text(" ", strip=True) if title_element else html_path.stem,
                 "meta": meta,
                 "html_name": html_path.name,
-                "pdf_exists": pdf_path.exists(),
-                "pdf_size": pdf_path.stat().st_size if pdf_path.exists() else 0,
+                "pdf_exists": (directory / f"{html_path.stem}.pdf").exists(),
             }
-        )
+        else:
+            meta = _meta()
+            if not meta:  # not a pipeline chapter page — leave it untouched
+                continue
+            pdf_path = directory / f"{html_path.stem}.pdf"
+            chapter_data = {
+                "slug": meta.get("slug") or html_path.stem,
+                "theme": meta.get("theme") or "slate",
+                "number": meta.get("number"),
+                "kicker": (
+                    f"Zoya's English — Study Module {int(meta['number']):02d}"
+                    if meta.get("number")
+                    else "Zoya's English — Study Module"
+                ),
+                "title": meta.get("title") or html_path.stem,
+                "meta": meta,
+                "html_name": html_path.name,
+                "pdf_exists": pdf_path.exists(),
+            }
+
+        pdf_size = (directory / chapter_data["slug"]).with_suffix(".pdf")
+        chapter_data["pdf_size"] = pdf_size.stat().st_size if pdf_size.exists() else 0
+        chapters.append(chapter_data)
 
     chapters.sort(
         key=lambda c: (

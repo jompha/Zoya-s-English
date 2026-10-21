@@ -38,8 +38,19 @@ def footer_template(title: str) -> str:
     )
 
 
-def print_to_pdf(html_path: Path, pdf_path: Path, *, footer_title: str = "") -> Path:
-    """Render `html_path` (file://) through Chromium's print engine to A4 PDF."""
+def print_to_pdf(
+    html_path: Path,
+    pdf_path: Path,
+    *,
+    footer_title: str = "",
+    margin: dict | None = None,
+    footer: bool = True,
+) -> Path:
+    """Render `html_path` (file://) through Chromium's print engine to A4 PDF.
+
+    Manual/design-faithful conversions that carry their own `@page` rules are
+    printed with zero margins and no running footer so the artwork stays exact.
+    """
     uri = html_path.resolve().as_uri()
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(
@@ -66,10 +77,10 @@ def print_to_pdf(html_path: Path, pdf_path: Path, *, footer_title: str = "") -> 
                 path=str(pdf_path),
                 format="A4",
                 print_background=True,
-                display_header_footer=True,
+                display_header_footer=footer,
                 header_template="<div></div>",
-                footer_template=footer_template(footer_title),
-                margin=MARGIN,
+                footer_template=footer_template(footer_title) if footer else "<div></div>",
+                margin=margin or MARGIN,
                 prefer_css_page_size=True,
             )
         finally:

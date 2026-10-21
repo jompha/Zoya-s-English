@@ -30,7 +30,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
-from pipeline.config import EXTRACTED_DIR  # noqa: E402 — module-level for cached_doc
+from pipeline.config import EXTRACTED_DIR, slugify  # noqa: E402 — module-level for cached_doc
 
 VERSION = "1.0.0"
 SENTINEL = "SELFTEST-7Q3F9Z"
@@ -224,7 +224,7 @@ def run_selftest(keep: bool) -> bool:
 
     def _extract():
         doc = extract_content(tmp / "bootstrap-sample.pdf")
-        if "Bootstrap" not in doc.md and "bootstrap" not in doc.md:
+        if "bootstrap" not in doc.md.lower():
             raise RuntimeError("sentinel text lost during extraction")
         selftest_doc = ExtractedDoc(tmp, "selftest-sample", SAMPLE_MD, "selftest", 1)
         compile_member = compile_module.compile_chapter(
@@ -300,16 +300,38 @@ def run_selftest(keep: bool) -> bool:
 
 # ─────────────────────────────────────────────────────────────── run workflow
 
+def normalize_slug(slug: str) -> str:
+    """Strip leading zero-padded module counters so '001-foo' and 'foo' match."""
+    return re.sub(r"^\d{1,3}(?=[-_])", "", slug).strip("-")
+
+
 def cached_doc(slug: str, source: Path):
     """Reuse a previous extraction when the markdown is newer than the source.
 
     Lets styling/topology iterations recompile in seconds without paying the
-    OCR cost again. `--force` always re-extracts from scratch.
+    OCR cost again. Falls back to a normalized-slug match so renamed sources
+    (e.g. handwritten "002 - " prefixes) inherit their old cached extraction
+    instead of paying the cost twice. `--force` always re-extracts from scratch.
     """
-    md_path = EXTRACTED_DIR / f"{slug}.md"
+    candidates = [EXTRACTED_DIR / f"{slug}.md"]
+    if not candidates[0].exists():
+        target = normalize_slug(slug)
+        candidates = [
+            path
+            for path in EXTRACTED_DIR.glob("*.md")
+            if normalize_slug(path.stem) == target
+            and path.stat().st_mtime >= source.stat().st_mtime
+        ] or [EXTRACTED_DIR / f"{slug}.md"]
+    md_path = candidates[0]
     if md_path.exists() and md_path.stat().st_mtime >= source.stat().st_mtime:
         text = md_path.read_text(encoding="utf-8")
         if len(text.strip()) > 40:
+            if md_path.stem != slug:
+                # Promote the cached extraction under the new canonical slug.
+                try:
+                    md_path.rename(EXTRACTED_DIR / f"{slug}.md")
+                except OSError:
+                    pass
             from pipeline.extract import ExtractedDoc
 
             return ExtractedDoc(
@@ -356,16 +378,46 @@ def run_pipeline(args: argparse.Namespace) -> int:
     sources = discover_sources(tuple(Path(p) for p in (args.source or [])))
     if args.limit:
         sources = sources[: args.limit]
+
+    # User-authored, design-faithful conversions outrank every auto engine —
+    # if a manual page matches a source, the source is never machine-extracted.
+    from pipeline.config import SOURCE_DIRS as CFG_DIRS
+
+    manual_map: dict[str, Path] = {}
+    for base in (*CFG_DIRS, ROOT / "Study-Material"):
+        conv_dir = base / "manually-converted" if base.name == "Study-Material" else base.parent / "manually-converted"
+        if not conv_dir.exists():
+            conv_dir = base.parent / "manually-converted"
+        for candidate in conv_dir.glob("*.html") if conv_dir.exists() else []:
+            manual_map[normalize_slug(slugify(candidate))] = candidate
+
+    if manual_map:
+        log(f"   manual conversions available: {len(manual_map)} file(s) — they override auto extraction")
+
     if not sources:
         warn("no source PDFs/images found — library will index as empty")
     css_digest = hash_file(CSS_PATH) if CSS_PATH.exists() else "no-css"
     state = load_state()
     extracted_by_slug: dict[str, object] = {}
+    manual_adopted: set[str] = set()
 
     for source in sources:
-        from pipeline.config import slugify
+        canon = slugify(source)
+        manual = manual_map.get(normalize_slug(canon))
+        if manual is not None:
+            adopt_key = hashlib.sha1(("manual-" + hash_file(manual)).encode()).hexdigest()[:16]
+            out_html = MATERIALS_DIR / f"{canon}.html"
+            if not args.force and state.get(canon) == adopt_key and out_html.exists() and (MATERIALS_DIR / f"{canon}.pdf").exists():
+                ok(f"{source.name} — manual conversion cached (use --force to refresh)")
+                continue
+            adopted, meta = compile_module.adopt_manual_html(manual, canon)
+            print_pdf.print_to_pdf(adopted, MATERIALS_DIR / f"{canon}.pdf", margin={"top": "0", "bottom": "0", "left": "0", "right": "0"}, footer=False)
+            state[canon] = adopt_key
+            manual_adopted.add(canon)
+            ok(f"{source.name} → manual conversion adopted ({meta['pages']} pages · {meta['words']} words) + A4 print")
+            continue
 
-        slug = slugify(source)
+        slug = canon
         cache_key = hashlib.sha1((hash_file(source) + css_digest + "v1").encode()).hexdigest()[:16]
         outputs_fresh = (MATERIALS_DIR / f"{slug}.html").exists() and (
             args.skip_pdf or (MATERIALS_DIR / f"{slug}.pdf").exists()
@@ -426,8 +478,36 @@ def run_pipeline(args: argparse.Namespace) -> int:
     else:
         log()
         banner("STEP C · HEADLESS PRINTING " + "─" * 34)
+        # Rename hygiene: chapter pages whose source has been renamed away no
+        # longer belong in the live library. Archive them (reversible) instead
+        # of leaving ghost duplicates next to the current set.
+        from pipeline.config import ROOT as CFG_ROOT
+
+        live_slugs = {slugify(source) for source in sources}
+        orphan_slugs = [
+            html_path.stem
+            for html_path in MATERIALS_DIR.glob("*.html")
+            if html_path.stem not in live_slugs
+        ]
+        if orphan_slugs:
+            attic = CFG_ROOT / "pipeline" / "attic"
+            attic.mkdir(parents=True, exist_ok=True)
+            for orphan in orphan_slugs:
+                for ext in ("html", "pdf"):
+                    stale = MATERIALS_DIR / f"{orphan}.{ext}"
+                    if stale.exists():
+                        destination = attic / f"{orphan}.{ext}"
+                        try:
+                            stale.replace(destination)
+                        except OSError:
+                            pass
+                state.pop(orphan, None)
+            warn(f"archived {len(orphan_slugs)} orphaned chapter(s) to pipeline/attic: " + ", ".join(orphan_slugs))
+
         for html_path in sorted(MATERIALS_DIR.glob("*.html")):
             slug = html_path.stem
+            if slug in manual_adopted:
+                continue  # design-faithful conversion — already printed exactly
             if args.force or not (MATERIALS_DIR / f"{slug}.pdf").exists() or slug in extracted_by_slug:
                 doc = extracted_by_slug.get(slug)
                 soup_title = None

@@ -44,6 +44,7 @@ class ExtractedDoc:
 # -------------------------------------------------------------- docling path
 
 _CONVERTER = None
+_OCR_LOGGED = {"done": False}
 
 
 def _get_converter():
@@ -51,9 +52,25 @@ def _get_converter():
     # user cache — subsequent processes reuse it silently.
     global _CONVERTER
     if _CONVERTER is None:
-        from docling.document_converter import DocumentConverter
+        from docling.datamodel.base_models import InputFormat
+        from docling.datamodel.pipeline_options import (
+            PdfPipelineOptions,
+            TesseractCliOcrOptions,
+        )
+        from docling.document_converter import DocumentConverter, PdfFormatOption
 
-        _CONVERTER = DocumentConverter()
+        pipeline_options = PdfPipelineOptions()
+        pipeline_options.do_ocr = True
+        # RapidOCR (docling 2.141's default here) returned empty results across
+        # several scan batches; tesseract 5 CLI is the proven, honest engine for
+        # this library. tesserocr (TesseractOcrOptions) is not installed.
+        pipeline_options.ocr_options = TesseractCliOcrOptions(lang=["eng"])
+        pipeline_options.do_table_structure = True
+        if not _OCR_LOGGED["done"]:
+            _OCR_LOGGED["done"] = True
+        _CONVERTER = DocumentConverter(
+            format_options={InputFormat.PDF: PdfFormatOption(pipeline_options=pipeline_options)}
+        )
     return _CONVERTER
 
 
@@ -191,6 +208,24 @@ def _plain_pages_to_markdown(pages: list[str]) -> str:
     return "\n\n".join(blocks)
 
 
+_OCR_PAGES_CACHE: dict[str, list[str]] = {}
+
+
+def _cached_ocr_pages(path: Path) -> list[str]:
+    key = str(path.resolve())
+    texts = _OCR_PAGES_CACHE.get(key)
+    if texts is None:
+        texts = _pdf_ocr_pages(path)
+        _OCR_PAGES_CACHE[key] = texts
+    return texts
+
+
+def _tesseract_reference_words(path: Path) -> int:
+    """Whole-page tesseract yield — the honest word-count baseline a layout
+    model must at least approach before its structure can be trusted."""
+    return sum(len(re.findall(r"\w+", text)) for text in _cached_ocr_pages(path))
+
+
 def _fallback_md(path: Path, warnings: list[str]) -> tuple[str, str, int]:
     if path.suffix.lower() in PDF_EXTS:
         texts = _pdf_text_pages(path)
@@ -198,13 +233,13 @@ def _fallback_md(path: Path, warnings: list[str]) -> tuple[str, str, int]:
             sparse_pages = sum(1 for text in texts if len(text) < 40)
             if sparse_pages >= len(texts) / 2:
                 warnings.append("text layer sparse — rasterizing via pdf2image + tesseract OCR")
-                texts = _pdf_ocr_pages(path)
+                texts = _cached_ocr_pages(path)
                 engine = "pdf2image + tesseract OCR"
             else:
                 engine = "pdf text layer"
         else:
             warnings.append("no text layer — rasterizing via pdf2image + tesseract OCR")
-            texts = _pdf_ocr_pages(path)
+            texts = _cached_ocr_pages(path)
             engine = "pdf2image + tesseract OCR"
         if not any(text.strip() for text in texts):
             raise RuntimeError("no extractable text (no layer, no OCR output)")
@@ -254,6 +289,24 @@ def extract_content(path: Path) -> ExtractedDoc:
             except Exception as exc2:  # noqa: BLE001
                 warnings.append(f"fallback failed ({exc2}) — emitting stub chapter")
                 md, engine = "", "stub"
+        else:
+            # Coverage gate: the layout model sometimes silently drops content
+            # (dense two-column quiz sheets get mis-segmented into degraded
+            # tables). Cross-check the word yield against plain tesseract; if
+            # Docling returns far less text than the OCR layer found on the
+            # same pages, trust the full-coverage OCR instead.
+            try:
+                reference_words = _tesseract_reference_words(path)
+                if reference_words and len(re.findall(r"\w+", md)) < 0.6 * reference_words:
+                    coverage = len(re.findall(r"\w+", md)) / reference_words
+                    warnings.append(
+                        f"docling coverage {coverage:.0%} of tesseract baseline "
+                        f"({len(md.split())} vs {reference_words} words) — full-coverage fallback engaged"
+                    )
+                    full_md, full_engine, full_pages = _fallback_md(path, warnings)
+                    md, engine, pages = full_md, full_engine, full_pages
+            except Exception as exc:  # noqa: BLE001 — gate failure never aborts
+                warnings.append(f"coverage gate skipped ({exc.__class__.__name__})")
     else:
         try:
             md, engine, pages = _fallback_md(path, warnings)

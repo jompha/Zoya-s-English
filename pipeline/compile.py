@@ -15,7 +15,7 @@ from pathlib import Path
 
 import markdown as markdown_lib
 
-from .config import CSS_PATH, THEMES, chapter_number, humanize, pick_theme, slugify
+from .config import CSS_PATH, MATERIALS_DIR, THEMES, chapter_number, humanize, pick_theme, slugify
 
 FIRST_PARAGRAPH = re.compile(r"<p[^>]*>(.*?)</p>", re.S)
 
@@ -70,7 +70,7 @@ _TEMPLATE = """<!doctype html>
 <meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
 <style>%%CSS%%</style>
 </head>
 <body class="doc-page">
@@ -111,6 +111,94 @@ def _sidecar(source: Path) -> dict:
         except Exception:  # noqa: BLE001 — a bad sidecar must never abort a run
             return {}
     return {}
+
+
+def adopt_manual_html(
+    manual_html: Path,
+    slug: str,
+    *,
+    out_dir: Path | None = None,
+) -> tuple[Path, dict]:
+    """Publish a user-authored, design-faithful conversion as the chapter page.
+
+    The manual file is the visual truth: content, styles and print geometry are
+    preserved untouched. Only invisible plumbing is injected — an embedded
+    doc-meta JSON block (for the dashboard indexer) and a lightweight back-link
+    bar hidden during printing.
+    """
+    import math
+    import re
+
+    from bs4 import BeautifulSoup
+
+    from .config import chapter_number as cfg_chapter_number, pick_theme
+
+    out_dir = out_dir or MATERIALS_DIR
+    html = manual_html.read_text(encoding="utf-8")
+    soup = BeautifulSoup(html, "html.parser")
+
+    title = ""
+    if soup.title is not None and soup.title.string:
+        title = str(soup.title.string).strip()
+    if not title:
+        h1 = soup.find("h1")
+        title = h1.get_text(" ", strip=True) if h1 else slugify_title_from_slug(slug)
+
+    number = cfg_chapter_number(slug)
+    page_sections = soup.select(".page")
+    pages_n = len(page_sections) if page_sections else 0
+
+    teaser_el = soup.select_one(".tagline") or soup.select_one(".subtitle") or soup.find("h1")
+    teaser = teaser_el.get_text(" ", strip=True) if teaser_el else ""
+    if len(teaser) > 168:
+        teaser = teaser[:168].rsplit(" ", 1)[0].rstrip(",;:.") + "…"
+
+    words = len(re.findall(r"\w+", soup.get_text(" ", strip=True)))
+    reading = max(1, math.ceil(words / 180))
+    theme = pick_theme(slug)
+
+    meta = {
+        "slug": slug,
+        "number": number,
+        "theme": theme,
+        "engine": "manual conversion (user-authored)",
+        "source": manual_html.name,
+        "pages": pages_n,
+        "words": words,
+        "sections": len(soup.select("h2, h3")),
+        "tables": len(soup.select("table, .day-row")),
+        "reading_min": reading,
+        "title": title,
+        "date": date.today().isoformat(),
+        "teaser": teaser or "Design-faithful user-authored conversion of the original PDF.",
+    }
+
+    back_bar = (
+        '<nav class="doc-backbar no-print" style="max-width:1500px;margin:0 auto;padding:16px 14px 4px;'
+        "font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#6b6b6b;\">"
+        '<a style="color:#4a6b82;text-decoration:none" href="../index.html">&larr; Portfolio</a>'
+        '<span style="margin:0 8px;color:#bbb">·</span>'
+        '<a style="color:#4a6b82;text-decoration:none" href="../materials.html">Learning library</a>'
+        "</nav>"
+        '<style>@media print{.doc-backbar{display:none!important}}</style>'
+        '<script type="application/json" id="doc-meta">'
+        + json.dumps(meta, ensure_ascii=True)
+        + "</script>"
+    )
+    if "</body>" in html:
+        html = html.replace("</body>", back_bar + "</body>", 1)
+    else:
+        html += back_bar
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+    output = out_dir / f"{slug}.html"
+    output.write_text(html, encoding="utf-8")
+    return output, meta
+
+
+def slugify_title_from_slug(slug: str) -> str:
+    words = [word.capitalize() if len(word) > 3 else word.upper() if len(word) <= 2 else word for word in slug.split("-")]
+    return " ".join(words)
 
 
 def compile_chapter(
