@@ -12,23 +12,29 @@
 
 **Zoya** is currently an **English Trainer at Tech@Home** with 5+ years of experience — from absolute beginners to working professionals — specialising in *spoken fluency* and *confidence building*. The repository pairs a premium portfolio site with a self-streaming content pipeline: raw (even scanned) chapter PDFs go in one side; beautifully designed, print-perfect study modules and an auto-updating learning dashboard come out the other.
 
-- **`index.html`** — the teacher portfolio: pedagogy, method, and expertise in a warm, editorial, glass-minimalist design.
+- **`index.html`** — the teacher portfolio: pedagogy, method, and expertise in a sharp, light "Forge-edition" design — warm paper, near-black ink, electric-lime sparks.
 - **`materials.html`** — the learning library: every chapter as an *interactive web view* **and** a *pixel-perfect printable PDF*, indexed automatically.
 - **`run_pipeline.py`** — the manual, one-command content engine behind both.
+- **`ARCHITECTURE.md`** — the full system map, naming conventions and month-to-month design contracts.
+- **`MEMORY.md`** — operational memory: environment gotchas, decisions, security rules.
 
 ## Architecture
 
 ```
-Study-Material/Source-Files/         raw uploads — scanned or digital PDFs (also images)
+Study-Material/Source-Files/         raw uploads — scanned or digital PDFs, serial-numbered
+Study-Material/manually-converted/   user-authored design-faithful HTML conversions (outrank all engines)
         │
         ▼  STEP A — Extraction (pipeline/extract.py)
-        │   Docling layout model: semantic tables, bold headers, page structure.
-        │   Graceful fallback: pdf2image + tesseract OCR + structured text compiler.
+        │   Docling layout model (tesseract-CLI OCR) → semantic markdown,
+        │   with a coverage gate: if the layout model silently drops content
+        │   (< 60% of the tesseract baseline), full-coverage OCR fallback.
+        │   Manual conversions in manually-converted/ bypass extraction.
         ▼  STEP B — Compilation (pipeline/compile.py)
         │   Markdown → fully styled standalone chapter page.
         │   Global typographic tone + per-chapter design language (data-theme).
         ▼  STEP C — Headless printing (pipeline/print_pdf.py)
         │   Playwright Chromium, print-media emulation → pixel-perfect A4 PDF.
+        │   Manual conversions print margin-0/footerless to preserve their own @page geometry.
         ▼  STEP D — Indexing (pipeline/index.py)
         │   Beautiful Soup reads chapter metadata and rewrites the card grid
         │   inside materials.html — titles, teasers, web links, PDF downloads.
@@ -64,22 +70,24 @@ The script re-executes itself inside `.venv` automatically, caches per-chapter f
 | Thing | Rule |
 | --- | --- |
 | Source files | `.pdf` (scanned or digital) or `.png/.jpg/.tif` images in `Study-Material/Source-Files/` |
-| Chapter naming | Filenames like `001 - Complete 30-Day English Study Plan.pdf` or `Chapter 03 … .pdf` refine titles and module numbering |
+| **Serial numbering** | Source filenames carry zero-padded serial prefixes — `001 - …`, `002 - …` — which set module order/numbering. Renames are safe: cached extractions migrate by normalized slug; orphaned chapters are archived to `pipeline/attic/` |
+| Chapter naming | Filenames refine titles and module numbering; bare numbers > 40 in a filename are word counts, never module numbers |
+| **Manual conversions** | A hand-made HTML in `Study-Material/manually-converted/` matched to a source filename (prefix ignored) is adopted verbatim as the chapter page and printed margin-0 — drop one in and rerun the pipeline |
 | Per-chapter design language | Auto-assigned deterministically; pin one by dropping a sidecar `My-Chapter.pdf` → `My-Chapter.json` with `{"theme": "clay", "title": "…", "subtitle": "…"}` |
 | Chapter themes | `slate` · `ink` · `clay` · `sage` · `plum` · `mist` · `ember` · `moss` |
 | Dashboard grid | Never hand-edit inside the `<!-- MATERIALS:START -->…<!-- MATERIALS:END -->` markers of `materials.html` — the indexer owns that region |
 
-## Design system
+## Design system — "Forge, light edition"
 
 Defined once in **`assets/css/main.css`** and inlined at build time into every chapter page, so web views and PDFs never drift apart:
 
 | Token | Value |
 | --- | --- |
-| Editorial background | `#faf9f6` warm off-white |
-| Body typography | `#2b2b2b` stark charcoal |
-| Accent | `#4a6b82` muted slate-blue (theme-varied per chapter) |
-| Display type | *Fraunces* · Body type: *Inter* |
-| Surfaces | translucent glass cards, hairline borders, soft depth |
+| Ground | `#fafaf7` warm paper |
+| Body ink | `#17181a` near-black |
+| Spark accent | `#b5f030` electric lime — CTAs, kickers, hover glow (per-chapter accents from the 8 theme families) |
+| Display type | *Space Grotesk* (uppercase, tight tracking) · Body type: *Inter Tight* |
+| Surfaces | sharp 0-radius cards, hairline borders, lime-glow hover states, ticker & animated stat counters |
 
 The `@media print` block enforces a strict A4 pagination contract:
 
@@ -94,17 +102,21 @@ The `@media print` block enforces a strict A4 pagination contract:
 ├── index.html                        # Portfolio homepage (Zoya)
 ├── materials.html                    # Dynamic learning dashboard
 ├── Photo-Zoya.jpeg                   # Portfolio portrait
-├── assets/css/main.css               # Master layout stylesheet (web + print)
+├── assets/css/main.css               # Master layout stylesheet (web + print) — Forge-light system
 ├── materials/                        # AUTO — compiled chapter HTML + A4 PDFs
 ├── pipeline/
 │   ├── config.py                     # Paths, slugs, chapter numbering, themes
-│   ├── extract.py                    # STEP A — Docling + OCR fallback engine
-│   ├── compile.py                    # STEP B — Styled chapter compilation
+│   ├── extract.py                    # STEP A — Docling (+tesseract CLI) with coverage gate
+│   ├── compile.py                    # STEP B — Styled compilation + manual-conversion adoption
 │   ├── print_pdf.py                  # STEP C — Playwright A4 print engine
 │   ├── index.py                      # STEP D — Beautiful Soup dashboard indexer
 │   ├── extracted/                    # AUTO — raw markdown intermediates
+│   ├── attic/                        # AUTO — archived chapters whose sources were renamed away
 │   └── logs/                         # AUTO — run & self-test logs
-├── Study-Material/Source-Files/      # RAW — uploads land here
+├── Study-Material/Source-Files/      # RAW — serial-numbered uploads land here
+├── Study-Material/manually-converted/ # RAW — user-authored design-faithful conversions
+├── ARCHITECTURE.md                   # System map & contracts
+├── MEMORY.md                         # Operational memory (gotchas, decisions, security)
 ├── run_pipeline.py                   # Master execution script
 └── requirements.txt                  # Pinned dependency set
 ```

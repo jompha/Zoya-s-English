@@ -5,6 +5,7 @@ pipeline/logs/
 pipeline/extracted/
 pipeline/selftest_tmp/
 pipeline/.state.json
+pipeline/attic/
 
 # Contains personal information — never published.
 Zoya-Portfolio.pdf
