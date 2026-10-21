@@ -8,11 +8,11 @@
 <meta property="og:title" content="Zoya — English Teacher · Speaking &amp; Confidence Coach">
 <meta property="og:description" content="Structured English teaching for beginners to professionals. Speaking-first, confidence-built, print-perfect study materials.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234a6b82'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23faf9f6' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23b5f030'/%3E%3Ctext x='32' y='46' font-family='Arial Black,Arial,sans-serif' font-size='40' font-weight='900' fill='%2317181a' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -60,6 +60,11 @@
           <span class="chip">Confidence architecture</span>
           <span class="chip">Print-ready modules</span>
         </div>
+        <div class="stats">
+          <div class="stat"><span class="stat-num"><b data-count="5">0</b>+</span><span class="stat-label">Years teaching</span></div>
+          <div class="stat"><span class="stat-num"><b data-count="15">0</b></span><span class="stat-label">Study modules live</span></div>
+          <div class="stat"><span class="stat-num"><b data-count="2500">0</b>+</span><span class="stat-label">Drills &amp; practice items</span></div>
+        </div>
       </div>
       <div class="reveal">
         <figure class="portrait">
@@ -74,6 +79,24 @@
       </div>
     </div>
   </section>
+
+  <!-- ─── Results ticker ───────────────────────────────────────────────── -->
+  <div class="ticker no-print" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Permission to speak is built, not born</span>
+      <span>Structure before decoration</span>
+      <span>Every module printable</span>
+      <span>Beginner to professional</span>
+      <span>Errors are the curriculum</span>
+      <span>Show up · Speak up · Level up</span>
+      <span>Permission to speak is built, not born</span>
+      <span>Structure before decoration</span>
+      <span>Every module printable</span>
+      <span>Beginner to professional</span>
+      <span>Errors are the curriculum</span>
+      <span>Show up · Speak up · Level up</span>
+    </div>
+  </div>
 
   <!-- ─── Philosophy ───────────────────────────────────────────────────── -->
   <section class="section" id="philosophy">
@@ -286,15 +309,40 @@
   addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 24), {passive: true});
 
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealNow = el => el.classList.add('in');
   if (!reduced && 'IntersectionObserver' in window) {
     const io = new IntersectionObserver(entries => {
       for (const entry of entries) {
-        if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+        if (entry.isIntersecting) { revealNow(entry.target); io.unobserve(entry.target); }
       }
     }, {threshold: 0.12});
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   } else {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+    document.querySelectorAll('.reveal').forEach(revealNow);
+  }
+
+  // Stat counters — count up once when they enter view (0 if motion is reduced).
+  const counters = document.querySelectorAll('.stat-num b[data-count]');
+  if (reduced || !('IntersectionObserver' in window)) {
+    counters.forEach(b => { b.textContent = Number(b.dataset.count).toLocaleString(); });
+  } else {
+    const cio = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        cio.unobserve(entry.target);
+        const target = Number(entry.target.dataset.count);
+        const started = performance.now();
+        const duration = 1800;
+        const tick = now => {
+          const t = Math.min(1, (now - started) / duration);
+          const eased = 1 - Math.pow(1 - t, 3);
+          entry.target.textContent = Math.round(target * eased).toLocaleString();
+          if (t < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }
+    }, {threshold: 0.4});
+    counters.forEach(b => cio.observe(b));
   }
 </script>
 </body>
