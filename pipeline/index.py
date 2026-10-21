@@ -23,14 +23,17 @@ GRID_END = "<!-- MATERIALS:END -->"
 # Mirrors the [data-theme] accent declarations in assets/css/main.css so cards
 # can render their chapter's design language without parsing the stylesheet.
 THEME_ACCENTS = {
-    "slate": {"accent": "#4a6b82", "tint": "#edf2f6"},
-    "ink": {"accent": "#46474b", "tint": "#f1efe9"},
-    "clay": {"accent": "#b06a48", "tint": "#f9efe7"},
-    "sage": {"accent": "#5f7c60", "tint": "#eff5ef"},
-    "plum": {"accent": "#7d5a72", "tint": "#f6eff4"},
-    "mist": {"accent": "#3f7a75", "tint": "#ebf4f2"},
-    "ember": {"accent": "#a8543f", "tint": "#f9ece8"},
-    "moss": {"accent": "#72783f", "tint": "#f5f5e9"},
+    # Violet-family identity (zoyasenglish.ai.studio reference): each chapter
+    # gets a subtle hue shift inside the lavender/iris band — the site chrome
+    # stays a single violet brand.
+    "slate": {"accent": "#654A93", "tint": "#F2EDF8"},
+    "ink":   {"accent": "#4D3373", "tint": "#F1ECF9"},
+    "clay":  {"accent": "#7B5CA8", "tint": "#F4EEF9"},
+    "sage":  {"accent": "#8E6BB8", "tint": "#F4EFF9"},
+    "plum":  {"accent": "#6D4FA0", "tint": "#F3EDFA"},
+    "mist":  {"accent": "#A68BC9", "tint": "#F6F1FB"},
+    "ember": {"accent": "#553C79", "tint": "#F0EAF8"},
+    "moss":  {"accent": "#7D68A6", "tint": "#F4F0FA"},
 }
 
 EMPTY_GRID = f"""{GRID_START}

@@ -65,12 +65,13 @@ _TEMPLATE = """<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>%%TITLE%% · Zoya's English — Study Module</title>
+<title>%%TITLE%% · Zoya's English — Study Guide</title>
 <meta name="description" content="%%DESCRIPTION%%">
 <meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23654A93'/%3E%3Cstop offset='1' stop-color='%238E6BB8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='34' font-weight='900' fill='%23fff' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
 <style>%%CSS%%</style>
 </head>
 <body class="doc-page">
@@ -91,12 +92,45 @@ _TEMPLATE = """<!doctype html>
         <span>%%WORDS%% words</span>
         <span>~%%READING%% min read</span>
       </div>
+      <button class="listen-btn no-print" id="listen-btn" type="button" title="Read this study guide aloud">▶&nbsp;Listen</button>
     </header>
     <div class="doc-body prose">
 %%BODY%%
     </div>
   </article>
   <script type="application/json" id="doc-meta">%%META_JSON%%</script>
+  <script>
+    // Read-aloud (Web Speech API) — no dependencies, progressive enhancement.
+    (function () {
+      const btn = document.getElementById('listen-btn');
+      if (!btn || !('speechSynthesis' in window)) { if (btn) btn.remove(); return; }
+      let playing = false;
+      btn.addEventListener('click', () => {
+        if (playing) {
+          speechSynthesis.cancel();
+          return;
+        }
+        const prose = document.querySelector('.doc-body.prose');
+        if (!prose) return;
+        const text = prose.innerText.replace(/\\s+/g, ' ').trim().slice(0, 30000);
+        if (!text) return;
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = 0.97;
+        utterance.lang = 'en-GB';
+        utterance.onend = utterance.onerror = () => {
+          playing = false;
+          btn.classList.remove('playing');
+          btn.textContent = '▶\\u00a0Listen';
+        };
+        playing = true;
+        btn.classList.add('playing');
+        btn.textContent = '⏹\\u00a0Stop';
+        speechSynthesis.cancel();
+        speechSynthesis.speak(utterance);
+      });
+      addEventListener('beforeunload', () => { try { speechSynthesis.cancel(); } catch (e) {} });
+    })();
+  </script>
 </main>
 </body>
 </html>
