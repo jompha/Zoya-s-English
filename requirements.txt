@@ -7,5 +7,6 @@ pdf2image>=1.17
 pytesseract>=0.3.13
 pypdfium2>=4.30
 pillow>=10.4
-# torch CPU build recommended first:
-#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+transformers<5      # 5.x removed AutoImageProcessor — needed by docling's layout models
+# CPU wheels first (avoid the CUDA megabundle):
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu

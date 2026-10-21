@@ -40,7 +40,7 @@ materials/                           generated HTML + PDF study modules
 
 ```bash
 python3 -m venv .venv                      # one-time
-.venv/bin/pip install torch --index-url https://download.pytorch.org/whl/cpu
+.venv/bin/pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 .venv/bin/pip install -r requirements.txt
 .venv/bin/python -m playwright install chromium --with-deps
 ```
