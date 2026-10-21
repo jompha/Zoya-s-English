@@ -1,0 +1,1388 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>200 Daily Use English Sentences · Zoya's English — Study Module</title>
+<meta name="description" content="200 Daily Use English Sentences — study module from Zoya&#39;s English learning library: speaking and confidence coaching materials.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>/* ═══════════════════════════════════════════════════════════════════════════
+   ZOYA'S ENGLISH — MASTER LAYOUT STYLESHEET
+   Design language: warm editorial · luxury-minimalist · glass surfaces
+   Beat structure: tokens → chapter themes → base → components → prose → print
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────── 1 · DESIGN TOKENS (single source) */
+
+:root {
+  /* Palette */
+  --bg: #faf9f6;                 /* warm off-white editorial ground      */
+  --bg-deep: #f3f1ea;            /* deeper warm wash for bands           */
+  --surface: #ffffff;
+  --glass: rgba(255, 255, 255, 0.66);
+  --glass-strong: rgba(255, 255, 255, 0.86);
+  --ink: #2b2b2b;                /* stark charcoal body typography       */
+  --ink-soft: #56524b;
+  --ink-faint: #8b867b;
+  --line: rgba(43, 43, 43, 0.10);
+  --line-strong: rgba(43, 43, 43, 0.17);
+  --accent: #4a6b82;             /* muted sophisticated slate-blue       */
+  --accent-ink: #375266;
+  --accent-soft: #edf2f6;
+  --accent-glow: rgba(74, 107, 130, 0.16);
+  --warm: #f6eddd;
+
+  /* Typography */
+  --font-display: "Fraunces", "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Courier New", monospace;
+
+  /* Shape & depth */
+  --r-lg: 24px;
+  --r-md: 16px;
+  --r-sm: 10px;
+  --r-pill: 999px;
+  --shadow-1: 0 1px 2px rgba(31, 29, 25, 0.05), 0 10px 30px -14px rgba(31, 29, 25, 0.16);
+  --shadow-2: 0 2px 8px rgba(31, 29, 25, 0.06), 0 28px 64px -24px rgba(31, 29, 25, 0.24);
+  --ease: cubic-bezier(0.22, 0.7, 0.25, 1);
+}
+
+/* ─────────────────────────── 2 · CHAPTER DESIGN LANGUAGES (per-theme accents)
+
+   Every compiled chapter receives its own stable accent family, applied via
+   `data-theme` on the page root, so each module feels designed — not stamped.
+   The dashboard (materials.html) mirrors these values for its cards.        */
+
+[data-theme="ink"]   { --accent: #46474b; --accent-ink: #33353a; --accent-soft: #f1efe9; --accent-glow: rgba(70, 71, 75, 0.14); }
+[data-theme="clay"]  { --accent: #b06a48; --accent-ink: #8f5438; --accent-soft: #f9efe7; --accent-glow: rgba(176, 106, 72, 0.15); }
+[data-theme="sage"]  { --accent: #5f7c60; --accent-ink: #49614a; --accent-soft: #eff5ef; --accent-glow: rgba(95, 124, 96, 0.15); }
+[data-theme="plum"]  { --accent: #7d5a72; --accent-ink: #64485a; --accent-soft: #f6eff4; --accent-glow: rgba(125, 90, 114, 0.15); }
+[data-theme="mist"]  { --accent: #3f7a75; --accent-ink: #2f605c; --accent-soft: #ebf4f2; --accent-glow: rgba(63, 122, 117, 0.15); }
+[data-theme="ember"] { --accent: #a8543f; --accent-ink: #8a4232; --accent-soft: #f9ece8; --accent-glow: rgba(168, 84, 63, 0.15); }
+[data-theme="moss"]  { --accent: #72783f; --accent-ink: #5a5f31; --accent-soft: #f5f6e9; --accent-glow: rgba(114, 120, 63, 0.15); }
+
+/* ────────────────────────────────────────────────────────── 3 · BASE RESET */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.68;
+  color: var(--ink);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 560;
+  line-height: 1.16;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0 0 0.6em;
+}
+
+::selection { background: var(--accent-glow); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  z-index: 100;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--r-pill);
+}
+.skip-link:focus { left: 12px; color: #fff; }
+
+/* ───────────────────────────────────────────────────────── 4 · LAYOUT CORE */
+
+.shell { width: min(1140px, 92vw); margin-inline: auto; }
+.shell-wide { width: min(1240px, 94vw); margin-inline: auto; }
+
+.section { padding: 5.5rem 0; position: relative; }
+.section + .section { padding-top: 0; }
+.grid { display: grid; gap: 1.4rem; }
+.grid.cards { grid-template-columns: repeat(auto-fill, minmax(305px, 1fr)); }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: center; }
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.1rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.kicker::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.65;
+}
+
+.section-title { font-size: clamp(1.9rem, 3.4vw, 2.7rem); }
+.section-lede { max-width: 62ch; color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 2.4rem; }
+.display-xl { font-size: clamp(2.7rem, 5.4vw, 4.3rem); line-height: 1.04; }
+@media (max-width: 900px) { .br-d { display: none; } }
+
+/* ─────────────────────────────────────────────────────── 5 · GLASS NAV BAR */
+
+.site-nav {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 60;
+  padding: 0.65rem 0;
+  transition: background 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+  border-bottom: 1px solid transparent;
+}
+.site-nav.scrolled {
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(14px) saturate(1.25);
+  backdrop-filter: blur(14px) saturate(1.25);
+  border-bottom-color: var(--line);
+  box-shadow: 0 8px 30px -18px rgba(31, 29, 25, 0.28);
+}
+.site-nav .bar { display: flex; align-items: center; gap: 1.6rem; }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.08rem;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.05rem;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-ink) 100%);
+  box-shadow: 0 6px 16px -6px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.nav-links { display: flex; align-items: center; gap: 1.5rem; margin-left: auto; }
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s var(--ease);
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-links a[aria-current="page"] { color: var(--accent); }
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+}
+
+/* ──────────────────────────────────────────────────────── 6 · BUTTONS · CHIPS */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.78rem 1.5rem;
+  border-radius: var(--r-pill);
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), background 0.2s var(--ease);
+}
+.btn-solid {
+  color: #fff;
+  background: linear-gradient(140deg, var(--accent) 0%, var(--accent-ink) 100%);
+  box-shadow: 0 10px 24px -10px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+.btn-solid:hover { transform: translateY(-1px); box-shadow: 0 14px 30px -10px var(--accent-glow); }
+.btn-ghost {
+  color: var(--accent-ink);
+  background: transparent;
+  border-color: var(--line-strong);
+}
+.btn-ghost:hover { border-color: var(--accent); background: var(--accent-soft); }
+.btn.is-disabled,
+.btn[aria-disabled="true"] { opacity: 0.55; pointer-events: none; }
+.btn-sm { padding: 0.5rem 1.05rem; font-size: 0.86rem; }
+.btn-note {
+  margin-left: 0.1rem;
+  padding-left: 0.55rem;
+  border-left: 1px solid var(--line-strong);
+  font-size: 0.76rem;
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.95rem;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line);
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.chip::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.85;
+}
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+/* ─────────────────────────────────────────────────────────── 7 · GLASS CARDS */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.7rem 1.7rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(12px) saturate(1.15);
+  backdrop-filter: blur(12px) saturate(1.15);
+  box-shadow: var(--shadow-1);
+  transition: transform 0.28s var(--ease), box-shadow 0.28s var(--ease), border-color 0.28s var(--ease);
+}
+.card-hover:hover,
+.card-chapter:hover {
+  transform: translateY(-3px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-2);
+}
+.card-kicker {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--card-accent, var(--accent));
+  margin-bottom: 0.3rem;
+}
+.card-title { font-size: 1.22rem; margin: 0.15rem 0 0.35rem; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { color: var(--card-accent, var(--accent)); }
+.card-teaser { color: var(--ink-soft); font-size: 0.94rem; margin: 0 0 0.9rem; }
+.card-empty {
+  grid-column: 1 / -1;
+  align-items: flex-start;
+  border-style: dashed;
+  border-color: var(--line-strong);
+  background: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.card-empty code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.05em 0.4em;
+}
+
+.material-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  margin-bottom: 0.8rem;
+}
+.material-icon svg { width: 22px; height: 22px; }
+
+/* Chapter cards — materials.html dashboard */
+.card-chapter { --card-accent: var(--accent); }
+.chapter-num {
+  position: absolute;
+  top: 1.05rem;
+  right: 1.45rem;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 3.4rem;
+  font-weight: 600;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.4px var(--card-accent);
+  opacity: 0.4;
+  user-select: none;
+}
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+}
+.card-meta li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.card-meta li::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--card-accent);
+  opacity: 0.7;
+}
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.filter-row { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 1.6rem 0 2.2rem; }
+.filter-chip { cursor: pointer; transition: all 0.2s var(--ease); opacity: 0.72; }
+.filter-chip.is-active {
+  opacity: 1;
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.filter-chip.is-active::before { background: rgba(255, 255, 255, 0.9); }
+
+/* ─────────────────────────────────────────────────────────────── 8 · HERO */
+
+.hero {
+  position: relative;
+  padding: 9.5rem 0 5.5rem;
+  overflow: hidden;
+  background:
+    radial-gradient(1100px 480px at 84% -12%, var(--accent-soft) 0%, transparent 62%),
+    radial-gradient(900px 420px at -14% 112%, var(--warm) 0%, transparent 55%);
+}
+.hero .grid.two { gap: 3.5rem; }
+.hero-lede {
+  font-size: 1.13rem;
+  color: var(--ink-soft);
+  max-width: 54ch;
+  margin: 1.2rem 0 2rem;
+}
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 2.2rem; }
+
+.portrait { position: relative; margin: 0; }
+.portrait-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: linear-gradient(165deg, var(--accent-soft) 0%, var(--bg-deep) 100%);
+  box-shadow: var(--shadow-2);
+}
+.portrait-mono {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 14vw, 10rem);
+  font-weight: 600;
+  color: var(--accent);
+  opacity: 0.28;
+}
+.portrait-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portrait-chip {
+  position: absolute;
+  z-index: 2;
+  font-size: 0.78rem;
+  padding: 0.45rem 0.9rem;
+  box-shadow: var(--shadow-1);
+}
+.portrait-chip.c1 { top: 8%; left: -7%; }
+.portrait-chip.c2 { bottom: 20%; right: -6%; }
+.portrait-chip.c3 { bottom: -4%; left: 10%; }
+@media (max-width: 760px) {
+  .portrait-chip.c1 { left: 4%; }
+  .portrait-chip.c2 { right: 4%; }
+}
+
+/* ────────────────────────────────────────────────────── 9 · STATEMENT · METHOD */
+
+.pull-quote {
+  margin: 1rem 0 0;
+  padding: 0 0 0 1.6rem;
+  border-left: 2px solid var(--accent);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+  line-height: 1.35;
+  color: var(--accent-ink);
+}
+.prose-copy p { color: var(--ink-soft); margin: 0 0 1.05rem; max-width: 62ch; }
+
+.steps { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.step-num {
+  font-family: var(--font-display);
+  font-size: 2.9rem;
+  font-weight: 600;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.4px var(--accent);
+  opacity: 0.45;
+  margin-bottom: 0.7rem;
+}
+.steps .card p { color: var(--ink-soft); font-size: 0.93rem; margin: 0; }
+
+/* ───────────────────────────────────────── 10 · CALLOUTS — the .tip-box system */
+
+.tip-box {
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 1.05rem 1.3rem 1.05rem 1.4rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--r-md);
+  background: var(--accent-soft);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.tip-box p, .tip-box ul { margin: 0.2rem 0 0; font-size: 0.96rem; color: var(--ink-soft); }
+.tip-box .tip-title,
+.tip-box > p:first-child strong:first-child {
+  font-weight: 600;
+  color: var(--accent-ink);
+}
+.tip-box[data-tone="note"]  { border-left-color: #b98a4b; background: #faf4e8; }
+.tip-box[data-tone="warn"]  { border-left-color: #a8503f; background: #f9ecea; }
+.tip-box[data-tone="ok"]    { border-left-color: #3e7c74; background: #ecf4f1; }
+
+/* ─────────────────────────────────────────────── 11 · DOC PAGES (materials/*) */
+
+.doc-page body { background: var(--bg); }
+.doc-crumbs {
+  width: min(880px, 92vw);
+  margin: 6.5rem auto 1.2rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+}
+.doc-crumbs a { color: var(--accent); text-decoration: none; }
+.doc-crumbs a:hover { text-decoration: underline; }
+
+.doc-frame {
+  width: min(880px, 92vw);
+  margin: 0 auto 4.5rem;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: var(--shadow-2);
+  overflow: hidden;
+}
+
+.doc-cover {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 3.2rem 2.5rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--accent-soft);
+}
+.doc-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+/* one quiet motif per chapter design language */
+[data-theme="slate"] .doc-cover::after { background-image: radial-gradient(circle at 88% 30%, var(--accent-glow) 0 2px, transparent 2.6px); background-size: 22px 22px; }
+[data-theme="ink"]   .doc-cover::after { background-image: repeating-linear-gradient(135deg, var(--accent-glow) 0 1px, transparent 1px 16px); }
+[data-theme="clay"]  .doc-cover::after { background-image: radial-gradient(circle farthest-side at 50% 128%, transparent 68%, var(--accent-glow) 68.6% 69.4%, transparent 70%); background-size: 300px 130px; background-position: bottom; }
+[data-theme="sage"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="plum"]  .doc-cover::after { background-image: radial-gradient(420px 260px at 92% 100%, var(--accent-glow) 0%, transparent 70%); }
+[data-theme="mist"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 30px); }
+[data-theme="ember"] .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 13px), repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 13px); }
+[data-theme="moss"]  .doc-cover::after { background-image: radial-gradient(circle at 12% 110%, var(--accent-glow) 0 56%, transparent 57%); background-size: 190px 190px; }
+
+.doc-kicker {
+  margin: 0 0 0.9rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.doc-title { font-size: clamp(2rem, 4.2vw, 2.9rem); margin-bottom: 0.35em; }
+.doc-subtitle { margin: 0 0 1.4rem; max-width: 58ch; color: var(--ink-soft); font-size: 1.02rem; }
+.doc-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.2rem;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+}
+
+.doc-body { padding: 2.6rem 3.2rem 3.4rem; }
+@media (max-width: 640px) {
+  .doc-cover, .doc-body { padding-inline: 1.4rem; }
+}
+
+/* ──────────────────────────────────────────────── 12 · PROSE (lesson content) */
+
+.prose { font-size: 1.02rem; color: #34322e; }
+.prose > * + * { margin-top: 0.9em; }
+.prose h2 { font-size: 1.55rem; margin-top: 2.2em; padding-bottom: 0.35rem; border-bottom: 1px solid var(--line); }
+.prose h3 { font-size: 1.22rem; margin-top: 1.9em; }
+.prose h4 { font-size: 1.05rem; margin-top: 1.6em; }
+.prose blockquote { margin: 1.4rem 0; padding: 1rem 1.3rem 1rem 1.4rem; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--r-md); background: var(--accent-soft); color: var(--ink-soft); break-inside: avoid; page-break-inside: avoid; }
+.prose blockquote p { margin: 0.2rem 0 0; }
+.prose blockquote p:first-child { margin-top: 0; font-weight: 500; color: var(--accent-ink); }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.6rem 0; font-size: 0.93rem; break-inside: avoid; page-break-inside: avoid; }
+.prose th { background: var(--accent-soft); color: var(--accent-ink); font-weight: 600; text-align: left; }
+.prose th, .prose td { border: 1px solid var(--line-strong); padding: 0.55rem 0.8rem; }
+.prose tbody tr:nth-child(even) td { background: rgba(74, 107, 130, 0.045); }
+.prose ul, .prose ol { padding-left: 1.4rem; }
+.prose li { margin: 0.35rem 0; }
+.prose li::marker { color: var(--accent); }
+.prose strong { color: var(--ink); font-weight: 600; }
+.prose code { font-family: var(--font-mono); font-size: 0.88em; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 6px; padding: 0.08em 0.42em; }
+.prose hr { border: 0; border-top: 1px dashed var(--line-strong); margin: 2.2rem auto; width: 55%; }
+.prose figure { margin: 1.6rem 0; break-inside: avoid; page-break-inside: avoid; }
+
+/* ────────────────────────────────────────────────────────────── 13 · FOOTER */
+
+.site-footer {
+  padding: 3rem 0 3.6rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+}
+.site-footer .bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-footer a { color: var(--ink-soft); text-decoration: none; }
+.site-footer a:hover { color: var(--accent); }
+
+/* ────────────────────────────────────────────────── 14 · MOTION & RESPONSIVE */
+
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (max-width: 760px) {
+  .section { padding: 3.6rem 0; }
+  .hero { padding-top: 7.5rem; }
+  .doc-meta { gap: 0.3rem 0.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ═══════════════════════════════════════════════ 15 · PRINT — A4 CHOREOGRAPHY
+   Hard pagination contract: no orphan headings, no splintered callouts,
+   no split table rows. Chromium prints exactly what these rules promise.     */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 14mm 18mm 14mm;
+  }
+
+  html, body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .site-nav, .site-footer, .no-print, .skip-link,
+  .hero-cta, .chip-row, .filter-row, .card-actions,
+  .portrait-chip, .grain, .doc-crumbs {
+    display: none !important;
+  }
+
+  .hero, .section { padding: 0 !important; min-height: 0 !important; background: none !important; }
+  .shell, .shell-wide { width: 100% !important; max-width: none !important; }
+  main { padding-top: 0 !important; margin: 0 !important; }
+
+  /* — content-keep = never leave a single widow line — */
+  p, li { orphans: 3; widows: 3; }
+
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .tip-box, blockquote, table, tr, img, figure,
+  .doc-cover, .doc-frame, .card, .prose figure {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  thead { display: table-header-group; }  /* column headers repeat on every page */
+  tfoot { display: table-footer-group; }
+
+  a { color: inherit; text-decoration: none; }
+  a[href^="http"]::after {
+    content: " (" attr(href) ") ";
+    font-size: 0.82em;
+    color: #77777a;
+  }
+
+  /* Chapter pages unwrap from their web chrome and print edge-to-edge calm */
+  .doc-frame {
+    box-shadow: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    background: #fff !important;
+  }
+  .doc-cover { border-radius: 0; margin-bottom: 1.4rem; }
+  .doc-body { padding: 0 !important; }
+  .prose table { font-size: 0.88rem; }
+  .prose tbody tr:nth-child(even) td { background: rgba(74, 107, 130, 0.06); }
+
+  .card, .steps .card { box-shadow: none; border-color: var(--line-strong); }
+  .page-break, .break-before {
+    break-before: page;
+    page-break-before: always;
+  }
+}
+</style>
+</head>
+<body class="doc-page">
+<a class="skip-link" href="#doc-main">Skip to content</a>
+<main id="doc-main">
+  <div class="doc-crumbs no-print">
+    <a href="../index.html">&larr; Portfolio</a><span aria-hidden="true">/</span>
+    <a href="../materials.html">Learning library</a>
+  </div>
+  <article class="doc-frame chapter-doc" data-chapter="200-daily-use-english-sentences" data-theme="slate">
+    <header class="doc-cover">
+      <p class="doc-kicker">Zoya&#39;s English — Study Module</p>
+      <h1 class="doc-title">200 Daily Use English Sentences</h1>
+      <p class="doc-subtitle">Rebuilt from the original source — interactive web edition plus print-ready A4.</p>
+      <div class="doc-meta">
+        <span>Source: 200 Daily Use ENGLISH Sentences.pdf</span>
+        
+        <span>2876 words</span>
+        <span>~16 min read</span>
+      </div>
+    </header>
+    <div class="doc-body prose">
+<!-- page 1 -->
+
+<h3 id="200-daily-use-english">200 DAILY USE ENGLISH</h3>
+<h3 id="sentences-for-speaking">SENTENCES FOR SPEAKING</h3>
+<h3 id="part-1-1-20">PART 1 (1 - 20)</h3>
+<p>ostee</p>
+<h3 id="at-home">AT HOME</h3>
+<ol>
+<li>Instead of: What? Say: Sorry, could you repeat that? . Instead of: I don’t know. Say: I’m not sure about that.</li>
+</ol>
+<p>. Instead of: Wait. Say: Give me a moment, please.</p>
+<p>. Instead of: I am busy. Say: I’m a little busy right now.</p>
+<p>. Instead of: Leave it. Say: It’s okay, never mind.</p>
+<h3 id="with-friends">WITH FRIENDS</h3>
+<p>. Instead of: It’s nothing. Say: It was nothing, really. Instead of: You're wrong. Say: I see it a little differently. . Instead of: I don’t like it. Say: It’s not really my thing. . Instead of: Shut up! Say: Could you be quiet, please? . Instead of: That's boring. Say: That’s a bit dull.</p>
+<h3 id="at-college-school">AT COLLEGE / SCHOOL</h3>
+<ol start="11">
+<li>
+<p>Instead of: I don’t understand. Say: Could you explain that again?</p>
+</li>
+<li>
+<p>Instead of: I forgot. Say: I completely slipped my mind. 13. Instead of: I don’t have a pen. Say: May I borrow your pen? 14. Instead of: I don’t have time. Say: I’m a bit tight on time.</p>
+</li>
+<li>
+<p>Instead of: It’s difficult. Say: It’s quite challenging.</p>
+</li>
+</ol>
+<h3 id="on-the-phone">ON THE PHONE</h3>
+<ol start="16">
+<li>
+<p>Instead of: Hello? Say: Hello, this is ... speaking.</p>
+</li>
+<li>
+<p>Instead of: Who is this? Say: May I know who’s calling? 18. Instead of: I'll call you later. Say: I'll get back to you shortly. 19. Instead of: The line is busy. Say: The line seems to be busy. 20. Instead of: I can’t hear you. Say: Sorry, I can’t hear you clearly.</p>
+</li>
+</ol>
+<p>Tip: Practice these sentences daily and try using them in real conversations.</p>
+<!-- page 2 -->
+
+<h3 id="200-daily-use-english_1">200 DAILY USE ENGLISH</h3>
+<h3 id="sentences-for-speaking_1">SENTENCES FOR SPEAKING</h3>
+<h3 id="part-2-21-40">PART 2 (21 - 40)</h3>
+<h3 id="asking-for-help">ASKING FOR HELP</h3>
+<ol start="21">
+<li>Instead of: 22. Instead of: 23. Instead of: 24. Instead of: 25. Instead of:</li>
+</ol>
+<p>Help me. Do this for me. I need it. Show me.</p>
+<p>Explain this.</p>
+<h3 id="agreeing">AGREEING</h3>
+<ol start="26">
+<li>Instead of: 27. Instead of: 28. Instead of: 29. Instead of: 30. Instead of:</li>
+</ol>
+<p>I agree.</p>
+<p>Yes, I think so. That’s right. You're correct.</p>
+<p>I’m with you.</p>
+<h3 id="disagreeing">DISAGREEING</h3>
+<ol start="31">
+<li>
+<p>Instead of: I disagree.</p>
+</li>
+<li>
+<p>Instead of: You’re wrong. 33. Instead of: No, it’s not.</p>
+</li>
+<li>
+<p>Instead of: That’s not right. 35. Instead of: I don’t think so.</p>
+</li>
+</ol>
+<h3 id="expressing-feelings">EXPRESSING FEELINGS</h3>
+<ol start="36">
+<li>
+<p>Instead of: I am happy. 37. Instead of: I am sad.</p>
+</li>
+<li>
+<p>Instead of: I am angry.</p>
+</li>
+<li>
+<p>Instead of: I am tired.</p>
+</li>
+<li>
+<p>Instead of: I am nervous.</p>
+</li>
+</ol>
+<p>~sSteo&lt;-</p>
+<p>=&gt;</p>
+<p>Say: Say: Say: Say: Say:</p>
+<p>Say: Say: Say: Say: Say:</p>
+<p>Say: Say: Say: Say: Say:</p>
+<p>Say: Say: Say: Say: Say:</p>
+<p>Could you help me with this? Could you do this for me?</p>
+<p>I would really appreciate it. Could you show me how?</p>
+<p>Could you explain this to me?</p>
+<p>I completely agree. Yes, that makes sense. Exactly!</p>
+<p>You're absolutely right.</p>
+<p>I’m on the same page.</p>
+<p>I see your point, but I disagree. I see it differently.</p>
+<p>I don’t think so.</p>
+<p>I’m not sure that’s right.</p>
+<p>I have a different opinion.</p>
+<p>I’m really happy.</p>
+<p>I'm feeling a bit down. I’m really upset about it. I’m completely exhausted.</p>
+<p>I’m a little nervous.</p>
+<p>Tip: Don’t just learn — use these sentences in your daily life!</p>
+<!-- page 3 -->
+
+<h3 id="200-daily-use-english_2">200 DAILY USE ENGLISH</h3>
+<h3 id="sentences-for-speaking_2">SENTENCES FOR SPEAKING</h3>
+<h3 id="part-3-41-60">PART 3 (41 - 60)</h3>
+<p>mse MAKING REQUESTS</p>
+<ol start="41">
+<li>
+<p>Instead of: Pass me that. Say: Could you pass me that, please? 42. Instead of: Open the window. Say: Could you open the window? 43. Instead of: Help me with this. Say: Can you help me with this?</p>
+</li>
+<li>
+<p>Instead of: Give it to me. Say: Could you give it to me, please?</p>
+</li>
+<li>
+<p>Instead of: Wait for me. Say: Could you wait for me a minute?</p>
+</li>
+</ol>
+<h3 id="apologising">APOLOGISING</h3>
+<ol start="46">
+<li>Instead of: Sorry.</li>
+</ol>
+<p>47, Instead of: It’s my fault. 48. Instead of: I didn’t mean it.</p>
+<p>Say: I’m really sorry.</p>
+<p>Say: I take full responsibility. Say: I didn’t mean to hurt you. 49. Instead of: Forgive me.</p>
+<p>Say: Please forgive me.</p>
+<p>Sn a a 2</p>
+<ol start="50">
+<li>Instead of: Sorry I’m late. Say: Sorry for being late.</li>
+</ol>
+<h3 id="starting-conversations">STARTING CONVERSATIONS</h3>
+<ol start="51">
+<li>Instead of: How are you? 52. Instead of: What’s up?</li>
+</ol>
+<p>Say: How have you been? Say: What’s new with you? 53. Instead of: Where are you from? 54. Instead of: What do you do?</p>
+<ol start="55">
+<li>Instead of: Nice to meet you.</li>
+</ol>
+<p>Say: May I know where you’re from? : What do you do for a living?</p>
+<p>nn en 2</p>
+<p>: It’s a pleasure meeting you.</p>
+<h3 id="thanking">THANKING</h3>
+<ol start="56">
+<li>
+<p>Instead of: Thanks.</p>
+</li>
+<li>
+<p>Instead of: Thanks a lot.</p>
+</li>
+<li>
+<p>Instead of: That was helpful. 59. Instead of: I’m grateful.</p>
+</li>
+</ol>
+<p>: Thank you so much.</p>
+<p>: I really appreciate it.</p>
+<p>: That was very helpful, thank you. : I truly appreciate your help.</p>
+<p>+live</p>
+<ol start="60">
+<li>Instead of: You’re welcome. : My pleasure. Tips to Remember: ¢ Speak politely and confidently. ¢ Small changes in words can make a big difference. ¢ Practice daily and make them a habit!</li>
+</ol>
+<!-- page 4 -->
+
+<h3 id="200-daily-use-english_3">200 DAILY USE ENGLISH</h3>
+<h3 id="sentences-for-speaking_3">SENTENCES FOR SPEAKING</h3>
+<h3 id="part-4-61-80">PART 4 (61 - 80)</h3>
+<p>Hoe GIVING OPINIONS</p>
+<ol start="61">
+<li>
+<p>Instead of: I think so. Say: In my opinion, yes.</p>
+</li>
+<li>
+<p>Instead of: I don’t think so. Say: I have a different opinion. 63. Instead of: It is good. Say: It seems pretty good.</p>
+</li>
+<li>
+<p>Instead of: It is bad. Say: It isn’t up to the mark. 65. Instead of: I like it. Say: I’m really fond of it.</p>
+</li>
+</ol>
+<h3 id="asking-for-information">ASKING FOR INFORMATION</h3>
+<ol start="66">
+<li>
+<p>Instead of: What is this? Say: Could you tell me what this is? 67. Instead of: How does this work? Say: Could you explain how this works? 68. Instead of: When is it? Say: Could you tell me when it is?</p>
+</li>
+<li>
+<p>Instead of: Where is it? Say: Could you tell me where it is?</p>
+</li>
+<li>
+<p>Instead of: Why is it so? Say: Could you tell me why it is so?</p>
+</li>
+</ol>
+<h3 id="making-plans">MAKING PLANS</h3>
+<ol start="71">
+<li>Instead of: Let’s go. 72. Instead of: What shall we do? 73. Instead of: I am free.</li>
+</ol>
+<p>Say: Shall we go? Say: What do you feel like doing? Say: I’m available.</p>
+<ol start="74">
+<li>Instead of: I can’t come. Say: I’m afraid I can’t make it.</li>
+</ol>
+<p>++ vd</p>
+<ol start="75">
+<li>Instead of: See you later. Say: Catch you later!</li>
+</ol>
+<h3 id="talking-about-time">TALKING ABOUT TIME</h3>
+<ol start="76">
+<li>
+<p>Instead of: I am on time. Say: I’m right on time. 77. Instead of: It is too early. Say: It’s still a bit early. 78. Instead of: It is too late. Say: It’s quite late now.</p>
+</li>
+<li>
+<p>Instead of: Give me time. Say: Give me some time, please.</p>
+</li>
+</ol>
+<p>++ uy</p>
+<ol start="80">
+<li>Instead of: In a few minutes. Say: In a couple of minutes. How to Use These Sentences?</li>
+</ol>
+<ul>
+<li>
+<p>Don’t just read — speak them out loud.</p>
+</li>
+<li>
+<p>Use them in daily conversations.</p>
+</li>
+<li>
+<p>The more you practice, the more confident you will become!</p>
+</li>
+</ul>
+<p>— Practice Today, Speak Better Tomorrow! &lt;—</p>
+<!-- page 5 -->
+
+<h3 id="200-daily-use-english_4">200 DAILY USE ENGLISH</h3>
+<h3 id="sentences-for-speaking_4">SENTENCES FOR SPEAKING</h3>
+<h3 id="part-5-81-100">PART 5 (81 - 100)</h3>
+<h3 id="at-the-shop-market">AT THE SHOP / MARKET</h3>
+<ol start="81">
+<li>
+<ol start="82">
+<li>
+<ol start="83">
+<li>
+<ol start="84">
+<li>85.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>Instead of: How much is this?</p>
+<p>Instead of: It is expensive.</p>
+<p>Instead of: I want this.</p>
+<p>Instead of: Do you have this in other size? Instead of: Where is the bill?</p>
+<h3 id="travelling">TRAVELLING</h3>
+<ol start="86">
+<li>
+<ol start="87">
+<li>
+<ol start="88">
+<li>
+<ol start="89">
+<li>90.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>Instead of: Where is the bus stop? Instead of: How long will it take?</p>
+<p>Instead of: | got down here.</p>
+<p>Instead of: Is this the right way?</p>
+<p>Instead of: I am lost.</p>
+<h3 id="expressing-necessity">EXPRESSING NECESSITY</h3>
+<ol start="91">
+<li>
+<ol start="92">
+<li>
+<ol start="93">
+<li>94, 95.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>Instead of: I need to go.</p>
+<p>Instead of: It is important. Instead of: We have to finish this. Instead of: It is necessary.</p>
+<p>Instead of: I must do this.</p>
+<h3 id="giving-suggestions">GIVING SUGGESTIONS</h3>
+<ol start="96">
+<li>
+<ol start="97">
+<li>
+<ol start="98">
+<li>99.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>100.</p>
+<p>Instead of: Let’s eat something.</p>
+<p>Instead of: We should study.</p>
+<p>Instead of: Let’s go outside.</p>
+<p>Instead of: What about watching a movie? Instead of: Let’s take a break.</p>
+<p>Remember:</p>
+<p>Say: How much does this cost?</p>
+<p>Say: It’s a bit out of my budget.</p>
+<p>Say: I would like to buy this.</p>
+<p>Say: Do you have this in a different size? Say: Could | please get the bill?</p>
+<p>: Could you tell me where the bus stop is? : How long will it take to reach there? : I got off the bus here. : Is this the correct way?</p>
+<p>: I seem to be lost.</p>
+<p>: I have to go.</p>
+<p>: It is very important.</p>
+<p>: We need to finish this.</p>
+<p>y: It is absolutely necessary.</p>
+<p>: I have no choice but to do this.</p>
+<p>: How about eating something? : Why don’t we study?</p>
+<p>: Shall we go outside?</p>
+<p>: How about watching a movie?</p>
+<p>: Why don’t we take a break?</p>
+<p>¢ Small changes in words can make you sound more natural.</p>
+<p>¢ Practice these sentences daily.</p>
+<p>¢ Speak with confidence and keep learning! ——+ Practice Today, Speak Better Tomorrow! +—————</p>
+<!-- page 6 -->
+
+<h3 id="200-daily-use-english_5">200 DAILY USE ENGLISH</h3>
+<h3 id="sentences-for-speaking_5">SENTENCES FOR SPEAKING</h3>
+<h3 id="part-6-101-120">PART 6 (101 - 120)</h3>
+<p>Se DEALING WITH PROBLEMS</p>
+<ol start="101">
+<li>
+<ol start="102">
+<li>103.</li>
+</ol>
+</li>
+</ol>
+<p>Instead of: There is a problem.</p>
+<p>Instead of: It is not working.</p>
+<p>Instead of: I can’t do this.</p>
+<p>: There seems to be a problem.</p>
+<p>: It doesn’t seem to be working.</p>
+<p>: I’m afraid I can’t do this.</p>
+<ol start="104">
+<li>
+<p>Instead of: I don’t understand. : I’m sorry, I didn’t understand.</p>
+</li>
+<li>
+<p>Instead of: It is confusing. : It is a little confusing.</p>
+</li>
+</ol>
+<h3 id="giving-compliments">GIVING COMPLIMENTS</h3>
+<ol start="106">
+<li>
+<p>Instead of: You are good. Say: You're really good at this. 107. Instead of: I like your work. Say: I really like your work. 108. Instead of: You look nice. Say: You look great!</p>
+</li>
+<li>
+<p>Instead of: That is a good idea. Say: That’s a brilliant idea. 110. Instead of: Well done! Say: That’s really impressive!</p>
+</li>
+</ol>
+<h3 id="responding-politely">RESPONDING POLITELY</h3>
+<ol start="111">
+<li>
+<p>Instead of: Okay. Say: Sure.</p>
+</li>
+<li>
+<p>Instead of: No problem. Say: Not at all.</p>
+</li>
+<li>
+<p>Instead of: I don’t mind. Say: I’m perfectly fine with that. 114. Instead of: I agree. Say: I totally agree.</p>
+</li>
+<li>
+<p>Instead of: Whatever. Say: It doesn’t matter.</p>
+</li>
+</ol>
+<h3 id="expressing-uncertainty">EXPRESSING UNCERTAINTY</h3>
+<ol start="116">
+<li>
+<p>Instead of: I don’t know. Say: I’m not sure.</p>
+</li>
+<li>
+<p>Instead of: Maybe. Say: Perhaps.</p>
+</li>
+<li>
+<p>Instead of: I’m not sure about it. Say: I’m not very certain about it. 119. Instead of: I think so. 120. Instead of: I guess.</p>
+</li>
+</ol>
+<p>Say: I believe so. Say: I suppose so.</p>
+<p>TIPS TO REMEMBER: ¢ Speak slowly and clearly. ¢ Use these sentences in your daily conversations. ¢ Practice regularly and you will see the difference.</p>
+<p>————* Practice Today, Speak Better Tomorrow! *%————</p>
+<!-- page 7 -->
+
+<h3 id="200-daily-use-english_6">200 DAILY USE ENGLISH</h3>
+<h3 id="sentences-for-speaking_6">SENTENCES FOR SPEAKING</h3>
+<h3 id="part-7-121-140">PART 7 (121 - 140)</h3>
+<p>octe&lt; GREETINGS &amp; RESPONSES 121. Instead of: Hi. Say: Hello! 122. Instead of: How are you? Say: How have you been? 123. Instead of: I am fine. Say: I’m doing well, thank you. 124. Instead of: What’s your name? Say: May I know your name?</p>
+<ol start="125">
+<li>Instead of: Nice to meet you. Say: It’s a pleasure meeting you.</li>
+</ol>
+<h3 id="on-the-phone_1">ON THE PHONE</h3>
+<ol start="126">
+<li>
+<p>Instead of: Hello? Say: Hello, this is speaking. 127. Instead of: Who is this? Say: May I know who’s calling? 128. Instead of: Call me later. Say: Can you call me back later?</p>
+</li>
+<li>
+<p>Instead of: I can’t hear you. Say: I’m sorry, I can’t hear you clearly.</p>
+</li>
+<li>
+<p>Instead of: Wrong number. Say: I think you have the wrong number.</p>
+</li>
+</ol>
+<h3 id="at-home_1">AT HOME</h3>
+<ol start="131">
+<li>
+<p>Instead of: Turn off the light. Say: Could you please turn off the light? 132. Instead of: Close the door. Say: Please close the door.</p>
+</li>
+<li>
+<p>Instead of: Bring me water. Say: Could you bring me some water? 134. Instead of: Hurry up! Say: Please hurry up.</p>
+</li>
+<li>
+<p>Instead of: Be quiet. Say: Please be quiet.</p>
+</li>
+</ol>
+<h3 id="with-friends_1">WITH FRIENDS</h3>
+<ol start="136">
+<li>
+<p>Instead of: What’s up?</p>
+</li>
+<li>
+<p>Instead of: I am bored.</p>
+</li>
+<li>
+<p>Instead of: That’s funny.</p>
+</li>
+<li>
+<p>Instead of: What are you doing? 140. Instead of: Let’s hang out.</p>
+</li>
+</ol>
+<p>Say: What’s going on? Say: I’m feeling bored. Say: That’s hilarious! Say: What are you up to?</p>
+<p>+live</p>
+<p>Say: Let’s catch up sometime.</p>
+<p>DAILY PRACTICE TIPS:</p>
+<p>¢ Speak these sentences out loud every day. ¢ Use them in real conversations.</p>
+<p>¢ Don’t just memorize — understand and use!</p>
+<p>—————* Practice Today, Speak Better Tomorrow! %*——————</p>
+<!-- page 8 -->
+
+<h3 id="200-daily-use-english_7">200 DAILY USE ENGLISH</h3>
+<h3 id="sentences-for-speaking_7">SENTENCES FOR SPEAKING</h3>
+<h3 id="expressing-feelings_1">EXPRESSING FEELINGS</h3>
+<ol start="141">
+<li>
+<ol start="142">
+<li>
+<ol start="143">
+<li>
+<ol start="144">
+<li>145.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="agreeing-disagreeing">AGREEING &amp; DISAGREEING</h3>
+<ol start="146">
+<li>
+<ol start="147">
+<li>
+<ol start="148">
+<li>
+<ol start="149">
+<li>150.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>Instead of: I am happy.</p>
+<p>Instead of: I am sad. Instead of: I am scared. Instead of: I am tired.</p>
+<p>Instead of: I am excited.</p>
+<p>Instead of: Yes, I agree. Instead of: No, I don’t agree. Instead of: Maybe.</p>
+<p>Instead of: You are right. Instead of: That’s wrong.</p>
+<h3 id="making-requests">MAKING REQUESTS</h3>
+<ol start="151">
+<li>
+<ol start="152">
+<li>153.</li>
+</ol>
+</li>
+</ol>
+<p>Instead of: Give me that. Instead of: Help me.</p>
+<p>Instead of: Do this for me.</p>
+<p>. Instead of: Lend me your pen.</p>
+<p>155.</p>
+<p>Instead of: Repeat that.</p>
+<h3 id="apologising_1">APOLOGISING</h3>
+<ol start="156">
+<li>
+<ol start="157">
+<li>
+<ol start="158">
+<li>159, 160.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>Instead of: Sorry.</p>
+<p>Instead of: It’s my fault. Instead of: I didn’t mean it. Instead of: Forgive me. Instead of: Sorry I’m late.</p>
+<h3 id="part-8-141-160">PART 8 (141 - 160)</h3>
+<p>; [am really happy. y: I feel a little sad. y: Lam a bit scared. y: I am really tired.</p>
+<p>: I am super excited!</p>
+<p>; I totally agree with you. : I’m afraid I have to disagree. : I’m not sure about that. : You are absolutely right.</p>
+<p>: I think that’s not correct.</p>
+<p>: Could you please give me that? y: Could you please help me?</p>
+<p>y: Could you do this for me?</p>
+<p>: Could I borrow your pen?</p>
+<p>: Could you please repeat that?</p>
+<p>: I’m really sorry.</p>
+<p>I take full responsibility. y: I didn’t mean to hurt you.</p>
+<p>: Please forgive me.</p>
+<p>y: Sorry for being late.</p>
+<p>SMART SPEAKING TIPS:</p>
+<p>¢ Use polite words.</p>
+<p>¢ Add details to your sentences.</p>
+<p>¢ Practice daily and gain confidence.</p>
+<p><em>% Practice Today, Speak Better Tomorrow! %</em> ———</p>
+<!-- page 9 -->
+
+<h3 id="200-daily-use-english_8">200 DAILY USE ENGLISH</h3>
+<h3 id="sentences-for-speaking_8">SENTENCES FOR SPEAKING</h3>
+<h3 id="part-9-161-180">PART 9 (161 - 180)</h3>
+<h3 id="starting-a-conversation">STARTING A CONVERSATION</h3>
+<ol start="161">
+<li>
+<p>Instead of: How are you? + Say: How’s it going? 162. Instead of: What do you do? &gt; Say: What do you do for a living?</p>
+</li>
+<li>
+<p>Instead of: Where are you from?  -&gt; Say: Where do you come from?</p>
+</li>
+<li>
+<p>Instead of: What's your hobby? &gt; Say: What do you lke to do in your free time? 165. Instead of: Let’s be friends. + Say: It would be great to be friends!</p>
+</li>
+</ol>
+<h3 id="keeping-the-conversation-going">KEEPING THE CONVERSATION GOING</h3>
+<ol start="166">
+<li>
+<p>Instead of: I see. &gt; Say: I understand.</p>
+</li>
+<li>
+<p>Instead of: That’s interesting. + Say: That’s really interesting!</p>
+</li>
+<li>
+<p>Instead of: Tell me more. &gt; Say: I'd love to hear more about that. 169. Instead of: What happened next? Say: And then what happened?</p>
+</li>
+<li>
+<p>Instead of: I didn’t know that. Say: That’s something new to me!</p>
+</li>
+</ol>
+<h3 id="giving-thanks">GIVING THANKS</h3>
+<ol start="171">
+<li>
+<p>Instead of: Thanks. Say: Thank you so much!</p>
+</li>
+<li>
+<p>Instead of: Thanks a lot. : I really appreciate it.</p>
+</li>
+</ol>
+<p>173, Instead of: You are welcome. Say: It was my pleasure.</p>
+<ol start="174">
+<li>
+<p>Instead of: I am grateful. : I truly appreciate your help.</p>
+</li>
+<li>
+<p>Instead of: That helped a lot. Say: That was really helpful, thank you!</p>
+</li>
+</ol>
+<h3 id="expressing-surprise">EXPRESSING SURPRISE</h3>
+<ol start="176">
+<li>Instead of: Oh! Say: Oh wow! 177. Instead of: Really? Say: Seriously? 178. Instead of: I can’t believe it! Say: That’s unbelievable! 179. Instead of: No way! : Are you serious! 180. Instead of: That’s amazing! Say: That’s absolutely amazing! FINAL TIPS: ¢ Practice a little every day. ¢ Use these sentences in real conversations. ¢ Don’t worry about grammar, focus on speaking! ¢ The more you speak, the more confident you become. * Practice Today, Speak Better Tomorrow! *</li>
+</ol>
+<!-- page 10 -->
+
+<h3 id="200-daily-use-english_9">200 DAILY USE ENGLISH</h3>
+<h3 id="sentences-for-speaking_9">SENTENCES FOR SPEAKING</h3>
+<h3 id="part-10-181-200">PART 10 (181 - 200)</h3>
+<p>oae&lt; MAKING SUGGESTIONS</p>
+<ol start="181">
+<li>
+<p>Instead of: What should we do? Say: What do you think we should do? 182. Instead of: I have an idea. Say: I have a suggestion.</p>
+</li>
+<li>
+<p>Instead of: Why don’t we...? Say: How about we...?</p>
+</li>
+<li>
+<p>Instead of: Let’s go there. Say: Shall we go there?</p>
+</li>
+<li>
+<p>Instead of: What about this? Say: How does this sound?</p>
+</li>
+</ol>
+<h3 id="talking-about-time_1">TALKING ABOUT TIME</h3>
+<p>186, 187, 188, 189. 190.</p>
+<p>Instead of: I don’t have time. Instead of: Wait a minute. Instead of: I’m free now. Instead of: It’s too late.</p>
+<p>Instead of: See you tomorrow.</p>
+<h3 id="talking-about-plans">TALKING ABOUT PLANS</h3>
+<ol start="191">
+<li>
+<ol start="192">
+<li>
+<ol start="193">
+<li>194, 195.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>Instead of: I will try.</p>
+<p>Instead of: I don’t know. Instead of: I will think about it. Instead of: Maybe next time. Instead of: I am busy.</p>
+<h3 id="encouraging-others">ENCOURAGING OTHERS</h3>
+<ol start="196">
+<li>197.</li>
+</ol>
+<p>Instead of: Good job!</p>
+<p>Instead of: You can do it.</p>
+<p>. Instead of: Don’t give up. . Instead of: Try again. . Instead of: All the best!</p>
+<p>REMEMBER:</p>
+<p>: Tm a bit busy right now.</p>
+<p>: Just give me a moment.</p>
+<p>: [ have some time now.</p>
+<p>: It’s getting late.</p>
+<p>: See you again tomorrow. é</p>
+<p>: I will do my best.</p>
+<p>: I’m not sure.</p>
+<p>: I'll consider it.</p>
+<p>: Perhaps another time.</p>
+<p>: [have a lot on my plate.</p>
+<p>: Well done!</p>
+<p>: I know you can do it!</p>
+<p>: Keep going, you can do it! : Give it another shot! : Best of luck!</p>
+<p>¢ Polite and smart words make your personality shine.</p>
+<p>¢ Use these sentences in your daily life.</p>
+<p>¢ The more you practice, the more fluent you become.</p>
+<ul>
+<li>Practice Today, Speak Better Tomorrow! *</li>
+</ul>
+    </div>
+  </article>
+  <script type="application/json" id="doc-meta">{"slug": "200-daily-use-english-sentences", "number": null, "theme": "slate", "engine": "cached markdown", "source": "200 Daily Use ENGLISH Sentences.pdf", "pages": 0, "words": 2876, "sections": 0, "tables": 0, "reading_min": 16, "date": "2026-10-21", "teaser": ". Instead of: It\u2019s nothing. Say: It was nothing, really. Instead of: You're wrong. Say: I see it a little differently. . Instead of: I don\u2019t like it. Say: It\u2019s not\u2026"}</script>
+</main>
+</body>
+</html>

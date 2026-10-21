@@ -1,0 +1,1426 @@
+<!doctype html>
+<html lang="en" data-theme="clay">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commonly Confused Words – Meanings &amp; Examples · Zoya's English — Study Module</title>
+<meta name="description" content="Commonly Confused Words – Meanings &amp; Examples — study module from Zoya&#39;s English learning library: speaking and confidence coaching materials.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>/* ═══════════════════════════════════════════════════════════════════════════
+   ZOYA'S ENGLISH — MASTER LAYOUT STYLESHEET
+   Design language: warm editorial · luxury-minimalist · glass surfaces
+   Beat structure: tokens → chapter themes → base → components → prose → print
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────── 1 · DESIGN TOKENS (single source) */
+
+:root {
+  /* Palette */
+  --bg: #faf9f6;                 /* warm off-white editorial ground      */
+  --bg-deep: #f3f1ea;            /* deeper warm wash for bands           */
+  --surface: #ffffff;
+  --glass: rgba(255, 255, 255, 0.66);
+  --glass-strong: rgba(255, 255, 255, 0.86);
+  --ink: #2b2b2b;                /* stark charcoal body typography       */
+  --ink-soft: #56524b;
+  --ink-faint: #8b867b;
+  --line: rgba(43, 43, 43, 0.10);
+  --line-strong: rgba(43, 43, 43, 0.17);
+  --accent: #4a6b82;             /* muted sophisticated slate-blue       */
+  --accent-ink: #375266;
+  --accent-soft: #edf2f6;
+  --accent-glow: rgba(74, 107, 130, 0.16);
+  --warm: #f6eddd;
+
+  /* Typography */
+  --font-display: "Fraunces", "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Courier New", monospace;
+
+  /* Shape & depth */
+  --r-lg: 24px;
+  --r-md: 16px;
+  --r-sm: 10px;
+  --r-pill: 999px;
+  --shadow-1: 0 1px 2px rgba(31, 29, 25, 0.05), 0 10px 30px -14px rgba(31, 29, 25, 0.16);
+  --shadow-2: 0 2px 8px rgba(31, 29, 25, 0.06), 0 28px 64px -24px rgba(31, 29, 25, 0.24);
+  --ease: cubic-bezier(0.22, 0.7, 0.25, 1);
+}
+
+/* ─────────────────────────── 2 · CHAPTER DESIGN LANGUAGES (per-theme accents)
+
+   Every compiled chapter receives its own stable accent family, applied via
+   `data-theme` on the page root, so each module feels designed — not stamped.
+   The dashboard (materials.html) mirrors these values for its cards.        */
+
+[data-theme="ink"]   { --accent: #46474b; --accent-ink: #33353a; --accent-soft: #f1efe9; --accent-glow: rgba(70, 71, 75, 0.14); }
+[data-theme="clay"]  { --accent: #b06a48; --accent-ink: #8f5438; --accent-soft: #f9efe7; --accent-glow: rgba(176, 106, 72, 0.15); }
+[data-theme="sage"]  { --accent: #5f7c60; --accent-ink: #49614a; --accent-soft: #eff5ef; --accent-glow: rgba(95, 124, 96, 0.15); }
+[data-theme="plum"]  { --accent: #7d5a72; --accent-ink: #64485a; --accent-soft: #f6eff4; --accent-glow: rgba(125, 90, 114, 0.15); }
+[data-theme="mist"]  { --accent: #3f7a75; --accent-ink: #2f605c; --accent-soft: #ebf4f2; --accent-glow: rgba(63, 122, 117, 0.15); }
+[data-theme="ember"] { --accent: #a8543f; --accent-ink: #8a4232; --accent-soft: #f9ece8; --accent-glow: rgba(168, 84, 63, 0.15); }
+[data-theme="moss"]  { --accent: #72783f; --accent-ink: #5a5f31; --accent-soft: #f5f6e9; --accent-glow: rgba(114, 120, 63, 0.15); }
+
+/* ────────────────────────────────────────────────────────── 3 · BASE RESET */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.68;
+  color: var(--ink);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 560;
+  line-height: 1.16;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0 0 0.6em;
+}
+
+::selection { background: var(--accent-glow); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  z-index: 100;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--r-pill);
+}
+.skip-link:focus { left: 12px; color: #fff; }
+
+/* ───────────────────────────────────────────────────────── 4 · LAYOUT CORE */
+
+.shell { width: min(1140px, 92vw); margin-inline: auto; }
+.shell-wide { width: min(1240px, 94vw); margin-inline: auto; }
+
+.section { padding: 5.5rem 0; position: relative; }
+.section + .section { padding-top: 0; }
+.grid { display: grid; gap: 1.4rem; }
+.grid.cards { grid-template-columns: repeat(auto-fill, minmax(305px, 1fr)); }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: center; }
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.1rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.kicker::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.65;
+}
+
+.section-title { font-size: clamp(1.9rem, 3.4vw, 2.7rem); }
+.section-lede { max-width: 62ch; color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 2.4rem; }
+.display-xl { font-size: clamp(2.7rem, 5.4vw, 4.3rem); line-height: 1.04; }
+@media (max-width: 900px) { .br-d { display: none; } }
+
+/* ─────────────────────────────────────────────────────── 5 · GLASS NAV BAR */
+
+.site-nav {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 60;
+  padding: 0.65rem 0;
+  transition: background 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+  border-bottom: 1px solid transparent;
+}
+.site-nav.scrolled {
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(14px) saturate(1.25);
+  backdrop-filter: blur(14px) saturate(1.25);
+  border-bottom-color: var(--line);
+  box-shadow: 0 8px 30px -18px rgba(31, 29, 25, 0.28);
+}
+.site-nav .bar { display: flex; align-items: center; gap: 1.6rem; }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.08rem;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.05rem;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-ink) 100%);
+  box-shadow: 0 6px 16px -6px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.nav-links { display: flex; align-items: center; gap: 1.5rem; margin-left: auto; }
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s var(--ease);
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-links a[aria-current="page"] { color: var(--accent); }
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+}
+
+/* ──────────────────────────────────────────────────────── 6 · BUTTONS · CHIPS */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.78rem 1.5rem;
+  border-radius: var(--r-pill);
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), background 0.2s var(--ease);
+}
+.btn-solid {
+  color: #fff;
+  background: linear-gradient(140deg, var(--accent) 0%, var(--accent-ink) 100%);
+  box-shadow: 0 10px 24px -10px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+.btn-solid:hover { transform: translateY(-1px); box-shadow: 0 14px 30px -10px var(--accent-glow); }
+.btn-ghost {
+  color: var(--accent-ink);
+  background: transparent;
+  border-color: var(--line-strong);
+}
+.btn-ghost:hover { border-color: var(--accent); background: var(--accent-soft); }
+.btn.is-disabled,
+.btn[aria-disabled="true"] { opacity: 0.55; pointer-events: none; }
+.btn-sm { padding: 0.5rem 1.05rem; font-size: 0.86rem; }
+.btn-note {
+  margin-left: 0.1rem;
+  padding-left: 0.55rem;
+  border-left: 1px solid var(--line-strong);
+  font-size: 0.76rem;
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.95rem;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line);
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.chip::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.85;
+}
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+/* ─────────────────────────────────────────────────────────── 7 · GLASS CARDS */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.7rem 1.7rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(12px) saturate(1.15);
+  backdrop-filter: blur(12px) saturate(1.15);
+  box-shadow: var(--shadow-1);
+  transition: transform 0.28s var(--ease), box-shadow 0.28s var(--ease), border-color 0.28s var(--ease);
+}
+.card-hover:hover,
+.card-chapter:hover {
+  transform: translateY(-3px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-2);
+}
+.card-kicker {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--card-accent, var(--accent));
+  margin-bottom: 0.3rem;
+}
+.card-title { font-size: 1.22rem; margin: 0.15rem 0 0.35rem; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { color: var(--card-accent, var(--accent)); }
+.card-teaser { color: var(--ink-soft); font-size: 0.94rem; margin: 0 0 0.9rem; }
+.card-empty {
+  grid-column: 1 / -1;
+  align-items: flex-start;
+  border-style: dashed;
+  border-color: var(--line-strong);
+  background: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.card-empty code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.05em 0.4em;
+}
+
+.material-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  margin-bottom: 0.8rem;
+}
+.material-icon svg { width: 22px; height: 22px; }
+
+/* Chapter cards — materials.html dashboard */
+.card-chapter { --card-accent: var(--accent); }
+.chapter-num {
+  position: absolute;
+  top: 1.05rem;
+  right: 1.45rem;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 3.4rem;
+  font-weight: 600;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.4px var(--card-accent);
+  opacity: 0.4;
+  user-select: none;
+}
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+}
+.card-meta li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.card-meta li::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--card-accent);
+  opacity: 0.7;
+}
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.filter-row { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 1.6rem 0 2.2rem; }
+.filter-chip { cursor: pointer; transition: all 0.2s var(--ease); opacity: 0.72; }
+.filter-chip.is-active {
+  opacity: 1;
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.filter-chip.is-active::before { background: rgba(255, 255, 255, 0.9); }
+
+/* ─────────────────────────────────────────────────────────────── 8 · HERO */
+
+.hero {
+  position: relative;
+  padding: 9.5rem 0 5.5rem;
+  overflow: hidden;
+  background:
+    radial-gradient(1100px 480px at 84% -12%, var(--accent-soft) 0%, transparent 62%),
+    radial-gradient(900px 420px at -14% 112%, var(--warm) 0%, transparent 55%);
+}
+.hero .grid.two { gap: 3.5rem; }
+.hero-lede {
+  font-size: 1.13rem;
+  color: var(--ink-soft);
+  max-width: 54ch;
+  margin: 1.2rem 0 2rem;
+}
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 2.2rem; }
+
+.portrait { position: relative; margin: 0; }
+.portrait-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: linear-gradient(165deg, var(--accent-soft) 0%, var(--bg-deep) 100%);
+  box-shadow: var(--shadow-2);
+}
+.portrait-mono {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 14vw, 10rem);
+  font-weight: 600;
+  color: var(--accent);
+  opacity: 0.28;
+}
+.portrait-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portrait-chip {
+  position: absolute;
+  z-index: 2;
+  font-size: 0.78rem;
+  padding: 0.45rem 0.9rem;
+  box-shadow: var(--shadow-1);
+}
+.portrait-chip.c1 { top: 8%; left: -7%; }
+.portrait-chip.c2 { bottom: 20%; right: -6%; }
+.portrait-chip.c3 { bottom: -4%; left: 10%; }
+@media (max-width: 760px) {
+  .portrait-chip.c1 { left: 4%; }
+  .portrait-chip.c2 { right: 4%; }
+}
+
+/* ────────────────────────────────────────────────────── 9 · STATEMENT · METHOD */
+
+.pull-quote {
+  margin: 1rem 0 0;
+  padding: 0 0 0 1.6rem;
+  border-left: 2px solid var(--accent);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+  line-height: 1.35;
+  color: var(--accent-ink);
+}
+.prose-copy p { color: var(--ink-soft); margin: 0 0 1.05rem; max-width: 62ch; }
+
+.steps { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.step-num {
+  font-family: var(--font-display);
+  font-size: 2.9rem;
+  font-weight: 600;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.4px var(--accent);
+  opacity: 0.45;
+  margin-bottom: 0.7rem;
+}
+.steps .card p { color: var(--ink-soft); font-size: 0.93rem; margin: 0; }
+
+/* ───────────────────────────────────────── 10 · CALLOUTS — the .tip-box system */
+
+.tip-box {
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 1.05rem 1.3rem 1.05rem 1.4rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--r-md);
+  background: var(--accent-soft);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.tip-box p, .tip-box ul { margin: 0.2rem 0 0; font-size: 0.96rem; color: var(--ink-soft); }
+.tip-box .tip-title,
+.tip-box > p:first-child strong:first-child {
+  font-weight: 600;
+  color: var(--accent-ink);
+}
+.tip-box[data-tone="note"]  { border-left-color: #b98a4b; background: #faf4e8; }
+.tip-box[data-tone="warn"]  { border-left-color: #a8503f; background: #f9ecea; }
+.tip-box[data-tone="ok"]    { border-left-color: #3e7c74; background: #ecf4f1; }
+
+/* ─────────────────────────────────────────────── 11 · DOC PAGES (materials/*) */
+
+.doc-page body { background: var(--bg); }
+.doc-crumbs {
+  width: min(880px, 92vw);
+  margin: 6.5rem auto 1.2rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+}
+.doc-crumbs a { color: var(--accent); text-decoration: none; }
+.doc-crumbs a:hover { text-decoration: underline; }
+
+.doc-frame {
+  width: min(880px, 92vw);
+  margin: 0 auto 4.5rem;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: var(--shadow-2);
+  overflow: hidden;
+}
+
+.doc-cover {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 3.2rem 2.5rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--accent-soft);
+}
+.doc-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+/* one quiet motif per chapter design language */
+[data-theme="slate"] .doc-cover::after { background-image: radial-gradient(circle at 88% 30%, var(--accent-glow) 0 2px, transparent 2.6px); background-size: 22px 22px; }
+[data-theme="ink"]   .doc-cover::after { background-image: repeating-linear-gradient(135deg, var(--accent-glow) 0 1px, transparent 1px 16px); }
+[data-theme="clay"]  .doc-cover::after { background-image: radial-gradient(circle farthest-side at 50% 128%, transparent 68%, var(--accent-glow) 68.6% 69.4%, transparent 70%); background-size: 300px 130px; background-position: bottom; }
+[data-theme="sage"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="plum"]  .doc-cover::after { background-image: radial-gradient(420px 260px at 92% 100%, var(--accent-glow) 0%, transparent 70%); }
+[data-theme="mist"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 30px); }
+[data-theme="ember"] .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 13px), repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 13px); }
+[data-theme="moss"]  .doc-cover::after { background-image: radial-gradient(circle at 12% 110%, var(--accent-glow) 0 56%, transparent 57%); background-size: 190px 190px; }
+
+.doc-kicker {
+  margin: 0 0 0.9rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.doc-title { font-size: clamp(2rem, 4.2vw, 2.9rem); margin-bottom: 0.35em; }
+.doc-subtitle { margin: 0 0 1.4rem; max-width: 58ch; color: var(--ink-soft); font-size: 1.02rem; }
+.doc-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.2rem;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+}
+
+.doc-body { padding: 2.6rem 3.2rem 3.4rem; }
+@media (max-width: 640px) {
+  .doc-cover, .doc-body { padding-inline: 1.4rem; }
+}
+
+/* ──────────────────────────────────────────────── 12 · PROSE (lesson content) */
+
+.prose { font-size: 1.02rem; color: #34322e; }
+.prose > * + * { margin-top: 0.9em; }
+.prose h2 { font-size: 1.55rem; margin-top: 2.2em; padding-bottom: 0.35rem; border-bottom: 1px solid var(--line); }
+.prose h3 { font-size: 1.22rem; margin-top: 1.9em; }
+.prose h4 { font-size: 1.05rem; margin-top: 1.6em; }
+.prose blockquote { margin: 1.4rem 0; padding: 1rem 1.3rem 1rem 1.4rem; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--r-md); background: var(--accent-soft); color: var(--ink-soft); break-inside: avoid; page-break-inside: avoid; }
+.prose blockquote p { margin: 0.2rem 0 0; }
+.prose blockquote p:first-child { margin-top: 0; font-weight: 500; color: var(--accent-ink); }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.6rem 0; font-size: 0.93rem; break-inside: avoid; page-break-inside: avoid; }
+.prose th { background: var(--accent-soft); color: var(--accent-ink); font-weight: 600; text-align: left; }
+.prose th, .prose td { border: 1px solid var(--line-strong); padding: 0.55rem 0.8rem; }
+.prose tbody tr:nth-child(even) td { background: rgba(74, 107, 130, 0.045); }
+.prose ul, .prose ol { padding-left: 1.4rem; }
+.prose li { margin: 0.35rem 0; }
+.prose li::marker { color: var(--accent); }
+.prose strong { color: var(--ink); font-weight: 600; }
+.prose code { font-family: var(--font-mono); font-size: 0.88em; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 6px; padding: 0.08em 0.42em; }
+.prose hr { border: 0; border-top: 1px dashed var(--line-strong); margin: 2.2rem auto; width: 55%; }
+.prose figure { margin: 1.6rem 0; break-inside: avoid; page-break-inside: avoid; }
+
+/* ────────────────────────────────────────────────────────────── 13 · FOOTER */
+
+.site-footer {
+  padding: 3rem 0 3.6rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+}
+.site-footer .bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-footer a { color: var(--ink-soft); text-decoration: none; }
+.site-footer a:hover { color: var(--accent); }
+
+/* ────────────────────────────────────────────────── 14 · MOTION & RESPONSIVE */
+
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (max-width: 760px) {
+  .section { padding: 3.6rem 0; }
+  .hero { padding-top: 7.5rem; }
+  .doc-meta { gap: 0.3rem 0.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ═══════════════════════════════════════════════ 15 · PRINT — A4 CHOREOGRAPHY
+   Hard pagination contract: no orphan headings, no splintered callouts,
+   no split table rows. Chromium prints exactly what these rules promise.     */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 14mm 18mm 14mm;
+  }
+
+  html, body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .site-nav, .site-footer, .no-print, .skip-link,
+  .hero-cta, .chip-row, .filter-row, .card-actions,
+  .portrait-chip, .grain, .doc-crumbs {
+    display: none !important;
+  }
+
+  .hero, .section { padding: 0 !important; min-height: 0 !important; background: none !important; }
+  .shell, .shell-wide { width: 100% !important; max-width: none !important; }
+  main { padding-top: 0 !important; margin: 0 !important; }
+
+  /* — content-keep = never leave a single widow line — */
+  p, li { orphans: 3; widows: 3; }
+
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .tip-box, blockquote, table, tr, img, figure,
+  .doc-cover, .doc-frame, .card, .prose figure {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  thead { display: table-header-group; }  /* column headers repeat on every page */
+  tfoot { display: table-footer-group; }
+
+  a { color: inherit; text-decoration: none; }
+  a[href^="http"]::after {
+    content: " (" attr(href) ") ";
+    font-size: 0.82em;
+    color: #77777a;
+  }
+
+  /* Chapter pages unwrap from their web chrome and print edge-to-edge calm */
+  .doc-frame {
+    box-shadow: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    background: #fff !important;
+  }
+  .doc-cover { border-radius: 0; margin-bottom: 1.4rem; }
+  .doc-body { padding: 0 !important; }
+  .prose table { font-size: 0.88rem; }
+  .prose tbody tr:nth-child(even) td { background: rgba(74, 107, 130, 0.06); }
+
+  .card, .steps .card { box-shadow: none; border-color: var(--line-strong); }
+  .page-break, .break-before {
+    break-before: page;
+    page-break-before: always;
+  }
+}
+</style>
+</head>
+<body class="doc-page">
+<a class="skip-link" href="#doc-main">Skip to content</a>
+<main id="doc-main">
+  <div class="doc-crumbs no-print">
+    <a href="../index.html">&larr; Portfolio</a><span aria-hidden="true">/</span>
+    <a href="../materials.html">Learning library</a>
+  </div>
+  <article class="doc-frame chapter-doc" data-chapter="commonly-confused-words-meanings-examples" data-theme="clay">
+    <header class="doc-cover">
+      <p class="doc-kicker">Zoya&#39;s English — Study Module</p>
+      <h1 class="doc-title">Commonly Confused Words – Meanings &amp; Examples</h1>
+      <p class="doc-subtitle">Rebuilt from the original source — interactive web edition plus print-ready A4.</p>
+      <div class="doc-meta">
+        <span>Source: Commonly Confused Words – Meanings &amp; Examples .pdf</span>
+        
+        <span>2849 words</span>
+        <span>~16 min read</span>
+      </div>
+    </header>
+    <div class="doc-body prose">
+<!-- page 1 -->
+
+<p>Accept — to receive; Except — other than.</p>
+<p>Affect — to influence; Effect — result.</p>
+<p>Advice — a suggestion; Advise — to give a suggestion. Allowed — given permission; Aloud — in a loud voice. Allude — to refer indirectly; Elude — to escape or avoid. Altar — a platform for religious rituals; Alter — to change. Among - in the middle of; Between — involving two things.</p>
+<p>Assure — to give confidence; Ensure — to make certain.</p>
+<p>Brave — showing courage; Brave — to face something with courage.</p>
+<p>Capital — a city or wealth; Capitol — a government building. Complement — to praise; Compliment — a polite remark. Counsel — advice; Council — a group of people.</p>
+<p>Dissent — to disagree; Discreet — careful and reserved. Desert — a dry land; Dessert — a sweet dish.</p>
+<p>Eminent — famous; Imminent — about to happen.</p>
+<p>Female — a woman or girl; Feminine — qualities of a woman. Forth — forward; Fourth — coming after third.</p>
+<p>Hang — to suspend; Hanged — past form of hang.</p>
+<p>Heal — to make healthy; Heel — back part of the foot. Historic — important in history; Historical — related to history. Imitate — to copy; Intimate — close and personal.</p>
+<p>Lay — to put down; Lie — to rest.</p>
+<p>Principal — head of a school; Principle — a rule or belief. Stationary — not moving; Stationery — writing materials.</p>
+<p>Wear — to have on clothes; Ware — goods for sale.</p>
+<!-- page 2 -->
+
+<ol start="26">
+<li>2, 28. 29. 30. 31. 32. a3, 34, 35. 36. 37. 38. 39. 40. 41. 42. 43.</li>
+</ol>
+<p>45.</p>
+<ol start="47">
+<li>
+<ol start="48">
+<li>
+<ol start="49">
+<li>50.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>Access — the ability to enter; Excess — more than needed. Ballot — a voting paper; Ballet — a classical dance form. Bear — to carry; Bare — without clothes or covering. Practical — sensible and useful; Practicable — possible to do. Precede — to come before; Proceed — to continue.</p>
+<p>Profit — a financial gain; Prophet — a person who predicts. Rain — water from the sky; Reign — to rule.</p>
+<p>Raise — to lift or increase; Rise — to go up.</p>
+<p>Reign — to rule; Rein — a strap to control a horse.</p>
+<p>Scene — a view or situation; Seen — past participle of see. Serial — a TV show in episodes; Cereals — grains for food. Sight — the ability to see; Site — a place or location.</p>
+<p>Solo — done alone; Sallow — pale and unhealthy.</p>
+<p>Than — used for comparison; Then — at that time.</p>
+<p>There — in that place; Their — belonging to them. They’re — short for they are; There — in that place.</p>
+<p>To — used before a verb; Too — also or very.</p>
+<p>Affect — to influence; Effect — a result.</p>
+<p>Complement — to complete something; Compliment — a nice comment.</p>
+<p>Dessert — a sweet dish; Desert — a dry, sandy area. Eminent — famous; Imminent — about to happen.</p>
+<p>Ensure — to make certain; Insure — to provide insurance. Farther — at a greater distance; Further — additional or more. Historic — important in history; Historical — related to history.</p>
+<p>Loose — not tight; Lose — to misplace or be defeated.</p>
+<!-- page 3 -->
+
+<ol start="51">
+<li>
+<ol start="52">
+<li>
+<ol start="33">
+<li>
+<ol start="54">
+<li>53: 56. 57. 58. 59,</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>6l. 62. 63.</p>
+<p>65.</p>
+<ol start="67">
+<li>
+<ol start="68">
+<li>
+<ol start="69">
+<li>
+<ol start="70">
+<li>fi. 72. BB. 74, 75.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>Medal — a prize for achievement; Meddle — to interfere in others’ affairs. Meet — to come together; Meat — the flesh of animals.</p>
+<p>Module — a unit of a course; Model — a sample or example. Moral — related to right and wrong; Morale — confidence and spirit. Past — gone by; Passed — past form of pass.</p>
+<p>Peace — freedom from conflict; Piece — a part of something. Peak — the highest point; Peek — to look quickly.</p>
+<p>Plain — simple; Plane — an aircraft or a flat surface.</p>
+<p>Principal — head of an institution; Principle — a rule or belief. Proceed — to continue; Precede — to come before.</p>
+<p>Quiet — making little noise; Quite — completely or very.</p>
+<p>Rain — water from the sky; Reign — to rule.</p>
+<p>Right — correct; Write — to put words on paper.</p>
+<p>Role — a part to play; Roll — to move by turning.</p>
+<p>Scene — a view or setting; Seen — past participle of see.</p>
+<p>Series — a set in order; Serious — not joking.</p>
+<p>Stationary — not moving; Stationery — writing materials. Steal — to take without permission; Steel — a strong metal. Tail — the back part of an animal; Tale —a story.</p>
+<p>Than — used for comparison; Then — at that time.</p>
+<p>Their — belonging to them; There — in that place.</p>
+<p>To — used before a verb; Too — also or very.</p>
+<p>Vary — to change; Very — used to show degree.</p>
+<p>Way — a route or method; Weigh — to find the weight.</p>
+<p>Weather — the condition of the atmosphere; Whether — used to show a choice.</p>
+<!-- page 4 -->
+
+<ol start="76">
+<li>
+<ol start="77">
+<li>
+<ol start="78">
+<li>
+<ol start="79">
+<li>
+<ol start="80">
+<li>
+<ol start="81">
+<li>
+<ol start="82">
+<li>
+<ol start="83">
+<li>
+<ol start="84">
+<li>
+<ol start="85">
+<li>
+<ol start="86">
+<li>
+<ol start="87">
+<li>
+<ol start="88">
+<li>
+<ol start="89">
+<li>
+<ol start="90">
+<li>91, 92. 93. 94. 95. 96. 97. 98. 7,</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>100.</p>
+<p>Accept — to receive; Except — other than.</p>
+<p>Advice — a suggestion; Advise — to give advice.</p>
+<p>Affect — to influence; Effect — a result.</p>
+<p>Allowed — given permission; Aloud — in a loud voice.</p>
+<p>Allude — to refer indirectly; Elude — to escape or avoid.</p>
+<p>Cell — a small room; Sell — to give something for money.</p>
+<p>Cent — a unit of money; Scent — a pleasant smell.</p>
+<p>Cite — to mention as an example; Sight — the ability to see. Compliment — a polite remark; Complement — something that completes. Council — a group of people; Counsel — advice or guidance.</p>
+<p>Discreet — careful and reserved; Discrete — separate and distinct. Emigrate — to move to another country; Immigrate — to move into a country. Episode — a part of a series; Epidemic — a widespread disease. Farther — at a greater distance; Further — additional or more.</p>
+<p>Fewer — a smaller number (countable); Less — a smaller amount (uncountable). Historic — important in history; Historical — related to history.</p>
+<p>Illegal — against the law; Illegible — not clear to read.</p>
+<p>Inspect — to examine; Expect — to hope or believe.</p>
+<p>Its — belonging to it; It’s — short for “‘it is”.</p>
+<p>Lead — to guide; Led — past tense of lead.</p>
+<p>Lose — to misplace or be defeated; Loose — not tight.</p>
+<p>Medal — a prize; Meddle — to interfere in others’ matters.</p>
+<p>Principal — head of an institution; Principle — a rule or belief. Stationary — not moving; Stationery — writing materials.</p>
+<p>Weather — the condition of the atmosphere; Whether — used to show a choice.</p>
+<!-- page 5 -->
+
+<ol start="112">
+<li>
+<ol start="113">
+<li>
+<ol start="114">
+<li>
+<ol start="115">
+<li>
+<ol start="116">
+<li>
+<ol start="117">
+<li>
+<ol start="118">
+<li>
+<ol start="119">
+<li>
+<ol start="120">
+<li>
+<ol start="121">
+<li>
+<ol start="122">
+<li>123.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>125.</p>
+</li>
+</ol>
+<p>Adapt — to adjust; Adopt — to take as one’s own.</p>
+<p>Altitude — height above sea level; Attitude — a way of thinking. Affect — to influence; Effect — a result.</p>
+<p>Allusion — an indirect reference; Ilusion — a false idea or belief. Ascent — a climb upward; Assent — agreement or approval.</p>
+<p>Birth — the act of being born; Berth — a place to sleep (e.g., on a train). Capital — a city or wealth; Capitol — a government building. Casual — relaxed and informal; Causal — showing cause and effect. Choir — a group of singers; Quire — a set of sheets of paper. Consequence — a result; Sequence — a particular order.</p>
+<p>Counsel — advice; Council — a group of people.</p>
+<p>Daily — done every day; Daily — a newspaper.</p>
+<p>Demand — a request for something; Demanded — past tense of demand. Descent — a downward movement; Dissent — to disagree.</p>
+<p>Dessert — a sweet dish; Desert — a dry, sandy area.</p>
+<p>Eminent — famous; Imminent — about to happen.</p>
+<p>Ensure — to make certain; Insure — to provide insurance.</p>
+<p>Ethical — morally right; Ethnic — related to a race or culture. Farther — at a greater distance; Further — additional or more.</p>
+<p>Faze — to disturb; Phase — a stage in a process.</p>
+<p>Historic — important in history; Historical — related to history. Illegal — against the law; Illegible — not clear to read.</p>
+<p>Immigrant — a person who moves to a country; Emigrant — a person who leaves a country.</p>
+<p>Infer — to conclude; Imply — to suggest without stating directly.</p>
+<p>Lead — to guide; Led — past tense of lead.</p>
+<!-- page 6 -->
+
+<ol start="126">
+<li>
+<ol start="127">
+<li>
+<ol start="128">
+<li>
+<ol start="129">
+<li>
+<ol start="130">
+<li>
+<ol start="131">
+<li>
+<ol start="132">
+<li>
+<ol start="133">
+<li>
+<ol start="134">
+<li>
+<ol start="135">
+<li>136.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>Lose — to misplace or be defeated; Loose — not tight.</p>
+<p>Affect — to influence; Effect — a result.</p>
+<p>Complement — to complete something; Compliment — a nice remark. Counsel — advice; Council — a group of people.</p>
+<p>Discreet — careful and reserved; Discrete — separate and distinct. Farther — at a greater distance; Further — additional or more. Fewer —a smaller number (countable); Less — a smaller amount (uncountable). Historic — important in history; Historical — related to history. Immigrate — to move into a country; Emigrate — to leave a country. Illicit — illegal; Elicit — to bring out a response.</p>
+<p>Its — belonging to it; It’s — short for “‘it is”.</p>
+<p>Lay — to put down; Lie — to rest.</p>
+<p>Moral - related to right and wrong; Morale — confidence and spirit. Peace — freedom from conflict; Piece — a part of something.</p>
+<p>Plain — simple; Plane — an aircraft or a flat surface.</p>
+<p>Precede — to come before; Proceed — to continue.</p>
+<p>Principal — head of an institution; Principle — a rule or belief. Profit — a financial gain; Prophet — a person who predicts.</p>
+<p>Quiet — making little noise; Quite — completely or very.</p>
+<p>Raise — to lift or increase; Rise — to go up.</p>
+<p>Reign — to rule; Rein —a strap to control a horse.</p>
+<p>Scene — a view or setting; Seen — past participle of see.</p>
+<p>Stationary — not moving; Stationery — writing materials.</p>
+<p>Than — used for comparison; Then — at that time.</p>
+<p>Weather — the condition of the atmosphere; Whether — used to show a choice.</p>
+<!-- page 7 -->
+
+<ol start="151">
+<li>
+<ol start="152">
+<li>153.</li>
+</ol>
+</li>
+<li>
+<p>156.</p>
+</li>
+<li>
+<ol start="170">
+<li>ivi. 172. 173. 174. 175.</li>
+</ol>
+</li>
+</ol>
+<p>Accept — to receive; Except — other than.</p>
+<p>Advice — a suggestion; Advise — to give advice.</p>
+<p>Alley — a narrow street; Aisle — a passage between rows.</p>
+<p>Allusion — an indirect reference; Illusion — a false idea or belief. Alter — to change; Altar — a raised place for religious ceremonies. Breach — a violation; Breech — the back part of a gun.</p>
+<p>Capital — a city or wealth; Capitol — a government building.</p>
+<p>Casual — relaxed and informal; Causal — showing cause and effect. Cite — to mention as an example; Sight — the ability to see. Complement — to complete something; Compliment — a polite remark. Council — a group of people; Counsel — advice or guidance.</p>
+<p>Desert — a dry, sandy area; Dessert — a sweet dish.</p>
+<p>Dissent — to disagree; Descent — a downward movement.</p>
+<p>Emigrate — to leave a country; Immigrate — to move into a country. Eminent — famous; Imminent — about to happen.</p>
+<p>Ensure — to make certain; Insure — to provide insurance.</p>
+<p>Ethical — morally right; Ethnic — related to a race or culture. Farther — at a greater distance; Further — additional or more. Fewer —a smaller number (countable); Less — a smaller amount (uncountable). Historic — important in history; Historical — related to history. Illicit — illegal; Elicit — to bring out a response.</p>
+<p>Lay — to put down; Lie — to rest.</p>
+<p>Medal — a prize; Meddle — to interfere in others’ matters.</p>
+<p>Peak — the highest point; Peek — to look quickly.</p>
+<p>Plain — simple; Plane — an aircraft or a flat surface.</p>
+<!-- page 8 -->
+
+<ol start="176">
+<li>
+<p>Principal — head of an institution; Principle — a rule or belief. 177. Proceed — to continue; Precede — to come before.</p>
+</li>
+<li>
+<p>Profit — a financial gain; Prophet — a person who predicts. 179. Rain — water from the sky; Reign — to rule.</p>
+</li>
+<li>
+<p>Raise — to lift or increase; Rise — to go up.</p>
+</li>
+<li>
+<p>Right — correct; Write — to put words on paper.</p>
+</li>
+<li>
+<p>Role —a part to play; Roll — to move by turning.</p>
+</li>
+<li>
+<p>Scene —a view or setting; Seen — past participle of see. 184. Series —a set in order; Serious — not joking.</p>
+</li>
+<li>
+<p>Stable — firm and steady; Stable — a place for animals. 186. Steal —to take without permission; Steel — a strong metal. 187. Tail — the back part of an animal; Tale — a story.</p>
+</li>
+<li>
+<p>Than — used for comparison; Then — at that time.</p>
+</li>
+<li>
+<p>Their — belonging to them; There — in that place.</p>
+</li>
+<li>
+<p>To —used before a verb; Too — also or very.</p>
+</li>
+<li>
+<p>Vary —to change; Very — used to show degree.</p>
+</li>
+<li>
+<p>Way -aroute or method; Weigh — to find the weight.</p>
+</li>
+<li>
+<p>Weather — the condition of the atmosphere; Whether — used to show a choice.</p>
+</li>
+<li>
+<p>Whole — complete; Hole — an empty space.</p>
+</li>
+<li>
+<p>Accept — to receive; Except — other than.</p>
+</li>
+<li>
+<p>Adapt — to adjust; Adopt — to take as one’s own.</p>
+</li>
+<li>
+<p>Advice — a suggestion; Advise — to give advice.</p>
+</li>
+<li>
+<p>Birth — the act of being born; Berth — a place to sleep (e.g., on a train). 199. Cell —a small room; Sell — to give something for money.</p>
+</li>
+<li>
+<p>Climb — to go up; Cleft — a split or crack.</p>
+</li>
+</ol>
+<!-- page 9 -->
+
+<ol start="201">
+<li>
+<ol start="202">
+<li>
+<ol start="203">
+<li>
+<ol start="204">
+<li>
+<ol start="205">
+<li>
+<ol start="206">
+<li>
+<ol start="207">
+<li>
+<ol start="208">
+<li>
+<ol start="209">
+<li>
+<ol start="210">
+<li>
+<ol start="211">
+<li>
+<ol start="212">
+<li>
+<ol start="213">
+<li>
+<ol start="214">
+<li>
+<ol start="215">
+<li>
+<ol start="216">
+<li>ai, 218. 219. 220. 221, 222. 223. 224. 225.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>Coarse — rough in texture; Course — a path or a subject of study. Complement — to complete; Compliment — a polite remark. Consent — permission; Content — what is contained.</p>
+<p>Continual — happening without stop; Continuous — unbroken. Council — a group of people; Counsel — advice.</p>
+<p>Desert — a dry, sandy area; Dessert — a sweet dish.</p>
+<p>Discreet — careful and reserved; Discrete — separate and distinct. Emigrate — to leave a country; Immigrate — to move into a country. Eminent — famous; Imminent — about to happen.</p>
+<p>Ensure — to make certain; Insure — to provide insurance.</p>
+<p>Except — other than; Accept — to receive.</p>
+<p>Farther — at a greater distance; Further — additional or more. Fewer — a smaller number (countable); Less — a smaller amount (uncountable). Flare — a sudden burst; Flair —a natural talent.</p>
+<p>Fraud — a dishonest act; Flawed — having a defect.</p>
+<p>Historic — important in history; Historical — related to history. Illicit — illegal; Elicit — to bring out a response.</p>
+<p>Imply — to suggest without stating directly; Infer — to conclude. Lay — to put down; Lie — to rest.</p>
+<p>Later — at a time after; Latter — the second of two.</p>
+<p>Legal — allowed by law; Legitimate — valid or acceptable.</p>
+<p>Lose — to misplace or be defeated; Loose — not tight.</p>
+<p>Medal — a prize; Meddle — to interfere in others’ matters.</p>
+<p>Moral — related to right and wrong; Morale — confidence and spirit.</p>
+<p>Principal — head of an institution; Principle — a rule or belief.</p>
+<!-- page 10 -->
+
+<ol start="226">
+<li>
+<ol start="227">
+<li>
+<ol start="228">
+<li>
+<ol start="229">
+<li>
+<ol start="230">
+<li>
+<ol start="231">
+<li>
+<ol start="232">
+<li>
+<ol start="233">
+<li>
+<ol start="234">
+<li>
+<ol start="235">
+<li>
+<ol start="236">
+<li>
+<ol start="237">
+<li>
+<ol start="238">
+<li>
+<ol start="239">
+<li>240.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<ol start="242">
+<li>
+<ol start="243">
+<li>
+<ol start="244">
+<li>
+<ol start="245">
+<li>
+<ol start="246">
+<li>
+<ol start="247">
+<li>
+<ol start="248">
+<li>
+<ol start="249">
+<li>250.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>Proceed — to continue; Precede — to come before.</p>
+<p>Profit — a financial gain; Prophet — a person who predicts. Quiet — making little noise; Quite — completely or very. Rain — water from the sky; Reign — to rule.</p>
+<p>Raise — to lift or increase; Rise — to go up.</p>
+<p>Right — correct; Write — to put words on paper.</p>
+<p>Role — a part to play; Roll — to move by turning.</p>
+<p>Scene — a view or setting; Seen — past participle of see. Stationary — not moving; Stationery — writing materials. Steal — to take without permission; Steel — a strong metal. Tail — the back part of an animal; Tale —a story.</p>
+<p>Their — belonging to them; There — in that place.</p>
+<p>To — used before a verb; Too — also or very.</p>
+<p>Vary — to change; Very — used to show degree.</p>
+<p>Weather — the condition of the atmosphere; Whether — used to show a choice.</p>
+<p>Whole — complete; Hole — an empty space.</p>
+<p>Affect — to influence; Effect — a result.</p>
+<p>Advice — a suggestion; Advise — to give advice.</p>
+<p>Allusion — an indirect reference; Illusion — a false idea or belief. Altitude — height above sea level; Attitude — a way of thinking. Breach — a violation; Breech — the back part of a gun.</p>
+<p>Capital — a city or wealth; Capitol — a government building. Casual — relaxed and informal; Causal — showing cause and effect. Consequence — a result; Sequence — a particular order.</p>
+<p>Counsel — advice; Council — a group of people.</p>
+<!-- page 11 -->
+
+<ol start="251">
+<li>
+<ol start="252">
+<li>
+<ol start="253">
+<li>
+<ol start="254">
+<li>
+<ol start="255">
+<li>
+<ol start="256">
+<li>Zot. 258. 259. 260. 261. 262. 263. 264. 265. 266. 267. 268. 269. 270. Zr. 272. 273. 274. 295:</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>Desert — a dry, sandy area; Dessert — a sweet dish.</p>
+<p>Dissent — to disagree; Descent — a downward movement.</p>
+<p>Emigrate — to leave a country; Immigrate — to move into a country. Eminent — famous; Imminent — about to happen.</p>
+<p>Ensure — to make certain; Insure — to provide insurance.</p>
+<p>Ethical — morally right; Ethnic — related to a race or culture.</p>
+<p>Except — other than; Accept — to receive.</p>
+<p>Faze — to disturb or frighten; Phase — a stage or period.</p>
+<p>Fewer — a smaller number (countable); Less —a smaller amount (uncountable). Historic — important in history; Historical — related to history. Human — relating to people; Humane — showing kindness.</p>
+<p>Illicit — illegal; Elicit — to bring out a response.</p>
+<p>Immoral — not moral; Amoral — having no sense of right or wrong. Imply — to suggest without stating directly; Infer — to conclude.</p>
+<p>Its — belonging to it; It’s — short for “it is”.</p>
+<p>Lay — to put down; Lie — to rest.</p>
+<p>Lead — to guide; Led — past tense of lead.</p>
+<p>Legal — allowed by law; Legitimate — valid or acceptable.</p>
+<p>Lessen — to make smaller; Lesson — a part of learning.</p>
+<p>Loose — not tight; Lose — to misplace or be defeated.</p>
+<p>Medal — a prize; Meddle — to interfere in others’ matters.</p>
+<p>Patient — a person receiving medical care; Impatient — not willing to wait. Peak — the highest point; Peek — to look quickly.</p>
+<p>Peace — freedom from conflict; Piece — a part of something.</p>
+<p>Plain — simple; Plane — an aircraft or a flat surface.</p>
+<!-- page 12 -->
+
+<ol start="276">
+<li>
+<p>_ Principal — head of an institution; Principle — a rule or belief: 277. Proceed — to continue; Precede — to come before.</p>
+</li>
+<li>
+<p>Profit — a financial gain; Prophet — a person who predicts. 279. Rain — water from the sky; Reign — to rule.</p>
+</li>
+<li>
+<p>Raise — to lift or increase; Rise — to go up.</p>
+</li>
+<li>
+<p>Right — correct; Write — to put words on paper.</p>
+</li>
+<li>
+<p>Role —a part to play; Roll — to move by turing.</p>
+</li>
+<li>
+<p>Scene —a view or setting; Seen — past participle of see. 284. Serious — not joking; Series — a set in order.</p>
+</li>
+<li>
+<p>Stationary — not moving; Stationery — writing materials. 286. Steal — to take without permission; Steel — a strong metal. 287. Succeed — to achieve; Success — the achievement.</p>
+</li>
+<li>
+<p>Tail — the back part of an animal; Tale — a story.</p>
+</li>
+<li>
+<p>Than — used for comparison; Then — at that time.</p>
+</li>
+<li>
+<p>Their — belonging to them; There — in that place.</p>
+</li>
+<li>
+<p>To -used before a verb; Too — also or very.</p>
+</li>
+<li>
+<p>Vary — to change; Very — used to show degree.</p>
+</li>
+<li>
+<p>Way —aroute or method; Weigh — to find the weight.</p>
+</li>
+<li>
+<p>Weather — the condition of the atmosphere; Whether — used to show a choice.</p>
+</li>
+<li>
+<p>| Whole — complete; Hole — an empty space.</p>
+</li>
+<li>
+<p>Affect — to influence; Effect — a result.</p>
+</li>
+<li>
+<p>Advice —a suggestion; Advise — to give advice.</p>
+</li>
+<li>
+<p>| Who’s — short for “who is”; Whose — belonging to whom. 299. Your — belonging to you; You’re — short for “you are”.</p>
+</li>
+<li>
+<p>— It’s — short for “‘it is”; Its — belonging to it.</p>
+</li>
+</ol>
+    </div>
+  </article>
+  <script type="application/json" id="doc-meta">{"slug": "commonly-confused-words-meanings-examples", "number": null, "theme": "clay", "engine": "cached markdown", "source": "Commonly Confused Words \u2013 Meanings & Examples .pdf", "pages": 0, "words": 2849, "sections": 0, "tables": 0, "reading_min": 16, "date": "2026-10-21", "teaser": "Advice \u2014 a suggestion; Advise \u2014 to give a suggestion. Allowed \u2014 given permission; Aloud \u2014 in a loud voice. Allude \u2014 to refer indirectly; Elude \u2014 to escape or avoid\u2026"}</script>
+</main>
+</body>
+</html>

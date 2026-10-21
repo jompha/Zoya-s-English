@@ -1,0 +1,1462 @@
+<!doctype html>
+<html lang="en" data-theme="sage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Complete 30-Day English Study Plan · Zoya's English — Study Module</title>
+<meta name="description" content="Complete 30-Day English Study Plan — study module from Zoya&#39;s English learning library: speaking and confidence coaching materials.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>/* ═══════════════════════════════════════════════════════════════════════════
+   ZOYA'S ENGLISH — MASTER LAYOUT STYLESHEET
+   Design language: warm editorial · luxury-minimalist · glass surfaces
+   Beat structure: tokens → chapter themes → base → components → prose → print
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────── 1 · DESIGN TOKENS (single source) */
+
+:root {
+  /* Palette */
+  --bg: #faf9f6;                 /* warm off-white editorial ground      */
+  --bg-deep: #f3f1ea;            /* deeper warm wash for bands           */
+  --surface: #ffffff;
+  --glass: rgba(255, 255, 255, 0.66);
+  --glass-strong: rgba(255, 255, 255, 0.86);
+  --ink: #2b2b2b;                /* stark charcoal body typography       */
+  --ink-soft: #56524b;
+  --ink-faint: #8b867b;
+  --line: rgba(43, 43, 43, 0.10);
+  --line-strong: rgba(43, 43, 43, 0.17);
+  --accent: #4a6b82;             /* muted sophisticated slate-blue       */
+  --accent-ink: #375266;
+  --accent-soft: #edf2f6;
+  --accent-glow: rgba(74, 107, 130, 0.16);
+  --warm: #f6eddd;
+
+  /* Typography */
+  --font-display: "Fraunces", "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Courier New", monospace;
+
+  /* Shape & depth */
+  --r-lg: 24px;
+  --r-md: 16px;
+  --r-sm: 10px;
+  --r-pill: 999px;
+  --shadow-1: 0 1px 2px rgba(31, 29, 25, 0.05), 0 10px 30px -14px rgba(31, 29, 25, 0.16);
+  --shadow-2: 0 2px 8px rgba(31, 29, 25, 0.06), 0 28px 64px -24px rgba(31, 29, 25, 0.24);
+  --ease: cubic-bezier(0.22, 0.7, 0.25, 1);
+}
+
+/* ─────────────────────────── 2 · CHAPTER DESIGN LANGUAGES (per-theme accents)
+
+   Every compiled chapter receives its own stable accent family, applied via
+   `data-theme` on the page root, so each module feels designed — not stamped.
+   The dashboard (materials.html) mirrors these values for its cards.        */
+
+[data-theme="ink"]   { --accent: #46474b; --accent-ink: #33353a; --accent-soft: #f1efe9; --accent-glow: rgba(70, 71, 75, 0.14); }
+[data-theme="clay"]  { --accent: #b06a48; --accent-ink: #8f5438; --accent-soft: #f9efe7; --accent-glow: rgba(176, 106, 72, 0.15); }
+[data-theme="sage"]  { --accent: #5f7c60; --accent-ink: #49614a; --accent-soft: #eff5ef; --accent-glow: rgba(95, 124, 96, 0.15); }
+[data-theme="plum"]  { --accent: #7d5a72; --accent-ink: #64485a; --accent-soft: #f6eff4; --accent-glow: rgba(125, 90, 114, 0.15); }
+[data-theme="mist"]  { --accent: #3f7a75; --accent-ink: #2f605c; --accent-soft: #ebf4f2; --accent-glow: rgba(63, 122, 117, 0.15); }
+[data-theme="ember"] { --accent: #a8543f; --accent-ink: #8a4232; --accent-soft: #f9ece8; --accent-glow: rgba(168, 84, 63, 0.15); }
+[data-theme="moss"]  { --accent: #72783f; --accent-ink: #5a5f31; --accent-soft: #f5f6e9; --accent-glow: rgba(114, 120, 63, 0.15); }
+
+/* ────────────────────────────────────────────────────────── 3 · BASE RESET */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.68;
+  color: var(--ink);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 560;
+  line-height: 1.16;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0 0 0.6em;
+}
+
+::selection { background: var(--accent-glow); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  z-index: 100;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--r-pill);
+}
+.skip-link:focus { left: 12px; color: #fff; }
+
+/* ───────────────────────────────────────────────────────── 4 · LAYOUT CORE */
+
+.shell { width: min(1140px, 92vw); margin-inline: auto; }
+.shell-wide { width: min(1240px, 94vw); margin-inline: auto; }
+
+.section { padding: 5.5rem 0; position: relative; }
+.section + .section { padding-top: 0; }
+.grid { display: grid; gap: 1.4rem; }
+.grid.cards { grid-template-columns: repeat(auto-fill, minmax(305px, 1fr)); }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: center; }
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.1rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.kicker::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.65;
+}
+
+.section-title { font-size: clamp(1.9rem, 3.4vw, 2.7rem); }
+.section-lede { max-width: 62ch; color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 2.4rem; }
+.display-xl { font-size: clamp(2.7rem, 5.4vw, 4.3rem); line-height: 1.04; }
+@media (max-width: 900px) { .br-d { display: none; } }
+
+/* ─────────────────────────────────────────────────────── 5 · GLASS NAV BAR */
+
+.site-nav {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 60;
+  padding: 0.65rem 0;
+  transition: background 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+  border-bottom: 1px solid transparent;
+}
+.site-nav.scrolled {
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(14px) saturate(1.25);
+  backdrop-filter: blur(14px) saturate(1.25);
+  border-bottom-color: var(--line);
+  box-shadow: 0 8px 30px -18px rgba(31, 29, 25, 0.28);
+}
+.site-nav .bar { display: flex; align-items: center; gap: 1.6rem; }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.08rem;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.05rem;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-ink) 100%);
+  box-shadow: 0 6px 16px -6px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.nav-links { display: flex; align-items: center; gap: 1.5rem; margin-left: auto; }
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s var(--ease);
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-links a[aria-current="page"] { color: var(--accent); }
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+}
+
+/* ──────────────────────────────────────────────────────── 6 · BUTTONS · CHIPS */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.78rem 1.5rem;
+  border-radius: var(--r-pill);
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), background 0.2s var(--ease);
+}
+.btn-solid {
+  color: #fff;
+  background: linear-gradient(140deg, var(--accent) 0%, var(--accent-ink) 100%);
+  box-shadow: 0 10px 24px -10px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+.btn-solid:hover { transform: translateY(-1px); box-shadow: 0 14px 30px -10px var(--accent-glow); }
+.btn-ghost {
+  color: var(--accent-ink);
+  background: transparent;
+  border-color: var(--line-strong);
+}
+.btn-ghost:hover { border-color: var(--accent); background: var(--accent-soft); }
+.btn.is-disabled,
+.btn[aria-disabled="true"] { opacity: 0.55; pointer-events: none; }
+.btn-sm { padding: 0.5rem 1.05rem; font-size: 0.86rem; }
+.btn-note {
+  margin-left: 0.1rem;
+  padding-left: 0.55rem;
+  border-left: 1px solid var(--line-strong);
+  font-size: 0.76rem;
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.95rem;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line);
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.chip::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.85;
+}
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+/* ─────────────────────────────────────────────────────────── 7 · GLASS CARDS */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.7rem 1.7rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(12px) saturate(1.15);
+  backdrop-filter: blur(12px) saturate(1.15);
+  box-shadow: var(--shadow-1);
+  transition: transform 0.28s var(--ease), box-shadow 0.28s var(--ease), border-color 0.28s var(--ease);
+}
+.card-hover:hover,
+.card-chapter:hover {
+  transform: translateY(-3px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-2);
+}
+.card-kicker {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--card-accent, var(--accent));
+  margin-bottom: 0.3rem;
+}
+.card-title { font-size: 1.22rem; margin: 0.15rem 0 0.35rem; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { color: var(--card-accent, var(--accent)); }
+.card-teaser { color: var(--ink-soft); font-size: 0.94rem; margin: 0 0 0.9rem; }
+.card-empty {
+  grid-column: 1 / -1;
+  align-items: flex-start;
+  border-style: dashed;
+  border-color: var(--line-strong);
+  background: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.card-empty code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.05em 0.4em;
+}
+
+.material-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  margin-bottom: 0.8rem;
+}
+.material-icon svg { width: 22px; height: 22px; }
+
+/* Chapter cards — materials.html dashboard */
+.card-chapter { --card-accent: var(--accent); }
+.chapter-num {
+  position: absolute;
+  top: 1.05rem;
+  right: 1.45rem;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 3.4rem;
+  font-weight: 600;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.4px var(--card-accent);
+  opacity: 0.4;
+  user-select: none;
+}
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+}
+.card-meta li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.card-meta li::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--card-accent);
+  opacity: 0.7;
+}
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.filter-row { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 1.6rem 0 2.2rem; }
+.filter-chip { cursor: pointer; transition: all 0.2s var(--ease); opacity: 0.72; }
+.filter-chip.is-active {
+  opacity: 1;
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.filter-chip.is-active::before { background: rgba(255, 255, 255, 0.9); }
+
+/* ─────────────────────────────────────────────────────────────── 8 · HERO */
+
+.hero {
+  position: relative;
+  padding: 9.5rem 0 5.5rem;
+  overflow: hidden;
+  background:
+    radial-gradient(1100px 480px at 84% -12%, var(--accent-soft) 0%, transparent 62%),
+    radial-gradient(900px 420px at -14% 112%, var(--warm) 0%, transparent 55%);
+}
+.hero .grid.two { gap: 3.5rem; }
+.hero-lede {
+  font-size: 1.13rem;
+  color: var(--ink-soft);
+  max-width: 54ch;
+  margin: 1.2rem 0 2rem;
+}
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 2.2rem; }
+
+.portrait { position: relative; margin: 0; }
+.portrait-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: linear-gradient(165deg, var(--accent-soft) 0%, var(--bg-deep) 100%);
+  box-shadow: var(--shadow-2);
+}
+.portrait-mono {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 14vw, 10rem);
+  font-weight: 600;
+  color: var(--accent);
+  opacity: 0.28;
+}
+.portrait-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portrait-chip {
+  position: absolute;
+  z-index: 2;
+  font-size: 0.78rem;
+  padding: 0.45rem 0.9rem;
+  box-shadow: var(--shadow-1);
+}
+.portrait-chip.c1 { top: 8%; left: -7%; }
+.portrait-chip.c2 { bottom: 20%; right: -6%; }
+.portrait-chip.c3 { bottom: -4%; left: 10%; }
+@media (max-width: 760px) {
+  .portrait-chip.c1 { left: 4%; }
+  .portrait-chip.c2 { right: 4%; }
+}
+
+/* ────────────────────────────────────────────────────── 9 · STATEMENT · METHOD */
+
+.pull-quote {
+  margin: 1rem 0 0;
+  padding: 0 0 0 1.6rem;
+  border-left: 2px solid var(--accent);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+  line-height: 1.35;
+  color: var(--accent-ink);
+}
+.prose-copy p { color: var(--ink-soft); margin: 0 0 1.05rem; max-width: 62ch; }
+
+.steps { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.step-num {
+  font-family: var(--font-display);
+  font-size: 2.9rem;
+  font-weight: 600;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.4px var(--accent);
+  opacity: 0.45;
+  margin-bottom: 0.7rem;
+}
+.steps .card p { color: var(--ink-soft); font-size: 0.93rem; margin: 0; }
+
+/* ───────────────────────────────────────── 10 · CALLOUTS — the .tip-box system */
+
+.tip-box {
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 1.05rem 1.3rem 1.05rem 1.4rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--r-md);
+  background: var(--accent-soft);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.tip-box p, .tip-box ul { margin: 0.2rem 0 0; font-size: 0.96rem; color: var(--ink-soft); }
+.tip-box .tip-title,
+.tip-box > p:first-child strong:first-child {
+  font-weight: 600;
+  color: var(--accent-ink);
+}
+.tip-box[data-tone="note"]  { border-left-color: #b98a4b; background: #faf4e8; }
+.tip-box[data-tone="warn"]  { border-left-color: #a8503f; background: #f9ecea; }
+.tip-box[data-tone="ok"]    { border-left-color: #3e7c74; background: #ecf4f1; }
+
+/* ─────────────────────────────────────────────── 11 · DOC PAGES (materials/*) */
+
+.doc-page body { background: var(--bg); }
+.doc-crumbs {
+  width: min(880px, 92vw);
+  margin: 6.5rem auto 1.2rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+}
+.doc-crumbs a { color: var(--accent); text-decoration: none; }
+.doc-crumbs a:hover { text-decoration: underline; }
+
+.doc-frame {
+  width: min(880px, 92vw);
+  margin: 0 auto 4.5rem;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: var(--shadow-2);
+  overflow: hidden;
+}
+
+.doc-cover {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 3.2rem 2.5rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--accent-soft);
+}
+.doc-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+/* one quiet motif per chapter design language */
+[data-theme="slate"] .doc-cover::after { background-image: radial-gradient(circle at 88% 30%, var(--accent-glow) 0 2px, transparent 2.6px); background-size: 22px 22px; }
+[data-theme="ink"]   .doc-cover::after { background-image: repeating-linear-gradient(135deg, var(--accent-glow) 0 1px, transparent 1px 16px); }
+[data-theme="clay"]  .doc-cover::after { background-image: radial-gradient(circle farthest-side at 50% 128%, transparent 68%, var(--accent-glow) 68.6% 69.4%, transparent 70%); background-size: 300px 130px; background-position: bottom; }
+[data-theme="sage"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="plum"]  .doc-cover::after { background-image: radial-gradient(420px 260px at 92% 100%, var(--accent-glow) 0%, transparent 70%); }
+[data-theme="mist"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 30px); }
+[data-theme="ember"] .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 13px), repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 13px); }
+[data-theme="moss"]  .doc-cover::after { background-image: radial-gradient(circle at 12% 110%, var(--accent-glow) 0 56%, transparent 57%); background-size: 190px 190px; }
+
+.doc-kicker {
+  margin: 0 0 0.9rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.doc-title { font-size: clamp(2rem, 4.2vw, 2.9rem); margin-bottom: 0.35em; }
+.doc-subtitle { margin: 0 0 1.4rem; max-width: 58ch; color: var(--ink-soft); font-size: 1.02rem; }
+.doc-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.2rem;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+}
+
+.doc-body { padding: 2.6rem 3.2rem 3.4rem; }
+@media (max-width: 640px) {
+  .doc-cover, .doc-body { padding-inline: 1.4rem; }
+}
+
+/* ──────────────────────────────────────────────── 12 · PROSE (lesson content) */
+
+.prose { font-size: 1.02rem; color: #34322e; }
+.prose > * + * { margin-top: 0.9em; }
+.prose h2 { font-size: 1.55rem; margin-top: 2.2em; padding-bottom: 0.35rem; border-bottom: 1px solid var(--line); }
+.prose h3 { font-size: 1.22rem; margin-top: 1.9em; }
+.prose h4 { font-size: 1.05rem; margin-top: 1.6em; }
+.prose blockquote { margin: 1.4rem 0; padding: 1rem 1.3rem 1rem 1.4rem; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--r-md); background: var(--accent-soft); color: var(--ink-soft); break-inside: avoid; page-break-inside: avoid; }
+.prose blockquote p { margin: 0.2rem 0 0; }
+.prose blockquote p:first-child { margin-top: 0; font-weight: 500; color: var(--accent-ink); }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.6rem 0; font-size: 0.93rem; break-inside: avoid; page-break-inside: avoid; }
+.prose th { background: var(--accent-soft); color: var(--accent-ink); font-weight: 600; text-align: left; }
+.prose th, .prose td { border: 1px solid var(--line-strong); padding: 0.55rem 0.8rem; }
+.prose tbody tr:nth-child(even) td { background: rgba(74, 107, 130, 0.045); }
+.prose ul, .prose ol { padding-left: 1.4rem; }
+.prose li { margin: 0.35rem 0; }
+.prose li::marker { color: var(--accent); }
+.prose strong { color: var(--ink); font-weight: 600; }
+.prose code { font-family: var(--font-mono); font-size: 0.88em; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 6px; padding: 0.08em 0.42em; }
+.prose hr { border: 0; border-top: 1px dashed var(--line-strong); margin: 2.2rem auto; width: 55%; }
+.prose figure { margin: 1.6rem 0; break-inside: avoid; page-break-inside: avoid; }
+
+/* ────────────────────────────────────────────────────────────── 13 · FOOTER */
+
+.site-footer {
+  padding: 3rem 0 3.6rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+}
+.site-footer .bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-footer a { color: var(--ink-soft); text-decoration: none; }
+.site-footer a:hover { color: var(--accent); }
+
+/* ────────────────────────────────────────────────── 14 · MOTION & RESPONSIVE */
+
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (max-width: 760px) {
+  .section { padding: 3.6rem 0; }
+  .hero { padding-top: 7.5rem; }
+  .doc-meta { gap: 0.3rem 0.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ═══════════════════════════════════════════════ 15 · PRINT — A4 CHOREOGRAPHY
+   Hard pagination contract: no orphan headings, no splintered callouts,
+   no split table rows. Chromium prints exactly what these rules promise.     */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 14mm 18mm 14mm;
+  }
+
+  html, body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .site-nav, .site-footer, .no-print, .skip-link,
+  .hero-cta, .chip-row, .filter-row, .card-actions,
+  .portrait-chip, .grain, .doc-crumbs {
+    display: none !important;
+  }
+
+  .hero, .section { padding: 0 !important; min-height: 0 !important; background: none !important; }
+  .shell, .shell-wide { width: 100% !important; max-width: none !important; }
+  main { padding-top: 0 !important; margin: 0 !important; }
+
+  /* — content-keep = never leave a single widow line — */
+  p, li { orphans: 3; widows: 3; }
+
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .tip-box, blockquote, table, tr, img, figure,
+  .doc-cover, .doc-frame, .card, .prose figure {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  thead { display: table-header-group; }  /* column headers repeat on every page */
+  tfoot { display: table-footer-group; }
+
+  a { color: inherit; text-decoration: none; }
+  a[href^="http"]::after {
+    content: " (" attr(href) ") ";
+    font-size: 0.82em;
+    color: #77777a;
+  }
+
+  /* Chapter pages unwrap from their web chrome and print edge-to-edge calm */
+  .doc-frame {
+    box-shadow: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    background: #fff !important;
+  }
+  .doc-cover { border-radius: 0; margin-bottom: 1.4rem; }
+  .doc-body { padding: 0 !important; }
+  .prose table { font-size: 0.88rem; }
+  .prose tbody tr:nth-child(even) td { background: rgba(74, 107, 130, 0.06); }
+
+  .card, .steps .card { box-shadow: none; border-color: var(--line-strong); }
+  .page-break, .break-before {
+    break-before: page;
+    page-break-before: always;
+  }
+}
+</style>
+</head>
+<body class="doc-page">
+<a class="skip-link" href="#doc-main">Skip to content</a>
+<main id="doc-main">
+  <div class="doc-crumbs no-print">
+    <a href="../index.html">&larr; Portfolio</a><span aria-hidden="true">/</span>
+    <a href="../materials.html">Learning library</a>
+  </div>
+  <article class="doc-frame chapter-doc" data-chapter="001-complete-30-day-english-study-plan" data-theme="sage">
+    <header class="doc-cover">
+      <p class="doc-kicker">Zoya&#39;s English — Study Module 01</p>
+      <h1 class="doc-title">Complete 30-Day English Study Plan</h1>
+      <p class="doc-subtitle">Rebuilt from the original source — interactive web edition plus print-ready A4.</p>
+      <div class="doc-meta">
+        <span>Source: 001 - Complete 30-Day English Study Plan.pdf</span>
+        
+        <span>3535 words</span>
+        <span>~20 min read</span>
+      </div>
+    </header>
+    <div class="doc-body prose">
+<!-- page 1 -->
+
+<h3 id="30-day-plan">30 DAY PLAN</h3>
+<h3 id="everyday-study">| EVERYDAY STUDY |</h3>
+<h3 id="consistency">CONSISTENCY</h3>
+<h3 id="practice-better-english">+ PRACTICE BETTER ENGLISH |</h3>
+<h3 id="success-better-scores">= SUCCESS BETTER SCORES |</h3>
+<h2 id="grammar-basics">@ Grammar BASICS</h2>
+<p>e Parts of Speech ¢ Noun - Types of Noun - Countable &amp; Uncountable - Gender - Number Pronoun - Types of Pronoun - Reflexive, Emphatic, Relative, Indefinite</p>
+<p>Verb - Types of Verb</p>
+<h2 id="-main-auxiliary-modal">- Main, Auxiliary, Modal</h2>
+<ul>
+<li>Transitive &amp; intransitive</li>
+</ul>
+<h3 id="english">ENGLISH</h3>
+<h3 id="complete-syllabus-overview">COMPLETE SYLLABUS OVERVIEW</h3>
+<h3 id="determiners">DETERMINERS</h3>
+<h3 id="articles">&amp; ARTICLES</h3>
+<p>Determiners</p>
+<h2 id="types-of-determiners">Types of Determiners</h2>
+<p>Articles</p>
+<ul>
+<li>
+<p>Definite Article (The)</p>
+</li>
+<li>
+<p>Indefinite Articles (A, An)</p>
+</li>
+<li>
+<p>Rules for Usage</p>
+</li>
+</ul>
+<p>Use of</p>
+<h2 id="-this-that">- This, That</h2>
+<h2 id="-these-those">- These, Those</h2>
+<h2 id="-such-so">- Such, So</h2>
+<p>Quantifiers</p>
+<ul>
+<li>Some, Any, Much, Many, Few, Little, All, Both, Either, Neither, Each, Every, None</li>
+</ul>
+<p>Possessives</p>
+<h2 id="-possessive-adjective">- Possessive Adjective</h2>
+<h2 id="-possessive-pronoun">- Possessive Pronoun</h2>
+<h3 id="verbs-tenses">© VERBS &amp; TENSES</h3>
+<h2 id="forms-of-verb">Forms of Verb</h2>
+<h2 id="finite-non-finite-verbs">Finite &amp; Non-finite Verbs</h2>
+<p>Tenses</p>
+<h2 id="-present-indefinite">- Present Indefinite</h2>
+<h2 id="-present-continuous">- Present Continuous</h2>
+<h2 id="-present-perfect">~- Present Perfect</h2>
+<h2 id="-present-perfect-continuous">~- Present Perfect Continuous</h2>
+<h2 id="-past-indefinite">- Past Indefinite</h2>
+<h2 id="past-continuous">~ Past Continuous</h2>
+<h2 id="-past-perfect">~- Past Perfect</h2>
+<h2 id="-past-perfect-continuous">- Past Perfect Continuous</h2>
+<h2 id="-future-indefinite">- Future Indefinite</h2>
+<h2 id="-future-continuous">- Future Continuous</h2>
+<h2 id="-future-perfect">- Future Perfect</h2>
+<h2 id="future-perfect-continuous">~ Future Perfect Continuous</h2>
+<h2 id="tense-chart">Tense Chart</h2>
+<h2 id="subject-verb-agreement">Subject Verb Agreement</h2>
+<p>Modals</p>
+<ul>
+<li>Can, Could, May, Might, Shall, Should, Will, Would, Ought to, Need, Dare</li>
+</ul>
+<h2 id="semi-modals">Semi Modals</h2>
+<h2 id="phrasal-verbs">Phrasal Verbs</h2>
+<p>Wee ee eee ee eee ee eeweeeeseeeeee®</p>
+<p>© Voice &amp; SPEECH e Active Voice ¢ Passive Voice - Rules of Passive Voice - Tense wise Passive Voice - By + Agent - Without By + Agent Direct Speech indirect Speech</p>
+<h3 id="5-sentence-6-connectors-7-vocabulary-8-reading">5] SENTENCE 6] CONNECTORS &amp; 7) VOCABULARY 8] READING</h3>
+<h3 id="improvement-structure-building-comprehension">IMPROVEMENT STRUCTURE BUILDING COMPREHENSION</h3>
+<p>¢ Error Detection ¢ Coordinating Conjunctions ¢ Synonyms ¢ Reading Passages e Sentence Correction ~ For, And, Nor, But, Or, Yet, So e Antonyms Main idea ¢ Sentence improvement ¢ Subordinating Conjunctions e One Word Substitution e Redundancy ~ Because, Although, If, Since, e idiom e Clichés As, When, While, Until, Unless, gS rreses q Where, Wherever, etc. ° Proverbs ¢ Misplaced Modifiers © Collocations * Dangling Modifiers ¢ Correlative Conjunctions ok . ~ Either...or, Neither..nor, * Spelling Rules eutty Peretiotion Both...and, Not only...but also - Silent Letters e HMlogical Compar son ¢ Transition Words - Doubling of Letters e Wordy Sentences © Gheess &amp; Gate ~- Homophones ¢ One Word Substitution — Independent Clause le Homophones (Sentence Level) - Dependent Clause ¢ Homonyms ~ Noun Clause - Adjective Clause | ¢ Confusing Words ~ Adverb Clause ¢ Words Often Confused ¢ Types of Sentences ¢ Foreign Words &amp; Phrases</p>
+<p>~ Assertive, Interrogative, ~ Imperative, Exclamatory</p>
+<p>fc</p>
+<p>© cioze test</p>
+<h3 id="fill-in-the-blanks">@ FILL IN THE BLANKS</h3>
+<p>@ Para sumBtes</p>
+<p>| @ Cloze Test Basics ¢ Tenses * Sentence Rearrangement _ @ Context Clues * Prepositions ° Logical Sequence e Grammatical Clues ¢ Articles ¢ Paragraph Jumbles ¢ Vocabulary Clues ¢ Conjunctions * Topic Sentence * Logical Flow * Modal Verbs * Coherence &amp; Flow ¢ Practice Sets ¢ Phrasal Verbs ¢ Practice Sets | ¢ Vocabulary | ¢ Mixed Practice \ 4% 30 DAY PLAN (DAILY ROADMAP) DAY 1-5 DAY 6-10 DAY 11-15 DAY 16 - 20 DAY 21 - 25 ¢ Day 1 - Parts of Speech * Day 6 - Determiners * Day 11 - Active &amp; Passive * Day 16 - Synonyms &amp; * Day 21 - Reading * Day 2 - Noun * Day 7 - Articles &amp; Quantifiers Voice Antonyms Comprehension * Day 3 - Pronoun * Day 8 - Tenses (Part 1) * Day 12 - Direct &amp; indirect * Day 17 ~- One Word * Day 22 — Cloze Test * Day 4 - Verb * Day 9 - Tenses (Part 2) Speech Substitution * Day 23 - Fill in the Blanks * Day S - Adjective, Adverb, | * Day 10 - Subject Verb * Day 13 - Narration * Day 18 - idioms &amp; Phrases * Day 24 - Para Jumbles Preposition, Conjunction. Agreement &amp; Modals * Day 14 ~ Error Detection * Day 19 ~ Spelling Rules &amp; * Day 25 - Mixed Practice interjection + Day 15 ~ Sentence Homophones (All Topics) Improvement * Day 20 - Confusing Words</p>
+<h3 id="day-26-30-revision-practice-daily-tasks">DAY 26 - 30 (REVISION &amp; PRACTICE) DAILY TASKS</h3>
+<p>« 20 New Words ¢ Day 26 ~ Full Length Mock Test 1 * Day 29 - Previous Year Questions * 1 Grammar Topic * Day 27 - Full Length Mock Test 2 * Day 30 - Revision + Weak Topics + Notes * 1 Reading Passage ¢ Day 28 - Full Length Mock Test 3 ¢ 20-30 Practice Questions ¢ Revise Before Sleeping</p>
+<h2 id="best-resources-ee">BEST RESOURCES ee</h2>
+<p>() YOuTUBE CHANNELS {@) Books [2] PRACTICE &amp; MOCK TESTS CONSISTENCY * English With Rani Ma'am * Neetu Singh English (Vol. 1) © Previous Year Papers (SSC/Bank/Railway) + PRACTICE * Dear Sir * Plinth to Paramount © Topic-wise Practice Sets i * Neetu Singh English * SP Bakshi - English * Mock Tests (Adda247, Testbook, | = SUCCESS ¢ Adda247 English * Lucent's General English Oliveboard, Careerwill App) i ¢ PW English * Blackbook of English Vocabulary © Daily Quizzes Te creesnensenssrmnnanesemsanneanues</p>
+<!-- page 2 -->
+
+<h3 id="30-day-plan-for-english">© 30 DAY PLAN FOR ENGLISH</h3>
+<p>-—<em>—- “Consistency + Practice = Progress” —</em>———-+</p>
+<p>“par [Tome | oewuspsveroncs | peacrce war Tova) | eqmarocus PARTS OF</p>
+<p>SPEECH ¢ Definition &amp; Examples of each . ¢ identification in a sentence ¢ Study all parts of speech ¢ Learn with examples . ¢ Functions in a sentence ¢ identify in 50 sentences ¢ Write in your own words * Types of each * Make your own 20 sentences ¢ Use highlighter/mind map p ¢ Rules related to each * 20 MCQs Practice ¢ Revise before sleeping . iti ¢ Common mistakes « Common Noun * Proper Noun ¢ Collective Noun NOUN * Abstract Noun ¢ Read all types with examples ¢ Make a list of SO nouns * Material Noun P 7 . ee - of N . Change Noun (Singular-Plural) Write plural forms daily © Number © Uncounteiie Meun ¢ identify Nouns in 50 sentences ¢ Learn tricky plurals e Case ¢ Singular &amp; Plural Rules ¢ 25 MCQs Practice ¢ Revise short notes ¢ Gender (Masculine, Feminine Common, Neuter) ¢ Case - Nominative, Objective Possessive © Personal Pronoun PRONOUN ¢ Possessive Pronoun | ¢ Reflexive Pronoun ¢ Read all types with examples * Make a chart of all types ¢ Types of Pronoun ¢ Demonstrative Pronoun * Identify Pronouns in 50 ; e Pronoun ¢ Distributive Pronoun pane dis ¢ Solve previous year Qs ~ Antecedent . interrogative Pronoun 5 Guan ¢ Note down exceptions ¢ Relative Pronoun acuce Agreemem ¢ Revise before sleeping nqpeemam ¢ Indefinite Pronoun « 25 MCQs Practice « Rules _ @ Pronoun-Antecedent Agreement 4 (Rules &amp; Tricks) ¢ Main Verb &amp; Auxiliary Verb VERB ¢ Transitive &amp; intransitive Verb . Regular &amp; irregular Verb ¢ Learn all verb forms e Use verbs in own sentences ° Types of Verb © Finke &amp; Non-finke Verb ¢ Make a list of 50 verbs (VI-V5) «© Focus on Modals “" * Modal Verbs (can, could, may, Fill in the blanks practice ¢ Learn irregular verbs ¢ Main, Auxiliary, might, shall, should, will, would, ¢ 25-30 MCQs Practice ¢ Revise &amp; test yourself Modal! Verbs must, have to, ought to, need, dare) ¢ Uses of Modal Verbs ¢ Adjective - Types, Degrees (Positive, Comparative, Superiative) * Adverb - Types, Position * Read with examples ¢ Preposition — List, Uses, ¢ identify in sentences Prepositional Phrases ° Fill in the blanks practice ¢ Conjunction - Types (Coordinating. Correlative) « 25 MCQs Practice * interjection - Uses, Examples</p>
+<h3 id="9-youtube-channels-practice-test">(9 YOUTUBE CHANNELS PRACTICE &amp; TEST</h3>
+<ul>
+<li>English With Rani Ma'am * Previous Year Papers (SSC. Bank. Railway)</li>
+</ul>
+<p>¢ Dear Sir ¢ Topic-wise Practice Sets (Adda247, Testbook)</p>
+<p>¢ Neetu Singh English ¢ Oliveboard, Careerwill « Adda247 English . . App</p>
+<h2 id="pw-english">* PW English</h2>
+<!-- page 3 -->
+
+<h2 id="ba-30-day-plan-for-english">Ba 30 DAY PLAN FOR ENGLISH</h2>
+<p>———— Consistency + Practice = Progress</p>
+<h2 id="topic-detailed-subtopics-practice-what-to-do-extra-focus">TOPIC DETAILED SUBTOPICS PRACTICE (WHAT TO DO) EXTRA FOCUS</h2>
+<h3 id="articles_1">ARTICLES</h3>
+<p>e Articles — A, An, The</p>
+<p>¢ Definite Article (The)</p>
+<p>¢ Indefinite Articles (A, An)</p>
+<h2 id="zero-article">¢ Zero Article</h2>
+<p>¢ Rules of Usage</p>
+<h2 id="special-cases-exceptions">Special Cases &amp; Exceptions</h2>
+<h2 id="use-of-a">Use of A</h2>
+<h2 id="use-of-an">Use of An</h2>
+<p>e Use of The</p>
+<p>« When to use No Article</p>
+<p>¢ Read rules with examples ¢ Make a list of exceptions</p>
+<h3 id="day">DAY</h3>
+<p>¢ Practice from previous year questions</p>
+<ul>
+<li>Make your own sentences</li>
+</ul>
+<p>¢ Identify Articles in 50 sentences ¢ 25 MCQs Practice ¢ Fill in the blanks</p>
+<p>¢ Use in daily writing</p>
+<p>¢ Revise before sleeping</p>
+<p>¢ Situations based usage</p>
+<p>Common mistakes</p>
+<h2 id="prepositions-of-time">Prepositions of Time</h2>
+<p>¢ Prepositions of Place ¢ Learn all important ¢ Learn commonly PREPOSITIONS ¢ Prepositions of Direction prepositions confused pairs * Prepositions - Definition ¢ Prepositions of Movement * Make sentences of each * Make a preposition chart List of Prepositions ¢ Prepositions of Cause ¢ Fill in the blanks practice * Note down rules Types ¢ Prepositions with Verbs ; : ° 25-30 MCQs Practice ¢ Revise daily</p>
+<h2 id="prepositional-phrases-commonly-confused">Prepositional Phrases * Commonly Confused</h2>
+<h2 id="rules-of-usage-prepositions">Rules of Usage Prepositions</h2>
+<h2 id="idiomatic-prepositions">Idiomatic Prepositions</h2>
+<p>¢ Error spotting</p>
+<h2 id="coordinating-fanboys">Coordinating - FANBOYS</h2>
+<p>CONJUNCTIONS ¢ Subordinating - Time,</p>
+<p>Conjunction - Definition Cause, Condition, Types of Conjunctions Contrast, Purpose, Coordinating Conjunctions Result, Place Subordinating Conjunctions ¢ Correlative - either...or,</p>
+<p>, ; neither...nor, both...and, Correlative Conjunctions wa not only...but also, etc. s</p>
+<h2 id="conjunctive-adverbs">Conjunctive Adverbs</h2>
+<p>¢ Learn all types with examples ¢ Use in your writing ¢ Identify conjunctions in</p>
+<p>¢ Practice from PYQs 50 sentences</p>
+<p>¢ Make a list of important</p>
+<p>¢ Join sentences using functi conjunctions</p>
+<p>conjunctions * 25 MCQs Practice e Revise before sleeping</p>
+<h2 id="present-tenses">Present Tenses</h2>
+<h2 id="simple-present">¢ Simple Present</h2>
+<p>« Learn rules + structure</p>
+<p>DAY TENSES (PART 1) * Present Continuous * Read examples Make tense timeline — ¢ Present Perfect ¢ Tense - Definition © Precent:Perinct Contiibus * Make positive, negative, Practice daily 20 sentences</p>
+<p>¢ Types of Tenses interrogative sentences Focus on helping verbs</p>
+<p>¢ Fill in the blanks Revise short notes « 25-30 MCQs Practice</p>
+<h2 id="past-tenses">Past Tenses</h2>
+<h2 id="simple-past">¢ Simple Past</h2>
+<h2 id="past-continuous_1">¢ Past Continuous</h2>
+<h2 id="past-perfect">¢ Past Perfect</h2>
+<h2 id="e-past-perfect-continuous">e Past Perfect Continuous</h2>
+<p>cO</p>
+<h2 id="present-tenses_1">¢ Present Tenses</h2>
+<h2 id="past-tenses_1">« Past Tenses</h2>
+<h2 id="future-tenses">Future Tenses</h2>
+<p>¢ Learn rules + structure</p>
+<p>TENSES (PART 2 * Simple Future . DAY 4 ai ph ai + Pia Catiun bs Rind cicherrenait se previous year * Future Perfect all future tenses a AGREEMENT ¢ Future Perfect Continuous a \aadlity-aveba ta Make rules chart</p>
+<p>Subject Verb Agreement subject verb agreement ¢ Basic Rules</p>
+<p>¢ With Singular &amp; Plural * 30 MCQs teatihass ¢ Special Cases ¢ Error spotting « Common Exceptions</p>
+<p>« Future Tenses ¢ Use in writing</p>
+<p>« Subject Verb Agreement * Revise before sleeping</p>
+<p>¢ Rules &amp; Exceptions</p>
+<h3 id="resources-best-to-follow">RESOURCES (BEST TO FOLLOW)</h3>
+<h3 id="9-youtube-channels-books-practice-test">9 YOUTUBE CHANNELS BOOKS PRACTICE &amp; TEST</h3>
+<p>English With Rani Ma‘am ¢ Neetu Singh English (Vol. 1) ¢ Previous Year Papers (SSC, Bank, Railway)</p>
+<p>Dear Sir ¢ Plinth to Paramount * Topic-wise Practice Sets (Adda247, Testbook) Neetu Singh English e SP Bakshi - English</p>
+<p>Adda247 English ¢ Lucent's General English ; PW English * Wren &amp; Martin (High Schoo! Grammar) * Daily Quizzes &amp; Mock Tests</p>
+<h2 id="oliveboard-careerwill-app">¢ Oliveboard, Careerwill App</h2>
+<!-- page 4 -->
+
+<h3 id="modals">MODALS</h3>
+<h2 id="modal-auxiliaries">Modal Auxiliaries</h2>
+<h2 id="types-of-modals">Types of Modals</h2>
+<h2 id="uses-of-modals">Uses of Modals</h2>
+<h2 id="modal-perfect-infinitive">Modal + Perfect Infinitive</h2>
+<p>Modal + Be + V3</p>
+<p>Modal + Have + V3 Equivalents of Modals Modals in Past</p>
+<h2 id="rules-exceptions">Rules &amp; Exceptions</h2>
+<h3 id="active">ACTIVE &amp;</h3>
+<h3 id="passive-voice">PASSIVE VOICE</h3>
+<h2 id="voice-definition">Voice — Definition</h2>
+<h2 id="active-voice">Active Voice</h2>
+<h2 id="passive-voice_1">Passive Voice</h2>
+<h2 id="rules-of-conversion">Rules of Conversion</h2>
+<h2 id="tenses-in-passive-voice">Tenses in Passive Voice</h2>
+<h2 id="modals-in-passive-voice">Modals in Passive Voice</h2>
+<p>Imperative/Infinitive in Passive Voice</p>
+<h2 id="by-agent">By + Agent</h2>
+<h2 id="common-mistakes">Common Mistakes</h2>
+<h3 id="direct">DIRECT &amp;</h3>
+<h3 id="indirect-speech">INDIRECT SPEECH</h3>
+<h2 id="narration-definition">Narration — Definition</h2>
+<h2 id="rules-of-narration">Rules of Narration</h2>
+<h2 id="changes-in-narration">Changes in Narration</h2>
+<h2 id="types-of-sentences">Types of Sentences</h2>
+<h2 id="important-rules">Important Rules</h2>
+<p>Exceptions</p>
+<h2 id="reporting-verbs">Reporting Verbs</h2>
+<h3 id="sentence">SENTENCE</h3>
+<h3 id="improvement">IMPROVEMENT</h3>
+<p>Structure of a Good Sentence Common Errors Correct Usage Redundancy</p>
+<p>Clichés</p>
+<h2 id="misplaced-modifiers">Misplaced Modifiers</h2>
+<h2 id="dangling-modifiers">Dangling Modifiers</h2>
+<h2 id="faulty-parallelism">Faulty Parallelism</h2>
+<p>illogical Comparison Wordy Sentences Conciseness</p>
+<h3 id="error-detection">ERROR DETECTION</h3>
+<h2 id="types-of-errors">Types of Errors</h2>
+<h2 id="grammatical-errors">Grammatical Errors</h2>
+<h2 id="structural-errors">Structural Errors</h2>
+<h2 id="usage-errors">Usage Errors</h2>
+<h2 id="common-error-patterns">Common Error Patterns</h2>
+<h2 id="techniques-to-solve">Techniques to Solve</h2>
+<h3 id="9-youtube-channels">(9 YOUTUBE CHANNELS</h3>
+<h2 id="english-with-rani-maam">English With Rani Ma'am</h2>
+<h2 id="dear-sir">Dear Sir</h2>
+<h2 id="neetu-singh-english">Neetu Singh English</h2>
+<h2 id="adda247-english">Adda247 English</h2>
+<h2 id="pw-english_1">PW English</h2>
+<p>So GO Ge 0 e920 Ge CG</p>
+<h3 id="day-plan-for-english">DAY PLAN FOR ENGLISH</h3>
+<p>Consistency + Practice = Progress</p>
+<h2 id="can-could">Can, Could</h2>
+<h2 id="seal-might">Seal Might</h2>
+<h2 id="will-would">Will, Would</h2>
+<h2 id="shall-should">Shall, Should</h2>
+<p>Must</p>
+<p>Ought to</p>
+<h2 id="need-dare">Need, Dare</h2>
+<p>Used to</p>
+<p>Had better, Would rather Rules of Modals Common Mistakes</p>
+<h2 id="simple-present_1">Simple Present</h2>
+<h2 id="present-continuous">Present Continuous</h2>
+<h2 id="present-perfect">Present Perfect</h2>
+<h2 id="present-perfect-continuous">Present Perfect Continuous</h2>
+<h2 id="simple-past_1">Simple Past</h2>
+<h2 id="past-continuous_2">Past Continuous</h2>
+<h2 id="past-perfect_1">Past Perfect</h2>
+<h2 id="past-perfect-continuous">Past Perfect Continuous</h2>
+<h2 id="simple-future">Simple Future</h2>
+<h2 id="future-continuous">Future Continuous</h2>
+<h2 id="future-perfect">Future Perfect</h2>
+<h2 id="future-perfect-continuous_1">Future Perfect Continuous</h2>
+<h2 id="modals-in-passive">Modals in Passive</h2>
+<p>Use of “By”</p>
+<p>Without “By”</p>
+<h2 id="important-rules_1">Important Rules</h2>
+<h2 id="changes-in-pronouns">Changes in Pronouns</h2>
+<h2 id="changes-in-tenses">Changes in Tenses</h2>
+<p>Changes in Time &amp; Place Changes in Modals Changes in Adverbs Changes in Imperatives Interrogative Sentences Exclamatory Sentences Optative Sentences</p>
+<h2 id="no-change-rules">No Change Rules</h2>
+<h2 id="reporting-verbs-list">Reporting Verbs List</h2>
+<h2 id="subject-verb-agreement_1">Subject-Verb Agreement</h2>
+<h2 id="tense-consistency">Tense Consistency</h2>
+<h2 id="pronoun-reference">Pronoun Reference</h2>
+<h2 id="preposition-errors">Preposition Errors</h2>
+<h2 id="article-errors">Article Errors</h2>
+<h2 id="adverb-errors">Adverb Errors</h2>
+<h2 id="word-order">Word Order</h2>
+<h2 id="redundancy-repetition">Redundancy &amp; Repetition</h2>
+<h2 id="overuse-of-words">Overuse of Words</h2>
+<h2 id="improvement-techniques">Improvement Techniques</h2>
+<h2 id="noun-pronoun-errors">Noun &amp; Pronoun Errors</h2>
+<h2 id="verb-errors">Verb Errors</h2>
+<h2 id="tense-errors">Tense Errors</h2>
+<h2 id="preposition-errors_1">Preposition Errors</h2>
+<h2 id="article-errors_1">Article Errors</h2>
+<h2 id="adverb-errors_1">Adverb Errors</h2>
+<h2 id="conjunction-errors">Conjunction Errors</h2>
+<h2 id="agreement-errors">Agreement Errors</h2>
+<h2 id="misplaced-modifiers_1">Misplaced Modifiers</h2>
+<h2 id="word-order-errors">Word Order Errors</h2>
+<p>Learn rules with examples</p>
+<p>Make your own sentences</p>
+<p>Identify modals in 50 sentences</p>
+<p>Fill in the blanks 25-30 MCQs Practice Error spotting</p>
+<p>Learn conversion rules thoroughly</p>
+<p>Convert active to passive (All Tenses)</p>
+<p>Convert passive to active 30-35 MCQs Practice Error spotting</p>
+<p>Learn rules with examples Change direct to indirect Change indirect to direct Identify narration in</p>
+<p>50 sentences</p>
+<h2 id="25-30-mcqs-practice">25-30 MCQs Practice</h2>
+<p>Error spotting</p>
+<p>Read rules with examples Improve given sentences 30-35 MCQs Practice Identify errors in sentences</p>
+<p>Rewrite incorrect sentences</p>
+<p>Solve error detection questions daily</p>
+<p>Focus on underlined part</p>
+<h2 id="30-35-mcqs-practice">30-35 MCQs Practice</h2>
+<h2 id="practice-mixed-error">Practice mixed error</h2>
+<p>sets</p>
+<h3 id="resources-best-to-follow_1">RESOURCES (BEST TO FOLLOW)</h3>
+<h3 id="ppptt">PPPTT</h3>
+<p>TOPIC DETAILED SUBTOPICS PRACTICE (WHAT TO DO) =.</p>
+<p>Make a modal chart Use modals in daily conversations Practice from previous year questions</p>
+<p>Revise before sleeping</p>
+<p>Make tense-wise passive voice chart</p>
+<h2 id="practice-from-pyqs">Practice from PYQs</h2>
+<p>Write 10 sentences daily in passive voice</p>
+<p>Revise short notes</p>
+<p>Make change rules chart Practice all types daily</p>
+<p>Solve previous year questions</p>
+<p>Revise before sleeping</p>
+<p>Make a list of common errors</p>
+<h2 id="practice-5-10-sentences">Practice 5-10 sentences</h2>
+<p>daily</p>
+<p>Focus on accuracy</p>
+<p>Revise &amp; test yourself</p>
+<p>Maintain an error notebook Learn from mistakes Solve PYQs</p>
+<p>Time yourself</p>
+<p>Revise before sleeping</p>
+<h3 id="books-practice-test">BOOKS -¢| PRACTICE &amp; TEST</h3>
+<p>¢ Neetu Singh English (Vol. 1) * Previous Year Papers (SSC, Bank, Railway) ; poet a ae os * Topic-wise Practice Sets (Adda247, Testbook) ¢ Lucent's General English ¢ Oliveboard, Careerwill App ¢ Wren &amp; Martin (High School Grammar) ¢ Daily Quizzes &amp; Mock Tests</p>
+<!-- page 5 -->
+
+<p>30</p>
+<h3 id="day-plan-for-english_1">DAY PLAN FOR ENGLISH</h3>
+<p>Consistency + Practice = Progress</p>
+<p>=f</p>
+<p>@Momiistudies</p>
+<h2 id="day-topic-detailed-subtopics-practice-what-to-do-extra-focus">| DAY TOPIC DETAILED SUBTOPICS PRACTICE (WHAT TO DO) EXTRA FOCUS</h2>
+<h3 id="day_1">DAY</h3>
+<h3 id="synonyms">SYNONYMS &amp;</h3>
+<h3 id="antonyms">ANTONYMS</h3>
+<h2 id="synonyms-definition">Synonyms — Definition</h2>
+<h2 id="antonyms-definition">Antonyms — Definition</h2>
+<p>Types</p>
+<h2 id="context-based-usage">Context Based Usage</h2>
+<h2 id="one-word-substitution">One Word Substitution</h2>
+<p>vs Synonyms</p>
+<h2 id="rules-common-mistakes">Rules &amp; Common Mistakes</h2>
+<h3 id="idioms-phrases">IDIOMS &amp; PHRASES</h3>
+<p>idioms — Definition Phrases — Definition Types of Idioms</p>
+<h2 id="types-of-phrases">Types of Phrases</h2>
+<h2 id="usage-in-sentences">Usage in Sentences</h2>
+<h2 id="commonly-asked-in-exams">Commonly Asked in Exams</h2>
+<h3 id="one-word">ONE WORD</h3>
+<h3 id="substitution">SUBSTITUTION</h3>
+<p>Definition Types Rules Usage in Sentences Importance in Exams</p>
+<h3 id="spelling-errors">SPELLING ERRORS &amp;</h3>
+<h3 id="homophones">HOMOPHONES</h3>
+<h2 id="spelling-errors-definition">Spelling Errors — Definition</h2>
+<h2 id="rules-of-spelling">Rules of Spelling</h2>
+<h2 id="common-spelling-mistakes">Common Spelling Mistakes</h2>
+<h2 id="homophones-definition">Homophones -— Definition</h2>
+<h2 id="common-homophones">Common Homophones</h2>
+<h2 id="usage-in-sentences_1">Usage in Sentences</h2>
+<h3 id="commonly-confused">COMMONLY CONFUSED</h3>
+<h3 id="words">WORDS</h3>
+<p>Definition</p>
+<p>Types</p>
+<h2 id="usage-in-sentences_2">Usage in Sentences</h2>
+<h2 id="importance-in-exams">Importance in Exams</h2>
+<h2 id="rules-to-remember">Rules to Remember</h2>
+<h3 id="9-youtube-channels_1">(9 YOUTUBE CHANNELS</h3>
+<h2 id="english-with-rani-maam_1">English With Rani Ma‘am</h2>
+<h2 id="dear-sir_1">Dear Sir</h2>
+<h2 id="neetu-singh-english_1">Neetu Singh English</h2>
+<h2 id="adda247-english_1">Adda247 English</h2>
+<h2 id="pw-english_2">PW English</h2>
+<p>¢ Synonyms — Exact Synonyms Synonyms - Contextual Synonyms Antonyms — Gradable Antonyms Antonyms - Absolute Antonyms Frequently Asked Synonyms Frequently Asked Antonyms Confusing Synonyms</p>
+<h2 id="confusing-antonyms">Confusing Antonyms</h2>
+<h2 id="practice-words">Practice Words</h2>
+<h2 id="common-idioms-a-z">Common Idioms (A-Z)</h2>
+<h2 id="common-phrases-a-z">Common Phrases (A-Z)</h2>
+<h2 id="phrasal-verbs_1">Phrasal Verbs</h2>
+<h2 id="idioms-for-people">Idioms for People</h2>
+<h2 id="idioms-for-situations">Idioms for Situations</h2>
+<h2 id="idioms-with-meanings">Idioms with Meanings</h2>
+<h2 id="phrases-for-formal-writing">Phrases for Formal Writing</h2>
+<h2 id="phrases-for-daily-use">Phrases for Daily Use</h2>
+<h2 id="person-related">Person Related</h2>
+<h2 id="place-related">Place Related</h2>
+<h2 id="thingobject-related">Thing/Object Related</h2>
+<h2 id="qualitycondition-related">Quality/Condition Related</h2>
+<h2 id="action-related">Action Related</h2>
+<h2 id="groupcollection-related">Group/Collection Related</h2>
+<h2 id="abstractnoun-related">Abstract/Noun Related</h2>
+<h2 id="frequently-asked-exam-level">Frequently Asked (Exam Level)</h2>
+<h2 id="spelling-rules">Spelling Rules</h2>
+<h2 id="silent-letters">Silent Letters</h2>
+<h2 id="double-letters">Double Letters</h2>
+<p>Endings (—ly, —tion, —sion, -ive etc.) Confusing Spellings</p>
+<h2 id="commonly-misspelled-words">Commonly Misspelled Words</h2>
+<h2 id="homophones-list">Homophones List</h2>
+<h2 id="difference-with-examples">Difference with Examples</h2>
+<h2 id="accept-except">Accept / Except</h2>
+<h2 id="affect-effect">Affect / Effect</h2>
+<h2 id="compliment-complement">Compliment / Complement</h2>
+<p>Ensure / Insure / Assure Farther / Further</p>
+<h2 id="hear-here">Hear / Here</h2>
+<h2 id="its-its">Its / It's</h2>
+<h2 id="lie-lay">Lie / Lay</h2>
+<h2 id="loose-lose">Loose / Lose</h2>
+<h2 id="principle-principal">Principle / Principal</h2>
+<h2 id="others-complete-list">Others (Complete List)</h2>
+<h3 id="best-resources">BEST RESOURCES</h3>
+<h3 id="books">BOOKS</h3>
+<p>¢ Neetu Singh English (Vol. 1) Plinth to Paramount</p>
+<h2 id="sp-bakshi-english">SP Bakshi — English</h2>
+<h2 id="lucents-general-english">Lucent's General English</h2>
+<p>Wren &amp; Martin (High School Grammar)</p>
+<p>Learn 30—40 synonym pairs Make a personal</p>
+<p>Learn 30-40 antonym pairs vocabulary notebook</p>
+<p>. Revise previous words Use in sentences</p>
+<p>Make your own word list Use in daily writing 25-30 MCQs Practice</p>
+<h2 id="practice-from-pyqs_1">Practice from PYQs</h2>
+<p>Focus on word power</p>
+<p>Revise before sleeping</p>
+<p>Learn 10-15 idioms daily</p>
+<p>: Use idioms in writing Learn 10-15 phrases daily Use phrases in</p>
+<p>Write sentences ; conversations</p>
+<h2 id="practice-from-previous">Practice from previous</h2>
+<p>year questions</p>
+<h2 id="20-25-mcqs-practice">20-25 MCQs Practice</h2>
+<p>Make flashcards</p>
+<p>Learn phrasal verbs Revise older idioms</p>
+<p>Quick revision at night</p>
+<p>Learn 20-25 words daily</p>
+<p>Write meanings</p>
+<p>Add new words daily</p>
+<p>Revise old lists Use in sentences</p>
+<h2 id="solve-from-pyqs">Solve from PYQs</h2>
+<h2 id="25-30-mcqs-practice_1">25-30 MCQs Practice</h2>
+<p>Make a daily list</p>
+<h2 id="practice-in-quiz-format">Practice in quiz format</h2>
+<p>Focus on difficult words</p>
+<p>Revise before sleeping</p>
+<p>Learn 20-25 words daily</p>
+<p>Write correct spellings</p>
+<p>Maintain spelling notebook Revise homophones daily Learn homophones with</p>
+<p>Focus on commonly meanings</p>
+<p>confused words Make sentences</p>
+<h2 id="25-30-mcqs-practice_2">25-30 MCQs Practice</h2>
+<h2 id="practice-from-pyqs_2">Practice from PYQs</h2>
+<p>Use in your writing Quick revision</p>
+<p>Loam 15-20 pairs daily Make a confusion list</p>
+<p>Write differences Make flashcards</p>
+<p>Use in sentences é' Solve MCQs Revise all previous days</p>
+<p>topics</p>
+<p>Keep examples</p>
+<p>Use in writing</p>
+<h2 id="practice-from-pyqs_3">Practice from PYQs</h2>
+<p>Revise before sleeping</p>
+<p>Weekly revision</p>
+<h3 id="practice-test">PRACTICE &amp; TEST</h3>
+<p>¢ Previous Year Papers (SSC, Bank, Railway) * Topic-wise Practice Sets (Adda247, Testbook) ¢ Oliveboard, Careerwill App ¢ Daily Quizzes &amp; Mock Tests</p>
+<!-- page 6 -->
+
+<h3 id="day-plan-for-english_2">DAY PLAN FOR ENGLISH</h3>
+<h3 id="day-21-to-25-complete-roadmap">DAY 21 TO 25 — COMPLETE ROADMAP</h3>
+<p>fa *</p>
+<p>‘y Tle | | Consistency + Practice = Progress @omiis ies | DAY TOPIC DETAILED SUBTOPICS PRACTICE (WHAT TO DO) EXTRA FOCUS</p>
+<h3 id="reading">READING</h3>
+<h3 id="comprehension">COMPREHENSION</h3>
+<p>Meaning</p>
+<p>Importance</p>
+<h2 id="types-of-passages">Types of Passages</h2>
+<h2 id="techniques-to-improve">Techniques to Improve</h2>
+<h2 id="reading_1">Reading</h2>
+<h2 id="main-idea">Main Idea</h2>
+<p>Inference</p>
+<h2 id="vocabulary-in-context">Vocabulary in Context</h2>
+<h3 id="fill-in-the-blanks_1">FILL IN THE BLANKS</h3>
+<p>Meaning Types Grammar Based Blanks</p>
+<h2 id="vocabulary-based-blanks">Vocabulary Based Blanks</h2>
+<h2 id="cloze-passages">Cloze Passages</h2>
+<h2 id="rules-tricks">Rules &amp; Tricks</h2>
+<h3 id="sentence_1">SENTENCE</h3>
+<h3 id="rearrangement">REARRANGEMENT</h3>
+<p>Meaning Rules</p>
+<h2 id="types-of-rearrangement">Types of Rearrangement</h2>
+<h2 id="techniques-strategies">Techniques &amp; Strategies</h2>
+<p>Connectors Logical Sequencing</p>
+<h3 id="para-jumbles">PARA JUMBLES</h3>
+<p>Meaning</p>
+<p>Rules</p>
+<p>Types</p>
+<p>Techniques</p>
+<h2 id="logical-arrangement">Logical Arrangement</h2>
+<h2 id="tips-tricks">Tips &amp; Tricks</h2>
+<h3 id="cloze-test">CLOZE TEST</h3>
+<p>Meaning</p>
+<p>Types</p>
+<h2 id="grammar-cloze">Grammar Cloze</h2>
+<h2 id="vocabulary-cloze">Vocabulary Cloze</h2>
+<h2 id="mixed-cloze">Mixed Cloze</h2>
+<p>Techniques Strategies</p>
+<h2 id="factual-passages">Factual Passages</h2>
+<p>5 ebcantite Passages Narrative Passages Argumentative Passages Note Making</p>
+<p>Skimming</p>
+<p>Scanning</p>
+<h2 id="understanding-tone-purpose">Understanding Tone &amp; Purpose</h2>
+<h2 id="finding-implicit-meaning">Finding Implicit Meaning</h2>
+<h2 id="summary-writing">Summary Writing</h2>
+<h2 id="authors-views-opinions">Authors’ Views &amp; Opinions</h2>
+<p>Fill in the Blanks — Grammar Fill in the Blanks - Vocabulary Prepositions</p>
+<p>Articles</p>
+<p>Tenses</p>
+<p>Conjunctions</p>
+<p>Modals</p>
+<h2 id="cloze-test-passage-based">Cloze Test (Passage Based)</h2>
+<h2 id="sentence-completion">Sentence Completion</h2>
+<h2 id="use-of-context-clues">Use of Context Clues</h2>
+<h2 id="rearrangement-of-sentences">Rearrangement of Sentences</h2>
+<h2 id="use-of-connectors">Use of Connectors</h2>
+<h2 id="pronoun-reference_1">Pronoun Reference</h2>
+<h2 id="time-sequence">Time Sequence</h2>
+<h2 id="cause-effect">Cause &amp; Effect</h2>
+<p>Examples</p>
+<h2 id="paragraph-formation">Paragraph Formation</h2>
+<h2 id="logical-flow">Logical Flow</h2>
+<h2 id="transitional-words">Transitional Words</h2>
+<h2 id="common-mistakes_1">Common Mistakes</h2>
+<p>Jumbled Sentences (4 part) Jumbled Sentences (5 part) Finding Topic Sentence Use of Cohesion</p>
+<h2 id="logical-sequence">Logical Sequence</h2>
+<h2 id="pronoun-reference_2">Pronoun Reference</h2>
+<h2 id="transitional-words_1">Transitional Words</h2>
+<p>Examples</p>
+<h2 id="elimination-method">Elimination Method</h2>
+<h2 id="practice-sets">Practice Sets</h2>
+<h2 id="close-test-grammar-based">Close Test - Grammar Based</h2>
+<h2 id="cloze-test-vocabulary-based">Cloze Test - Vocabulary Based</h2>
+<p>Mixed Cloze (Grammar + Vocab)</p>
+<h2 id="understanding-context">Understanding Context</h2>
+<h2 id="identifying-correct-word">Identifying Correct Word</h2>
+<h2 id="use-of-hints">Use of Hints</h2>
+<h2 id="word-bank">Word Bank</h2>
+<h2 id="practice-passages">Practice Passages</h2>
+<h2 id="common-traps">Common Traps</h2>
+<h2 id="scoring-techniques">Scoring Techniques</h2>
+<p>Read 1 passage daily</p>
+<h2 id="practice-different">Practice different</h2>
+<p>types of questions</p>
+<p>Attempt 15-20 questions daily Focus on speed + accuracy Time bound practice</p>
+<h2 id="practice-from-previous_1">Practice from previous</h2>
+<p>year papers</p>
+<p>Solve 20-30 blanks daily Practice cloze passages Identify pattern of blanks Focus on grammar rules Time your attempts</p>
+<h2 id="practice-from-pyqs_4">Practice from PYQs</h2>
+<p>Solve 15-20 questions daily identify first, middle</p>
+<p>and last sentence</p>
+<p>Use elimination method Practice from previous year papers</p>
+<p>Time bound practice</p>
+<p>Solve 10-15 jumbles daily Find connection between sentences</p>
+<p>Look for indicators</p>
+<p>Use elimination</p>
+<h2 id="practice-from-pyqs_5">Practice from PYQs</h2>
+<p>Time your attempts</p>
+<p>Solve 2 cloze passages daily Focus on context</p>
+<p>Learn from mistakes Attempt 15-20 questions Practice from PYQs</p>
+<p>Improve speed &amp; accuracy</p>
+<p>Build reading habit (newspaper, editorials) Learn new words from passages</p>
+<p>Make notes of difficult expressions</p>
+<p>Revise all passages weekly Analyze your mistakes</p>
+<p>Make a notes of rules Learn high frequency vocabulary</p>
+<h2 id="practice-mixed-exercises">Practice mixed exercises</h2>
+<p>Revise grammar topics</p>
+<p>regularly Analyze wrong answers</p>
+<p>Make connector list Practice paragraph formation</p>
+<p>Focus on flow of ideas Note down tricks</p>
+<p>Revise daily</p>
+<p>Make your own jumbles Read more to understand flow</p>
+<p>Note key indicators Practice mixed sets</p>
+<p>Evaluate your accuracy</p>
+<p>Build vocabulary Revise grammar</p>
+<p>Read editorials</p>
+<p>Note down new words</p>
+<p>Weekly revision</p>
+<h3 id="best-resources_1">BEST RESOURCES ”</h3>
+<p>9 YouTuBE CHANNELS BOOKS PRACTICE &amp; TEST | ¢ English With Rani Ma'am * Neetu Singh English (Vol. 1) ¢ Previous Year Papers (SSC, Bank, Railway) | ¢ Dear Sir * Plinth to Paramount * Topic-wise Practice Sets (Adda247, Testbook) | ¢ Neetu Singh English e SP Bakshi — English * Oliveboard, Careerwill App « Adda247 English « Lucent's General English</p>
+<p>j ¢ Daily Quizzes &amp; Mock Tests « PW English ¢ Wren &amp; Martin (High School Grammar)</p>
+<!-- page 7 -->
+
+<p>7</p>
+<h3 id="cloze-test_1">CLOZE TEST</h3>
+<h3 id="continued">(CONTINUED)</h3>
+<p>Meaning Types Grammar Cloze Vocabulary Cloze Mixed Cloze Techniques Strategies</p>
+<h3 id="match-the-following">MATCH THE FOLLOWING</h3>
+<h3 id="paragraph">&amp; PARAGRAPH</h3>
+<h3 id="completion">COMPLETION</h3>
+<p>Match the Following — Meaning Types</p>
+<p>Techniques</p>
+<h2 id="paragraph-completion-meaning">Paragraph Completion — Meaning</h2>
+<p>Types</p>
+<h2 id="tips-tricks_1">Tips &amp; Tricks</h2>
+<h3 id="vocabulary">VOCABULARY</h3>
+<h3 id="development-1">DEVELOPMENT (1)</h3>
+<h2 id="vocabulary-meaning">Vocabulary —- Meaning</h2>
+<p>Importance Sources of Vocabulary Word Building Prefixes Suffixes Root Words</p>
+<h3 id="vocabulary_1">VOCABULARY</h3>
+<h3 id="development-2">DEVELOPMENT (2)</h3>
+<h2 id="advanced-vocabulary">Advanced Vocabulary</h2>
+<p>Collocations</p>
+<h2 id="phrasal-verbs_2">Phrasal Verbs</h2>
+<h2 id="meaning-in-context">Meaning in Context</h2>
+<h2 id="active-vocabulary">Active Vocabulary</h2>
+<h2 id="idiomatic-expressions">Idiomatic Expressions</h2>
+<h3 id="writing-skills">WRITING SKILLS</h3>
+<h2 id="writing-meaning">Writing — Meaning</h2>
+<p>Importance Types of Writing Formal Letter Informal Letter Essay Writing Report Writing</p>
+<h3 id="full-length-mock-test">FULL LENGTH MOCK TEST</h3>
+<h3 id="revision-day">&amp; REVISION DAY</h3>
+<h2 id="full-length-practice-test">Full Length Practice Test</h2>
+<h2 id="time-management">Time Management</h2>
+<p>Revision Analysis Final Tips</p>
+<h3 id="9-youtube-channels_2">@9 YOUTUBE CHANNELS</h3>
+<h2 id="english-with-rani-maam_2">English With Rani Ma'am</h2>
+<h2 id="dear-sir_2">Dear Sir</h2>
+<h2 id="neetu-singh-english_2">Neetu Singh English</h2>
+<h2 id="adda247-english_2">Adda247 English</h2>
+<h2 id="pw-english_3">PW English</h2>
+<p>—— Consistency + Practice =</p>
+<h2 id="day-topic-detailed-subtopics-practice-what-to-do-extra-focus_1">DAY — TOPIC DETAILED SUBTOPICS PRACTICE (WHAT TO DO) EXTRA FOCUS</h2>
+<h2 id="close-test-grammar-based_1">Close Test - Grammar Based</h2>
+<h2 id="cloze-test-vocabulary-based_1">Cloze Test - Vocabulary Based</h2>
+<p>Mixed Cloze (Grammar + Vocab) Understanding Context Identifying Correct Word</p>
+<h2 id="use-of-hints_1">Use of Hints</h2>
+<h2 id="word-bank_1">Word Bank</h2>
+<h2 id="practice-passages_1">Practice Passages</h2>
+<h2 id="common-traps_1">Common Traps</h2>
+<h2 id="scoring-techniques_1">Scoring Techniques</h2>
+<h2 id="match-synonyms-antonyms">Match Synonyms / Antonyms</h2>
+<h2 id="match-idioms-phrases">Match Idioms / Phrases</h2>
+<h2 id="match-one-word-substitution">Match One Word Substitution</h2>
+<h2 id="match-definitions">Match Definitions</h2>
+<h2 id="match-sentence-parts">Match Sentence Parts</h2>
+<h2 id="paragraph-completion-grammar">Paragraph Completion — Grammar</h2>
+<h2 id="paragraph-completion-vocabulary">Paragraph Completion — Vocabulary</h2>
+<h2 id="using-clues-context">Using Clues &amp; Context</h2>
+<h2 id="common-patterns-rules">Common Patterns &amp; Rules</h2>
+<h2 id="practice-sets_1">Practice Sets</h2>
+<h2 id="synonyms-advanced-list">Synonyms — Advanced List</h2>
+<h2 id="antonyms-advanced-list">Antonyms — Advanced List</h2>
+<p>Homophones</p>
+<h2 id="one-word-substitution-advanced">One Word Substitution — Advanced</h2>
+<p>Prefixes (un-, re-, dis-, pre-, etc.)</p>
+<p>Suffixes (—able, -ible, —tion, —-ment, etc.)</p>
+<h2 id="root-words">Root Words</h2>
+<h2 id="word-formation">Word Formation</h2>
+<h2 id="practice-exercises">Practice Exercises</h2>
+<h2 id="vocabulary-in-context_1">Vocabulary in Context</h2>
+<h2 id="collocations-common-list">Collocations — Common List</h2>
+<h2 id="phrasal-verbs-common-list">Phrasal Verbs - Common List</h2>
+<h2 id="idioms-phrases_1">Idioms &amp; Phrases</h2>
+<h2 id="vocabulary-for-writing">Vocabulary for Writing</h2>
+<h2 id="contextual-meanings">Contextual Meanings</h2>
+<h2 id="choosing-the-right-word">Choosing the Right Word</h2>
+<h2 id="sentence-improvement">Sentence Improvement</h2>
+<h2 id="practice-sets_2">Practice Sets</h2>
+<h2 id="review-revision">Review &amp; Revision</h2>
+<p>Letter Writing - Format &amp; Rules Formal Letter —- Types (Application, Complaint, Request, etc.)</p>
+<h2 id="informal-letter-personal-letters">Informal Letter — Personal Letters</h2>
+<h2 id="essay-writing-types-structure">Essay Writing — Types, Structure</h2>
+<p>Essay Topics (Education, Environment,</p>
+<h2 id="technology-social-issues-etc">Technology, Social Issues, etc.)</h2>
+<p>Report Writing — Format &amp; Types Tips for Good Writing</p>
+<h2 id="practice-topics">Practice Topics</h2>
+<h2 id="common-mistakes-in-writing">Common Mistakes in Writing</h2>
+<h2 id="complete-mock-test-all-sections">Complete Mock Test (All Sections)</h2>
+<h2 id="time-bound-practice">Time Bound Practice</h2>
+<h2 id="review-of-all-topics">Review of All Topics</h2>
+<h2 id="check-mistakes-weak-areas">Check Mistakes &amp; Weak Areas</h2>
+<h2 id="revise-important-rules">Revise Important Rules</h2>
+<h2 id="revise-vocabulary">Revise Vocabulary</h2>
+<h2 id="revise-writing-formats">Revise Writing Formats</h2>
+<h2 id="last-minute-tips-strategy">Last Minute Tips &amp; Strategy</h2>
+<h2 id="confidence-building">Confidence Building</h2>
+<h3 id="best-resources_2">BEST RESOURCES</h3>
+<h3 id="books_1">(@) BOOKS</h3>
+<p>¢ Neetu Singh English (Vol. 1) Plinth to Paramount</p>
+<h2 id="sp-bakshi-english_1">SP Bakshi — English</h2>
+<h2 id="lucents-general-english_1">Lucent's General English</h2>
+<p>Wren &amp; Martin (High School Grammar)</p>
+<p>Progress ———</p>
+<p>Solve 2 cloze passages daily Focus on context</p>
+<p>Learn from mistakes Attempt 15-20 questions Practice from PYQs</p>
+<p>Improve speed &amp; accuracy</p>
+<p>Solve 15-20 match questions daily</p>
+<p>Solve 2 paragraph completion sets daily</p>
+<p>Identify common patterns Use elimination method Practice from PYQs</p>
+<p>Time your attempts</p>
+<p>Learn 20-25 new words daily Use words in sentences Solve word building exercises Practice from PYQs</p>
+<p>Write a short paragraph using new words</p>
+<p>Revise previous words</p>
+<p>Learn 20-25 new words daily Learn 10-15 phrasal verbs daily Learn 5-10 idioms/phrases daily Use in sentences</p>
+<p>Solve vocabulary sets</p>
+<h2 id="practice-from-pyqs_6">Practice from PYQs</h2>
+<p>Revise all learned words</p>
+<p>Write 1 letter daily (alterate types) Write 1 essay (250-300 words) Write 1 report (100-150 words) Focus on format &amp; tone</p>
+<p>Use linkers &amp; good vocabulary Practice from previous year questions</p>
+<p>Improve handwriting/presentation Get it checked (if possible)</p>
+<p>Attempt 1 full length mock test (Time Bound)</p>
+<p>Solve mixed practice sets Revise grammar rules</p>
+<p>Revise vocabulary list</p>
+<p>Revise writing formats</p>
+<p>Make short notes of rules Focus on weak areas</p>
+<h2 id="relax-stay-positive">Relax &amp; Stay Positive</h2>
+<h3 id="practice-test_1">PRACTICE &amp; TEST</h3>
+<p>@omiistudies</p>
+<p>Build vocabulary Revise grammar</p>
+<p>Read editorials</p>
+<p>Note down new words</p>
+<p>Weekly revision</p>
+<p>Make match the following notebook</p>
+<p>Make para completion formula list</p>
+<p>Focus on accuracy Revise vocabulary</p>
+<p>Analyze mistakes</p>
+<p>Maintain vocabulary diary Use flashcards</p>
+<p>Learn word families</p>
+<p>Read daily</p>
+<p>Revise before sleeping</p>
+<p>Use vocabulary in writing Make collocation list</p>
+<p>Use phrasal verbs in sentences</p>
+<p>Revise older words</p>
+<p>Focus on retention</p>
+<p>Maintain writing notebook Use formal vocabulary Follow format strictly Read model letters/essays Check for grammar &amp; spelling mistakes</p>
+<p>Analyze mock test Note down weak topics Revise short notes Revise important words Sleep well &amp; stay calm Believe in yourself!</p>
+<p>*¢ Previous Year Papers (SSC, Bank, Railway)</p>
+<ul>
+<li>
+<p>Topic-wise Practice Sets (Adda247, Testbook) * Oliveboard, Careerwill App</p>
+</li>
+<li>
+<p>Daily Quizzes &amp; Mock Tests</p>
+</li>
+</ul>
+    </div>
+  </article>
+  <script type="application/json" id="doc-meta">{"slug": "001-complete-30-day-english-study-plan", "number": 1, "theme": "sage", "engine": "cached markdown", "source": "001 - Complete 30-Day English Study Plan.pdf", "pages": 0, "words": 3535, "sections": 318, "tables": 0, "reading_min": 20, "date": "2026-10-21", "teaser": "e Parts of Speech \u00a2 Noun - Types of Noun - Countable &amp; Uncountable - Gender - Number Pronoun - Types of Pronoun - Reflexive, Emphatic, Relative, Indefinite"}</script>
+</main>
+</body>
+</html>

@@ -1,0 +1,1152 @@
+<!doctype html>
+<html lang="en" data-theme="moss">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Choose the Correct Word – 500 Questions · Zoya's English — Study Module</title>
+<meta name="description" content="Choose the Correct Word – 500 Questions — study module from Zoya&#39;s English learning library: speaking and confidence coaching materials.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>/* ═══════════════════════════════════════════════════════════════════════════
+   ZOYA'S ENGLISH — MASTER LAYOUT STYLESHEET
+   Design language: warm editorial · luxury-minimalist · glass surfaces
+   Beat structure: tokens → chapter themes → base → components → prose → print
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────── 1 · DESIGN TOKENS (single source) */
+
+:root {
+  /* Palette */
+  --bg: #faf9f6;                 /* warm off-white editorial ground      */
+  --bg-deep: #f3f1ea;            /* deeper warm wash for bands           */
+  --surface: #ffffff;
+  --glass: rgba(255, 255, 255, 0.66);
+  --glass-strong: rgba(255, 255, 255, 0.86);
+  --ink: #2b2b2b;                /* stark charcoal body typography       */
+  --ink-soft: #56524b;
+  --ink-faint: #8b867b;
+  --line: rgba(43, 43, 43, 0.10);
+  --line-strong: rgba(43, 43, 43, 0.17);
+  --accent: #4a6b82;             /* muted sophisticated slate-blue       */
+  --accent-ink: #375266;
+  --accent-soft: #edf2f6;
+  --accent-glow: rgba(74, 107, 130, 0.16);
+  --warm: #f6eddd;
+
+  /* Typography */
+  --font-display: "Fraunces", "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Courier New", monospace;
+
+  /* Shape & depth */
+  --r-lg: 24px;
+  --r-md: 16px;
+  --r-sm: 10px;
+  --r-pill: 999px;
+  --shadow-1: 0 1px 2px rgba(31, 29, 25, 0.05), 0 10px 30px -14px rgba(31, 29, 25, 0.16);
+  --shadow-2: 0 2px 8px rgba(31, 29, 25, 0.06), 0 28px 64px -24px rgba(31, 29, 25, 0.24);
+  --ease: cubic-bezier(0.22, 0.7, 0.25, 1);
+}
+
+/* ─────────────────────────── 2 · CHAPTER DESIGN LANGUAGES (per-theme accents)
+
+   Every compiled chapter receives its own stable accent family, applied via
+   `data-theme` on the page root, so each module feels designed — not stamped.
+   The dashboard (materials.html) mirrors these values for its cards.        */
+
+[data-theme="ink"]   { --accent: #46474b; --accent-ink: #33353a; --accent-soft: #f1efe9; --accent-glow: rgba(70, 71, 75, 0.14); }
+[data-theme="clay"]  { --accent: #b06a48; --accent-ink: #8f5438; --accent-soft: #f9efe7; --accent-glow: rgba(176, 106, 72, 0.15); }
+[data-theme="sage"]  { --accent: #5f7c60; --accent-ink: #49614a; --accent-soft: #eff5ef; --accent-glow: rgba(95, 124, 96, 0.15); }
+[data-theme="plum"]  { --accent: #7d5a72; --accent-ink: #64485a; --accent-soft: #f6eff4; --accent-glow: rgba(125, 90, 114, 0.15); }
+[data-theme="mist"]  { --accent: #3f7a75; --accent-ink: #2f605c; --accent-soft: #ebf4f2; --accent-glow: rgba(63, 122, 117, 0.15); }
+[data-theme="ember"] { --accent: #a8543f; --accent-ink: #8a4232; --accent-soft: #f9ece8; --accent-glow: rgba(168, 84, 63, 0.15); }
+[data-theme="moss"]  { --accent: #72783f; --accent-ink: #5a5f31; --accent-soft: #f5f6e9; --accent-glow: rgba(114, 120, 63, 0.15); }
+
+/* ────────────────────────────────────────────────────────── 3 · BASE RESET */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.68;
+  color: var(--ink);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 560;
+  line-height: 1.16;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0 0 0.6em;
+}
+
+::selection { background: var(--accent-glow); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  z-index: 100;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--r-pill);
+}
+.skip-link:focus { left: 12px; color: #fff; }
+
+/* ───────────────────────────────────────────────────────── 4 · LAYOUT CORE */
+
+.shell { width: min(1140px, 92vw); margin-inline: auto; }
+.shell-wide { width: min(1240px, 94vw); margin-inline: auto; }
+
+.section { padding: 5.5rem 0; position: relative; }
+.section + .section { padding-top: 0; }
+.grid { display: grid; gap: 1.4rem; }
+.grid.cards { grid-template-columns: repeat(auto-fill, minmax(305px, 1fr)); }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: center; }
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.1rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.kicker::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.65;
+}
+
+.section-title { font-size: clamp(1.9rem, 3.4vw, 2.7rem); }
+.section-lede { max-width: 62ch; color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 2.4rem; }
+.display-xl { font-size: clamp(2.7rem, 5.4vw, 4.3rem); line-height: 1.04; }
+@media (max-width: 900px) { .br-d { display: none; } }
+
+/* ─────────────────────────────────────────────────────── 5 · GLASS NAV BAR */
+
+.site-nav {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 60;
+  padding: 0.65rem 0;
+  transition: background 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+  border-bottom: 1px solid transparent;
+}
+.site-nav.scrolled {
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(14px) saturate(1.25);
+  backdrop-filter: blur(14px) saturate(1.25);
+  border-bottom-color: var(--line);
+  box-shadow: 0 8px 30px -18px rgba(31, 29, 25, 0.28);
+}
+.site-nav .bar { display: flex; align-items: center; gap: 1.6rem; }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.08rem;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.05rem;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-ink) 100%);
+  box-shadow: 0 6px 16px -6px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.nav-links { display: flex; align-items: center; gap: 1.5rem; margin-left: auto; }
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s var(--ease);
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-links a[aria-current="page"] { color: var(--accent); }
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+}
+
+/* ──────────────────────────────────────────────────────── 6 · BUTTONS · CHIPS */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.78rem 1.5rem;
+  border-radius: var(--r-pill);
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), background 0.2s var(--ease);
+}
+.btn-solid {
+  color: #fff;
+  background: linear-gradient(140deg, var(--accent) 0%, var(--accent-ink) 100%);
+  box-shadow: 0 10px 24px -10px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+.btn-solid:hover { transform: translateY(-1px); box-shadow: 0 14px 30px -10px var(--accent-glow); }
+.btn-ghost {
+  color: var(--accent-ink);
+  background: transparent;
+  border-color: var(--line-strong);
+}
+.btn-ghost:hover { border-color: var(--accent); background: var(--accent-soft); }
+.btn.is-disabled,
+.btn[aria-disabled="true"] { opacity: 0.55; pointer-events: none; }
+.btn-sm { padding: 0.5rem 1.05rem; font-size: 0.86rem; }
+.btn-note {
+  margin-left: 0.1rem;
+  padding-left: 0.55rem;
+  border-left: 1px solid var(--line-strong);
+  font-size: 0.76rem;
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.95rem;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line);
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.chip::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.85;
+}
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+/* ─────────────────────────────────────────────────────────── 7 · GLASS CARDS */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.7rem 1.7rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(12px) saturate(1.15);
+  backdrop-filter: blur(12px) saturate(1.15);
+  box-shadow: var(--shadow-1);
+  transition: transform 0.28s var(--ease), box-shadow 0.28s var(--ease), border-color 0.28s var(--ease);
+}
+.card-hover:hover,
+.card-chapter:hover {
+  transform: translateY(-3px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-2);
+}
+.card-kicker {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--card-accent, var(--accent));
+  margin-bottom: 0.3rem;
+}
+.card-title { font-size: 1.22rem; margin: 0.15rem 0 0.35rem; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { color: var(--card-accent, var(--accent)); }
+.card-teaser { color: var(--ink-soft); font-size: 0.94rem; margin: 0 0 0.9rem; }
+.card-empty {
+  grid-column: 1 / -1;
+  align-items: flex-start;
+  border-style: dashed;
+  border-color: var(--line-strong);
+  background: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.card-empty code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.05em 0.4em;
+}
+
+.material-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  margin-bottom: 0.8rem;
+}
+.material-icon svg { width: 22px; height: 22px; }
+
+/* Chapter cards — materials.html dashboard */
+.card-chapter { --card-accent: var(--accent); }
+.chapter-num {
+  position: absolute;
+  top: 1.05rem;
+  right: 1.45rem;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 3.4rem;
+  font-weight: 600;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.4px var(--card-accent);
+  opacity: 0.4;
+  user-select: none;
+}
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+}
+.card-meta li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.card-meta li::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--card-accent);
+  opacity: 0.7;
+}
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.filter-row { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 1.6rem 0 2.2rem; }
+.filter-chip { cursor: pointer; transition: all 0.2s var(--ease); opacity: 0.72; }
+.filter-chip.is-active {
+  opacity: 1;
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.filter-chip.is-active::before { background: rgba(255, 255, 255, 0.9); }
+
+/* ─────────────────────────────────────────────────────────────── 8 · HERO */
+
+.hero {
+  position: relative;
+  padding: 9.5rem 0 5.5rem;
+  overflow: hidden;
+  background:
+    radial-gradient(1100px 480px at 84% -12%, var(--accent-soft) 0%, transparent 62%),
+    radial-gradient(900px 420px at -14% 112%, var(--warm) 0%, transparent 55%);
+}
+.hero .grid.two { gap: 3.5rem; }
+.hero-lede {
+  font-size: 1.13rem;
+  color: var(--ink-soft);
+  max-width: 54ch;
+  margin: 1.2rem 0 2rem;
+}
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 2.2rem; }
+
+.portrait { position: relative; margin: 0; }
+.portrait-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: linear-gradient(165deg, var(--accent-soft) 0%, var(--bg-deep) 100%);
+  box-shadow: var(--shadow-2);
+}
+.portrait-mono {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 14vw, 10rem);
+  font-weight: 600;
+  color: var(--accent);
+  opacity: 0.28;
+}
+.portrait-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portrait-chip {
+  position: absolute;
+  z-index: 2;
+  font-size: 0.78rem;
+  padding: 0.45rem 0.9rem;
+  box-shadow: var(--shadow-1);
+}
+.portrait-chip.c1 { top: 8%; left: -7%; }
+.portrait-chip.c2 { bottom: 20%; right: -6%; }
+.portrait-chip.c3 { bottom: -4%; left: 10%; }
+@media (max-width: 760px) {
+  .portrait-chip.c1 { left: 4%; }
+  .portrait-chip.c2 { right: 4%; }
+}
+
+/* ────────────────────────────────────────────────────── 9 · STATEMENT · METHOD */
+
+.pull-quote {
+  margin: 1rem 0 0;
+  padding: 0 0 0 1.6rem;
+  border-left: 2px solid var(--accent);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+  line-height: 1.35;
+  color: var(--accent-ink);
+}
+.prose-copy p { color: var(--ink-soft); margin: 0 0 1.05rem; max-width: 62ch; }
+
+.steps { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.step-num {
+  font-family: var(--font-display);
+  font-size: 2.9rem;
+  font-weight: 600;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.4px var(--accent);
+  opacity: 0.45;
+  margin-bottom: 0.7rem;
+}
+.steps .card p { color: var(--ink-soft); font-size: 0.93rem; margin: 0; }
+
+/* ───────────────────────────────────────── 10 · CALLOUTS — the .tip-box system */
+
+.tip-box {
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 1.05rem 1.3rem 1.05rem 1.4rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--r-md);
+  background: var(--accent-soft);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.tip-box p, .tip-box ul { margin: 0.2rem 0 0; font-size: 0.96rem; color: var(--ink-soft); }
+.tip-box .tip-title,
+.tip-box > p:first-child strong:first-child {
+  font-weight: 600;
+  color: var(--accent-ink);
+}
+.tip-box[data-tone="note"]  { border-left-color: #b98a4b; background: #faf4e8; }
+.tip-box[data-tone="warn"]  { border-left-color: #a8503f; background: #f9ecea; }
+.tip-box[data-tone="ok"]    { border-left-color: #3e7c74; background: #ecf4f1; }
+
+/* ─────────────────────────────────────────────── 11 · DOC PAGES (materials/*) */
+
+.doc-page body { background: var(--bg); }
+.doc-crumbs {
+  width: min(880px, 92vw);
+  margin: 6.5rem auto 1.2rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+}
+.doc-crumbs a { color: var(--accent); text-decoration: none; }
+.doc-crumbs a:hover { text-decoration: underline; }
+
+.doc-frame {
+  width: min(880px, 92vw);
+  margin: 0 auto 4.5rem;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: var(--shadow-2);
+  overflow: hidden;
+}
+
+.doc-cover {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 3.2rem 2.5rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--accent-soft);
+}
+.doc-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+/* one quiet motif per chapter design language */
+[data-theme="slate"] .doc-cover::after { background-image: radial-gradient(circle at 88% 30%, var(--accent-glow) 0 2px, transparent 2.6px); background-size: 22px 22px; }
+[data-theme="ink"]   .doc-cover::after { background-image: repeating-linear-gradient(135deg, var(--accent-glow) 0 1px, transparent 1px 16px); }
+[data-theme="clay"]  .doc-cover::after { background-image: radial-gradient(circle farthest-side at 50% 128%, transparent 68%, var(--accent-glow) 68.6% 69.4%, transparent 70%); background-size: 300px 130px; background-position: bottom; }
+[data-theme="sage"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="plum"]  .doc-cover::after { background-image: radial-gradient(420px 260px at 92% 100%, var(--accent-glow) 0%, transparent 70%); }
+[data-theme="mist"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 30px); }
+[data-theme="ember"] .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 13px), repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 13px); }
+[data-theme="moss"]  .doc-cover::after { background-image: radial-gradient(circle at 12% 110%, var(--accent-glow) 0 56%, transparent 57%); background-size: 190px 190px; }
+
+.doc-kicker {
+  margin: 0 0 0.9rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.doc-title { font-size: clamp(2rem, 4.2vw, 2.9rem); margin-bottom: 0.35em; }
+.doc-subtitle { margin: 0 0 1.4rem; max-width: 58ch; color: var(--ink-soft); font-size: 1.02rem; }
+.doc-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.2rem;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+}
+
+.doc-body { padding: 2.6rem 3.2rem 3.4rem; }
+@media (max-width: 640px) {
+  .doc-cover, .doc-body { padding-inline: 1.4rem; }
+}
+
+/* ──────────────────────────────────────────────── 12 · PROSE (lesson content) */
+
+.prose { font-size: 1.02rem; color: #34322e; }
+.prose > * + * { margin-top: 0.9em; }
+.prose h2 { font-size: 1.55rem; margin-top: 2.2em; padding-bottom: 0.35rem; border-bottom: 1px solid var(--line); }
+.prose h3 { font-size: 1.22rem; margin-top: 1.9em; }
+.prose h4 { font-size: 1.05rem; margin-top: 1.6em; }
+.prose blockquote { margin: 1.4rem 0; padding: 1rem 1.3rem 1rem 1.4rem; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--r-md); background: var(--accent-soft); color: var(--ink-soft); break-inside: avoid; page-break-inside: avoid; }
+.prose blockquote p { margin: 0.2rem 0 0; }
+.prose blockquote p:first-child { margin-top: 0; font-weight: 500; color: var(--accent-ink); }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.6rem 0; font-size: 0.93rem; break-inside: avoid; page-break-inside: avoid; }
+.prose th { background: var(--accent-soft); color: var(--accent-ink); font-weight: 600; text-align: left; }
+.prose th, .prose td { border: 1px solid var(--line-strong); padding: 0.55rem 0.8rem; }
+.prose tbody tr:nth-child(even) td { background: rgba(74, 107, 130, 0.045); }
+.prose ul, .prose ol { padding-left: 1.4rem; }
+.prose li { margin: 0.35rem 0; }
+.prose li::marker { color: var(--accent); }
+.prose strong { color: var(--ink); font-weight: 600; }
+.prose code { font-family: var(--font-mono); font-size: 0.88em; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 6px; padding: 0.08em 0.42em; }
+.prose hr { border: 0; border-top: 1px dashed var(--line-strong); margin: 2.2rem auto; width: 55%; }
+.prose figure { margin: 1.6rem 0; break-inside: avoid; page-break-inside: avoid; }
+
+/* ────────────────────────────────────────────────────────────── 13 · FOOTER */
+
+.site-footer {
+  padding: 3rem 0 3.6rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+}
+.site-footer .bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-footer a { color: var(--ink-soft); text-decoration: none; }
+.site-footer a:hover { color: var(--accent); }
+
+/* ────────────────────────────────────────────────── 14 · MOTION & RESPONSIVE */
+
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (max-width: 760px) {
+  .section { padding: 3.6rem 0; }
+  .hero { padding-top: 7.5rem; }
+  .doc-meta { gap: 0.3rem 0.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ═══════════════════════════════════════════════ 15 · PRINT — A4 CHOREOGRAPHY
+   Hard pagination contract: no orphan headings, no splintered callouts,
+   no split table rows. Chromium prints exactly what these rules promise.     */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 14mm 18mm 14mm;
+  }
+
+  html, body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .site-nav, .site-footer, .no-print, .skip-link,
+  .hero-cta, .chip-row, .filter-row, .card-actions,
+  .portrait-chip, .grain, .doc-crumbs {
+    display: none !important;
+  }
+
+  .hero, .section { padding: 0 !important; min-height: 0 !important; background: none !important; }
+  .shell, .shell-wide { width: 100% !important; max-width: none !important; }
+  main { padding-top: 0 !important; margin: 0 !important; }
+
+  /* — content-keep = never leave a single widow line — */
+  p, li { orphans: 3; widows: 3; }
+
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .tip-box, blockquote, table, tr, img, figure,
+  .doc-cover, .doc-frame, .card, .prose figure {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  thead { display: table-header-group; }  /* column headers repeat on every page */
+  tfoot { display: table-footer-group; }
+
+  a { color: inherit; text-decoration: none; }
+  a[href^="http"]::after {
+    content: " (" attr(href) ") ";
+    font-size: 0.82em;
+    color: #77777a;
+  }
+
+  /* Chapter pages unwrap from their web chrome and print edge-to-edge calm */
+  .doc-frame {
+    box-shadow: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    background: #fff !important;
+  }
+  .doc-cover { border-radius: 0; margin-bottom: 1.4rem; }
+  .doc-body { padding: 0 !important; }
+  .prose table { font-size: 0.88rem; }
+  .prose tbody tr:nth-child(even) td { background: rgba(74, 107, 130, 0.06); }
+
+  .card, .steps .card { box-shadow: none; border-color: var(--line-strong); }
+  .page-break, .break-before {
+    break-before: page;
+    page-break-before: always;
+  }
+}
+</style>
+</head>
+<body class="doc-page">
+<a class="skip-link" href="#doc-main">Skip to content</a>
+<main id="doc-main">
+  <div class="doc-crumbs no-print">
+    <a href="../index.html">&larr; Portfolio</a><span aria-hidden="true">/</span>
+    <a href="../materials.html">Learning library</a>
+  </div>
+  <article class="doc-frame chapter-doc" data-chapter="choose-the-correct-word-500-questions" data-theme="moss">
+    <header class="doc-cover">
+      <p class="doc-kicker">Zoya&#39;s English — Study Module</p>
+      <h1 class="doc-title">Choose the Correct Word – 500 Questions</h1>
+      <p class="doc-subtitle">Rebuilt from the original source — interactive web edition plus print-ready A4.</p>
+      <div class="doc-meta">
+        <span>Source: Choose the Correct Word – 500 Questions.pdf</span>
+        
+        <span>5738 words</span>
+        <span>~32 min read</span>
+      </div>
+    </header>
+    <div class="doc-body prose">
+<!-- page 1 -->
+
+<ol>
+<li>She decided to ___ the offer.</li>
+</ol>
+<h2 id="accept-except">Accept / Except</h2>
+<ol start="2">
+<li>Everyone was present in the meeting ___ him.</li>
+</ol>
+<h2 id="accept-except_1">Accept / Except</h2>
+<ol start="3">
+<li>Iwill ___ full responsibility for the mistake.</li>
+</ol>
+<h2 id="accept-except_2">Accept / Except</h2>
+<ol start="4">
+<li>He works hard ___ expecting any reward. :</li>
+</ol>
+<p>without / with oat 5. Please __ my apology for the delay.</p>
+<h2 id="accept-except-ans-accept">Accept / Except Ans. Accept</h2>
+<ol start="6">
+<li>She is good at maths ___ science.</li>
+</ol>
+<p>Accept / Except Ans. except 7. The rules are no one.</p>
+<h2 id="accept-except_3">Accept / Except</h2>
+<ol start="8">
+<li>He couldn’t ____ the invitation.</li>
+</ol>
+<h2 id="accept-except_4">Accept / Except</h2>
+<ol start="9">
+<li>This book is interesting ____ boring.</li>
+</ol>
+<h2 id="accept-except_5">Accept / Except</h2>
+<ol start="10">
+<li>I have accepted your ___.</li>
+</ol>
+<h2 id="accept-except_6">Accept / Except</h2>
+<ol start="11">
+<li>Lack of sleep can ____ your mood. Affect / Effect 12. The new policy will have a positive ___ on students.</li>
+</ol>
+<h2 id="affect-effect">Affect / Effect</h2>
+<ol start="13">
+<li>Heavy rain will ___ traffic in the city.</li>
+</ol>
+<h2 id="affect-effect_1">Affect / Effect</h2>
+<ol start="14">
+<li>The ___ of the medicine was immediate.</li>
+</ol>
+<h2 id="affect-effect_2">Affect / Effect</h2>
+<ol start="15">
+<li>Too much sugar can ____ your health.</li>
+</ol>
+<h2 id="affect-effect_3">Affect / Effect</h2>
+<ol start="16">
+<li>His words had a deep ____ on everyone.</li>
+</ol>
+<h2 id="affect-effect_4">Affect / Effect</h2>
+<ol start="17">
+<li>My teacher gave me good __. :</li>
+</ol>
+<h2 id="advice-advise">Advice / Advise</h2>
+<ol start="18">
+<li>I need your ___ on this decision. ;</li>
+</ol>
+<h2 id="advice-advise_1">Advice / Advise</h2>
+<ol start="19">
+<li>Please ___ your younger brother to study regularly. Advice / Advise Ans, advice 20. He always ____ us to tell the truth. :</li>
+</ol>
+<h2 id="advice-advise_2">Advice / Advise</h2>
+<ol start="21">
+<li>The school __ addressed the students. (Ans. principal |</li>
+</ol>
+<p>Principal / Principle #: principal 22. Honesty is an important ____ in life. "Ans. principle |</p>
+<p>Principal / Principle Ans. principle 23. The ___ reason for the delay is unknown. A a</p>
+<p>Principal / Principle ns. principal ! 24. Always follow your moral ___. PS saaeal</p>
+<p>Principal / Principle s PEnepe 25. I bought some office __.</p>
+<h2 id="stationary-stationery">Stationary / Stationery</h2>
+<p>Ans. stationery</p>
+<!-- page 2 -->
+
+<ol start="26">
+<li>Keep your books and bag in the correct place; don’t leave them __.</li>
+</ol>
+<p>Stationary / Stationery Ans. stationery 27. She has a beautiful collection of ____ items. Stationary / Stationery Ans. stationery</p>
+<ol start="28">
+<li>He received a lovely ____ on his dress.</li>
+</ol>
+<p>Compliment / Complement Ans. compliment</p>
+<ol start="29">
+<li>His skills and knowledge ___ each other perfectly. Compliment / Complement</li>
+</ol>
+<p>Ans. complement</p>
+<ol start="30">
+<li>Don’t ___ your temper over small things.</li>
+</ol>
+<p>Lose / Loose Ans. lose 31. The rope is too ___ to tie tightly. —</p>
+<p>Lowe 1 teaee | Aan Teowe | 32. Please keep ___ in the library. —-</p>
+<p>Quite / Quiet Ans. quiet 33. He is a ___ smart boy. —————+</p>
+<h2 id="gee-quet-ede">Gee Quet Ede</h2>
+<ol start="34">
+<li>She stood ___ me in the queue. ee</li>
+</ol>
+<p>Beside / Besides Ans. beside 35. Besides being intelligent, he is also kind. -</p>
+<p>Beside / Besides Ans. besides 36. We will meet you ____ today.</p>
+<p>Later / Latter Ans. later 37. The ___ part of the letter is more important.</p>
+<p>faiee 7 Later Ans. latter 38. He is very ___ to his parents. :</p>
+<p>Obedient / Obedience Ans. obedient 39. Children should learn ___ from their mistakes.</p>
+<p>Obedient / Obedience Ans. obedience</p>
+<ol start="40">
+<li>We had a sincere ____ for the delay. Apology / Apologise</li>
+</ol>
+<p>i</p>
+<p>Ans. apology</p>
+<ol start="41">
+<li>Please ___ for being late.</li>
+</ol>
+<p>Apology / Apologise Ans. apologise 42. The teacher has a lot of ___ towards the students. i 7 Patience / Patient 7 - 7 Ans. patience | 43. The hospital has many ___ waiting for treatment. , Patience / Patient Ans. patients 44. She made a brave ___ to speak in public. = a Decision / Decide _Ans. decision 45. Please ___ what you want carefully. Decide / Decision Ans. devide 46. I am looking forward to ____ you again. 3 Meet / Meeting _ Sue Set, = J</p>
+<ol start="47">
+<li>It was nice to ____ you after so long.</li>
+</ol>
+<p>Meet / Meeting Ans. meet</p>
+<p>i</p>
+<ol start="48">
+<li>The painting is very __. _____ Expensive / Expense { 49. He did not spare any ___ to help the poor.</li>
+</ol>
+<p>Ans. expensive</p>
+<ol start="50">
+<li>She is very ___ about her work.</li>
+</ol>
+<h2 id="serious-series">Serious / Series</h2>
+<!-- page 3 -->
+
+<ol start="51">
+<li>He is from a wealthy family; however, he is not ; Proud / Prejdlced 52. She has some opinions about other cultures. Ans. Prejudiced Proud / Prejudiced oe 53. The medicine must be taken meals. Before { Belorehand AS Oa 54. He finished his work leaving for the office. (Ans. Beforchand | Befowe / Beforchend _ Ans Beforchand 55. I will call you I reach home. As soon as / As long as ok Ae ten 56. You can stay here you follow the rules. | Ans. As long as | As soon as / As long as sil Ss 57. This is the time I have seen such beauty. : : Ans. First First / Firstly 58. , I would like to thank everyone present here. -.. = First / Firstly | Ae oe] 59. He gave a very explanation of the topic. Clear / Clearly Ans. Clear 60. He spoke so that everyone could understand. F50 pauge Clear / Clearly [ee 61. She is a hard worker and always her best. fy, We Do / Does 62. The team well together in every match. Dei, Dies Ans. Does 63. I have seen such a beautiful place. hes, BS Ever / Never ae 64. Have you been to Paris? Bree | Neco Ans. Ever 65. He is very in his manners. ; Polite / Politics Ans. Polite 66. He has no interest in 7 Polite / Politics Ans. Politics 67. She is too to tell a lie. Honest / Honestly Ans. Honest 68. Please speak so that everyone can hear you. Honest / Honestly eS eee | 69. I was surprised to see him there. F Quite 7 Ouiet Ans. Quite 70. The room was very during the lecture. F Quite / Quiet Aas Quiet 71. He is from the city; , he loves nature. Although / Though L Ans. AGA u) 72. it was raining, they went for a walk. Although / Though Ans. Though 73. The child ran as fast as he could. A —— ns. Fast Fast / Faster 74. He runs than his brother. a “7° i Ans. Faster 75. Please submit your assignment Friday.</li>
+</ol>
+<h2 id="by-before">By / Before</h2>
+<h2 id="ans-by">Ans. By</h2>
+<!-- page 4 -->
+
+<ol start="76">
+<li>We will visit you the weekend. ; By / Daag During 77. He has been learning English two years. Since / For rita 78. 1 have known her childhood. Mie Sieex Since / For 79. They have stayed here Monday. (Ans. Since | Since / For 80. This phone is cheaper that one. [Ans Than | Than / Then Ase 81. First think, speak. [Ane Thea] Than / Then sey 82. He works hard, he is successful. [Ane se] So / Because a 83. I stayed at home I was sick. [ Ans, Because | So / Because . ail 84. She couldn’t come she had to study. So / Because Ans. Because 85. Let’s go out, it is a nice day. 2 en Because / Because of = — 86. The match was cancelled heavy rain. [Aas Because of | Because / Because of a © 87. You should be careful crossing the road. : Of / While fs Wine 88. I enjoy listening to music studying. ; Of / While Aes While 89. I will call you I reach home. When / While Ans. When 90. He was singing I entered the room. r When / While ssid om) 91. Neither the teacher nor the students ready. Is / Are Ans. Are 92. Either you or your friends coming. Is / Are : 93. Each of the boys a new bag. Has / Have - 94. Everybody their own opinion. | Ans. Has | Has / Have \ sath J 95. He is older his brother. Than / Then Ans. us 96. I will explain it to you Later / [ara » os Later ws 97. The art of the journey was tiring. Later / ae J 4 8 l Ans. Latter 98. She is good at writin speaking. Than f Then . ° Ans. Than 99. It is important to save money the future. he @ For / In n ae 100. The keys are kept ___ the drawer. rays</li>
+</ol>
+<h2 id="in-inside">In / Inside</h2>
+<!-- page 5 -->
+
+<ol start="101">
+<li>Please come five minutes. — In / Within Ans. Within 102. He has been living here 2019. _ ‘ Ans. Since Since / For Ses 103. We waited here two hours. Since / For fas Eee 104. Th j ime. @ project was completed time. hae: A On / In 105. She is good drawing. At / In | ane ee 106. He is responsible his actions. For / To Ans. For 107. ing i i 7. The meeting is scheduled Monday. aun Ba On / For 108. I have a lot of respect my parents. an For / To sd 109. This book is different that one. Ye Fae | From / Than [| ee | 110. She is taller her sister. Than / Then Ans: 111. He didn’t go to the party he was ill. Because / Because of tg. Pecalons 112. The delay was bad weather. Because / Because of ace ox ora 113. Work hard you succeed. So that / In order that L Pie, 8 Sia 114. He saved money he could buy a bike. So that / In order that phd ) : 5 ———————— 115. She speaks Engligh fluently, she? Sica, GBdeillt ie doesn’t / doesn’t she = 116. You = commis to the party, you? jes, eae aren't / aren't you 117. I have never seen such a beautiful place before / earlier Ane: belore 118. We met we were in college. when / while Ae se 119. He was reading a book his friend was playing. Ane: wile when / while : 120. She is one of the most talented students our class. f Kaa: ae in / of — 121. This is a picture my childhood. tl Ben Ans. of 122. He looked everywhere his lost watch. for / after ans ead 123. After the match, we went out dinner. i Ane = for / to : 124. He has no interest politics. ine: dn in / on : 125. They were happy their success. ‘Aunai at at / on f</li>
+</ol>
+<!-- page 6 -->
+
+<ol start="126">
+<li>She put the books the shelf. 3 Ans. on on / in 127. The keys are the table. ei) dn Ans. on 128. He has a great sense humour. Foca of / for o © 129. This gift is you. ‘Sian for / to _ ee 130. We must be honest ourselves. ; Ans. with to / with 131. She is different her twin sister. Hee By from / than : eer 132. K th h. ao ee er Ans. within in / within 133. I would prefer tea coffee. Ans. over over / than 134. j iver. 34 i jumped the river ‘tua an into / in 135. He i ics. e is good mathematics. = at / for 136. He is known his honesty. ae for / to 137. She succeeded a lot of hard work. ka awe because of / due to e: See 138. He is married an engineer. to / with =&gt; 139. She is confident her abilities. A Ans. in in / on 140. Don’t depend others. aude on / upon 141. He took the pen his pocket. from / out of Ans. from 142. The students were punished the teacher. by / from se 143. He is better his brother. than / then { Ans. then 144. The game will start 5 pm. at / on fay a 145. Please switch the light. off / out Ans. off 146. He was absent the meeting. Bare * GE i Ans. from 147. They walked the road. along / through Ass: along 148. The cat jumped the wall. x aust I. across rm 7 ns. over 149. He has lots of experience teaching. Waa: te 7 in / on Sr 150. She is afraid dogs. Cae eee : a Ans. of |</li>
+</ol>
+<!-- page 7 -->
+
+<ol start="151">
+<li>You should be grateful what you have. = for / to 152. He has a right freedom of speech. Ans. to to / for 153. We are heading the airport. Ae to / towards 154. She was accused stealing. Ans. of || of / for l Ans. of 155. I am not interested your offer. (Ans. in| ; Ans. in in / on 156. i : 56. The news spread quickly the town “Ans, across | through / across ) 157. He is geet playing chess. a a | at / in 158. iti fs 58. The students are waiting the bus Ans. for | for / to 159. insti : 59. I rely my instincts Sew: on on / to J i " ¢ * . . . 60. She ineiated paying for the bill ae ae on / in = : 161. The road is closed repair. for / due to eg Tt 162. He apologized his mistake. (Ans. for for / to 163. The bag is made leather. a) fees Ans. of 164. They were proud their achievement. Haw. of / on | 165. The river flows the mountains. fom / through casi 166. His painting is different the others. from / than 167. Don’t judge a book its cover. Ans. by | by / on = 168. She is fond sweets. of 7. to ( ns. 0 169. He prepared well the exam. he 7 Ans. for 170. They had a discussion current affairs. on / in 2 = 171. I will meet you the evening. inf ‘at : ) 172. She has been working here 2020. since / for = 173. He is sharp mind. Wasin in / on E 174. The train arrived the station. at / in 175. She agreed my suggestion. to / with</li>
+</ol>
+<!-- page 8 -->
+
+<p>176.</p>
+<p>He is tired working all day.</p>
+<p>of / from 177. Look that beautiful painting. at / on : 178. I laughed his joke. at / on i 179. She is seated the window. —= Ans. near near / next to - 180. Te dog ran the garden. in / into - 181. He came a smile. ska sail with / by 182. We should learn our mistakes. ime ee from / by 183. He is suffering fever. ie Foden from / by 184. The story is based a true incident. na ke on / in : 185. I am sure his honesty. about / of —— 186. She is good singing. = | at / in : 187. This pen is different that one. from / than A fs Hom 188. His behavior was rude everyone. Raw to / with a 189. Don’t be jealous others. wht Bae ——&lt;—# Ans. of 190. She has a keen interest reading books. wae in / on : 191. We must be careful what we say. pay a of / about 192. He is waiting his friend. how &amp; &amp; 2 / PS ns. for 193. Thank you your help. he Ds Ans. for 194. The box is full books. a “et dS ah —* | Ans. of 195. She is an me. 3 feels a =— Ans. with 196. He succeeded hard work. by / with m8 197. The children were playing the park. ee ta) f at = a 198. I agree you. . -: im Ans. with 199. The table is made wood. rgyrs ——= Ans. of 200. He is capable doing this task. 1 si L_ Ans of |</p>
+<!-- page 9 -->
+
+<ol start="201">
+<li>I am proud you. =—s Ans. of of / for . 202. He is bad lying. Ans. at at / in = 203. She is worried her brother. — Ans. about about / for | 204. The soup is hot. Be careful it. ia of / with oh: 205. He is used waking up early. leas to / for vinta 206. She is generous spirit. =" in / of een 207. I will be free the evening. Ans. bi in / by sli 208. i A 08. The teacher spoke the importance of honesty a about / on 209. He is addicted mobile games. a . to to / for . 210. Don’t be angry small things. he cee s. at / over 211. The key is hidden the drawer. Hes, Ha in / inside : 212. She was sitting the tree. = Ans. und under / below ere _| 213. He went the room and closed the door. shove, esi s. into / in 214. I looked everywhere my lost pen. is for for / in = 215. This medicine is useful headache. ‘ice &amp; s. for for / to — “Ee * 216. He is confident his success. ead of / in — 217. We must obey the rules. to / by aia by 218. I have been waiting you for an hour. Ave Be ai for / since : 219. He died cancer. of / from a aoe ole 220. She was disappointed the result. ‘Auk: “wath, with / by (ee! 221. Keep touch with me. if rows in / on 222. He is diffe t his twin. Aen i on Ans. from 223. I got these books friend. a - - heen £ le a) a Ans. from 224. wae eal cake her mother. Ans: for 225. I am not interested such topics. nas ex</li>
+</ol>
+<!-- page 10 -->
+
+<ol start="226">
+<li>He is responsible the team. hea, &amp; s. for for / of Ei ean 227. The luggage is kept the door. —_—— near / beside 228. She has a gift you. Tcie, tae for / to i 229. He is not afraid snakes. Ans. of of / from sil 230. The baby is sleeping the bed. n: Ss. 0} on / in 231. I am sorry what I said. Ans. f for / about et 232. He jumped the wall easily. he Ss. over over / above 233. We depend our parents. re — s. on 234. This story is based a true incident. de s. on on / in 235. He is excellent mathematics. a» s. in in / at 236. Don’t rely others. Teas de on / upon Ss 237. She came a taxi. Ans. b in / by ns - 238. The painting is hanging the wall. = on / at : 239. He is busy work. A. like in / with : ) 240. Please take care yourself. of / about eee] 241. The keys are kept the drawer. hea. de in / inside a nail | 242. She is fond music. Raw oe of / in L : 7 243. They argued a silly reason. i an for / over 244. Look the blackboard and listen carefully. i at / on : 245. He was punished his mistakes. for / because of a ed 246. The meeting starts 10 o'clock. Kea, at / on 247. She is good drawing. Wee, ae at / in — 248. Th t is hidi the table. iim. peas ag x “bein _ —e —~ s 249. We should be kind ; — i mt Cc mn everyone | Ans. to 250. Thi dicine is harmful health. _ 50 z a. en cine - nis eb e: : Aue €5 ( Yr Great job! Keep Practicing! @ _—i</li>
+</ol>
+<!-- page 11 -->
+
+<p>251.</p>
+<p>The bus stopped the signal.</p>
+<p>Ans. at at / on =e J 252. He is famous his acting. for / by <em>#&amp; &amp; -</em> 253. Don’t be rude the guests. Rew 4 s. to to / with 254. She has faith God. Kew de in / on 4 255. The children are playing the ground. Se ce 7} on / in ? 256. He is suffering a cold. hie. Hines from / by l 257. She agreed my proposal. - to / with Le 258. The train passed a tunnel. if bie Pry through / over { - 259. He is not good singing. Kaw. ok at / in L_ i J 260. She has experience teaching. Pa in / on Ea 261. We live a small village. ( ‘eae Se in / on Suse i re (= 262. He is waiting his results. for / of Plame Be 263. The cat jumped the chair. ( =r on / over : 264. She spoke confidence. ia ie ck || with / in (a Fe eee Ly 265. I looked the window. li “Al Ans. out of out of / through eee 266. He is interested history. [eee ‘| in / on { i —— 267. The book fell the table. f w ; off / from = i. = 268. This shirt is made cotton. i Ans (ak of / from (ew a 269. She came the station. Scene to / at } 270. He depends his hard work. dea. Gey on / upon ( : 271. The news shocked everyone. ews: te | to / into L 3 272. I donated money charity. Ke. &amp; to / for L Z 273. The keys are hung the wall. has. we on / at al L z 274. He is good cricket. j rm ro 2 eh tn : : 275. She is stronger her sister. en than / from ——~ —— z J</p>
+<p>(We Keep Penang, Keep Iupering) @</p>
+<!-- page 12 -->
+
+<p>276.</p>
+<p>They are famous their kindness.</p>
+<p>Ans. fi gh 277. The bag is placed the table. Ke an, on / in : 278. He ran catch the bus. er Ss. to / in 279. Do not interfere my matters. fess es in / with : 280. The mobile is charged electricity. dean by / on as 281. She is comfortable public speaking. [ as in / on 282. He climbed the ladder. Pa ns. up / over r 283. The flight will take off 6 PM. digte ab at / on : 284. She was accused cheating. Pr of / for : 285. The teacher praised me my hard work. Aves. haw for / on ilk 286. We should learn our past mistakes. ane Hom from / by a ee eS 287. The bird flew the cage. Roe iba out of / from L 288. He is suffering stomach pain. ity ies from / by 2 289. She looked the stars and smiled. — dine ek ; at / in “= = 290. The car stopped the red light. he, as at / on ; 291. Please wait me. r = Ge | for / to pe 292. He has a talent painting. Awe, Baw in / for . 293. The cupboard is full clothes. how of / with 294. He was not present the meeting. f ar ) in / at se i 295. I agree you on this point. dee. sev ) with / to : = 296. The letter is addressed my friend. Ana fo 7. a J 297. She is proud her achievements. of / for i 298. He hid the money the box. Bes: dn in / under “a a_i Nee __| 299. The cake was baked my mother. n= by / for ol ik 300. We reached home midnight. Ais! at at / on L a</p>
+<p>LP Excellent Work! Keep Practicing and You'll Master It! @ __</p>
+<!-- page 13 -->
+
+<ol start="301">
+<li>The book is written a famous author. Run t by / fom —o 302. She is sufferi high fever. e is suffering a high fever. jens. Snes from / by eee 303. The keys were lost the party. ads at / in il 04. He is kn his h A 304. He is known is honesty. hap, Ge for / by 305. The river flows the mountains. ae at Ans. from / through tee eg | 306. We are looking forward your reply. he to / for stl 307. He i ibl th ject. is responsible e proje ps for / of 308. The cat is hiding the sofa. . behind / under isl e 309. She was born July. Bs in / on it Hi y 310. I am not good swimming. 7 at / in oe. = J 11. He is absent hool today. 3 eis al nen school today. nw. Been from / in . The f i Kk a 312 e sia is cooked gas Mecca on / with 13. Th iti hi . . fs 313. e students are waiting the bus Wes Raa for / to a —_ 314. He died old age. r 7 pe f / Kaen Ans. of 315. The phone is kept the table. pa on cA at ——= | 316. The letter is written blue ink. Pa in / with iw 317. He is good mathematics. at / in Ans. at 318. The meeting will be held Monday. on | Z in Ans. on 319. The cake is decorated cream. —— P with 7 tae | sae web | 320. She is afraid dogs. i of / from ne: BE 321. The ball rolled ______si thee: road. Qe ma | on / onto Lae oe | 322. I am tired working all day. 7 ____of / from a! 323. He was punished his mistake. _— .. for / because of aon Ss 324. The baby is crying hunger. iene A ae =&gt; 7 Ans. from 325. The shop is located the corner. New ow CS os. Ie ee ne a fe</li>
+</ol>
+<!-- page 14 -->
+
+<ol start="326">
+<li>The train arrived the station.</li>
+</ol>
+<p>is Jd Ans. at 327. She looked me with kindness. = +h de Ans. at a — 328. The dog is sitting the door. ha by / near L s. near 329. He is famous his paintings. he Ta for / by i 330. They traveled a long distance. ) be IF Be Ans. for | 331. She has control her emotions. hes | over Fae |_Ans. over 332. The keys are lying the table. a “ Ans. on : ons i ip g J 333. He is not married = he . yet - yet / already ail 334. The baby is fond chocolates. wes of / in at 335. The news spread the city quickly. 4 ps ) across / through i lid iil 336. She was successful the interview. Bes P in / at aed 337. The decision depends you. t i aa 7 upon | ns. on 338. He apologized his mistake. ic . ded i | Ans. for 339. This book is different that one. { hewn J te Ans. from 340. id re a sweet voice. Asia, &lt;étihi wm wi J 341. The medicine is effective pain. 7s Ans. for 342. = oi the ground. bu we 343. They argued politics. ; about zi _ over | abet 344. es b —~ heights. Kone. BE 345. Please write neat handwriting. Py = in / with = me: sai J 346. She is busy her project. 2 _ with / on : Ans. with 347. The food is served time. ga At — i _ Ans. on 348. He is jealous his friend. oh ? bows - Ans. of 349. we is based true events. ae. Wexs 350. The bridge connects the two banks the river. re ns. over</p>
+<p>of / over rc</p>
+<!-- page 15 -->
+
+<ol start="351">
+<li>The coins are hidden the drawer.</li>
+</ol>
+<p>Ans. in in / inside _ 352. She suffered a serious illness. (a a</p>
+<p>Ans. from from / by ana 353. The plane flew the clouds. = P Ans. above above / over 354. He lives his uncle. Ans. with with / near =&lt; 355. The students cheered their teacher. f 7 Ans. for for / to co 356. Please don’t laugh me. i s Ans. at at / on 357. He is very good solving puzzles. zz - Ans. at at / in = 358. The crowd shouted joy- a Ans. in of / in 359. The garden is full beautiful flowers. a, Ans. of of / with — 360. The letter is meant ‘ou. 7 i Ans. for for / to LL _ = 361. She leaned the wall. 4 4) against / on ial 362. The shop is open 9 AM to 9 PM. In —— Ans. from from / between : = J 363. He escaped the prison. f ia Ans. fro: from / out of 4 = 364. The news was announced the radio. Ans. on on / by L = 365. He is addicted mobile games. Ans. to _ ee f. had ~—- 366. The teacher wrote the board. J Ans. on on / in il 367. The door is made wood. of / from Bat: a =i 368. She is different her sister. r r 9 from / than me Lee 369. He is always late school. &gt; for / to a i 370. The child is playing the park. Be in in / at <em>—</em> 371. The road is blocked traffic. if hea a ___by / with es cok 372. She has faith herself. Ree. kK a fee 373. The painting was sold a high price. Been at at / for a 374. The medicine should be taken time. if Ans. on on / in B=! 375. He is the tallest the three brothers. -</p>
+<p>of / among,</p>
+<p>{ &amp; Well Done! You're Doing Amazing! @ |</p>
+<!-- page 16 -->
+
+<ol start="376">
+<li>
+<p>The river is wider this place. . Ans. at at / in ———</p>
+</li>
+<li>
+<p>Sh ished her mistake. -</p>
+</li>
+</ol>
+<p>3 e was punishe: er mistake ie, Gee</p>
+<p>for / because of =</p>
+<ol start="378">
+<li>The jacket is made leather. is ; 7</li>
+</ol>
+<p>of / from ae</p>
+<ol start="79">
+<li>He i d drawing.</li>
+</ol>
+<p>3 e is goo rawing Se we _ sm on itee 80. The baby slept ;</p>
+<p>3 e baby slep noon —" —¢ =</p>
+<ol start="381">
+<li>The dog ran the road.</li>
+</ol>
+<p>Ans. across _ 92 ff amos : 382. He is weak health. [ ; Ans. in in / on a . The bi fl h 4 383 e birds flew the trees Roles alec from / among L =—-=— . She i 1 . i</p>
+<ol start="384">
+<li>She is related my uncle pan</li>
+</ol>
+<p>to / with</p>
+<ol start="385">
+<li>He works a bank. f rs</li>
+</ol>
+<p>_— Ans. in in { at 7 —- =</p>
+<ol start="386">
+<li>The notebook is placed the bag. -</li>
+</ol>
+<p>Ans. in in / inside Poinal ie a 387. The water is frozen cold. heen, be by / with — . H i . =</p>
+<ol start="388">
+<li>He came running help me ‘Kine, %</li>
+</ol>
+<p>to / in iy</p>
+<ol start="389">
+<li>She is waiting her friend. ic. eee</li>
+</ol>
+<h2 id="at-a-a">At a A</h2>
+<ol start="390">
+<li>The game was played fairness.</li>
+</ol>
+<p>Ans. in with / in ‘ i —_ 391. He is blind one eye. kexts |</p>
+<p>in at of ‘ j = =e</p>
+<ol start="392">
+<li>We discussed the topic. ace: alee</li>
+</ol>
+<p>about / on</p>
+<ol start="393">
+<li>The book is different the movie. Ke, Cass</li>
+</ol>
+<p>from / to_</p>
+<ol start="394">
+<li>She succeeded her hard work. im</li>
+</ol>
+<p>ay / Ye th al = = _* i. Ans. by 395. The cat jumped the window. ]</p>
+<p>Ans. out of out of / from { J</p>
+<ol start="396">
+<li>
+<p>He is capable doing this work. Ade. SE of / in</p>
+</li>
+<li>
+<p>The train departed time. Ais. oH on / at</p>
+</li>
+<li>
+<p>The food is rich vitamins. r z</p>
+</li>
+</ol>
+<p>Ans. in</p>
+<p>in / of _</p>
+<ol start="399">
+<li>He is similar his father. Aga ‘te</li>
+</ol>
+<p>__ to / with _ 400. The painting was hung the wall. Asses Ge</p>
+<p>on / at w&amp; You're Almost There! Keep Going! Q =</p>
+<!-- page 17 -->
+
+<ol start="401">
+<li>The students are working ___<em>a</em> project. on / at 402. He looked _____ his watch. __ 8 ¢ 2 ___. 403. The money is kept ____ the box in / on 404. We decided ___ go for a walk. to / on 405. The baby is playing ___ the floor. on / in 406. She is expert ____ painting. in / at 407. The pen is made _____ plastic. of / from 408. They are proud _____ their country. of / in 409<em> The meeting will start __——s: 10 AM. at / on 410. He has a good sense ____ humor. of / in 411. Th</em> keys are hanging __<em> the_ hook. ; on / in 412. The children are waiting ____ the bus. for / to ee o- 4 413. He was born ______ the year 2000. : in / on 414. The book is full ____ interesting facts. of / in 415. Please hand this letter ss me. a to / for F 416. T</em>e player is famous _____ his skills. for / with | La 417. She agreed ___ my suggestion. __<em>with / to 418. The food is served ____ a plate. ___ ia # on Lo 419. He is talking ____ his teacher. to / with = == 420. The phone is ringing ___ the table. on / in 421. The sweater is made _____ wool. of / from EEE 422. We are going ____ the</em> market. to / in 423. The bird is sitting _____ the branch. &gt; on / in = ———— = 424. He apologized ___ being late. for / to 425. The road leads the village. to / in .</li>
+</ol>
+<p>| wy Great Job! Keep Practicing and Keep Improving! @</p>
+<!-- page 18 -->
+
+<ol start="426">
+<li>The clothes are washed cold water. in / with 427. The key is kept the lock. on fe in a 428. The movie is based a true story. on vii in - 429. She is fond reading books. of / in 430. The suitcase is placed the bed. on / beside - 7 431. He thanked me my help. for / to 432. The children laughed the joke. at / for 433. The picture was drawn a pencil. with / by 434. He is interested music. =o 7 a : 435. They arrived the airport. at - in 436. The package is addressed me. ofS __™ 437. The thief ran away the police. from / to 4 4 ee 438. She hid the letter the drawer. in / on 7 ___ fe, _ 439. The result depends hard work. ; on / upon 440. He is better his brother. than / from 441. The information is available the website. on / in = - 7 442. The cat is sitting the chair. on / in 443. She has a gift her friend. _ for / to L _ 444. The bell rang the class. in / during 445. He fell asleep the movie. during / while 446. The child is scared the dark. of / in 447. We went shopping ____ Saturday. on / in 448. The work must be finished time. on / by 449. The bread is made wheat. of / from 450. He is suffering fever.</li>
+</ol>
+<p>from / _ by</p>
+<ul>
+<li>on Ans. of Ans. on Ans. for</li>
+</ul>
+<p>Ans. at</p>
+<p>Ans. with</p>
+<p>| Ans.</p>
+<p>on Ans. on</p>
+<p>Ans. for</p>
+<p>Ans. during Ans. during</p>
+<p>Ans. of</p>
+<p>Ans.</p>
+<p>on Ans. by</p>
+<p>Ans. from</p>
+<p>| Ans. from</p>
+<p>| @ Excellent Work! You're Making Amazing Progress! @ 1</p>
+<!-- page 19 -->
+
+<ol start="451">
+<li>
+<p>The cake is decorated ____ chocolate. with / in</p>
+</li>
+<li>
+<p>The train is crowded ____ passengers. with / by</p>
+</li>
+<li>
+<p>He succeeded __ his efforts.</p>
+</li>
+</ol>
+<p>__ Ff a</p>
+<ol start="454">
+<li>
+<p>The girl is afraid ___— dogs. of / from</p>
+</li>
+<li>
+<p>The story is written _____ a famous author.</p>
+</li>
+</ol>
+<p>; by / by</p>
+<ol start="456">
+<li>
+<p>The bag is made ____ leather. of / from</p>
+</li>
+<li>
+<p>Please be careful ____ the _ road. on / of</p>
+</li>
+<li>
+<p>The boy jumped ______ the_ pool. into / in</p>
+</li>
+<li>
+<p>The feedback depends ____ your _ honesty. on / with</p>
+</li>
+<li>
+<p>The team worked ______ a common goal. towards / on</p>
+</li>
+<li>
+<p>The flowers were arranged ____ a. vase. in / on</p>
+</li>
+<li>
+<p>He is good ____ mathematics. at / in</p>
+</li>
+<li>
+<p>She is fond ______ listening to music. of / in</p>
+</li>
+<li>
+<p>The answer is different ____ yours. from / to</p>
+</li>
+<li>
+<p>The patient is suffering ____ a cold. from / with</p>
+</li>
+<li>
+<p>The keys are hidden ____ the_ book. inside / in</p>
+</li>
+<li>
+<p>The book is full ____ pictures. of 7 gh</p>
+</li>
+<li>
+<p>The ‘ache is talking eo discipline. about / on</p>
+</li>
+<li>
+<p>He is waiting his turn. for / to</p>
+</li>
+<li>
+<p>She is responsible _____ this. work. for / to</p>
+</li>
+<li>
+<p>The bus stops the station. at / on</p>
+</li>
+<li>
+<p>The thief was caught _____ the police. by / with</p>
+</li>
+<li>
+<p>The water is safe ______— drinking. for / to</p>
+</li>
+<li>
+<p>The road is made ____ concrete. of / from</p>
+</li>
+<li>
+<p>The decision was based _____ facts.</p>
+</li>
+</ol>
+<p>on / in</p>
+<p>iy Keep Practicing, You’re Doing Great! @ |</p>
+<p>Ans.</p>
+<p>Ans.</p>
+<p>Ans.</p>
+<p>for</p>
+<p>of</p>
+<p>on</p>
+<!-- page 20 -->
+
+<ol start="476">
+<li>The meeting is scheduled Monday. Ans. on on / for = 477. She is different other girls. Ans. from from / than 478. The car is parked the garage. Ans. in in / at a J 479. The teacher is proud her students. Ans. of of / for 480. He is an his mistake. ey Ans. at at / for 481. The notes were taken the lecture. , Ans. during during / on 482. The child is capable great things. Ans. of ___ of / for — — 483. The government is responsible law and order. ( Ans. for 7 for / to 484. He is good playing chess. ir Ans. at at / in = 485. The birds are flying the sky. Ans. across - in / across L 486. The letter arrived time. BZ ) Ans. on 7 on / in Fp 87. Th i d tables. 5 1 487 e soup is made vegetables. aie. Bex : of / from . She looked th fully. i 488 e looke e map carefully ‘eo a 7 at / in = J 489. The new policy depends public support. ) Ans. on ef = 490. He congratulated me my success. F] Ans. on 7 on / for . The h is cl i i - - 491 e hotel is close the airport dude. an : to / from l 492. The building is made stone dea. ofl - of / from _ 493. The music started a sudden. Rae cists I all of a / on / in | = 494. She is famous her acting. Ase. Be for / by is 495. The seat is reserved me. | Ans. for ___fer / to { i 496. The project was completed time. | Wed ot : on / in 7 — 497. The box is filled old letters. hited ee 4 with / in L — 498. He is talking his best friend. | Awe. aids ___to / with A499. She thanked him his help. Kees Boe <em>for /</em> on ies a 500. The child fell asleep the story. | . during / wt Ans os sd</li>
+</ol>
+<p>| i</p>
+<p>Fantastic Work! You're Almost a Pro! Keep Going! ai .</p>
+    </div>
+  </article>
+  <script type="application/json" id="doc-meta">{"slug": "choose-the-correct-word-500-questions", "number": null, "theme": "moss", "engine": "cached markdown", "source": "Choose the Correct Word \u2013 500 Questions.pdf", "pages": 0, "words": 5738, "sections": 23, "tables": 0, "reading_min": 32, "date": "2026-10-21", "teaser": "Principal / Principle #: principal 22. Honesty is an important ____ in life. \"Ans. principle |"}</script>
+</main>
+</body>
+</html>
