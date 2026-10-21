@@ -1,0 +1,1515 @@
+<!doctype html>
+<html lang="en" data-theme="clay">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>500 Idioms &amp; Phrases · Zoya's English — Study Module</title>
+<meta name="description" content="500 Idioms &amp; Phrases — study module from Zoya&#39;s English learning library: speaking and confidence coaching materials.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>/* ═══════════════════════════════════════════════════════════════════════════
+   ZOYA'S ENGLISH — MASTER LAYOUT STYLESHEET
+   Design language: FORGE-inspired, light edition — warm paper ground,
+   near-black ink, electric-lime energy, sharp edges, grotesk discipline.
+   Beat structure: tokens → chapter themes → base → components → prose → print
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────── 1 · DESIGN TOKENS (single source) */
+
+:root {
+  /* Palette — light Forge: paper, ink, electric lime */
+  --bg: #fafaf7;                 /* warm paper ground                    */
+  --bg-deep: #f2f1ea;            /* deeper wash for bands                */
+  --surface: #ffffff;
+  --ink: #17181a;                /* near-black body typography           */
+  --ink-soft: #55584f;
+  --ink-faint: #8b8d82;
+  --line: #e6e4da;
+  --line-strong: #d4d2c6;
+  --lime: #b5f030;               /* electric lime — the brand spark      */
+  --lime-deep: #8fc413;          /* lime pressed onto paper hover        */
+  --accent: #34352f;             /* neutral chrome accent (links et al.) */
+  --accent-ink: #17181a;
+  --accent-soft: #f4f3ec;
+  --accent-glow: rgba(181, 240, 48, 0.35);
+  --glow: rgba(181, 240, 48, 0.45);
+  --warm: #f6f3e4;
+
+  /* Typography */
+  --font-display: "Space Grotesk", "Inter Tight", system-ui, sans-serif;
+  --font-body: "Inter Tight", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Courier New", monospace;
+
+  /* Shape & depth — Forge is sharp: nothing rounded, glow instead of shadow */
+  --r-lg: 0px;
+  --r-md: 0px;
+  --r-sm: 0px;
+  --r-pill: 999px;               /* reserved: badges only                */
+  --shadow-1: 0 1px 0 var(--line);
+  --shadow-2: 0 0 0 1px var(--line);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─────────────────────────── 2 · CHAPTER DESIGN LANGUAGES (per-theme accents)
+
+   Every compiled chapter receives its own stable accent family, applied via
+   `data-theme` on the page root, so each module feels designed — not stamped.
+   The dashboard (materials.html) mirrors these values for its cards.        */
+
+[data-theme="slate"] { --accent: #4a6b82; --accent-ink: #375266; --accent-soft: #edf2f6; --accent-glow: rgba(74, 107, 130, 0.16); }
+[data-theme="ink"]   { --accent: #46474b; --accent-ink: #33353a; --accent-soft: #f1efe9; --accent-glow: rgba(70, 71, 75, 0.14); }
+[data-theme="clay"]  { --accent: #b06a48; --accent-ink: #8f5438; --accent-soft: #f9efe7; --accent-glow: rgba(176, 106, 72, 0.15); }
+[data-theme="sage"]  { --accent: #5f7c60; --accent-ink: #49614a; --accent-soft: #eff5ef; --accent-glow: rgba(95, 124, 96, 0.15); }
+[data-theme="plum"]  { --accent: #7d5a72; --accent-ink: #64485a; --accent-soft: #f6eff4; --accent-glow: rgba(125, 90, 114, 0.15); }
+[data-theme="mist"]  { --accent: #3f7a75; --accent-ink: #2f605c; --accent-soft: #ebf4f2; --accent-glow: rgba(63, 122, 117, 0.15); }
+[data-theme="ember"] { --accent: #a8543f; --accent-ink: #8a4232; --accent-soft: #f9ece8; --accent-glow: rgba(168, 84, 63, 0.15); }
+[data-theme="moss"]  { --accent: #72783f; --accent-ink: #5a5f31; --accent-soft: #f5f6e9; --accent-glow: rgba(114, 120, 63, 0.15); }
+
+/* ────────────────────────────────────────────────────────── 3 · BASE RESET */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 0.6em;
+}
+
+::selection { background: var(--lime); color: var(--ink); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  z-index: 100;
+  background: var(--lime);
+  color: var(--ink);
+  font-weight: 500;
+  padding: 0.55rem 1.1rem;
+}
+.skip-link:focus { left: 12px; color: var(--ink); }
+
+/* ───────────────────────────────────────────────────────── 4 · LAYOUT CORE */
+
+.shell { width: min(1140px, 92vw); margin-inline: auto; }
+.shell-wide { width: min(1240px, 94vw); margin-inline: auto; }
+
+.section { padding: 5.5rem 0; position: relative; }
+.section + .section { padding-top: 0; }
+.grid { display: grid; gap: 1.4rem; }
+.grid.cards { grid-template-columns: repeat(auto-fill, minmax(305px, 1fr)); }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: center; }
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.1rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.kicker::before {
+  content: "";
+  width: 22px;
+  height: 10px;
+  background: var(--lime);
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.section-lede { max-width: 62ch; color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 2.4rem; }
+.display-xl {
+  font-size: clamp(2.9rem, 6.2vw, 5.2rem);
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* ─────────────────────────────────────────────────────── 5 · NAV BAR */
+
+.site-nav {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 60;
+  padding: 0.85rem 0;
+  background: transparent;
+  transition: background 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+  border-bottom: 1px solid transparent;
+}
+.site-nav.scrolled {
+  background: rgba(250, 250, 247, 0.95);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom-color: var(--line);
+}
+.site-nav .bar { display: flex; align-items: center; gap: 1.6rem; }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 700;
+  background: var(--lime);
+}
+
+.nav-links { display: flex; align-items: center; gap: 1.5rem; margin-left: auto; }
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s var(--ease);
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a[aria-current="page"] { color: var(--ink); border-bottom: 2px solid var(--lime); }
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+}
+
+/* ─────────────────────────────────────────────────── 6 · BUTTONS · CHIPS */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid transparent;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.25s var(--ease), background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.25s var(--ease);
+}
+.btn-solid {
+  color: var(--ink);
+  background: var(--lime);
+}
+.btn-solid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px var(--accent-glow), 0 0 60px rgba(181, 240, 48, 0.18);
+}
+.btn-ghost {
+  color: var(--ink);
+  background: transparent;
+  border-color: var(--ink);
+}
+.btn-ghost:hover {
+  border-color: var(--lime-deep);
+  background: var(--lime);
+}
+.btn.is-disabled,
+.btn[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+.btn-sm { padding: 0.5rem 1rem; font-size: 0.74rem; }
+.btn-note {
+  margin-left: 0.1rem;
+  padding-left: 0.55rem;
+  border-left: 1px solid rgba(23, 24, 26, 0.3);
+  font-size: 0.72rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.9rem;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.chip::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--lime);
+  transform: rotate(45deg);
+}
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+/* ─────────────────────────────────────────────────── 7 · SHARP CARDS */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.7rem 1.7rem 1.5rem;
+  border: 1px solid var(--line-strong);
+  border-top: 3px solid var(--ink);
+  background: var(--surface);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+.card-hover:hover,
+.card-chapter:hover {
+  transform: translateY(-4px);
+  border-color: rgba(181, 240, 48, 0.55);
+  border-top-color: var(--lime);
+  box-shadow: 0 0 30px var(--accent-glow), 0 0 64px rgba(181, 240, 48, 0.14);
+  background: var(--card-tint, var(--surface));
+}
+.card-kicker {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--card-accent, var(--accent));
+  margin-bottom: 0.3rem;
+}
+.card-title { font-family: var(--font-display); font-weight: 700; font-size: 1.18rem; letter-spacing: -0.01em; margin: 0.15rem 0 0.35rem; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { color: var(--card-accent, var(--accent)); }
+.card-teaser { color: var(--ink-soft); font-size: 0.94rem; margin: 0 0 0.9rem; }
+.card-empty {
+  grid-column: 1 / -1;
+  align-items: flex-start;
+  border-style: dashed;
+  border-color: var(--line-strong);
+  background: transparent;
+  box-shadow: none;
+}
+.card-empty code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  padding: 0.05em 0.4em;
+}
+
+.material-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  background: var(--lime);
+  margin-bottom: 0.8rem;
+}
+.material-icon svg { width: 22px; height: 22px; }
+
+/* Chapter cards — materials.html dashboard */
+.card-chapter { --card-accent: var(--accent); border-top-color: var(--card-accent, var(--ink)); }
+.chapter-num {
+  position: absolute;
+  top: 1rem;
+  right: 1.4rem;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--card-accent);
+  opacity: 0.35;
+  user-select: none;
+}
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.card-meta li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.card-meta li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  transform: rotate(45deg);
+  background: var(--lime);
+  opacity: 0.9;
+}
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.filter-row { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 1.6rem 0 2.2rem; }
+.filter-chip { cursor: pointer; transition: all 0.2s var(--ease); opacity: 0.7; }
+.filter-chip:hover { opacity: 1; color: var(--ink); }
+.filter-chip.is-active {
+  opacity: 1;
+  color: var(--ink);
+  background: var(--lime);
+  border-color: var(--lime);
+}
+.filter-chip.is-active::before { background: var(--ink); }
+
+/* ─────────────────────────────────────────────────────────────── 8 · HERO */
+
+.hero {
+  position: relative;
+  padding: 9.5rem 0 4.5rem;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: min(4vw, 60px);
+  width: clamp(90px, 12vw, 150px);
+  height: clamp(90px, 12vw, 150px);
+  background:
+    repeating-linear-gradient(0deg, rgba(23, 24, 26, 0.09) 0 1.5px, transparent 1.5px 9px),
+    repeating-linear-gradient(90deg, rgba(23, 24, 26, 0.09) 0 1.5px, transparent 1.5px 9px);
+  pointer-events: none;
+}
+.hero .grid.two { gap: 3.5rem; }
+.hero-lede {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 54ch;
+  margin: 1.4rem 0 2rem;
+}
+.hero-lede em { font-style: normal; box-shadow: inset 0 -0.5em 0 var(--lime); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 2.4rem; }
+
+/* Stats — Forge's animated counters, honest numbers only */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.6rem 3.2rem;
+  margin-top: 0.4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--line-strong);
+}
+.stat { display: flex; flex-direction: column; gap: 0.15rem; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--ink);
+}
+.stat-num b { color: inherit; font-weight: inherit; }
+.stat-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.portrait { position: relative; margin: 0; }
+.portrait-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-deep);
+}
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(23, 24, 26, 0.08);
+  pointer-events: none;
+}
+.portrait-mono {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 14vw, 10rem);
+  font-weight: 700;
+  color: var(--ink);
+  opacity: 0.1;
+}
+.portrait-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portrait-chip {
+  position: absolute;
+  z-index: 2;
+  font-size: 0.72rem;
+  padding: 0.45rem 0.8rem;
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+.portrait-chip::before { background: var(--lime); }
+.portrait-chip.c1 { top: 8%; left: -4%; }
+.portrait-chip.c2 { bottom: 20%; right: -3%; }
+.portrait-chip.c3 { bottom: -3%; left: 8%; }
+@media (max-width: 760px) {
+  .portrait-chip.c1 { left: 4%; }
+  .portrait-chip.c2 { right: 4%; }
+}
+
+/* ───────────────────────────────────────────── 9 · TICKER · STATEMENT · METHOD */
+
+.ticker {
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 0.85rem 0;
+  background: var(--bg);
+}
+.ticker-track {
+  display: inline-flex;
+  animation: ticker-scroll 26s linear infinite;
+}
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-right: 1.6rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.ticker-track span::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--lime);
+  transform: rotate(45deg);
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.pull-quote {
+  margin: 1rem 0 0;
+  padding: 0.9rem 0 0 1.5rem;
+  border-left: 4px solid var(--lime);
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.prose-copy p { color: var(--ink-soft); margin: 0 0 1.05rem; max-width: 62ch; }
+.prose-copy strong { font-weight: 500; color: var(--ink); }
+
+.steps { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.step-num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--ink);
+  opacity: 0.35;
+  margin-bottom: 0.7rem;
+}
+.steps .card h3 { text-transform: uppercase; letter-spacing: 0.02em; font-size: 1.05rem; }
+.steps .card p { color: var(--ink-soft); font-size: 0.93rem; margin: 0; }
+
+/* ───────────────────────────────────────── 10 · CALLOUTS — the .tip-box system */
+
+.tip-box {
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 1.05rem 1.3rem 1.05rem 1.4rem;
+  border: 1px solid var(--line-strong);
+  border-left: 4px solid var(--card-accent, var(--accent));
+  background: var(--accent-soft);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.tip-box p, .tip-box ul { margin: 0.2rem 0 0; font-size: 0.96rem; color: var(--ink-soft); }
+.tip-box .tip-title,
+.tip-box > p:first-child strong:first-child {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent-ink);
+}
+.tip-box[data-tone="note"]  { border-left-color: #b98a4b; background: #faf4e8; }
+.tip-box[data-tone="warn"]  { border-left-color: #a8503f; background: #f9ecea; }
+.tip-box[data-tone="ok"]    { border-left-color: #3e7c74; background: #ecf4f1; }
+
+/* ─────────────────────────────────────────────── 11 · DOC PAGES (materials/*) */
+
+.doc-page body { background: var(--bg); }
+.doc-crumbs {
+  width: min(880px, 92vw);
+  margin: 6.5rem auto 1.2rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.doc-crumbs a { color: var(--ink); text-decoration: none; }
+.doc-crumbs a:hover { box-shadow: inset 0 -0.4em 0 var(--lime); }
+
+.doc-frame {
+  width: min(880px, 92vw);
+  margin: 0 auto 4.5rem;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.doc-cover {
+  position: relative;
+  overflow: hidden;
+  padding: 2.8rem 3.2rem 2.4rem;
+  border-bottom: 1px solid var(--ink);
+  border-top: 8px solid var(--accent);
+  background: var(--accent-soft);
+}
+.doc-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+/* one quiet motif per chapter design language */
+[data-theme="slate"] .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="ink"]   .doc-cover::after { background-image: repeating-linear-gradient(135deg, var(--accent-glow) 0 1px, transparent 1px 16px); }
+[data-theme="clay"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 22px); }
+[data-theme="sage"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="plum"]  .doc-cover::after { background-image: radial-gradient(420px 260px at 92% 100%, var(--accent-glow) 0%, transparent 70%); }
+[data-theme="mist"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 30px); }
+[data-theme="ember"] .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 13px), repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 13px); }
+[data-theme="moss"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 18px); }
+
+.doc-kicker {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.doc-kicker::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 9px;
+  margin-top: 0.55rem;
+  background: var(--lime);
+}
+.doc-title {
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+.doc-subtitle { margin: 0.4rem 0 1.4rem; max-width: 58ch; color: var(--ink-soft); font-size: 1.02rem; }
+.doc-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.2rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.doc-body { padding: 2.6rem 3.2rem 3.4rem; }
+@media (max-width: 640px) {
+  .doc-cover, .doc-body { padding-inline: 1.4rem; }
+}
+
+/* ──────────────────────────────────────────────── 12 · PROSE (lesson content) */
+
+.prose { font-size: 1.02rem; color: #2b2d26; }
+.prose > * + * { margin-top: 0.9em; }
+.prose h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-top: 2.2em;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--card-accent, var(--accent));
+}
+.prose h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; margin-top: 1.9em; }
+.prose h4 { font-family: var(--font-display); font-size: 1.02rem; font-weight: 600; margin-top: 1.6em; }
+.prose blockquote { margin: 1.4rem 0; padding: 1rem 1.3rem 1rem 1.4rem; border: 1px solid var(--line-strong); border-left: 4px solid var(--card-accent, var(--accent)); background: var(--accent-soft); color: var(--ink-soft); break-inside: avoid; page-break-inside: avoid; }
+.prose blockquote p { margin: 0.2rem 0 0; }
+.prose blockquote p:first-child { margin-top: 0; font-weight: 500; color: var(--ink); }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.6rem 0; font-size: 0.93rem; break-inside: avoid; page-break-inside: avoid; }
+.prose th { background: var(--card-accent, var(--accent)); color: #fff; font-family: var(--font-display); font-weight: 600; text-align: left; letter-spacing: 0.03em; }
+.prose th, .prose td { border: 1px solid var(--line-strong); padding: 0.55rem 0.8rem; }
+.prose tbody tr:nth-child(even) td { background: var(--accent-soft); }
+.prose ul, .prose ol { padding-left: 1.4rem; }
+.prose li { margin: 0.35rem 0; }
+.prose li::marker { color: var(--accent); font-weight: 600; }
+.prose strong { color: var(--ink); font-weight: 500; }
+.prose code { font-family: var(--font-mono); font-size: 0.88em; background: var(--accent-soft); border: 1px solid var(--line); padding: 0.08em 0.42em; }
+.prose hr { border: 0; border-top: 1px dashed var(--line-strong); margin: 2.2rem auto; width: 55%; }
+.prose figure { margin: 1.6rem 0; break-inside: avoid; page-break-inside: avoid; }
+
+/* ────────────────────────────────────────────────────────────── 13 · FOOTER */
+
+.site-footer {
+  padding: 3rem 0 3.6rem;
+  border-top: 2px solid var(--ink);
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+}
+.site-footer .bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-footer a { color: var(--ink-soft); text-decoration: none; }
+.site-footer a:hover { box-shadow: inset 0 -0.4em 0 var(--lime); }
+.site-footer .brand { font-size: 0.95rem; }
+
+/* ────────────────────────────────────────────────── 14 · MOTION & RESPONSIVE */
+
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (max-width: 760px) {
+  .section { padding: 3.6rem 0; }
+  .hero { padding-top: 7.5rem; }
+  .hero::after { display: none; }
+  .stats { gap: 1.8rem 2.2rem; }
+  .stat-num { font-size: 2.1rem; }
+  .doc-meta { gap: 0.3rem 0.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .ticker-track { animation: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ═══════════════════════════════════════════════ 15 · PRINT — A4 CHOREOGRAPHY
+   Hard pagination contract: no orphan headings, no splintered callouts,
+   no split table rows. Chromium prints exactly what these rules promise.     */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 14mm 18mm 14mm;
+  }
+
+  html, body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .site-nav, .site-footer, .no-print, .skip-link,
+  .hero-cta, .chip-row, .filter-row, .card-actions,
+  .ticker, .portrait-chip, .doc-crumbs, .doc-backbar {
+    display: none !important;
+  }
+
+  .hero, .section { padding: 0 !important; min-height: 0 !important; background: none !important; }
+  .hero::after { display: none !important; }
+  .shell, .shell-wide { width: 100% !important; max-width: none !important; }
+  main { padding-top: 0 !important; margin: 0 !important; }
+
+  /* — content-keep = never leave a single widow line — */
+  p, li { orphans: 3; widows: 3; }
+
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .tip-box, blockquote, table, tr, img, figure,
+  .doc-cover, .doc-frame, .card, .prose figure {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  thead { display: table-header-group; }  /* column headers repeat on every page */
+  tfoot { display: table-footer-group; }
+
+  a { color: inherit; text-decoration: none; }
+  a[href^="http"]::after {
+    content: " (" attr(href) ") ";
+    font-size: 0.82em;
+    color: #77777a;
+  }
+
+  /* Chapter pages unwrap from their web chrome and print edge-to-edge calm */
+  .doc-frame {
+    box-shadow: none !important;
+    border: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    background: #fff !important;
+  }
+  .doc-cover { margin-bottom: 1.4rem; }
+  .doc-body { padding: 0 !important; }
+  .prose table { font-size: 0.88rem; }
+  .prose th { background: var(--card-accent, #444540) !important; }
+  .prose tbody tr:nth-child(even) td { background: var(--accent-soft); }
+
+  .card, .steps .card { box-shadow: none; border-color: var(--line-strong); border-top-width: 2px; }
+  .page-break, .break-before {
+    break-before: page;
+    page-break-before: always;
+  }
+}
+</style>
+</head>
+<body class="doc-page">
+<a class="skip-link" href="#doc-main">Skip to content</a>
+<main id="doc-main">
+  <div class="doc-crumbs no-print">
+    <a href="../index.html">&larr; Portfolio</a><span aria-hidden="true">/</span>
+    <a href="../materials.html">Learning library</a>
+  </div>
+  <article class="doc-frame chapter-doc" data-chapter="011-500-idioms-phrases" data-theme="clay">
+    <header class="doc-cover">
+      <p class="doc-kicker">Zoya&#39;s English — Study Module 11</p>
+      <h1 class="doc-title">500 Idioms &amp; Phrases</h1>
+      <p class="doc-subtitle">Rebuilt from the original source — interactive web edition plus print-ready A4.</p>
+      <div class="doc-meta">
+        <span>Source: 011 - 500 Idioms &amp; Phrases.pdf</span>
+        <span>20 source pages</span>
+        <span>11431 words</span>
+        <span>~64 min read</span>
+      </div>
+    </header>
+    <div class="doc-body prose">
+<h2 id="500-idioms-phrases">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples">WITH MEANING &amp; EXAMPLES</h2>
+<p>Page 1 (1-25)</p>
+<ul>
+<li>A blessing in disguise — Something good that seems bad at first. - Losing that job was a blessing in disguise.</li>
+<li>A piece of cake — Very easy. — The test was a piece of cake.</li>
+<li>A shot in the dark — A risky attempt with little chance of success. — Applying for the job was a shot in the dark.</li>
+<li>Actions speak louder than words — What you do is more important than what you say. — Actions speak louder than words.</li>
+<li>Against the clock — In a race against time. — We have to finish this work against the clock.</li>
+<li>All ears — Listening very attentively. — I'm all ears; please tell me everything.</li>
+<li>All in the same boat — In the same difficult situation. — We are all in the same boat.</li>
+<li>At the end of the day — Ultimately; in the final analysis. — At the end of the day, honesty is the best policy.</li>
+<li>Beat around the bush — Avoid the main topic. — Stop beating around the bush and tell me the truth.</li>
+<li>Better late than never — It's good to do something even if it's delayed. — She started studying; better late than never.</li>
+<li>Bite the bullet — Face a difficult situation bravely. — I had to bite the bullet and apologize.</li>
+<li>Break the ice — To initiate conversation in an awkward situation. — He told a joke to break the ice.</li>
+<li>Burn the midnight oil — To work late into the night. — She had to burn the midnight oil to finish the project.</li>
+<li>Call it a day — To stop working on something. — It's getting late, let's call it a day.</li>
+<li>Cost an arm and a leg — Very expensive. — This gadget cost me an arm and a leg.</li>
+<li>Cut corners — To do something in the easiest or cheapest way, often poorly. — Don't cut corners, or the work will suffer.</li>
+<li>Don't put all your eggs in one basket — Don't risk everything on one thing. — Invest in different areas; don't put all your eggs in one basket.</li>
+<li>Every cloud has a silver lining — Every bad situation has a positive side. — He lost his job, but every cloud has a silver lining.</li>
+<li>Face the music — To accept the consequences of your actions. — He cheated in the exam and had to face the music.
+20. Hit the nail on the head — To say exactly the right thing. — You hit the nail on the head with your explanation.</li>
+<li>ai, In a nutshell — In summary; in a few words. — In a nutshell, the meeting was very productive.</li>
+<li>In hot water — In trouble. — He is in hot water for missing the deadline.
+23. Let the cat out of the bag — To reveal a secret. — She let the cat out of the bag about the surprise party.
+24. Once in a blue moon — Very rarely. — I visit my hometown once in a blue moon.
+25. Pull someone's leg — To joke with someone. — He is just pulling your leg; don't take it seriously.</li>
+</ul>
+<h2 id="500-idioms-phrases_1">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples_1">WITH MEANING &amp; EXAMPLES</h2>
+<p>Page 2 (26-50)</p>
+<ol start="26">
+<li>Put all your money on something — To risk everything on a single venture. — He put all his money on that start-up.</li>
+<li>2%. See eye to eye — To agree with someone. — We don't always see eye to eye, but we respect each other.</li>
+<li>Spill the beans — To reveal a secret. — I wasn't going to tell anyone, but he spilled the beans.</li>
+<li>The ball is in your court — It's your turn to take action. — I've done my part; the ball is in your court.</li>
+<li>The early bird catches the worm — Success comes to those who act early. — The early bird catches the worm.</li>
+<li>The last straw — The final problem in a series of problems. — His rudeness was the last straw.</li>
+<li>Under the weather — Feeling slightly ill. — I'm a little under the weather today.</li>
+<li>A dime a dozen — Very common and therefore of little value. - Complaints from customers are a dime a dozen.</li>
+<li>A rolling stone gathers no moss — A person who moves around a lot has no stable home or job. — He keeps changing jobs; a rolling stone gathers no moss.</li>
+<li>Add fuel to the fire - To make a bad situation worse. — Their argument only added fuel to the fire.</li>
+<li>Bark up the wrong tree — To blame or criticize the wrong person. — You're barking up the wrong tree; I didn't do it,</li>
+<li>Better safe than sorry — It's better to be careful than to take risks. — | always double-check; better safe than sorry.</li>
+<li>Don't judge a book by its cover — Don't judge someone or something by appearance. — He looked quiet, but don't judge a book by its cover.</li>
+<li>Don't count your chickens before they hatch — Don't expect success too early. — Let's wait for the results; don't count your chickens before they hatch.</li>
+<li>Down to earth — Practical and realistic. - She's very down to earth despite her success.</li>
+<li>Get out of hand — To become uncontrolled. — The situation got out of hand quickly.</li>
+<li>Give someone the benefit of the doubt — To trust someone despite uncertainty. — I will give him the benefit of the doubt this time.</li>
+<li>Go the extra mile — To make extra effort. — She always goes the extra mile to help others.</li>
+<li>44, Hit the books — To study very hard. — I need to hit the books for the exam.</li>
+<li>45, Keep an eye on — To watch or monitor something. — Please keep an eye on the kids.</li>
+<li>Let sleeping dogs lie — To avoid bringing up a topic that may cause trouble. — It's best to let sleeping dogs lie.</li>
+<li>Make ends meet — To have just enough money for basic needs. — It's hard to make ends meet these days.</li>
+<li>Miss the boat — To miss an opportunity. — I missed the boat when I didn't apply on time.</li>
+<li>On the same page — To agree and understand the same thing. — Let's make sure we are on the same page.</li>
+<li>Out of the blue — Suddenly and unexpectedly. — He called me out of the blue after years.</li>
+</ol>
+<h2 id="500-idioms-phrases_2">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples_2">WITH MEANING &amp; EXAMPLES</h2>
+<p>Page 3 (51-75)</p>
+<ol start="51">
+<li>Piece of mind — A state of being calm and free from worry. — After the vacation, I finally got some piece of mind.</li>
+<li>Play it by ear — To deal with a situation in a flexible way. — We don't have a plan; let's play it by ear.</li>
+<li>Put your foot down — To establish authority; to insist on something. — You need to put your foot down with your children.</li>
+<li>Read between the lines — To understand the hidden meaning. — You should read between the lines of his email.</li>
+<li>55: Right under someone's nose — In a place that is very obvious. — The keys were right under my nose the whole time.</li>
+<li>Safe and sound — In a state of safety; without harm. — He returned home safe and sound.</li>
+<li>57: See the light — To understand or suddenly realize something. — After a long talk, he finally saw the light.</li>
+<li>Speak of the devil — Used when the person you are talking about appears. — Speak of the devil, and he shows up!</li>
+<li>Stand on your own two feet — To be independent; to support yourself. — After college, she started to stand on her own two feet.</li>
+<li>Start from scratch — To begin again from the beginning. — He lost all his data and had to start from scratch.</li>
+<li>Step up to the plate — To accept a challenge or take responsibility. — It's time for you to step up to the plate.</li>
+<li>Take a back seat — To take a less active role; to allow others to lead. — He decided to take a back seat in the project.</li>
+<li>Take it with a grain of salt — To consider something with doubt. — Don't believe everything you hear; take it with a grain of salt.</li>
+<li>The calm before the storm — A quiet period before a difficult time. — There was a calm before the storm.</li>
+<li>The pen is mightier than the sword — Words and writing are more powerful than violence. — The pen is mightier than the sword.</li>
+<li>There's no place like home — Home is the best place to be. — After traveling so much, I realized there's no place like home.</li>
+<li>Think outside the box — To be creative and think differently. - We need to think outside the box to solve this problem.</li>
+<li>Throw in the towel — To give up; to admit defeat. — He threw in the towel after many failed attempts.</li>
+<li>Time flies — Time passes quickly. — I can't believe how time flies!</li>
+<li>Under the table — In a secret or illegal way. — They settled the deal under the table.</li>
+<li>Fl. Up in the air — Not yet decided. — Our plans for the trip are still up in the air.</li>
+<li>qa Walk the talk — To do what you say you will do. — Don't just promise; walk the talk.</li>
+<li>i Watch your step — To be careful. — The floor is wet, so watch your step.</li>
+<li>When in Rome, do as the Romans do — To adapt to the customs of a place. — When in Rome, do as the Romans do.</li>
+<li>gi You can't judge a book by its cover — Don't judge by appearance. — You can't judge a book by its cover.</li>
+<li>— @omiistudies —</li>
+</ol>
+<h2 id="500-idioms-phrases_3">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples_3">WITH MEANING &amp; EXAMPLES</h2>
+<p>Page 4 (76-100)</p>
+<ol start="76">
+<li>A blessing in disguise — Something that seems bad but turns out to be good. — Losing that job was a blessing in disguise; I found a better opportunity.</li>
+<li>VE. A drop in the ocean — A very small amount compared to what is needed. — His donation is just a drop in the ocean compared to the total cost.</li>
+<li>A picture is worth a thousand words — A visual can explain something better than words. — The chart makes it clear; a picture is worth a thousand words.</li>
+<li>Back to the drawing board — To start over and try a new approach. — The plan didn't work, so it's back to the drawing board.</li>
+<li>Beat a dead horse — To do something that is useless because it has already failed. — There's no point in arguing; that's beating a dead horse.</li>
+<li>Bite off more than you can chew — To take on more responsibility than you can handle. — I bit off more than I could chew with three projects at once.</li>
+<li>Call the shots — To be in control; to make decisions. — In this team, she calls the shots.</li>
+<li>Costs an arm and a leg — Very expensive. — That designer bag costs an arm and a leg!</li>
+<li>Cross that bridge when you come to it — Deal with a problem when it happens, not before. — Don't worry now; we'll cross that bridge when we come to it.</li>
+<li>Dance around the issue — Avoid talking about the real problem. — Stop dancing around the issue and tell me what's wrong.</li>
+<li>Don't bite the hand that feeds you — Don't harm those who help you. — Be respectful to your employer; don't bite the hand that feeds you.</li>
+<li>Earn your keep — To do your job or work for the money you receive. — You're here to earn your keep, so get to work.</li>
+<li>Every dog has its day — Everyone will have a chance to succeed someday. — He's going through a tough time, but every dog has its day.</li>
+<li>Eye for an eye, tooth for a tooth — Revenge in equal measure. — That policy is eye for an eye, tooth for a tooth.</li>
+<li>Feather in your cap — An achievement to be proud of. — Winning the award was a feather in his cap.</li>
+<li>Get back on your feet — To recover from a difficult situation. — It took time, but she got back on her feet.</li>
+<li>Get cold feet — To suddenly become nervous and lose confidence. — He got cold feet before the final match.</li>
+<li>Give it your best shot — To try your best. — You may not win, but give it your best shot.</li>
+<li>Go with the flow — To accept things as they happen and not try to control them. — Sometimes you just have to go with the flow.</li>
+<li>Hit below the belt — To say or do something unfair or cruel. — His comment about her family was a low blow; he hit below the belt.</li>
+<li>Hold your horses — To wait; to be patient. — Hold your horses! Your turn will come.</li>
+<li>Keep your chin up — To stay cheerful and not lose hope. — Things will get better; keep your chin up.</li>
+<li>Kill two birds with one stone — To achieve two things at the same time. — By studying abroad, he improved his English and gained experience; he killed two birds with one stone.</li>
+<li>Let bygones be bygones — To forgive past mistakes and move on. — We argued before, but let bygones be bygones.</li>
+<li>Light at the end of the tunnel — A sign of hope in a difficult situation. — After months of struggle, there's finally light at the end of the tunnel.</li>
+<li>— @omiistudies —</li>
+</ol>
+<h2 id="500-idioms-phrases_4">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples_4">WITH MEANING &amp; EXAMPLES</h2>
+<p>Page 5 (101-125)</p>
+<ol start="101">
+<li>Mad as a hatter — Extremely crazy. — He was mad as a hatter when he heard the news.</li>
+<li>Make a long story short — To give only the main details. — Make a long story short, we missed the bus.</li>
+<li>Make a mountain out of a molehill — To make a big deal out of something small. — It's just a small mistake; don't make a mountain out of a molehill.</li>
+<li>. Miss the point — To fail to understand the main idea. — You completely missed the point of my argument.</li>
+<li>Move heaven and earth — To make every possible effort. — I will move heaven and earth to help you.</li>
+<li>No pain, no gain — You have to work hard to achieve success. — There's no pain, no gain in life.</li>
+<li>Not my cup of tea — Not something I like. — Horror movies are not my cup of tea.</li>
+<li>Once bitten, twice shy — After being hurt, you become more careful. — He's once bitten, twice shy when it comes to investments.</li>
+<li>On cloud nine — Extremely happy. — She was on cloud nine after getting the job.</li>
+<li>On the ball — To be alert and quick to act. — You need to be on the ball to handle this project.</li>
+<li>Out of sight, out of mind — When you don't see someone, you stop thinking about them. — I haven't seen him in years, out of sight, out of mind.</li>
+<li>. Practice makes perfect — The more you practice, the better you become. — Practice makes perfect; keep trying.</li>
+<li>. Press the panic button — To react in a way that shows you are very worried. — There's no need to press the panic button; everything is fine.</li>
+<li>Piece by piece — Gradually and step by step. — We rebuilt the old house piece by piece.</li>
+<li>Pull yourself together — To calm down and get control of your emotions. — It's not a big deal; pull yourself together.</li>
+<li>Put all cards on the table — To be completely honest and open. — Let's put all cards on the table and discuss the truth.</li>
+<li>Put the cart before the horse — To do things in the wrong order. — You're putting the cart before the horse; we need a plan first.</li>
+<li>Rain cats and dogs — To rain very heavily. — It rained cats and dogs all day yesterday.</li>
+<li>See eye to eye — To agree with someone. — We don't always see eye to eye, but we respect each other.</li>
+<li>See through — To understand someone's true intentions. — I can see through his lies.</li>
+<li>Set in stone — Something that is decided and cannot be changed. — The meeting time is set in stone.</li>
+<li>Shape up or ship out — To improve your behavior or leave. — Shape up or ship out; these are the rules.</li>
+<li>The calm before the storm — A quiet period before a difficult time. — The calm before the storm always makes me nervous.</li>
+<li>The elephant in the room — A big problem that everyone ignores. — His illness was the elephant in the room.</li>
+<li>The grass is always greener on the other side — People think others have a better life. — The grass is always greener on the other side.</li>
+<li>— @omiistudies —</li>
+</ol>
+<h2 id="500-idioms-phrases_5">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples_5">WITH MEANING &amp; EXAMPLES</h2>
+<p>|</p>
+<p>Page 6 (126-150)</p>
+<p>|</p>
+<ol start="126">
+<li>The lion's share — The largest part. - He did most of the work and got the lion's share of the credit.</li>
+<li>The tip of the iceberg — Only a small part of a much larger problem. — What you see is just the tip of the iceberg.</li>
+<li>There's no smoke without fire — Where there's some truth in a rumor. — There's no smoke without fire; there must be some reason.</li>
+<li>This is easier said than done — Something is more difficult to do than to say. — It's easy to give advice, but this is easier said than done.</li>
+<li>Throw caution to the wind — To take a risk and do something without worrying. — He threw caution to the wind and started his own business.</li>
+<li>Tighten your belt — To spend less money; to be more careful. — We need to tighten our belts this month.</li>
+<li>Time and tide wait for no man — Time moves on and does not stop for anyone. — Time and tide wait for no man; we must act now.</li>
+<li>To each his own — Everyone has their own opinion or choice. — She likes coffee, I like tea; to each his own.</li>
+<li>Too many cooks spoil the broth — Too many people doing a task can cause problems. — Everyone gave advice, and too many cooks spoiled the broth.</li>
+<li>Turn a blind eye — To deliberately ignore something. — The teacher turned a blind eye to the students' talking.</li>
+<li>Two sides of the same coin — Two things that are similar and connected. — Freedom and responsibility are two sides of the same coin.</li>
+<li>Under the knife — To be in surgery. — He is under the knife right now.</li>
+<li>Under your nose — Very close to you. — The book was under your nose the whole time!</li>
+<li>Up in arms — Very angry about something. — People were up in arms about the new rule.</li>
+<li>Use your head — To think and be sensible. —- Use your head and you'll find a solution.</li>
+<li>Walk on eggshells — To be very careful not to upset someone. — I have to walk on eggshells around my boss.</li>
+<li>What goes around comes around — The good or bad things you do will happen to you too. — Be kind, because what goes around comes around.</li>
+<li>When push comes to shove — When a difficult situation requires a decision or action. — When push came to shove, he stood by his friend.</li>
+<li>Wild goose chase — A long and foolish search for something that cannot be found. — It was a wild goose chase; the information didn't exist.</li>
+<li>Win some, lose some — In any activity, you cannot succeed all the time. — You can't win every match; win some, lose some.</li>
+<li>With flying colors — Very successfully. — She passed the exam with flying colors.</li>
+<li>Worth your salt — Good at your job; deserving of your pay. — He's young, but he's worth his salt.</li>
+<li>You can't have your cake and eat it too — You can't enjoy two good things that are impossible together. — You can't skip study and expect good marks; you can't have your cake and eat it too.</li>
+<li>Your guess is as good as mine — I have no idea. - Where did he go? Your guess is as good as mine.</li>
+<li>Zip your lip — To be quiet. — Zip your lip and listen to what the teacher is saying.</li>
+<li>— @omiistudies —</li>
+</ol>
+<h2 id="500-idioms-phrases_6">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples_6">WITH MEANING &amp; EXAMPLES</h2>
+<p>Page 7 (151-175)</p>
+<ul>
+<li>ESL. A bad apple — A person who behaves badly and influences others. — He is a bad apple in the group.
+152. Actions speak louder than words — What you do is more important than what you say. — He helps others; actions speak louder than words.
+153. Add insult to injury — To make a bad situation worse. — When he failed the test and lost his wallet, it was adding insult to injury.
+154. Against the clock — In a race against time. — We had to finish the project against the clock.
+155. All ears — Listening very attentively. — Tell me more; I'm all ears.
+156. All in good time — Everything will happen when it should. — You'll understand when you're older; all in good time.</li>
+<li>157, All that glitters is not gold — Not everything that looks good is valuable. — His offer looks great, but all that glitters is not gold.
+158. Bite off more than you can chew — To take more responsibility than you can handle. — He bit off more than he could chew and got stressed.
+159. Break a leg — Good luck! (said to someone before a performance) — You have a big match today — break a leg!</li>
+<li>Break the ice — To start a conversation in a social situation. — He told a joke to break the ice.
+161. Burn the midnight oil — To work late into the night. — She had to burn the midnight oil to finish her assignment.
+162. Cost an arm and a leg — Very expensive. — That phone costs an arm and a leg!
+163. Don't cry over spilled milk — Don't worry about things that cannot be changed. — It's over now; don't cry over spilled milk.</li>
+<li>Don't put all your eggs in one basket — Don't risk everything on one plan. — It's smart not to put all your eggs in one basket.</li>
+<li>Down in the dumps — Feeling sad or depressed. — I felt down in the dumps after the results.</li>
+<li>Every cloud has a silver lining — There is something good in every bad situation. — He lost his job, but every cloud has a silver lining.
+167. Face the music — To accept the punishment for your actions. — You broke the rules, now face the music.
+168. Get a taste of your own medicine — To experience the same bad treatment you gave others. — He was rude to everyone; now he's getting a taste of his own medicine.
+169. Get the ball rolling — To start something. — Let's get the ball rolling on this project.
+170. Get wind of something — To hear about something by chance. — I got wind of the news yesterday.
+171. Go back to the drawing board — To start over after a failure. - The plan didn't work, so we have to go back to the drawing board.
+172. Go down the wrong path — To start doing something that is not right. - He was a good student but went down the wrong path.
+173. Hit the nail on the head — To say or do exactly the right thing. — You hit the nail on the head with your suggestion.
+174. In black and white — In writing; clearly and officially. - Get the agreement in black and white.
+175. In hot water — In trouble. — He's in hot water for breaking the rules.</li>
+<li>— @omiistudies —</li>
+</ul>
+<h2 id="500-idioms-phrases_7">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples_7">WITH MEANING &amp; EXAMPLES</h2>
+<p>Page 8 (176-200)</p>
+<ol start="176">
+<li>In the same boat — In a similar situation. — We are all in the same boat; everyone is facing problems.</li>
+<li>Jump the gun — To do something too early. — You jumped the gun by telling him the surprise.</li>
+<li>Keep an eye on — To watch or monitor something. — Please keep an eye on the kids while I'm out.</li>
+<li>Keep your fingers crossed — To hope for the best. — I have an interview tomorrow; keep your fingers crossed for me.</li>
+<li>Kill two birds with one stone — To accomplish two things with one action. — I finished my homework while listening to music; I killed two birds with one stone.</li>
+<li>Let the cat out of the bag — To reveal a secret. — Who let the cat out of the bag about the party?</li>
+<li>Let sleeping dogs lie — To avoid disturbing a situation that is not causing problems. — It's better to let sleeping dogs lie and not bring up the old issue.</li>
+<li>Like two peas in a pod — Very similar. — Those twins are like two peas in a pod.</li>
+</ol>
+<p>184.</p>
+<p>Live and let live</p>
+<p>—</p>
+<p>To allow others to live their own lives.</p>
+<p>—</p>
+<p>We should live and let live.</p>
+<ol start="185">
+<li>Long time no see — Used when you haven't seen someone for a long time. — Long time no see! How have you been?</li>
+<li>Lose track of time — To forget about time while doing something. — I lose track of time when I'm reading a good book.</li>
+<li>Make a bee line — To go somewhere as quickly as possible. — As soon as the class ended, I made a bee line for home.</li>
+<li>Make ends meet — To have just enough money to pay for necessities. — It's not easy to make ends meet these days.</li>
+<li>Make up your mind — To decide something. — Please make up your mind soon.</li>
+<li>Many hands make light work — A task is easier when many people help. — We finished early because many hands make light work.</li>
+<li>Miss the boat — To miss an opportunity. — You snoozed and missed the boat; the offer is over now.</li>
+<li>Neck and neck — Very close in competition. — The two teams are neck and neck in the race.</li>
+<li>Neither here nor there — Not important; not related to the topic. — That comment is neither here nor there in our discussion.</li>
+<li>No news is good news — If you don't hear anything bad, everything is probably fine. — He hasn't called, but no news is good news.</li>
+<li>Not lift a finger — To do no work or help. — He sat on the sofa all day and didn't lift a finger to help.</li>
+<li>Once in a blue moon — Very rarely. — We get to meet once in a blue moon.</li>
+<li>Out of the blue — Suddenly; unexpectedly. — He called me out of the blue after many years.</li>
+<li>Out of the question — Impossible; not allowed. — Going out tonight is out of the question.</li>
+<li>Over the moon — Extremely happy. — I was over the moon when I got the job!</li>
+<li>Pay through the nose — To pay a lot of money for something. — We paid through the nose for those concert tickets.</li>
+</ol>
+<h2 id="500-idioms-phrases_8">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples_8">WITH MEANING &amp; EXAMPLES</h2>
+<p>Page 9 (201—225)</p>
+<ol start="201">
+<li>Piece of cake — Very easy. — The test was a piece of cake.</li>
+<li>Play by ear — To decide what to do as a situation develops. — We didn't have a plan, so we played it by ear.</li>
+<li>Pull the wool over someone's eyes — To deceive someone. — He tried to pull the wool over our eyes, but we knew the truth.</li>
+<li>Put a sock in it — To be quiet. — Put a sock in it! You're talking too much.</li>
+<li>Put your foot down — To be firm and refuse to allow something. — I had to put my foot down and say no.</li>
+<li>Read between the lines — To understand the hidden meaning. — Read between the lines; he's not interested.</li>
+<li>Ring a bell — To sound familiar. — Your name rings a bell, but I can't place where I know you from.</li>
+<li>See eye to eye — To agree with someone. — We don't always see eye to eye, but we respect each other.</li>
+<li>Speak of the devil — Used when the person you're talking about appears. — Speak of the devil, here he comes!</li>
+<li>Spill the beans — To reveal a secret. —- Don't spill the beans about the surprise party.</li>
+<li>Still waters run deep — Quiet people often have strong minds or feelings. — He is very quiet, but still waters run deep.</li>
+<li>Take it or leave it — An offer with no room for negotiation. — This is my final offer, take it or leave it.</li>
+<li>Take the bull by the horns — To deal with a difficult situation bravely. — I decided to take the bull by the hors and talk to my boss.</li>
+<li>Take with a grain of salt — To accept with doubt. — Take his advice with a grain of salt.</li>
+<li>That's the last straw — The final problem in a series of problems. — That was the last straw; I quit my job.</li>
+<li>The early bird catches the worm — Success comes to those who act early. — He always arrives early; the early bird catches the worm.</li>
+<li>The grass is always greener on the other side — People think others have a better life. — The grass is always greener on the other side.</li>
+<li>The ball is in your court — It's your decision or responsibility now. — I've done my part; the ball is in your court.</li>
+<li>The benefit of the doubt — Giving someone a chance to be honest. — I'll give him the benefit of the doubt.</li>
+<li>The calm before the storm — A quiet time before something bad happens. — The calm before the storm made everyone nervous.</li>
+<li>The elephant in the room — A big problem that people avoid talking about. — We can't solve this until we talk about the elephant in the room.</li>
+<li>The long and short of it — The main point or the basics. — The long and short of it is that we need more time.</li>
+<li>The salt of the earth — A very good and honest person. — My grandfather was the salt of the earth.</li>
+<li>Turn over a new leaf — To start a new life and change bad habits. — After the new year, I tumed over a new leaf.</li>
+<li>Two wrongs don't make a right — Doing wrong in return doesn't solve the problem. — We should talk, not fight; two wrongs don't make a right.</li>
+<li>— @omiistudies —</li>
+</ol>
+<h2 id="500-idioms-phrases_9">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples_9">WITH MEANING &amp; EXAMPLES</h2>
+<p>Page 10 (226-250)</p>
+<ol start="226">
+<li>Under the weather — Feeling sick. — I'm a little under the weather today.</li>
+<li>Up in the air — Not yet decided. — The plan is still up in the air.</li>
+<li>Vanish into thin air — To disappear completely. — The magician made the coin vanish into thin air.</li>
+<li>Watch your back — To be careful; beware of danger. — He smiled at me, but I'm still watching my back.</li>
+<li>Weigh the pros and cons — To consider both good and bad sides. — Before making a decision, weigh the pros and cons.</li>
+<li>Well at the end that well — Used to say that a bad situation turned out well. — We got lost, but it was well at the end that well.</li>
+<li>What goes up must come down — Success won't last forever. — Remember, what goes up must come down.</li>
+<li>When in Rome, do as the Romans do — Follow local customs when you are in a new place. — When in Rome, do as the Romans do.</li>
+<li>Where there's a will, there's a way — Determination helps achieve goals. — Where there's a will, there's a way to succeed.</li>
+<li>Whoever laughs last laughs best — The person who wins in the end is the real winner. — He laughed at me first, but whoever laughs last laughs best.</li>
+<li>Wild horses couldn't drag me away — Used to say you really enjoy being somewhere. — I love this place; wild horses couldn't drag me away.</li>
+<li>You can lead a horse to water, but you can't make it drink — You can't force someone to do something. — I advised him many times, but you can lead a horse to water, but you can't make it drink.</li>
+<li>You can't judge a book by its cover — Don't judge someone by their appearance. — He looks serious, but you can't judge a book by its cover.</li>
+<li>239: You can't have it both ways — You must choose between two options. — You can't have it both ways; either you stay late or leave early.</li>
+<li>You can't teach an old dog new tricks — It's hard to change someone's old habits. — He's stubborn; you can't teach an old dog new tricks.</li>
+<li>A blessing in disguise — Something good that seems bad at first. — Losing that job was a blessing in disguise.</li>
+<li>A dime a dozen — Very common or of little value. — These souvenirs are a dime a dozen.</li>
+<li>A friend in need is a friend indeed — True friends help in difficult times. — He helped me during my illness; a friend in need is a friend indeed.</li>
+<li>A picture is worth a thousand words — Pictures can explain things better than words. — The chart says it all; a picture is worth a thousand words.</li>
+<li>Actions speak louder than words — Actions are more important than what you say. — Don't just promise; actions speak louder than words.</li>
+<li>Add fuel to the fire — To make a bad situation worse. — His rude comment only added fuel to the fire.</li>
+<li>All bark and no bite — Someone who threatens but doesn't act. — He talks a lot, but he's all bark and no bite.</li>
+<li>All that glitters is not gold — Not everything that looks good is valuable. — Don't be fooled; all that glitters is not gold.</li>
+<li>An arm and a leg — Very expensive. — That watch costs an arm and a leg.</li>
+<li>As blind as a bat — Unable to see very well. — I'm as blind as a bat without my glasses.</li>
+<li>— @omiistudies —</li>
+</ol>
+<h2 id="500-idioms-phrases_10">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples_10">WITH MEANING &amp; EXAMPLES</h2>
+<p>Page 11 (251-275)</p>
+<ul>
+<li>251; Back to the drawing board — To start over after a failure. —- The plan didn't work, so we went back to the drawing board.
+252. Beat around the bush — To avoid the main topic. — Stop beating around the bush and tell me the truth.
+253. Better late than never — It's good to do something even if it's late. — You apologized today; better late than never.
+254. Between a rock and a hard place — In a difficult situation with no good choices. — He is between a rock and a hard place about which job to take.
+255. Bite the bullet — To face a painful or difficult situation bravely. — I didn't want to go to the dentist, but I bit the bullet.
+256. Break the news — To tell someone bad or surprising news. — It's never easy to break the news to a friend.
+257. Bring home the bacon — To earn money to support your family. — He works hard every day to bring home the bacon.</li>
+<li>Burn bridges — To do something that makes it impossible to have a good relationship again. — After his rude comment, he bummed bridges with his boss.
+259. Call it a day — To stop working or doing something for the day. — It's getting late; let's call it a day.
+260. Catch someone red-handed — To catch someone doing something wrong. — The teacher caught him red-handed cheating in the exam.
+261. Cost an arm and a leg — Very expensive. — That designer bag costs an arm and a leg!
+262. Cut to the chase — To get to the point quickly. — I don't have much time, so cut to the chase.
+263. Don't count your chickens before they hatch — Don't expect success before it happens. — Let's wait for the result; don't count your chickens before they hatch.
+264. Don't put all your eggs in one basket — Don't risk everything on one plan or idea. — He started another business; he didn't put all his eggs in one basket.</li>
+<li>Down to earth — Practical and realistic. — She is a famous actor but still very down to earth.
+266. Drive someone up the wall — To annoy someone very much. — His constant questions are driving me up the wall!
+267. Every dog has its day — Everyone will have a chance to succeed. — Don't worry; every dog has its day.
+268. Face the music — To accept the punishment for your mistakes. — You broke the rules; now you have to face the music.
+269. Figure it out — To understand or solve something. — I need some time to figure this out.
+270. Go the extra mile — To do more than what is expected. — She always goes the extra mile for her students.
+271. Go with the flow — To accept things as they happen and not try to control everything. — Sometimes, it's better to go with the flow.
+272. Have a soft spot for someone — To be kind and caring toward someone. — I have a soft spot for animals.
+273. Hit the books — To study very hard. — I have to hit the books to pass this exam.
+274. Hold your horses — To wait and be patient. — Hold your horses! I will explain everything.
+275. In a nutshell — In short; in a few words. — In a nutshell, the meeting was a success.</li>
+<li>— @omiistudies —</li>
+</ul>
+<h2 id="500-idioms-phrases_11">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples_11">WITH MEANING &amp; EXAMPLES</h2>
+<p>Page 12 (276—300)</p>
+<ol start="276">
+<li>In black and white — In writing; clearly and officially. — Please get our agreement in black and white.</li>
+<li>In the same boat — In the same difficult situation. — We are all in the same boat during this crisis.</li>
+<li>In the thick of it — In the middle of a difficult situation. — The manager is in the thick of it right now.</li>
+<li>In the wrong place at the wrong time — To be present when something bad happens. — I was in the wrong place at the wrong time.</li>
+<li>It takes two to tango — Both people are responsible for a situation. — Don't blame him; it takes two to tango.</li>
+<li>Keep your chin up — To stay positive and keep trying. — You failed the test, but keep your chin up; you can do better next time.</li>
+<li>Keep your eye on the ball — To stay focused on what you are doing. — Don't get distracted; keep your eye on the ball.</li>
+<li>Keep your shirt on — To calm down; don't panic. — Keep your shirt on! Everything will be fine.</li>
+<li>Kick the bucket — To die. —- My grandfather passed away; he kicked the bucket last night.</li>
+<li>Let bygones be bygones — To forgive and forget the past. — We argued a lot, but let bygones be bygones.</li>
+<li>Let the sleeping dogs lie — To avoid causing problems by bringing up old issues. — It's better to let the sleeping dogs lie.</li>
+<li>Like a fish out of water — To feel uncomfortable in a situation. — He felt like a fish out of water at the party.</li>
+<li>Live from hand to mouth — To have just enough money to survive. — Many people live from hand to mouth.</li>
+<li>More than meets the eye — Better or more important than it seems. — She is quiet, but there's more than meets the eye.</li>
+<li>Not my cup of tea — Not something I like. — Horror movies are not my cup of tea.</li>
+<li>Once bitten, twice shy — After being hurt once, you are careful next time. — I was cheated before, so once bitten, twice shy.</li>
+<li>Out of sight, out of mind — When you don't see someone, you stop thinking about them. — She moved away, and out of sight, out of mind.</li>
+<li>Out of the woods — Safe from danger or trouble. — We still have challenges, but we're out of the woods.</li>
+<li>294, Pay through the nose — To pay a lot of money. — He paid through the nose for that designer watch.</li>
+<li>Piece of mind — A state of being calm and stress-free. — I just want some peace of mind.</li>
+<li>Pull yourself together — To calm down and behave properly. — You have an interview; pull yourself together!</li>
+<li>Put all your cards on the table — To be honest about your plans or feelings. — Let's put all our cards on the table.</li>
+<li>Shoot from the hip — To say or do something without thinking. — He always shoots from the hip.</li>
+<li>Speak of the devil — Someone appears who was just talked about. — Speak of the devil! Here he comes.</li>
+<li>Strike while the iron is hot — To act immediately when there is an opportunity. — We got a good offer; let's strike while the iron is hot.</li>
+<li>— @omiistudies —</li>
+</ol>
+<h2 id="500-idioms-phrases_12">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples_12">WITH MEANING &amp; EXAMPLES</h2>
+<p>Page 13 (301-325)</p>
+<ul>
+<li>Take a back seat — To be less important; to let others lead. — In this project, I'll take a back
+302. Take it with a pinch of salt — To not believe something completely. — His story sounds strange; take it with a pinch of salt.
+303. The ball is in your court — It's your tum to act or decide. — I've done my part; now the ball is in your court.
+304. The bottom line — The most important point. — The bottom line is that we need more time.
+305. The calm before the storm — A quiet time before something bad happens. — The calm before the storm made everyone nervous.</li>
+<li>The door is always open — You are always welcome. — If you need help, remember the door is always open.
+307. The elephant in the room — A big problem that everyone ignores. — We need to talk about the elephant in the room.
+308. The icing on the cake — Something extra that makes a good thing better. — Getting a bonus was the icing on the cake!
+309. The last but not the least — Used to introduce the final point. — We visited many places; the last but not the least was the museum.
+310. The more, the merrier — More people or things make a situation more enjoyable. — The more friends we have, the merrier!
+311. The proof of the pudding is in the eating — You can only judge something by experiencing it. — The proof of the pudding is in the eating; try it and see.</li>
+<li>The writing is on the wall — A sign of something bad that will happen. — The company is losing money; the writing is on the wall.
+313. There is no free lunch — Nothing is given without any cost or effort. — If you want success, remember there is no free lunch.
+314. Time and tide wait for none — Time and opportunities do not wait for anyone. — Don't waste time; time and tide wait for none.
+315. Under the gun — Under pressure; in a difficult situation. — We have to finish the work under the gun.
+316. Until the cows come home — For a very long time. — I waited for him until the cows came home!
+317. Variety is the spice of life — Different things make life more interesting. — I love trying new foods; variety is the spice of life.
+318. When pigs fly — Something that will never happen. — He will clean his room when pigs fly!</li>
+<li>319: Where there's smoke, there's fire — If there is a sign of trouble, it is likely tue. — There are rumors, and where there's smoke, there's fire.
+320. You can't have your cake and eat it too — You can't enjoy two good things that conflict. — You can't skip practice and expect to win; you can't have your cake and eat it too.
+321. You can't make an omelette without breaking a few eggs — To achieve something, small problems are necessary. — Every success comes with challenges; you can't make an omelette without breaking a few eggs.
+322. Actions speak louder than words — What you do is more important than what you say. — Stop talking and start helping; actions speak louder than words.
+323. A diamond in the rough — A good person or thing that needs polishing. — She is a diamond in the rough; with training, she will shine.
+324. A horse of a different color — Something or someone very different. — This phone is a horse of a different color, I've never seen one like it!
+325. A little bird told me — A way of saying you heard a secret or rumor. — A little bird told me about your surprise party!</li>
+</ul>
+<h2 id="omiistudies">— @omiistudies —</h2>
+<h2 id="500-idioms-phrases_13">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples_13">WITH MEANING &amp; EXAMPLES</h2>
+<p>Page 14 (326-350)</p>
+<ol start="326">
+<li>A penny for your thoughts — Asking someone what they are thinking. — You look so quiet; a penny for your thoughts?</li>
+<li>A shot in the dark — A guess without much knowledge. — It was a shot in the dark, but I think I got it right.</li>
+<li>As right as rain — In perfect health or working order. — Don't worry about my car; it's running as right as rain.</li>
+<li>At death's door — Very close to dying. — He was at death's door after the accident.</li>
+<li>At loose ends — Having nothing to do. — I'm at loose ends this weekend; want to go out?</li>
+<li>At the drop of a hat — Immediately; without any delay. - He would help anyone at the drop of a hat.</li>
+<li>Back on track — Doing well again after a problem. — After a hard time, he is finally back on track.</li>
+<li>Barking up the wrong tree — Pursuing the wrong person or thing. — If you think I took your pen, you're barking up the wrong tree.</li>
+<li>Beat a dead horse — To do something that is useless because it won't change anything. — We can't change the decision now; let's stop beating a dead horse.</li>
+<li>Birds of a feather flock together — People with similar interests or qualities stay together. — They are always together; birds of a feather flock together</li>
+<li>Bite off more than you can chew — To take on more than you can handle. — He bit off more than he could chew with three jobs.</li>
+<li>Break a leg — A way to wish someone good luck, especially before a performance. — You have your exam today? Break a leg!</li>
+<li>Call it a day — To stop working. — We've been working for hours; let's call it a day.</li>
+<li>| Cut corners — To do something in the easiest or cheapest way, usually not the best way. — Don't cut comers; quality is important.</li>
+<li>Don't put all your eggs in one basket — Don't risk everything on one plan. — Smart investors don't put all their eggs in one basket.</li>
+<li>Face the music — To accept the punishment for your actions. — He lied to his parents and now has to face the music.</li>
+<li>Feeling under the weather — Not feeling well. — I'm feeling a little under the weather today.</li>
+<li>Get out of hand — To become uncontrolled. — The party got out of hand after midnight.</li>
+<li>Give someone the benefit of the doubt — To trust someone even if you are not sure. — Let's give him the benefit of the doubt this time.</li>
+<li>Go back to square one — To start again after a failure. — The project failed, so we have to go back to square one.</li>
+<li>Go the extra mile — To do more than what is expected. — She always goes the extra mile for her students.</li>
+<li>Hit the nail on the head — To say or do exactly the right thing. — You hit the nail on the head with your comment.</li>
+<li>It's not my cup of tea — Not something I like. - Rock music is not my cup of tea.</li>
+<li>Jump the gun — To start something too early. — Don't jump the gun; wait for the signal.</li>
+<li>Keep an eye on — To watch or monitor something. — I will keep an eye on your bag while you go. # 4</li>
+<li>— @omiistudies —</li>
+</ol>
+<h2 id="500-idioms-phrases_14">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples_14">WITH MEANING &amp; EXAMPLES</h2>
+<p>Page 15 (351-375)</p>
+<ol start="351">
+<li>Keep your fingers crossed — To hope for the best. — I have an interview today; keep your fingers crossed for me.</li>
+<li>Keep your head above water — To manage to survive in a difficult situation. — It was hard, but we managed to keep our heads above water.</li>
+<li>_ Kill two birds with one stone — To do two things at the same time. — I went to the bank and did some shopping; killed two birds with one stone.</li>
+<li>Laugh up your sleeve — To hide your true feelings and secretly laugh. — He agreed with them, but he was laughing up his sleeve.</li>
+<li>Let the cat out of the bag — To reveal a secret. — She let the cat out of the bag about the surprise party.</li>
+<li>Let sleeping dogs lie — To avoid causing problems by not bringing up old issues. — We should let sleeping dogs lie and move on.</li>
+<li>Like chalk and cheese — Very different from each other. — My two brothers are like chalk and cheese in personality.</li>
+<li>Living in a fool's paradise — To believe something that is not true. — He thinks he will win the lottery, living in a fool's paradise.</li>
+<li>Look before you leap — To think carefully before you do something. — Always look before you leap into a decision.</li>
+<li>Lose heart — To become sad or disappointed. — Don't lose heart; keep trying.</li>
+<li>Make a long story short — To give only the important details. — I won't bore you with details; to make a long story short, I got the job.</li>
+<li>Miss the boat — To miss an opportunity. — I wanted to apply, but missed the boat.</li>
+<li>Once in a blue moon — Very rarely. — We go on a vacation once in a blue moon.</li>
+<li>On the same wavelength — To think or feel the same way. — We are on the same wavelength about the issue.</li>
+<li>Out of the question — Impossible; not acceptable. — It's out of the question that I will quit now.</li>
+<li>Out of the blue — Suddenly; without warning. — She called me out of the blue.</li>
+<li>Play it by ear — To deal with something as it happens. — We don't have a plan, we'll just play it by ear.</li>
+<li>Put a sock in it — To tell someone to be quiet. — Put a sock in it and let others speak!</li>
+<li>Pull someone's leg — To joke with someone. — Don't worry, I'm just pulling your leg.</li>
+<li>Right under your nose — Very close to you, but not noticed. — The answer was right under my nose!</li>
+<li>See eye to eye — To agree with someone. — We don't always see eye to eye.</li>
+<li>Speak of the devil — Used when the person you were talking about appears. — Speak of the devil! Here he comes.</li>
+<li>Spill the beans — To reveal a secret. — He spilled the beans about the new project.</li>
+<li>Take it or leave it — To accept something or reject it. — That's the final offer, take it or leave it.</li>
+<li>The ball is in your court — It's your turn to act or decide. — I've done my part; now the ball is in your court. a 4</li>
+<li>— @omiistudies —</li>
+</ol>
+<h2 id="500-idioms-phrases_15">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples_15">WITH MEANING &amp; EXAMPLES</h2>
+<p>Page 16 (376-400)</p>
+<ol start="376">
+<li>The best of both worlds — To have two good things at the same time. — She has a great job and more free time; the best of both worlds!</li>
+<li>The bigger picture — The most important thing to consider. — Don't get worried about small mistakes; look at the bigger picture.</li>
+<li>The blind leading the blind — When unqualified people guide others. — It's like the blind leading the blind when he gives advice.</li>
+<li>The calm after the storm — A quiet time after a difficult situation. — We enjoyed the calm after the storm.</li>
+<li>The cream of the crop — The best of a group. — She is the cream of the crop in our class.</li>
+<li>The early bird catches the worm — Success comes to those who act early. — Wake up early; the early bird catches the worm.</li>
+<li>The elephant in the room — A big problem that everyone ignores. — We all know the elephant in the room, but no one wants to talk about it.</li>
+<li>The grass is always greener on the other side — People think others have it better. — The grass is always greener on the other side; be happy with what you have.</li>
+<li>The last straw — The final problem that causes a reaction. — His rude behavior was the last straw.</li>
+<li>The lion's share — The largest part. — He did most of the work, but took the lion's share of the credit.</li>
+<li>The long and short of it — The main point in brief. — The long and short of it is that we need more time.</li>
+<li>The tip of the iceberg — A small part of a much bigger problem. — What we saw is just the tip of the iceberg.</li>
+<li>There's no place like home — Home is the best place. — After traveling, I realize there's no place like home.</li>
+<li>Through thick and thin — In good times and bad times. — We have been friends through thick and thin.</li>
+<li>To make matters worse — To make a bad situation even worse. — I missed the bus and to make matters worse, it started raining!</li>
+<li>To see eye to eye — To agree with someone. — We don't always see eye to eye on politics.</li>
+<li>To turn a blind eye — To ignore something wrong. — The teacher can't turn a blind eye to cheating.</li>
+<li>Under the same roof — Living in the same house or working in the same place. — It's not easy to live under the same roof with so many people.</li>
+<li>When in Rome, do as the Romans do — Adapt to the place or situation. — When in Rome, do as the Romans do.</li>
+<li>Actions speak louder than words — What you do is more important than what you say. — He didn't promise; his actions speak louder than words.</li>
+<li>All that glitters is not gold — Everything that looks good is not valuable. — Don't trust everything you see; all that glitters is not gold.</li>
+<li>As easy as pie — Very easy. — The test was as easy as pie!</li>
+<li>Break the ice — To initiate conversation in an awkward situation. — He told a joke to break the ice.</li>
+<li>Burn the midnight oil — To work late into the night. — I have to bum the midnight oil to finish the project.</li>
+<li>Costs an arm and a leg — Very expensive. — That car costs an arm and a leg!</li>
+<li>— @omiistudies —</li>
+</ol>
+<h2 id="500-idioms-phrases_16">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples_16">WITH MEANING &amp; EXAMPLES</h2>
+<p>|</p>
+<p>Page 17 (401-425)</p>
+<p>|</p>
+<ol start="401">
+<li>Cross that bridge when we come to it — Deal with a problem when it happens. — Why worry now? We'll cross that bridge when we come to it.</li>
+<li>Don't count your chickens before they hatch — Don't expect something before it happens. — I know you're excited, but don't count your chickens before they hatch.</li>
+<li>Don't have a cow — To stay calm; not to panic. — It's just a small mistake, don't have a cow!</li>
+<li>Don't judge a book by its cover — Don't judge by appearance. — He may look quiet, but don't judge a book by its cover.</li>
+<li>Every cloud has a silver lining — Every problem has something good. — I know you failed, but every cloud has a silver lining.</li>
+<li>From the horse's mouth — Direct information from the person involved. — I heard it from the horse's mouth, so it must be true.</li>
+<li>Get your act together — To organize yourself and start behaving seriously. — You need to get your act together if you want to pass.</li>
+<li>Go with the flow — To accept things as they happen. — Life is easier when you go with the flow.</li>
+<li>Half a loaf is better than none — It's better to have something than nothing. — I didn't get the job I wanted, but half a loaf is better than none.</li>
+<li>Hit the books — To study hard. — I have an exam tomorrow, so I need to hit the books.</li>
+<li>Im black and white — In a clear and definite way; in writing. — Get the agreement in black and white before you start the project.</li>
+<li>It takes two to tango — Both people are responsible for a situation. — Don't blame me alone; it takes two to tango.</li>
+<li>Keep an open mind — To be willing to consider new ideas. — Listen to the plan with an open mind before you decide.</li>
+<li>'Let bygones be bygones — To forgive and forget the past. — We had a fight, but let bygones be bygones.</li>
+<li>Make ends meet — To have enough money to pay for what you need. — It's hard to make ends meet with this salary.</li>
+<li>Once bitten, twice shy — If you are hurt once, you will be more careful next time. — He was cheated before, so once bitten, twice shy.</li>
+<li>Out of sight, out of mind — If you don't see someone, you forget about them. — We haven't met for years; out of sight, out of mind.</li>
+<li>Piece of cake — Very easy. — The test was a piece of cake!</li>
+<li>See the light — To understand something suddenly. — After reading the book, I finally saw the light.</li>
+<li>The penny drops — To understand something suddenly. — It took a while, but then the penny dropped.</li>
+<li>The window of opportunity — A short time when something good can happen. — You must act fast; this is your window of opportunity.</li>
+<li>Two sides of the same coin — Two things that are similar. — Success and failure are two sides of the same coin.</li>
+<li>Walk the talk — To do what you say. — He says he cares about the environment and really walks the talk.</li>
+<li>What goes around comes around — Good or bad things will happen to you based on your actions. — He hurt many people, but what goes around comes around.</li>
+<li>When the going gets tough, the tough get going — Suong people keep trying in difficult times. — Challenges are normal; when the going gets tough, the tough get going.</li>
+</ol>
+<p>—</p>
+<p>@omiistudies</p>
+<p>—</p>
+<h2 id="500-idioms-phrases_17">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples_17">WITH MEANING &amp; EXAMPLES</h2>
+<p>Page 18 (426-450)</p>
+<ol start="426">
+<li>A barking dog never bites — Someone who acts aggressively is usually not dangerous. — He keeps shouting, but a barking dog never bites.</li>
+<li>Actions louder than words — What you do is more important than what you say. — She promised a lot, but actions louder than words.</li>
+<li>Add fuel to the fire — To make a bad situation worse. — Stop arguing; you're only adding fuel to the fire.</li>
+<li>Beat around the bush — To avoid talking about the main subject. — Please don't beat around the bush; tell me the truth.</li>
+<li>Better late than never — It is good to do something even if it is done late. — You apologized, better late than never.</li>
+<li>Beyond the shadow of a doubt — Completely certain; no doubt about it. — He is beyond the shadow of a doubt the best player.</li>
+<li>Bite the bullet — To face a painful or difficult situation bravely. — I had to bite the bullet and tell him the tuth.</li>
+<li>Break new ground — To do something that has not been done before. — This research breaks new ground in medicine.</li>
+<li>Burn bridges — To destroy relationships so there is no way back. — Don't bum bridges: you may need those people later.</li>
+<li>Call a spade a spade — To speak the truth clearly. — Let's call a spade a spade; he made a mistake.</li>
+<li>Close but no cigar — To come very near to achieving something, but fail. - We played well, but close, yet no cigar.</li>
+<li>Cost an arm and a leg — To be very expensive. — That laptop costs an arm and a leg!</li>
+<li>Don't cry over spilt milk — Don't worry about things that have already happened. — It's over now, so don't cry over spilt milk.</li>
+<li>Don't put the cart before the horse — Don't do things in the wrong order. — We need a plan first; don't put the cart before the horse.</li>
+<li>Don't sweat the small stuff — Don't worry about unimportant things. — Relax! Don't sweat the small stuff.</li>
+<li>Every dog has its day — Everyone will experience success sometime. — He is not famous now, but every dog has its day.</li>
+<li>Get back on your feet — To recover from a difficult situation. — After losing his job, he worked hard to get back on his feet.</li>
+<li>Give it a shot — To try something. — I've never done it before, but I'll give it a shot.</li>
+<li>Go down the drain — To be wasted or ruined. — All our hard work went down the drain because of that mistake.</li>
+<li>Great minds think alike — Intelligent people have similar ideas. — It's a surprise we came up with the same plan; great minds think alike!</li>
+<li>Have a bone to pick — To have a complaint about something. — I have a bone to pick with you about yesterday.</li>
+<li>Hit the books — To study hard. — I need to hit the books for my final exams.</li>
+<li>Hold your horses — To wait patiently. — Hold your horses; your tum will come.</li>
+<li>Keep something up your sleeve — To have a secret plan. — He's acting normal, but I think he has something up his sleeve.</li>
+<li>Kill time — To spend time when you are bored or waiting. — I was early, so I just killed time reading a book. : oe DF wii</li>
+<li>— @omiistudies —</li>
+</ol>
+<h2 id="500-idioms-phrases_18">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples_18">WITH MEANING &amp; EXAMPLES</h2>
+<p>Page 19 (451-475)</p>
+<ol start="451">
+<li>Know like the back of your hand — To know something very well. — I know this city like the back of my hand.</li>
+<li>Leave no stone unturned — To try everything possible. — We left no stone untumed to find the missing document.</li>
+<li>Let bygones be bygones — To forgive and forget the past. — It's time to let bygones be bygones and move on.</li>
+<li>Let the chips fall where they may — To accept the results without trying to control them. — I've done my best; now let the chips fall where they may.</li>
+<li>Like father, like son — Children behave the same way as their parents. — He is so kind, like father, like son.</li>
+<li>Make a mountain out of a molehill — To exaggerate a small problem. — Don't make a mountain out of a molehill; it's just a tiny mistake.</li>
+<li>Money talks — Wealthy people have more influence. — In politics, money talks.</li>
+<li>More than meets the eye — There is more to something than you can see. — He looks shy, but there's more than meets the eye.</li>
+<li>On cloud nine — Extremely happy. — She was on cloud nine after getting the job.</li>
+<li>Once in a while — Not often, but sometimes. - We meet once in a while for coffee.</li>
+<li>Out of the blue — Suddenly and unexpectedly. — He called me out of the blue.</li>
+<li>Pull yourself together — To calm down and behave properly. — You're upset; pull yourself together.</li>
+<li>See the bigger picture — To think about the overall situation, not just details. — Don't worry about the small errors; see the bigger picture.</li>
+<li>Strike while the iron is hot — To act while the opportunity is good. — It's the right time to invest; strike while the iron is hot.</li>
+<li>Sweeten the deal — To make an offer more attractive. — They offered a bonus to sweeten the deal.</li>
+<li>The ball is in your court — It's your tum to act or decide. — I've explained everything; now the ball is in your court.</li>
+<li>The heart wants what it wants — People desire what they want, not what is practical. — She left a good job because the heart wants what it wants.</li>
+<li>There is no time like the present — The best time to do something is now. — If you want to start, remember there is no time like the present.</li>
+<li>To be honest — To tell the tuth. — To be honest, I didn't like the movie.</li>
+<li>Too many cooks spoil the broth — When too many people are involved, things go wrong. — Let's decide soon; too many cooks spoil the broth.</li>
+<li>'Turn over a new leaf — To start a new and better life. — After the new year, I want to tum over a new leaf.</li>
+<li>Under the weather — Not feeling well. — I can't come out today; I'm feeling under the weather.</li>
+<li>When push comes to shove — In a difficult situation that requires a decision or action. — When push comes to shove, I will always choose honesty.</li>
+<li>You can't have your cake and eat it too — You cannot have two good things that are impossible at the same time. — You can't have your cake and eat it too; you must choose.</li>
+<li>You win some, you lose some — Sometimes you succeed, sometimes you fail. — We tried our best; you win some, you lose some.</li>
+</ol>
+<h2 id="500-idioms-phrases_19">500 IDIOMS &amp; PHRASES</h2>
+<h2 id="with-meaning-examples_19">WITH MEANING &amp; EXAMPLES</h2>
+<p>Page 20 (476—500)</p>
+<ol start="476">
+<li>A burden off one's shoulders — To feel less worried or relieved. — I felt a burden off my shoulders after finishing the exam.</li>
+<li>Bite off more than you can chew — To take on more than you can handle. — Don't bite off more than you can chew; start small.</li>
+<li>Break a leg — Used to wish someone good luck. — You have your performance tonight? Break a leg!</li>
+<li>Call it a day — To stop working on something. — It's late, let's call it a day.</li>
+<li>Cut to the chase — To get to the point. — Stop talking and cut to the chase.</li>
+<li>Don't burn your bridges — Don't destroy a relationship that may be useful later. — Leave on good terms; don't bum your bridges.</li>
+<li>Every little bit helps — Small efforts can make a big difference. — Saving water every day; every little bit helps.</li>
+<li>Face the music — To accept the consequences of your actions. — You made a mistake, so face the music.</li>
+<li>Go the extra mile — To do more than what is expected. — She always goes the extra mile for her students.</li>
+<li>Hit below the belt — To say or do something unfair or unkind. — That comment was uncalled for; it hit below the belt.</li>
+<li>In hot water — In trouble. — He is in hot water for breaking the rules.</li>
+<li>Kill two birds with one stone — To do two things at the same time. — I did my homework while listening to the lecture; I killed two birds with one stone.</li>
+<li>Let sleeping dogs lie — To avoid a problem by not bringing it up. — It's better to let sleeping dogs lie.</li>
+<li>No pain, no gain — You must work hard to succeed. — Remember, no pain, no gain!</li>
+<li>On the ball — To be efficient and quick. — Our teacher is always on the ball.</li>
+<li>Piece of cake — Very easy. — The test was a piece of cake.</li>
+<li>Put all your eggs in one basket — To risk everything on a single plan or idea. — Don't put all your eggs in one basket.</li>
+<li>Raise the bar — To set higher standards. — We must raise the bar to compete globally.</li>
+<li>See eye to eye — To agree with someone. — We don't always see eye to eye, but we respect each other.</li>
+<li>Spill the beans — To tell a secret. — Don't spill the beans about the surprise party!</li>
+<li>Take with a grain of salt — To not believe something completely. — Take his words with a grain of salt.</li>
+<li>The ball is in your court — It's your tum to act. — I've explained my part; the ball is in your court now.</li>
+<li>Under the same roof — Living or working in the same place. — We grew up under the same roof.</li>
+<li>When in doubt, do nothing — When unsure, it's better to wait. — When in doubt, do nothing and think again.</li>
+<li>You can't judge a book by its cover — Don't judge someone by appearance. — He looks shy, but you can't judge a book by its cover.</li>
+</ol>
+<p>—</p>
+<p>—</p>
+<p>@omiistudies</p>
+<p>——</p>
+    </div>
+  </article>
+  <script type="application/json" id="doc-meta">{"slug": "011-500-idioms-phrases", "number": 11, "theme": "clay", "engine": "docling", "source": "011 - 500 Idioms & Phrases.pdf", "pages": 20, "words": 11431, "sections": 41, "tables": 0, "reading_min": 64, "date": "2026-10-21", "teaser": ""}</script>
+</main>
+</body>
+</html>

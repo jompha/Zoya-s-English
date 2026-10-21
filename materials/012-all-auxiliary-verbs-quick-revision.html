@@ -1,0 +1,1448 @@
+<!doctype html>
+<html lang="en" data-theme="ember">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All Auxiliary Verbs – Quick Revision · Zoya's English — Study Module</title>
+<meta name="description" content="All Auxiliary Verbs – Quick Revision — study module from Zoya&#39;s English learning library: speaking and confidence coaching materials.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>/* ═══════════════════════════════════════════════════════════════════════════
+   ZOYA'S ENGLISH — MASTER LAYOUT STYLESHEET
+   Design language: FORGE-inspired, light edition — warm paper ground,
+   near-black ink, electric-lime energy, sharp edges, grotesk discipline.
+   Beat structure: tokens → chapter themes → base → components → prose → print
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────── 1 · DESIGN TOKENS (single source) */
+
+:root {
+  /* Palette — light Forge: paper, ink, electric lime */
+  --bg: #fafaf7;                 /* warm paper ground                    */
+  --bg-deep: #f2f1ea;            /* deeper wash for bands                */
+  --surface: #ffffff;
+  --ink: #17181a;                /* near-black body typography           */
+  --ink-soft: #55584f;
+  --ink-faint: #8b8d82;
+  --line: #e6e4da;
+  --line-strong: #d4d2c6;
+  --lime: #b5f030;               /* electric lime — the brand spark      */
+  --lime-deep: #8fc413;          /* lime pressed onto paper hover        */
+  --accent: #34352f;             /* neutral chrome accent (links et al.) */
+  --accent-ink: #17181a;
+  --accent-soft: #f4f3ec;
+  --accent-glow: rgba(181, 240, 48, 0.35);
+  --glow: rgba(181, 240, 48, 0.45);
+  --warm: #f6f3e4;
+
+  /* Typography */
+  --font-display: "Space Grotesk", "Inter Tight", system-ui, sans-serif;
+  --font-body: "Inter Tight", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Courier New", monospace;
+
+  /* Shape & depth — Forge is sharp: nothing rounded, glow instead of shadow */
+  --r-lg: 0px;
+  --r-md: 0px;
+  --r-sm: 0px;
+  --r-pill: 999px;               /* reserved: badges only                */
+  --shadow-1: 0 1px 0 var(--line);
+  --shadow-2: 0 0 0 1px var(--line);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─────────────────────────── 2 · CHAPTER DESIGN LANGUAGES (per-theme accents)
+
+   Every compiled chapter receives its own stable accent family, applied via
+   `data-theme` on the page root, so each module feels designed — not stamped.
+   The dashboard (materials.html) mirrors these values for its cards.        */
+
+[data-theme="slate"] { --accent: #4a6b82; --accent-ink: #375266; --accent-soft: #edf2f6; --accent-glow: rgba(74, 107, 130, 0.16); }
+[data-theme="ink"]   { --accent: #46474b; --accent-ink: #33353a; --accent-soft: #f1efe9; --accent-glow: rgba(70, 71, 75, 0.14); }
+[data-theme="clay"]  { --accent: #b06a48; --accent-ink: #8f5438; --accent-soft: #f9efe7; --accent-glow: rgba(176, 106, 72, 0.15); }
+[data-theme="sage"]  { --accent: #5f7c60; --accent-ink: #49614a; --accent-soft: #eff5ef; --accent-glow: rgba(95, 124, 96, 0.15); }
+[data-theme="plum"]  { --accent: #7d5a72; --accent-ink: #64485a; --accent-soft: #f6eff4; --accent-glow: rgba(125, 90, 114, 0.15); }
+[data-theme="mist"]  { --accent: #3f7a75; --accent-ink: #2f605c; --accent-soft: #ebf4f2; --accent-glow: rgba(63, 122, 117, 0.15); }
+[data-theme="ember"] { --accent: #a8543f; --accent-ink: #8a4232; --accent-soft: #f9ece8; --accent-glow: rgba(168, 84, 63, 0.15); }
+[data-theme="moss"]  { --accent: #72783f; --accent-ink: #5a5f31; --accent-soft: #f5f6e9; --accent-glow: rgba(114, 120, 63, 0.15); }
+
+/* ────────────────────────────────────────────────────────── 3 · BASE RESET */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 0.6em;
+}
+
+::selection { background: var(--lime); color: var(--ink); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  z-index: 100;
+  background: var(--lime);
+  color: var(--ink);
+  font-weight: 500;
+  padding: 0.55rem 1.1rem;
+}
+.skip-link:focus { left: 12px; color: var(--ink); }
+
+/* ───────────────────────────────────────────────────────── 4 · LAYOUT CORE */
+
+.shell { width: min(1140px, 92vw); margin-inline: auto; }
+.shell-wide { width: min(1240px, 94vw); margin-inline: auto; }
+
+.section { padding: 5.5rem 0; position: relative; }
+.section + .section { padding-top: 0; }
+.grid { display: grid; gap: 1.4rem; }
+.grid.cards { grid-template-columns: repeat(auto-fill, minmax(305px, 1fr)); }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: center; }
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.1rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.kicker::before {
+  content: "";
+  width: 22px;
+  height: 10px;
+  background: var(--lime);
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.section-lede { max-width: 62ch; color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 2.4rem; }
+.display-xl {
+  font-size: clamp(2.9rem, 6.2vw, 5.2rem);
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* ─────────────────────────────────────────────────────── 5 · NAV BAR */
+
+.site-nav {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 60;
+  padding: 0.85rem 0;
+  background: transparent;
+  transition: background 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+  border-bottom: 1px solid transparent;
+}
+.site-nav.scrolled {
+  background: rgba(250, 250, 247, 0.95);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom-color: var(--line);
+}
+.site-nav .bar { display: flex; align-items: center; gap: 1.6rem; }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 700;
+  background: var(--lime);
+}
+
+.nav-links { display: flex; align-items: center; gap: 1.5rem; margin-left: auto; }
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s var(--ease);
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a[aria-current="page"] { color: var(--ink); border-bottom: 2px solid var(--lime); }
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+}
+
+/* ─────────────────────────────────────────────────── 6 · BUTTONS · CHIPS */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid transparent;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.25s var(--ease), background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.25s var(--ease);
+}
+.btn-solid {
+  color: var(--ink);
+  background: var(--lime);
+}
+.btn-solid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px var(--accent-glow), 0 0 60px rgba(181, 240, 48, 0.18);
+}
+.btn-ghost {
+  color: var(--ink);
+  background: transparent;
+  border-color: var(--ink);
+}
+.btn-ghost:hover {
+  border-color: var(--lime-deep);
+  background: var(--lime);
+}
+.btn.is-disabled,
+.btn[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+.btn-sm { padding: 0.5rem 1rem; font-size: 0.74rem; }
+.btn-note {
+  margin-left: 0.1rem;
+  padding-left: 0.55rem;
+  border-left: 1px solid rgba(23, 24, 26, 0.3);
+  font-size: 0.72rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.9rem;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.chip::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--lime);
+  transform: rotate(45deg);
+}
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+/* ─────────────────────────────────────────────────── 7 · SHARP CARDS */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.7rem 1.7rem 1.5rem;
+  border: 1px solid var(--line-strong);
+  border-top: 3px solid var(--ink);
+  background: var(--surface);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+.card-hover:hover,
+.card-chapter:hover {
+  transform: translateY(-4px);
+  border-color: rgba(181, 240, 48, 0.55);
+  border-top-color: var(--lime);
+  box-shadow: 0 0 30px var(--accent-glow), 0 0 64px rgba(181, 240, 48, 0.14);
+  background: var(--card-tint, var(--surface));
+}
+.card-kicker {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--card-accent, var(--accent));
+  margin-bottom: 0.3rem;
+}
+.card-title { font-family: var(--font-display); font-weight: 700; font-size: 1.18rem; letter-spacing: -0.01em; margin: 0.15rem 0 0.35rem; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { color: var(--card-accent, var(--accent)); }
+.card-teaser { color: var(--ink-soft); font-size: 0.94rem; margin: 0 0 0.9rem; }
+.card-empty {
+  grid-column: 1 / -1;
+  align-items: flex-start;
+  border-style: dashed;
+  border-color: var(--line-strong);
+  background: transparent;
+  box-shadow: none;
+}
+.card-empty code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  padding: 0.05em 0.4em;
+}
+
+.material-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  background: var(--lime);
+  margin-bottom: 0.8rem;
+}
+.material-icon svg { width: 22px; height: 22px; }
+
+/* Chapter cards — materials.html dashboard */
+.card-chapter { --card-accent: var(--accent); border-top-color: var(--card-accent, var(--ink)); }
+.chapter-num {
+  position: absolute;
+  top: 1rem;
+  right: 1.4rem;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--card-accent);
+  opacity: 0.35;
+  user-select: none;
+}
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.card-meta li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.card-meta li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  transform: rotate(45deg);
+  background: var(--lime);
+  opacity: 0.9;
+}
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.filter-row { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 1.6rem 0 2.2rem; }
+.filter-chip { cursor: pointer; transition: all 0.2s var(--ease); opacity: 0.7; }
+.filter-chip:hover { opacity: 1; color: var(--ink); }
+.filter-chip.is-active {
+  opacity: 1;
+  color: var(--ink);
+  background: var(--lime);
+  border-color: var(--lime);
+}
+.filter-chip.is-active::before { background: var(--ink); }
+
+/* ─────────────────────────────────────────────────────────────── 8 · HERO */
+
+.hero {
+  position: relative;
+  padding: 9.5rem 0 4.5rem;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: min(4vw, 60px);
+  width: clamp(90px, 12vw, 150px);
+  height: clamp(90px, 12vw, 150px);
+  background:
+    repeating-linear-gradient(0deg, rgba(23, 24, 26, 0.09) 0 1.5px, transparent 1.5px 9px),
+    repeating-linear-gradient(90deg, rgba(23, 24, 26, 0.09) 0 1.5px, transparent 1.5px 9px);
+  pointer-events: none;
+}
+.hero .grid.two { gap: 3.5rem; }
+.hero-lede {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 54ch;
+  margin: 1.4rem 0 2rem;
+}
+.hero-lede em { font-style: normal; box-shadow: inset 0 -0.5em 0 var(--lime); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 2.4rem; }
+
+/* Stats — Forge's animated counters, honest numbers only */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.6rem 3.2rem;
+  margin-top: 0.4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--line-strong);
+}
+.stat { display: flex; flex-direction: column; gap: 0.15rem; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--ink);
+}
+.stat-num b { color: inherit; font-weight: inherit; }
+.stat-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.portrait { position: relative; margin: 0; }
+.portrait-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-deep);
+}
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(23, 24, 26, 0.08);
+  pointer-events: none;
+}
+.portrait-mono {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 14vw, 10rem);
+  font-weight: 700;
+  color: var(--ink);
+  opacity: 0.1;
+}
+.portrait-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portrait-chip {
+  position: absolute;
+  z-index: 2;
+  font-size: 0.72rem;
+  padding: 0.45rem 0.8rem;
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+.portrait-chip::before { background: var(--lime); }
+.portrait-chip.c1 { top: 8%; left: -4%; }
+.portrait-chip.c2 { bottom: 20%; right: -3%; }
+.portrait-chip.c3 { bottom: -3%; left: 8%; }
+@media (max-width: 760px) {
+  .portrait-chip.c1 { left: 4%; }
+  .portrait-chip.c2 { right: 4%; }
+}
+
+/* ───────────────────────────────────────────── 9 · TICKER · STATEMENT · METHOD */
+
+.ticker {
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 0.85rem 0;
+  background: var(--bg);
+}
+.ticker-track {
+  display: inline-flex;
+  animation: ticker-scroll 26s linear infinite;
+}
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-right: 1.6rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.ticker-track span::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--lime);
+  transform: rotate(45deg);
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.pull-quote {
+  margin: 1rem 0 0;
+  padding: 0.9rem 0 0 1.5rem;
+  border-left: 4px solid var(--lime);
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.prose-copy p { color: var(--ink-soft); margin: 0 0 1.05rem; max-width: 62ch; }
+.prose-copy strong { font-weight: 500; color: var(--ink); }
+
+.steps { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.step-num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--ink);
+  opacity: 0.35;
+  margin-bottom: 0.7rem;
+}
+.steps .card h3 { text-transform: uppercase; letter-spacing: 0.02em; font-size: 1.05rem; }
+.steps .card p { color: var(--ink-soft); font-size: 0.93rem; margin: 0; }
+
+/* ───────────────────────────────────────── 10 · CALLOUTS — the .tip-box system */
+
+.tip-box {
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 1.05rem 1.3rem 1.05rem 1.4rem;
+  border: 1px solid var(--line-strong);
+  border-left: 4px solid var(--card-accent, var(--accent));
+  background: var(--accent-soft);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.tip-box p, .tip-box ul { margin: 0.2rem 0 0; font-size: 0.96rem; color: var(--ink-soft); }
+.tip-box .tip-title,
+.tip-box > p:first-child strong:first-child {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent-ink);
+}
+.tip-box[data-tone="note"]  { border-left-color: #b98a4b; background: #faf4e8; }
+.tip-box[data-tone="warn"]  { border-left-color: #a8503f; background: #f9ecea; }
+.tip-box[data-tone="ok"]    { border-left-color: #3e7c74; background: #ecf4f1; }
+
+/* ─────────────────────────────────────────────── 11 · DOC PAGES (materials/*) */
+
+.doc-page body { background: var(--bg); }
+.doc-crumbs {
+  width: min(880px, 92vw);
+  margin: 6.5rem auto 1.2rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.doc-crumbs a { color: var(--ink); text-decoration: none; }
+.doc-crumbs a:hover { box-shadow: inset 0 -0.4em 0 var(--lime); }
+
+.doc-frame {
+  width: min(880px, 92vw);
+  margin: 0 auto 4.5rem;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.doc-cover {
+  position: relative;
+  overflow: hidden;
+  padding: 2.8rem 3.2rem 2.4rem;
+  border-bottom: 1px solid var(--ink);
+  border-top: 8px solid var(--accent);
+  background: var(--accent-soft);
+}
+.doc-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+/* one quiet motif per chapter design language */
+[data-theme="slate"] .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="ink"]   .doc-cover::after { background-image: repeating-linear-gradient(135deg, var(--accent-glow) 0 1px, transparent 1px 16px); }
+[data-theme="clay"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 22px); }
+[data-theme="sage"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="plum"]  .doc-cover::after { background-image: radial-gradient(420px 260px at 92% 100%, var(--accent-glow) 0%, transparent 70%); }
+[data-theme="mist"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 30px); }
+[data-theme="ember"] .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 13px), repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 13px); }
+[data-theme="moss"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 18px); }
+
+.doc-kicker {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.doc-kicker::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 9px;
+  margin-top: 0.55rem;
+  background: var(--lime);
+}
+.doc-title {
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+.doc-subtitle { margin: 0.4rem 0 1.4rem; max-width: 58ch; color: var(--ink-soft); font-size: 1.02rem; }
+.doc-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.2rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.doc-body { padding: 2.6rem 3.2rem 3.4rem; }
+@media (max-width: 640px) {
+  .doc-cover, .doc-body { padding-inline: 1.4rem; }
+}
+
+/* ──────────────────────────────────────────────── 12 · PROSE (lesson content) */
+
+.prose { font-size: 1.02rem; color: #2b2d26; }
+.prose > * + * { margin-top: 0.9em; }
+.prose h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-top: 2.2em;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--card-accent, var(--accent));
+}
+.prose h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; margin-top: 1.9em; }
+.prose h4 { font-family: var(--font-display); font-size: 1.02rem; font-weight: 600; margin-top: 1.6em; }
+.prose blockquote { margin: 1.4rem 0; padding: 1rem 1.3rem 1rem 1.4rem; border: 1px solid var(--line-strong); border-left: 4px solid var(--card-accent, var(--accent)); background: var(--accent-soft); color: var(--ink-soft); break-inside: avoid; page-break-inside: avoid; }
+.prose blockquote p { margin: 0.2rem 0 0; }
+.prose blockquote p:first-child { margin-top: 0; font-weight: 500; color: var(--ink); }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.6rem 0; font-size: 0.93rem; break-inside: avoid; page-break-inside: avoid; }
+.prose th { background: var(--card-accent, var(--accent)); color: #fff; font-family: var(--font-display); font-weight: 600; text-align: left; letter-spacing: 0.03em; }
+.prose th, .prose td { border: 1px solid var(--line-strong); padding: 0.55rem 0.8rem; }
+.prose tbody tr:nth-child(even) td { background: var(--accent-soft); }
+.prose ul, .prose ol { padding-left: 1.4rem; }
+.prose li { margin: 0.35rem 0; }
+.prose li::marker { color: var(--accent); font-weight: 600; }
+.prose strong { color: var(--ink); font-weight: 500; }
+.prose code { font-family: var(--font-mono); font-size: 0.88em; background: var(--accent-soft); border: 1px solid var(--line); padding: 0.08em 0.42em; }
+.prose hr { border: 0; border-top: 1px dashed var(--line-strong); margin: 2.2rem auto; width: 55%; }
+.prose figure { margin: 1.6rem 0; break-inside: avoid; page-break-inside: avoid; }
+
+/* ────────────────────────────────────────────────────────────── 13 · FOOTER */
+
+.site-footer {
+  padding: 3rem 0 3.6rem;
+  border-top: 2px solid var(--ink);
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+}
+.site-footer .bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-footer a { color: var(--ink-soft); text-decoration: none; }
+.site-footer a:hover { box-shadow: inset 0 -0.4em 0 var(--lime); }
+.site-footer .brand { font-size: 0.95rem; }
+
+/* ────────────────────────────────────────────────── 14 · MOTION & RESPONSIVE */
+
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (max-width: 760px) {
+  .section { padding: 3.6rem 0; }
+  .hero { padding-top: 7.5rem; }
+  .hero::after { display: none; }
+  .stats { gap: 1.8rem 2.2rem; }
+  .stat-num { font-size: 2.1rem; }
+  .doc-meta { gap: 0.3rem 0.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .ticker-track { animation: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ═══════════════════════════════════════════════ 15 · PRINT — A4 CHOREOGRAPHY
+   Hard pagination contract: no orphan headings, no splintered callouts,
+   no split table rows. Chromium prints exactly what these rules promise.     */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 14mm 18mm 14mm;
+  }
+
+  html, body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .site-nav, .site-footer, .no-print, .skip-link,
+  .hero-cta, .chip-row, .filter-row, .card-actions,
+  .ticker, .portrait-chip, .doc-crumbs, .doc-backbar {
+    display: none !important;
+  }
+
+  .hero, .section { padding: 0 !important; min-height: 0 !important; background: none !important; }
+  .hero::after { display: none !important; }
+  .shell, .shell-wide { width: 100% !important; max-width: none !important; }
+  main { padding-top: 0 !important; margin: 0 !important; }
+
+  /* — content-keep = never leave a single widow line — */
+  p, li { orphans: 3; widows: 3; }
+
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .tip-box, blockquote, table, tr, img, figure,
+  .doc-cover, .doc-frame, .card, .prose figure {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  thead { display: table-header-group; }  /* column headers repeat on every page */
+  tfoot { display: table-footer-group; }
+
+  a { color: inherit; text-decoration: none; }
+  a[href^="http"]::after {
+    content: " (" attr(href) ") ";
+    font-size: 0.82em;
+    color: #77777a;
+  }
+
+  /* Chapter pages unwrap from their web chrome and print edge-to-edge calm */
+  .doc-frame {
+    box-shadow: none !important;
+    border: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    background: #fff !important;
+  }
+  .doc-cover { margin-bottom: 1.4rem; }
+  .doc-body { padding: 0 !important; }
+  .prose table { font-size: 0.88rem; }
+  .prose th { background: var(--card-accent, #444540) !important; }
+  .prose tbody tr:nth-child(even) td { background: var(--accent-soft); }
+
+  .card, .steps .card { box-shadow: none; border-color: var(--line-strong); border-top-width: 2px; }
+  .page-break, .break-before {
+    break-before: page;
+    page-break-before: always;
+  }
+}
+</style>
+</head>
+<body class="doc-page">
+<a class="skip-link" href="#doc-main">Skip to content</a>
+<main id="doc-main">
+  <div class="doc-crumbs no-print">
+    <a href="../index.html">&larr; Portfolio</a><span aria-hidden="true">/</span>
+    <a href="../materials.html">Learning library</a>
+  </div>
+  <article class="doc-frame chapter-doc" data-chapter="012-all-auxiliary-verbs-quick-revision" data-theme="ember">
+    <header class="doc-cover">
+      <p class="doc-kicker">Zoya&#39;s English — Study Module 12</p>
+      <h1 class="doc-title">All Auxiliary Verbs – Quick Revision</h1>
+      <p class="doc-subtitle">Rebuilt from the original source — interactive web edition plus print-ready A4.</p>
+      <div class="doc-meta">
+        <span>Source: 012 - All Auxiliary Verbs – Quick Revision.pdf</span>
+        
+        <span>868 words</span>
+        <span>~5 min read</span>
+      </div>
+    </header>
+    <div class="doc-body prose">
+<h2 id="auxiliary-verb">Auxiliary Verb</h2>
+<h2 id="am-is-are-was-were-be-been-being">am | is | are | was | were | be | been | being</h2>
+<h2 id="be">BE</h2>
+<p>Used to show state, identity, existence, continuous action and in passive voice.</p>
+<table>
+<thead>
+<tr>
+<th>Form</th>
+<th>Usage</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>am</td>
+<td>used with I (present) I am happy.</td>
+<td></td>
+</tr>
+<tr>
+<td>is</td>
+<td>used with he/she/it (present)</td>
+<td>She is a student.</td>
+</tr>
+<tr>
+<td>are</td>
+<td>used with we/you/they (present)</td>
+<td>They are playing.</td>
+</tr>
+<tr>
+<td>was</td>
+<td>used with I/he/she/it (past) He was tired.</td>
+<td></td>
+</tr>
+<tr>
+<td>were</td>
+<td>used with we/you/they (past)</td>
+<td>We were at home.</td>
+</tr>
+<tr>
+<td>be</td>
+<td>base form (used with modals)</td>
+<td>It will be fine.</td>
+</tr>
+<tr>
+<td>been</td>
+<td>past participle (perfect tenses)</td>
+<td>I have been there.</td>
+</tr>
+<tr>
+<td>being</td>
+<td>present participle (continuous)</td>
+<td>She is being honest.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples-in-hindi-and-english">Examples in Hindi and English</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Hindi Sentence</th>
+<th>English Translation</th>
+<th>Use of 'Be'</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td></td>
+<td>I am studying.</td>
+<td>am + verb (present continuous)</td>
+</tr>
+<tr>
+<td>2.</td>
+<td></td>
+<td>She is happy.</td>
+<td>is + adjective (state)</td>
+</tr>
+<tr>
+<td>3.</td>
+<td></td>
+<td>They are playing.</td>
+<td>are + verb (present continuous)</td>
+</tr>
+<tr>
+<td>4.</td>
+<td></td>
+<td>He was here yesterday.</td>
+<td>was + expression (past)</td>
+</tr>
+<tr>
+<td>5.</td>
+<td></td>
+<td>We were there.</td>
+<td>were + expression (past)</td>
+</tr>
+<tr>
+<td>6.</td>
+<td>2212</td>
+<td>He is a doctor.</td>
+<td>is + noun (identity)</td>
+</tr>
+<tr>
+<td>7.</td>
+<td></td>
+<td>I will be fine.</td>
+<td>be + adjective (future)</td>
+</tr>
+<tr>
+<td>8.</td>
+<td></td>
+<td>The work has been completed.</td>
+<td>been (perfect passive)</td>
+</tr>
+<tr>
+<td>9.</td>
+<td></td>
+<td>She is being honest.</td>
+<td>being (continuous passive)</td>
+</tr>
+<tr>
+<td>10.</td>
+<td></td>
+<td>Everything is alright.</td>
+<td>is + adjective (state)</td>
+</tr>
+</tbody>
+</table>
+<p>Good Grammar. Clearer Communication.</p>
+<p>Used to show possession, experience, completion and in perfect tenses.</p>
+<table>
+<thead>
+<tr>
+<th>Form</th>
+<th>Usage</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>have</td>
+<td>used with I/we/you/they (present)</td>
+<td>I have a book.</td>
+</tr>
+<tr>
+<td>has</td>
+<td>used with he/she/it (present)</td>
+<td>She has a car.</td>
+</tr>
+<tr>
+<td>had</td>
+<td>used with all subjects (past)</td>
+<td>They had finished.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples-in-hindi-and-english_1">Examples in Hindi and English</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Hindi Sentence</th>
+<th>English Translation</th>
+<th>Use of 'Have'</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td></td>
+<td>I have a book.</td>
+<td>have + noun (possession)</td>
+</tr>
+<tr>
+<td>2.</td>
+<td>214 o h e</td>
+<td>She has a car.</td>
+<td>has + noun (possession)</td>
+</tr>
+<tr>
+<td>3.</td>
+<td></td>
+<td>We have enough time.</td>
+<td>have + noun (possession)</td>
+</tr>
+<tr>
+<td>4.</td>
+<td></td>
+<td>I have eaten.</td>
+<td>have + past participle (present perfect)</td>
+</tr>
+<tr>
+<td>5.</td>
+<td></td>
+<td>He has left.</td>
+<td>has + past participle (present perfect)</td>
+</tr>
+<tr>
+<td>6.</td>
+<td>e</td>
+<td>They have finished their work.</td>
+<td>have + past participle (present perfect)</td>
+</tr>
+<tr>
+<td>7.</td>
+<td></td>
+<td>I had seen him before.</td>
+<td>had + past participle (past perfect)</td>
+</tr>
+<tr>
+<td>8.</td>
+<td></td>
+<td>She has a lot of experience.</td>
+<td>has + noun (possession)</td>
+</tr>
+<tr>
+<td>9.</td>
+<td></td>
+<td>Do you have any suggestions?</td>
+<td>have + noun (question)</td>
+</tr>
+<tr>
+<td>10.</td>
+<td>24 H142上2</td>
+<td>We have to do this work.</td>
+<td>have to + verb (necessity)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="auxiliary-verb-do-do-does-did">Auxiliary Verb DO do | does | did</h2>
+<p>Used to form questions, negatives and for emphasis in the present and past tense.</p>
+<table>
+<thead>
+<tr>
+<th>Form</th>
+<th>Usage</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>op</td>
+<td>used with I/we/you/they (present)</td>
+<td>I do like it.</td>
+</tr>
+<tr>
+<td>does</td>
+<td>used with he/she/it (present)</td>
+<td>She does study.</td>
+</tr>
+<tr>
+<td>did</td>
+<td>used with all subjects (past)</td>
+<td>They did not come.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples-in-hindi-and-english_2">Examples in Hindi and English</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Hindi Sentence</th>
+<th>English Translation</th>
+<th>Use of 'Do'</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td></td>
+<td>Do you know me?</td>
+<td>do + verb (question)</td>
+</tr>
+<tr>
+<td>2.</td>
+<td></td>
+<td>Does she study?</td>
+<td>does + verb (question)</td>
+</tr>
+<tr>
+<td>3.</td>
+<td></td>
+<td>I do not do this.</td>
+<td>do + not + verb (negative)</td>
+</tr>
+<tr>
+<td>4.</td>
+<td></td>
+<td>He does not come here.</td>
+<td>does + not + verb (negative)</td>
+</tr>
+<tr>
+<td>5.</td>
+<td></td>
+<td>They did not do that.</td>
+<td>did + not + verb (negative)</td>
+</tr>
+<tr>
+<td>6.</td>
+<td></td>
+<td>Did you see this?</td>
+<td>did + verb (question)</td>
+</tr>
+<tr>
+<td>7.</td>
+<td></td>
+<td>I do like it.</td>
+<td>do (emphasis)</td>
+</tr>
+<tr>
+<td>8.</td>
+<td></td>
+<td>He does work hard.</td>
+<td>does (emphasis)</td>
+</tr>
+<tr>
+<td>9.</td>
+<td>H14 H</td>
+<td>We did that work.</td>
+<td>did + verb (past)</td>
+</tr>
+<tr>
+<td>10.</td>
+<td></td>
+<td>Why do you do that?</td>
+<td>do + verb (question)</td>
+</tr>
+</tbody>
+</table>
+<p>Practice Small. Improve Big.</p>
+<h2 id="modal-auxiliary-verbs-part-1-can-could-may-might-will-would">Modal Auxiliary Verbs Part 1 can | could | may | might | will | would</h2>
+<p>Used to express ability, possibility, permission, willingness and future.</p>
+<table>
+<thead>
+<tr>
+<th>Modal Verb</th>
+<th>Main Uses</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ability, possibility, permission</td>
+<td>I can swim.</td>
+<td>can</td>
+</tr>
+<tr>
+<td>past ability, polite request, possibility</td>
+<td>Could you help me?</td>
+<td>could</td>
+</tr>
+<tr>
+<td>possibility, permission (formal)</td>
+<td>He may come.</td>
+<td>may</td>
+</tr>
+<tr>
+<td>less certain possibility</td>
+<td>It might rain.</td>
+<td>might</td>
+</tr>
+<tr>
+<td>future, willingness, promise</td>
+<td>I will call you.</td>
+<td>will</td>
+</tr>
+<tr>
+<td>polite request, willingness, conditional</td>
+<td>Would you like some tea?</td>
+<td>would</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples-in-hindi-and-english_3">Examples in Hindi and English</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Hindi Sentence</th>
+<th>English Translation</th>
+<th>Use of Modal Verb</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td></td>
+<td>1 can swim.</td>
+<td>can (ability)</td>
+</tr>
+<tr>
+<td>2.</td>
+<td></td>
+<td>Could you help me?</td>
+<td>could (polite request)</td>
+</tr>
+<tr>
+<td>3.</td>
+<td></td>
+<td>He may come.</td>
+<td>may (possibility)</td>
+</tr>
+<tr>
+<td>4.</td>
+<td></td>
+<td>He might be busy.</td>
+<td>might (less certain possibility)</td>
+</tr>
+<tr>
+<td>5.</td>
+<td></td>
+<td>I will go tomorrow.</td>
+<td>will (future)</td>
+</tr>
+<tr>
+<td>6.</td>
+<td></td>
+<td>He will help you.</td>
+<td>will (promise)</td>
+</tr>
+<tr>
+<td>7.</td>
+<td>?</td>
+<td>May I come in?</td>
+<td>may (permission)</td>
+</tr>
+<tr>
+<td>8.</td>
+<td></td>
+<td>He could do that.</td>
+<td>could (past ability)</td>
+</tr>
+<tr>
+<td>9.</td>
+<td></td>
+<td>I will try.</td>
+<td>will (willingness)</td>
+</tr>
+<tr>
+<td>10.</td>
+<td>¿ lle</td>
+<td>Would you like some tea?</td>
+<td>would (polite request)</td>
+</tr>
+</tbody>
+</table>
+<p>Small Verbs. Big Possibilities.</p>
+<h2 id="modal-auxiliary-verbs-part-2">Modal Auxiliary Verbs Part 2</h2>
+<h2 id="shall-should-must-ought-to-need-dare">shall | should | must | ought to | need | dare</h2>
+<p>Used to express suggestions, obligations, necessity, advice and courage.</p>
+<table>
+<thead>
+<tr>
+<th>Modal Verb</th>
+<th>Main Uses</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shall</td>
+<td>suggestion, offer (mainly with I / we)</td>
+<td>Shall I open the window?</td>
+</tr>
+<tr>
+<td>should advice, suggestion, expectation</td>
+<td></td>
+<td>You should study regularly.</td>
+</tr>
+<tr>
+<td>must strong obligation, necessity</td>
+<td>You must be on time.</td>
+<td></td>
+</tr>
+<tr>
+<td>ought to</td>
+<td>moral obligation, right thing to do You ought to be honest.</td>
+<td></td>
+</tr>
+<tr>
+<td>need</td>
+<td>necessity (present / future)</td>
+<td>You need not worry.</td>
+</tr>
+<tr>
+<td>dare</td>
+<td>courage, willingness (often in negative) He dared not speak.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples-in-hindi-and-english_4">Examples in Hindi and English</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Hindi Sentence</th>
+<th>English Translation</th>
+<th>Use of Modal Verb</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td>337T?</td>
+<td>Shall I come in?</td>
+<td>shall (offer / suggestion)</td>
+</tr>
+<tr>
+<td>2.</td>
+<td></td>
+<td>We should leave now.</td>
+<td>should (advice)</td>
+</tr>
+<tr>
+<td>3.</td>
+<td></td>
+<td>You must do this.</td>
+<td>must (strong obligation)</td>
+</tr>
+<tr>
+<td>4.</td>
+<td></td>
+<td>We ought to be honest.</td>
+<td>ought to (moral obligation)</td>
+</tr>
+<tr>
+<td>5.</td>
+<td></td>
+<td>You need not worry.</td>
+<td>need (no necessity)</td>
+</tr>
+<tr>
+<td>6.</td>
+<td>3</td>
+<td>I need some water now.</td>
+<td>need (necessity)</td>
+</tr>
+<tr>
+<td></td>
+<td>7.</td>
+<td>He dared not do that.</td>
+<td>dare (negative form)</td>
+</tr>
+<tr>
+<td>8.</td>
+<td></td>
+<td>You should tell the truth.</td>
+<td>should (advice)</td>
+</tr>
+<tr>
+<td>9.</td>
+<td></td>
+<td>We shall meet tomorrow.</td>
+<td>shall (suggestion with we)</td>
+</tr>
+<tr>
+<td>10.</td>
+<td></td>
+<td>It must be completed now.</td>
+<td>must (necessity)</td>
+</tr>
+</tbody>
+</table>
+    </div>
+  </article>
+  <script type="application/json" id="doc-meta">{"slug": "012-all-auxiliary-verbs-quick-revision", "number": 12, "theme": "ember", "engine": "cached markdown", "source": "012 - All Auxiliary Verbs \u2013 Quick Revision.pdf", "pages": 0, "words": 868, "sections": 12, "tables": 10, "reading_min": 5, "date": "2026-10-21", "teaser": "Used to show state, identity, existence, continuous action and in passive voice."}</script>
+</main>
+</body>
+</html>

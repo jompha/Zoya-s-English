@@ -1,0 +1,2096 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>300 Important Words With Meanings · Zoya's English — Study Module</title>
+<meta name="description" content="300 Important Words With Meanings — study module from Zoya&#39;s English learning library: speaking and confidence coaching materials.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>/* ═══════════════════════════════════════════════════════════════════════════
+   ZOYA'S ENGLISH — MASTER LAYOUT STYLESHEET
+   Design language: FORGE-inspired, light edition — warm paper ground,
+   near-black ink, electric-lime energy, sharp edges, grotesk discipline.
+   Beat structure: tokens → chapter themes → base → components → prose → print
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────── 1 · DESIGN TOKENS (single source) */
+
+:root {
+  /* Palette — light Forge: paper, ink, electric lime */
+  --bg: #fafaf7;                 /* warm paper ground                    */
+  --bg-deep: #f2f1ea;            /* deeper wash for bands                */
+  --surface: #ffffff;
+  --ink: #17181a;                /* near-black body typography           */
+  --ink-soft: #55584f;
+  --ink-faint: #8b8d82;
+  --line: #e6e4da;
+  --line-strong: #d4d2c6;
+  --lime: #b5f030;               /* electric lime — the brand spark      */
+  --lime-deep: #8fc413;          /* lime pressed onto paper hover        */
+  --accent: #34352f;             /* neutral chrome accent (links et al.) */
+  --accent-ink: #17181a;
+  --accent-soft: #f4f3ec;
+  --accent-glow: rgba(181, 240, 48, 0.35);
+  --glow: rgba(181, 240, 48, 0.45);
+  --warm: #f6f3e4;
+
+  /* Typography */
+  --font-display: "Space Grotesk", "Inter Tight", system-ui, sans-serif;
+  --font-body: "Inter Tight", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Courier New", monospace;
+
+  /* Shape & depth — Forge is sharp: nothing rounded, glow instead of shadow */
+  --r-lg: 0px;
+  --r-md: 0px;
+  --r-sm: 0px;
+  --r-pill: 999px;               /* reserved: badges only                */
+  --shadow-1: 0 1px 0 var(--line);
+  --shadow-2: 0 0 0 1px var(--line);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─────────────────────────── 2 · CHAPTER DESIGN LANGUAGES (per-theme accents)
+
+   Every compiled chapter receives its own stable accent family, applied via
+   `data-theme` on the page root, so each module feels designed — not stamped.
+   The dashboard (materials.html) mirrors these values for its cards.        */
+
+[data-theme="slate"] { --accent: #4a6b82; --accent-ink: #375266; --accent-soft: #edf2f6; --accent-glow: rgba(74, 107, 130, 0.16); }
+[data-theme="ink"]   { --accent: #46474b; --accent-ink: #33353a; --accent-soft: #f1efe9; --accent-glow: rgba(70, 71, 75, 0.14); }
+[data-theme="clay"]  { --accent: #b06a48; --accent-ink: #8f5438; --accent-soft: #f9efe7; --accent-glow: rgba(176, 106, 72, 0.15); }
+[data-theme="sage"]  { --accent: #5f7c60; --accent-ink: #49614a; --accent-soft: #eff5ef; --accent-glow: rgba(95, 124, 96, 0.15); }
+[data-theme="plum"]  { --accent: #7d5a72; --accent-ink: #64485a; --accent-soft: #f6eff4; --accent-glow: rgba(125, 90, 114, 0.15); }
+[data-theme="mist"]  { --accent: #3f7a75; --accent-ink: #2f605c; --accent-soft: #ebf4f2; --accent-glow: rgba(63, 122, 117, 0.15); }
+[data-theme="ember"] { --accent: #a8543f; --accent-ink: #8a4232; --accent-soft: #f9ece8; --accent-glow: rgba(168, 84, 63, 0.15); }
+[data-theme="moss"]  { --accent: #72783f; --accent-ink: #5a5f31; --accent-soft: #f5f6e9; --accent-glow: rgba(114, 120, 63, 0.15); }
+
+/* ────────────────────────────────────────────────────────── 3 · BASE RESET */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 0.6em;
+}
+
+::selection { background: var(--lime); color: var(--ink); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  z-index: 100;
+  background: var(--lime);
+  color: var(--ink);
+  font-weight: 500;
+  padding: 0.55rem 1.1rem;
+}
+.skip-link:focus { left: 12px; color: var(--ink); }
+
+/* ───────────────────────────────────────────────────────── 4 · LAYOUT CORE */
+
+.shell { width: min(1140px, 92vw); margin-inline: auto; }
+.shell-wide { width: min(1240px, 94vw); margin-inline: auto; }
+
+.section { padding: 5.5rem 0; position: relative; }
+.section + .section { padding-top: 0; }
+.grid { display: grid; gap: 1.4rem; }
+.grid.cards { grid-template-columns: repeat(auto-fill, minmax(305px, 1fr)); }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: center; }
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.1rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.kicker::before {
+  content: "";
+  width: 22px;
+  height: 10px;
+  background: var(--lime);
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.section-lede { max-width: 62ch; color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 2.4rem; }
+.display-xl {
+  font-size: clamp(2.9rem, 6.2vw, 5.2rem);
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* ─────────────────────────────────────────────────────── 5 · NAV BAR */
+
+.site-nav {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 60;
+  padding: 0.85rem 0;
+  background: transparent;
+  transition: background 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+  border-bottom: 1px solid transparent;
+}
+.site-nav.scrolled {
+  background: rgba(250, 250, 247, 0.95);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom-color: var(--line);
+}
+.site-nav .bar { display: flex; align-items: center; gap: 1.6rem; }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 700;
+  background: var(--lime);
+}
+
+.nav-links { display: flex; align-items: center; gap: 1.5rem; margin-left: auto; }
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s var(--ease);
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a[aria-current="page"] { color: var(--ink); border-bottom: 2px solid var(--lime); }
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+}
+
+/* ─────────────────────────────────────────────────── 6 · BUTTONS · CHIPS */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid transparent;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.25s var(--ease), background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.25s var(--ease);
+}
+.btn-solid {
+  color: var(--ink);
+  background: var(--lime);
+}
+.btn-solid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px var(--accent-glow), 0 0 60px rgba(181, 240, 48, 0.18);
+}
+.btn-ghost {
+  color: var(--ink);
+  background: transparent;
+  border-color: var(--ink);
+}
+.btn-ghost:hover {
+  border-color: var(--lime-deep);
+  background: var(--lime);
+}
+.btn.is-disabled,
+.btn[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+.btn-sm { padding: 0.5rem 1rem; font-size: 0.74rem; }
+.btn-note {
+  margin-left: 0.1rem;
+  padding-left: 0.55rem;
+  border-left: 1px solid rgba(23, 24, 26, 0.3);
+  font-size: 0.72rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.9rem;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.chip::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--lime);
+  transform: rotate(45deg);
+}
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+/* ─────────────────────────────────────────────────── 7 · SHARP CARDS */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.7rem 1.7rem 1.5rem;
+  border: 1px solid var(--line-strong);
+  border-top: 3px solid var(--ink);
+  background: var(--surface);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+.card-hover:hover,
+.card-chapter:hover {
+  transform: translateY(-4px);
+  border-color: rgba(181, 240, 48, 0.55);
+  border-top-color: var(--lime);
+  box-shadow: 0 0 30px var(--accent-glow), 0 0 64px rgba(181, 240, 48, 0.14);
+  background: var(--card-tint, var(--surface));
+}
+.card-kicker {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--card-accent, var(--accent));
+  margin-bottom: 0.3rem;
+}
+.card-title { font-family: var(--font-display); font-weight: 700; font-size: 1.18rem; letter-spacing: -0.01em; margin: 0.15rem 0 0.35rem; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { color: var(--card-accent, var(--accent)); }
+.card-teaser { color: var(--ink-soft); font-size: 0.94rem; margin: 0 0 0.9rem; }
+.card-empty {
+  grid-column: 1 / -1;
+  align-items: flex-start;
+  border-style: dashed;
+  border-color: var(--line-strong);
+  background: transparent;
+  box-shadow: none;
+}
+.card-empty code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  padding: 0.05em 0.4em;
+}
+
+.material-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  background: var(--lime);
+  margin-bottom: 0.8rem;
+}
+.material-icon svg { width: 22px; height: 22px; }
+
+/* Chapter cards — materials.html dashboard */
+.card-chapter { --card-accent: var(--accent); border-top-color: var(--card-accent, var(--ink)); }
+.chapter-num {
+  position: absolute;
+  top: 1rem;
+  right: 1.4rem;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--card-accent);
+  opacity: 0.35;
+  user-select: none;
+}
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.card-meta li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.card-meta li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  transform: rotate(45deg);
+  background: var(--lime);
+  opacity: 0.9;
+}
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.filter-row { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 1.6rem 0 2.2rem; }
+.filter-chip { cursor: pointer; transition: all 0.2s var(--ease); opacity: 0.7; }
+.filter-chip:hover { opacity: 1; color: var(--ink); }
+.filter-chip.is-active {
+  opacity: 1;
+  color: var(--ink);
+  background: var(--lime);
+  border-color: var(--lime);
+}
+.filter-chip.is-active::before { background: var(--ink); }
+
+/* ─────────────────────────────────────────────────────────────── 8 · HERO */
+
+.hero {
+  position: relative;
+  padding: 9.5rem 0 4.5rem;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: min(4vw, 60px);
+  width: clamp(90px, 12vw, 150px);
+  height: clamp(90px, 12vw, 150px);
+  background:
+    repeating-linear-gradient(0deg, rgba(23, 24, 26, 0.09) 0 1.5px, transparent 1.5px 9px),
+    repeating-linear-gradient(90deg, rgba(23, 24, 26, 0.09) 0 1.5px, transparent 1.5px 9px);
+  pointer-events: none;
+}
+.hero .grid.two { gap: 3.5rem; }
+.hero-lede {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 54ch;
+  margin: 1.4rem 0 2rem;
+}
+.hero-lede em { font-style: normal; box-shadow: inset 0 -0.5em 0 var(--lime); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 2.4rem; }
+
+/* Stats — Forge's animated counters, honest numbers only */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.6rem 3.2rem;
+  margin-top: 0.4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--line-strong);
+}
+.stat { display: flex; flex-direction: column; gap: 0.15rem; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--ink);
+}
+.stat-num b { color: inherit; font-weight: inherit; }
+.stat-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.portrait { position: relative; margin: 0; }
+.portrait-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-deep);
+}
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(23, 24, 26, 0.08);
+  pointer-events: none;
+}
+.portrait-mono {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 14vw, 10rem);
+  font-weight: 700;
+  color: var(--ink);
+  opacity: 0.1;
+}
+.portrait-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portrait-chip {
+  position: absolute;
+  z-index: 2;
+  font-size: 0.72rem;
+  padding: 0.45rem 0.8rem;
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+.portrait-chip::before { background: var(--lime); }
+.portrait-chip.c1 { top: 8%; left: -4%; }
+.portrait-chip.c2 { bottom: 20%; right: -3%; }
+.portrait-chip.c3 { bottom: -3%; left: 8%; }
+@media (max-width: 760px) {
+  .portrait-chip.c1 { left: 4%; }
+  .portrait-chip.c2 { right: 4%; }
+}
+
+/* ───────────────────────────────────────────── 9 · TICKER · STATEMENT · METHOD */
+
+.ticker {
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 0.85rem 0;
+  background: var(--bg);
+}
+.ticker-track {
+  display: inline-flex;
+  animation: ticker-scroll 26s linear infinite;
+}
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-right: 1.6rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.ticker-track span::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--lime);
+  transform: rotate(45deg);
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.pull-quote {
+  margin: 1rem 0 0;
+  padding: 0.9rem 0 0 1.5rem;
+  border-left: 4px solid var(--lime);
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.prose-copy p { color: var(--ink-soft); margin: 0 0 1.05rem; max-width: 62ch; }
+.prose-copy strong { font-weight: 500; color: var(--ink); }
+
+.steps { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.step-num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--ink);
+  opacity: 0.35;
+  margin-bottom: 0.7rem;
+}
+.steps .card h3 { text-transform: uppercase; letter-spacing: 0.02em; font-size: 1.05rem; }
+.steps .card p { color: var(--ink-soft); font-size: 0.93rem; margin: 0; }
+
+/* ───────────────────────────────────────── 10 · CALLOUTS — the .tip-box system */
+
+.tip-box {
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 1.05rem 1.3rem 1.05rem 1.4rem;
+  border: 1px solid var(--line-strong);
+  border-left: 4px solid var(--card-accent, var(--accent));
+  background: var(--accent-soft);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.tip-box p, .tip-box ul { margin: 0.2rem 0 0; font-size: 0.96rem; color: var(--ink-soft); }
+.tip-box .tip-title,
+.tip-box > p:first-child strong:first-child {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent-ink);
+}
+.tip-box[data-tone="note"]  { border-left-color: #b98a4b; background: #faf4e8; }
+.tip-box[data-tone="warn"]  { border-left-color: #a8503f; background: #f9ecea; }
+.tip-box[data-tone="ok"]    { border-left-color: #3e7c74; background: #ecf4f1; }
+
+/* ─────────────────────────────────────────────── 11 · DOC PAGES (materials/*) */
+
+.doc-page body { background: var(--bg); }
+.doc-crumbs {
+  width: min(880px, 92vw);
+  margin: 6.5rem auto 1.2rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.doc-crumbs a { color: var(--ink); text-decoration: none; }
+.doc-crumbs a:hover { box-shadow: inset 0 -0.4em 0 var(--lime); }
+
+.doc-frame {
+  width: min(880px, 92vw);
+  margin: 0 auto 4.5rem;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.doc-cover {
+  position: relative;
+  overflow: hidden;
+  padding: 2.8rem 3.2rem 2.4rem;
+  border-bottom: 1px solid var(--ink);
+  border-top: 8px solid var(--accent);
+  background: var(--accent-soft);
+}
+.doc-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+/* one quiet motif per chapter design language */
+[data-theme="slate"] .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="ink"]   .doc-cover::after { background-image: repeating-linear-gradient(135deg, var(--accent-glow) 0 1px, transparent 1px 16px); }
+[data-theme="clay"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 22px); }
+[data-theme="sage"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="plum"]  .doc-cover::after { background-image: radial-gradient(420px 260px at 92% 100%, var(--accent-glow) 0%, transparent 70%); }
+[data-theme="mist"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 30px); }
+[data-theme="ember"] .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 13px), repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 13px); }
+[data-theme="moss"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 18px); }
+
+.doc-kicker {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.doc-kicker::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 9px;
+  margin-top: 0.55rem;
+  background: var(--lime);
+}
+.doc-title {
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+.doc-subtitle { margin: 0.4rem 0 1.4rem; max-width: 58ch; color: var(--ink-soft); font-size: 1.02rem; }
+.doc-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.2rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.doc-body { padding: 2.6rem 3.2rem 3.4rem; }
+@media (max-width: 640px) {
+  .doc-cover, .doc-body { padding-inline: 1.4rem; }
+}
+
+/* ──────────────────────────────────────────────── 12 · PROSE (lesson content) */
+
+.prose { font-size: 1.02rem; color: #2b2d26; }
+.prose > * + * { margin-top: 0.9em; }
+.prose h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-top: 2.2em;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--card-accent, var(--accent));
+}
+.prose h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; margin-top: 1.9em; }
+.prose h4 { font-family: var(--font-display); font-size: 1.02rem; font-weight: 600; margin-top: 1.6em; }
+.prose blockquote { margin: 1.4rem 0; padding: 1rem 1.3rem 1rem 1.4rem; border: 1px solid var(--line-strong); border-left: 4px solid var(--card-accent, var(--accent)); background: var(--accent-soft); color: var(--ink-soft); break-inside: avoid; page-break-inside: avoid; }
+.prose blockquote p { margin: 0.2rem 0 0; }
+.prose blockquote p:first-child { margin-top: 0; font-weight: 500; color: var(--ink); }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.6rem 0; font-size: 0.93rem; break-inside: avoid; page-break-inside: avoid; }
+.prose th { background: var(--card-accent, var(--accent)); color: #fff; font-family: var(--font-display); font-weight: 600; text-align: left; letter-spacing: 0.03em; }
+.prose th, .prose td { border: 1px solid var(--line-strong); padding: 0.55rem 0.8rem; }
+.prose tbody tr:nth-child(even) td { background: var(--accent-soft); }
+.prose ul, .prose ol { padding-left: 1.4rem; }
+.prose li { margin: 0.35rem 0; }
+.prose li::marker { color: var(--accent); font-weight: 600; }
+.prose strong { color: var(--ink); font-weight: 500; }
+.prose code { font-family: var(--font-mono); font-size: 0.88em; background: var(--accent-soft); border: 1px solid var(--line); padding: 0.08em 0.42em; }
+.prose hr { border: 0; border-top: 1px dashed var(--line-strong); margin: 2.2rem auto; width: 55%; }
+.prose figure { margin: 1.6rem 0; break-inside: avoid; page-break-inside: avoid; }
+
+/* ────────────────────────────────────────────────────────────── 13 · FOOTER */
+
+.site-footer {
+  padding: 3rem 0 3.6rem;
+  border-top: 2px solid var(--ink);
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+}
+.site-footer .bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-footer a { color: var(--ink-soft); text-decoration: none; }
+.site-footer a:hover { box-shadow: inset 0 -0.4em 0 var(--lime); }
+.site-footer .brand { font-size: 0.95rem; }
+
+/* ────────────────────────────────────────────────── 14 · MOTION & RESPONSIVE */
+
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (max-width: 760px) {
+  .section { padding: 3.6rem 0; }
+  .hero { padding-top: 7.5rem; }
+  .hero::after { display: none; }
+  .stats { gap: 1.8rem 2.2rem; }
+  .stat-num { font-size: 2.1rem; }
+  .doc-meta { gap: 0.3rem 0.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .ticker-track { animation: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ═══════════════════════════════════════════════ 15 · PRINT — A4 CHOREOGRAPHY
+   Hard pagination contract: no orphan headings, no splintered callouts,
+   no split table rows. Chromium prints exactly what these rules promise.     */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 14mm 18mm 14mm;
+  }
+
+  html, body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .site-nav, .site-footer, .no-print, .skip-link,
+  .hero-cta, .chip-row, .filter-row, .card-actions,
+  .ticker, .portrait-chip, .doc-crumbs, .doc-backbar {
+    display: none !important;
+  }
+
+  .hero, .section { padding: 0 !important; min-height: 0 !important; background: none !important; }
+  .hero::after { display: none !important; }
+  .shell, .shell-wide { width: 100% !important; max-width: none !important; }
+  main { padding-top: 0 !important; margin: 0 !important; }
+
+  /* — content-keep = never leave a single widow line — */
+  p, li { orphans: 3; widows: 3; }
+
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .tip-box, blockquote, table, tr, img, figure,
+  .doc-cover, .doc-frame, .card, .prose figure {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  thead { display: table-header-group; }  /* column headers repeat on every page */
+  tfoot { display: table-footer-group; }
+
+  a { color: inherit; text-decoration: none; }
+  a[href^="http"]::after {
+    content: " (" attr(href) ") ";
+    font-size: 0.82em;
+    color: #77777a;
+  }
+
+  /* Chapter pages unwrap from their web chrome and print edge-to-edge calm */
+  .doc-frame {
+    box-shadow: none !important;
+    border: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    background: #fff !important;
+  }
+  .doc-cover { margin-bottom: 1.4rem; }
+  .doc-body { padding: 0 !important; }
+  .prose table { font-size: 0.88rem; }
+  .prose th { background: var(--card-accent, #444540) !important; }
+  .prose tbody tr:nth-child(even) td { background: var(--accent-soft); }
+
+  .card, .steps .card { box-shadow: none; border-color: var(--line-strong); border-top-width: 2px; }
+  .page-break, .break-before {
+    break-before: page;
+    page-break-before: always;
+  }
+}
+</style>
+</head>
+<body class="doc-page">
+<a class="skip-link" href="#doc-main">Skip to content</a>
+<main id="doc-main">
+  <div class="doc-crumbs no-print">
+    <a href="../index.html">&larr; Portfolio</a><span aria-hidden="true">/</span>
+    <a href="../materials.html">Learning library</a>
+  </div>
+  <article class="doc-frame chapter-doc" data-chapter="009-300-important-words-with-meanings" data-theme="slate">
+    <header class="doc-cover">
+      <p class="doc-kicker">Zoya&#39;s English — Study Module 09</p>
+      <h1 class="doc-title">300 Important Words With Meanings</h1>
+      <p class="doc-subtitle">Rebuilt from the original source — interactive web edition plus print-ready A4.</p>
+      <div class="doc-meta">
+        <span>Source: 009 - 300 Important Words With Meanings.pdf</span>
+        <span>12 source pages</span>
+        <span>2222 words</span>
+        <span>~13 min read</span>
+      </div>
+    </header>
+    <div class="doc-body prose">
+<ul>
+<li>an Essential</li>
+<li>Reliable</li>
+<li>oe Curious</li>
+<li>oe Accurate</li>
+</ul>
+<p>a</p>
+<p>Achieve</p>
+<ul>
+<li>a Active</li>
+<li>ol Admit</li>
+<li>le Aware</li>
+<li>Advice</li>
+<li>et SD Balance</li>
+<li>me NE Brave Calm</li>
+<li>me PRY Capable</li>
+<li>Careful</li>
+<li>HeNAMN Challenge Clear Confident</li>
+<li>Constant</li>
+<li>Creative</li>
+</ul>
+<p>wm</p>
+<ul>
+<li>HK Delay</li>
+<li>KR ESP Decide</li>
+</ul>
+<p>NH</p>
+<p>Depend</p>
+<ul>
+<li>KH SH Determined</li>
+<li>wR NR YR Develop Difficult</li>
+</ul>
+<p>Absolutely necessary.</p>
+<p>Can be trusted.</p>
+<p>Wanting to know or learn something.</p>
+<p>Correct and exact.</p>
+<p>To successfully reach a goal.</p>
+<p>Energetic and always busy.</p>
+<p>To accept something is true.</p>
+<p>A suggestion about what to do.</p>
+<p>Knowing about something.</p>
+<p>A state of being steady or equal.</p>
+<p>Showing courage.</p>
+<p>Peaceful and not nervous.</p>
+<p>Able to do something well.</p>
+<p>Taking attention to avoid mistakes.</p>
+<p>A difficult task.</p>
+<p>Easy to see, hear or understand.</p>
+<p>Feeling sure about yourself.</p>
+<p>Happening again and again.</p>
+<p>Having new ideas.</p>
+<p>To make a choice.</p>
+<p>To make something late.</p>
+<p>To rely on someone or something.</p>
+<p>Having a strong decision.</p>
+<p>To grow or improve.</p>
+<p>Not easy.</p>
+<ol start="26">
+<li>Discuss</li>
+<li>27, Efficient</li>
+<li>Encourage</li>
+<li>Enjoy</li>
+<li>Environmental</li>
+<li>Equal</li>
+<li>Excellent</li>
+<li>Expect</li>
+<li>Explain</li>
+<li>35: Explore</li>
+<li>Express</li>
+<li>Fair</li>
+<li>Focus</li>
+<li>Free</li>
+<li>Friendly</li>
+<li>Future</li>
+<li>Generate</li>
+<li>Important</li>
+<li>44, Improve</li>
+<li>Increase</li>
+<li>Independent</li>
+<li>Inform</li>
+<li>Inspire</li>
+<li>Intelligent</li>
+<li>Interested</li>
+</ol>
+<p>To talk about something with others.</p>
+<p>Doing work well without wasting time.</p>
+<p>To give support or confidence.</p>
+<p>To take pleasure in something.</p>
+<p>Related to nature and the environment.</p>
+<p>The same in amount, size or value.</p>
+<p>Very good.</p>
+<p>To believe something will happen.</p>
+<p>To make something clear.</p>
+<p>To look into or discover.</p>
+<p>To share your feelings or thoughts.</p>
+<p>Treating everyone in the same way.</p>
+<p>To give your attention to something.</p>
+<p>Not controlled or not costing money.</p>
+<p>Kind and pleasant.</p>
+<p>The time that is coming.</p>
+<p>To produce or create something.</p>
+<p>Having great value or meaning.</p>
+<p>To make something better.</p>
+<p>To become or make greater.</p>
+<p>Able to do things by yourself.</p>
+<p>To give someone facts or news.</p>
+<p>To motivate or encourage someone.</p>
+<p>Having the ability to learn and understand.</p>
+<p>Wanting to know or learn about something.</p>
+<table>
+<thead>
+<tr>
+<th>51.</th>
+<th>Kind</th>
+<th>Having a friendly and generous nature.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>52.</td>
+<td>Knowledge</td>
+<td>Facts, information and skills.</td>
+</tr>
+<tr>
+<td>53.</td>
+<td>Learn</td>
+<td>To gain knowledge or skills.</td>
+</tr>
+<tr>
+<td>54.</td>
+<td>Listen</td>
+<td>To hear and pay attention.</td>
+</tr>
+<tr>
+<td>55.</td>
+<td>Logical</td>
+<td>Based on reason and clear thinking.</td>
+</tr>
+<tr>
+<td>56.</td>
+<td>Loyal</td>
+<td>Faithful and supportive.</td>
+</tr>
+<tr>
+<td>5/5</td>
+<td>Manage</td>
+<td>To be in charge of something.</td>
+</tr>
+<tr>
+<td>58.</td>
+<td>Meaningful</td>
+<td>Useful and important.</td>
+</tr>
+<tr>
+<td>59.</td>
+<td>Necessary</td>
+<td>Needed in order to do something.</td>
+</tr>
+<tr>
+<td>60.</td>
+<td>Observe</td>
+<td>To watch or notice carefully.</td>
+</tr>
+<tr>
+<td>61.</td>
+<td>Open-minded</td>
+<td>Willing to consider new ideas.</td>
+</tr>
+<tr>
+<td>62.</td>
+<td>Organize</td>
+<td>To arrange things in a good order.</td>
+</tr>
+<tr>
+<td>63.</td>
+<td>Original</td>
+<td>New and different.</td>
+</tr>
+<tr>
+<td>64.</td>
+<td>Patient</td>
+<td>Able to wait without getting angry.</td>
+</tr>
+<tr>
+<td>65.</td>
+<td>Peaceful</td>
+<td>Calm and free from disturbance.</td>
+</tr>
+<tr>
+<td>66.</td>
+<td>Perfect</td>
+<td>Complete and without any faults.</td>
+</tr>
+<tr>
+<td>67.</td>
+<td>Perform</td>
+<td>To do or carry out an action.</td>
+</tr>
+<tr>
+<td>68.</td>
+<td>Positive</td>
+<td>Thinking in a good and hopeful way.</td>
+</tr>
+<tr>
+<td>69.</td>
+<td>Practical</td>
+<td>Useful and based on real situations.</td>
+</tr>
+<tr>
+<td>70.</td>
+<td>Prepare</td>
+<td>To get ready for something.</td>
+</tr>
+<tr>
+<td>71.</td>
+<td>Prevent</td>
+<td>To stop something from happening.</td>
+</tr>
+<tr>
+<td>72.</td>
+<td>Problem</td>
+<td>A difficulty that needs to be solved.</td>
+</tr>
+<tr>
+<td>73.</td>
+<td>Progress</td>
+<td>Movement towards success.</td>
+</tr>
+<tr>
+<td>74.</td>
+<td>Protect</td>
+<td>To keep safe from harm or danger.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Prove</td>
+<td>To show that something is true.</td>
+</tr>
+</tbody>
+</table>
+<ol start="76">
+<li>Realistic</li>
+<li>Recognize</li>
+<li>Responsible</li>
+<li>Respect</li>
+<li>Result</li>
+<li>Secure</li>
+<li>Self-discipline</li>
+<li>Sensitive</li>
+<li>Serious</li>
+<li>Solve</li>
+<li>Support</li>
+<li>Successful</li>
+<li>Suggest</li>
+<li>Suitable</li>
+<li>Summary</li>
+<li>Talent</li>
+<li>Teach</li>
+<li>Tired</li>
+<li>Understand</li>
+<li>Unique</li>
+<li>Useful</li>
+<li>Valuable</li>
+</ol>
+<p>98.</p>
+<p>Variety</p>
+<ol start="99">
+<li>Warn</li>
+<li>Worth</li>
+</ol>
+<p>Based on facts; practical and sensible.</p>
+<p>To identify or remember someone or something.</p>
+<p>Answerable and trustworthy.</p>
+<p>To admire someone or show courtesy.</p>
+<p>The outcome or effect of an action.</p>
+<p>Safe and protected from danger.</p>
+<p>Controlling your actions and habits.</p>
+<p>Easily affected by feelings or changes.</p>
+<p>Thinking carefully about something important.</p>
+<p>To find the answer to a problem.</p>
+<p>To help or encourage someone.</p>
+<p>Achieving the desired goal.</p>
+<p>To give an idea or a plan.</p>
+<p>Right or good for a particular purpose.</p>
+<p>A brief statement of the main points.</p>
+<p>A natural ability to do something well.</p>
+<p>To give knowledge or instructions.</p>
+<p>Feeling a need for rest or sleep.</p>
+<p>To know the meaning of something.</p>
+<p>Being the only one of its kind.</p>
+<p>Able to be used to achieve something.</p>
+<p>Very important or useful.</p>
+<p>A range of different things.</p>
+<p>To tell someone about a possible danger.</p>
+<p>Having value or deserving respect.</p>
+<table>
+<thead>
+<tr>
+<th>101.</th>
+<th>Abundant</th>
+<th>Existing in large quantities.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>102.</td>
+<td>Absorb</td>
+<td>To take in or understand completely.</td>
+</tr>
+<tr>
+<td>103.</td>
+<td>Achieve</td>
+<td>To reach or accomplish something.</td>
+</tr>
+<tr>
+<td>104.</td>
+<td>Adapt</td>
+<td>To adjust to new conditions.</td>
+</tr>
+<tr>
+<td>105.</td>
+<td>Admire</td>
+<td>To respect and appreciate someone.</td>
+</tr>
+<tr>
+<td>106.</td>
+<td>Advance</td>
+<td>To move forward or make progress.</td>
+</tr>
+<tr>
+<td>107.</td>
+<td>Alert</td>
+<td>Quick to notice and understand.</td>
+</tr>
+<tr>
+<td>108.</td>
+<td>Ambitious</td>
+<td>Having a strong desire to succeed.</td>
+</tr>
+<tr>
+<td>109.</td>
+<td>Appreciate</td>
+<td>To value and be thankful for.</td>
+</tr>
+<tr>
+<td>110.</td>
+<td>Approve</td>
+<td>To agree with or accept something.</td>
+</tr>
+<tr>
+<td>111.</td>
+<td>Argue</td>
+<td>To express differing opinions.</td>
+</tr>
+<tr>
+<td>112.</td>
+<td>Associate</td>
+<td>To connect or relate with something.</td>
+</tr>
+<tr>
+<td>113.</td>
+<td>Assume</td>
+<td>To accept something as true without proof.</td>
+</tr>
+<tr>
+<td>114.</td>
+<td>Attentive</td>
+<td>Paying close attention.</td>
+</tr>
+<tr>
+<td>115.</td>
+<td>Attract</td>
+<td>To draw interest or attention.</td>
+</tr>
+<tr>
+<td>116.</td>
+<td>Benefit</td>
+<td>An advantage or something helpful.</td>
+</tr>
+<tr>
+<td>117.</td>
+<td>Believe</td>
+<td>To accept something as true.</td>
+</tr>
+<tr>
+<td>118.</td>
+<td>Brilliant</td>
+<td>Very intelligent or impressive.</td>
+</tr>
+<tr>
+<td>119.</td>
+<td>Calm</td>
+<td>Peaceful and not excited or angry.</td>
+</tr>
+<tr>
+<td>120.</td>
+<td>Calculate</td>
+<td>To work out numbers or amounts.</td>
+</tr>
+<tr>
+<td>121.</td>
+<td>Capable</td>
+<td>Having the ability to do something.</td>
+</tr>
+<tr>
+<td>122.</td>
+<td>Chance</td>
+<td>An opportunity or possibility.</td>
+</tr>
+<tr>
+<td>123.</td>
+<td>Change</td>
+<td>To make or become different.</td>
+</tr>
+<tr>
+<td>124.</td>
+<td>Choose</td>
+<td>To select from options.</td>
+</tr>
+<tr>
+<td>125.</td>
+<td>Clear</td>
+<td>Easy to understand or see.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>126.</th>
+<th>Classic</th>
+<th>Of the highest quality; very good.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>127.</td>
+<td>Clever</td>
+<td>Quick to learn and understand things.</td>
+</tr>
+<tr>
+<td>128.</td>
+<td>Comfortable</td>
+<td>Giving a feeling of ease and relaxation.</td>
+</tr>
+<tr>
+<td>129.</td>
+<td>Common</td>
+<td>Ordinary; found or seen often.</td>
+</tr>
+<tr>
+<td>130.</td>
+<td>Communicate</td>
+<td>To share information or ideas.</td>
+</tr>
+<tr>
+<td>131.</td>
+<td>Compare</td>
+<td>To look at the similarities or differences.</td>
+</tr>
+<tr>
+<td>132.</td>
+<td>Complete</td>
+<td>To finish something.</td>
+</tr>
+<tr>
+<td>133.</td>
+<td>Concerned</td>
+<td>Worried or interested about something.</td>
+</tr>
+<tr>
+<td>134.</td>
+<td>Confident</td>
+<td>Sure of yourself and your abilities.</td>
+</tr>
+<tr>
+<td>135.</td>
+<td>Consider</td>
+<td>To think carefully about something.</td>
+</tr>
+<tr>
+<td>136.</td>
+<td>Continue</td>
+<td>To keep doing something.</td>
+</tr>
+<tr>
+<td>137.</td>
+<td>Control</td>
+<td>To manage or influence something.</td>
+</tr>
+<tr>
+<td>138.</td>
+<td>Convince</td>
+<td>To make someone believe or agree.</td>
+</tr>
+<tr>
+<td>139.</td>
+<td>Courageous</td>
+<td>Brave; not afraid of danger.</td>
+</tr>
+<tr>
+<td>140.</td>
+<td>Create</td>
+<td>To make or bring something new.</td>
+</tr>
+<tr>
+<td>141.</td>
+<td>Critical</td>
+<td>Expressing careful judgment.</td>
+</tr>
+<tr>
+<td>142.</td>
+<td>Curious</td>
+<td>Eager to know or learn something.</td>
+</tr>
+<tr>
+<td>143.</td>
+<td>Current</td>
+<td>Happening now; up to date.</td>
+</tr>
+<tr>
+<td>144.</td>
+<td>Decide</td>
+<td>To make a choice or come to a conclusion.</td>
+</tr>
+<tr>
+<td>145.</td>
+<td>Dedicate</td>
+<td>To give time or effort to something.</td>
+</tr>
+<tr>
+<td>146.</td>
+<td>Deep</td>
+<td>Far down; intense.</td>
+</tr>
+<tr>
+<td>147.</td>
+<td>Define</td>
+<td>To explain the meaning clearly.</td>
+</tr>
+<tr>
+<td>148.</td>
+<td>Deliver</td>
+<td>To give or bring something.</td>
+</tr>
+<tr>
+<td>149,</td>
+<td>Depend</td>
+<td>To rely on someone or something.</td>
+</tr>
+<tr>
+<td>150.</td>
+<td>Desire</td>
+<td>A strong feeling of wanting something.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>SL.</li>
+<li>Dispute -</li>
+</ul>
+<p>A serious disagreement.</p>
+<ol start="152">
+<li>Distinct -</li>
+<li>Efficient -</li>
+<li>Enormous -</li>
+<li>Essential -</li>
+<li>Evaluate -</li>
+<li>Excuse -</li>
+<li>Flexible -</li>
+<li>Generate -</li>
+<li>Genuine -</li>
+<li>Harmful -</li>
+<li>Highlight -</li>
+<li>Imagine -</li>
+<li>Independence -</li>
+<li>Innovative -</li>
+<li>Moderate -</li>
+<li>Neglect -</li>
+<li>Notable =</li>
+<li>Obvious -</li>
+<li>Occur -</li>
+<li>7k Opinion =</li>
+<li>Perspective —-</li>
+<li>Potential -</li>
+<li>Practical -</li>
+<li>Reliable -</li>
+</ol>
+<p>Clearly different or noticeable.</p>
+<p>Working well with little waste.</p>
+<p>Very large.</p>
+<p>Absolutely necessary.</p>
+<p>To judge or assess.</p>
+<p>A reason or answer.</p>
+<p>Able to change or adapt.</p>
+<p>To produce or create.</p>
+<p>Real and honest.</p>
+<p>Causing damage.</p>
+<p>To make something stand out.</p>
+<p>To think or picture in the mind.</p>
+<p>Freedom from control.</p>
+<p>Introducing new ideas.</p>
+<p>Balanced and reasonable.</p>
+<p>To fail to give proper care.</p>
+<p>Worth mentioning.</p>
+<p>Easy to see or understand.</p>
+<p>To happen.</p>
+<p>A personal belief.</p>
+<p>A way of thinking.</p>
+<p>Possible future ability.</p>
+<p>Useful in real life.</p>
+<p>Can be trusted.</p>
+<ol start="176">
+<li>Reflect</li>
+<li>Regular</li>
+<li>Relevant</li>
+<li>Respond</li>
+<li>Responsibility</li>
+<li>Restore</li>
+<li>Restrict</li>
+<li>Reward</li>
+<li>Satisfy</li>
+<li>Search</li>
+<li>Secure</li>
+<li>Select</li>
+<li>Serious</li>
+<li>Solution</li>
+<li>Specific</li>
+<li>191, Succeed</li>
+<li>Suggest</li>
+<li>Superior</li>
+<li>Support</li>
+<li>Survive</li>
+<li>Talent</li>
+<li>Technique</li>
+<li>Tend</li>
+<li>Understand</li>
+<li>Valuable</li>
+</ol>
+<p>To think deeply or carefully about something.</p>
+<p>Happening or done often or in a set way.</p>
+<p>Closely connected or appropriate.</p>
+<p>To reply or react to something.</p>
+<p>A duty or obligation.</p>
+<p>To return to a good or original condition.</p>
+<p>To limit or control.</p>
+<p>A benefit for good actions or efforts.</p>
+<p>To make someone happy or content.</p>
+<p>To look carefully for something.</p>
+<p>Safe and protected from danger.</p>
+<p>To choose carefully from options.</p>
+<p>Thinking or feeling deeply about something.</p>
+<p>A way to solve a problem.</p>
+<p>Clearly defined or particular.</p>
+<p>To achieve the desired result.</p>
+<p>To give an idea or recommendation.</p>
+<p>Of higher quality or better.</p>
+<p>To help or encourage someone.</p>
+<p>To remain alive or continue.</p>
+<p>A natural ability to do something well.</p>
+<p>A way of doing something effectively.</p>
+<p>To mally dosti rien</p>
+<p>To know the meaning of something.</p>
+<p>Very useful or important.</p>
+<table>
+<thead>
+<tr>
+<th>201.</th>
+<th>Vary</th>
+<th>To be different or change.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>202.</td>
+<td>Verify</td>
+<td>To check or prove that something is true.</td>
+</tr>
+<tr>
+<td>203.</td>
+<td>Vivid</td>
+<td>Very clear, bright or detailed.</td>
+</tr>
+<tr>
+<td>204.</td>
+<td>Volunteer</td>
+<td>To offer to do something without payment.</td>
+</tr>
+<tr>
+<td>205.</td>
+<td>Weakness</td>
+<td>A lack of strength or ability.</td>
+</tr>
+<tr>
+<td>206.</td>
+<td>Wealth</td>
+<td>A large amount of money or valuable things.</td>
+</tr>
+<tr>
+<td>207.</td>
+<td>Welcome</td>
+<td>To greet someone in a friendly way.</td>
+</tr>
+<tr>
+<td>208.</td>
+<td>Willing</td>
+<td>Ready to do something.</td>
+</tr>
+<tr>
+<td>209.</td>
+<td>Wisdom</td>
+<td>The ability to make good decisions.</td>
+</tr>
+<tr>
+<td>210.</td>
+<td>Witness</td>
+<td>To see something happen.</td>
+</tr>
+<tr>
+<td>211.</td>
+<td>Worry</td>
+<td>To feel anxious or troubled about something.</td>
+</tr>
+<tr>
+<td>212.</td>
+<td>Write</td>
+<td>To put words on paper.</td>
+</tr>
+<tr>
+<td>213.</td>
+<td>Wrong</td>
+<td>Not correct or not right.</td>
+</tr>
+<tr>
+<td>214.</td>
+<td>Yearn</td>
+<td>To long for something strongly.</td>
+</tr>
+<tr>
+<td>215.</td>
+<td>Yield</td>
+<td>To give way or produce a result.</td>
+</tr>
+<tr>
+<td>216.</td>
+<td>Zealous</td>
+<td>Having great energy or enthusiasm.</td>
+</tr>
+<tr>
+<td>217.</td>
+<td>Abolish</td>
+<td>To end or officially stop a system or law.</td>
+</tr>
+<tr>
+<td>218.</td>
+<td>Absence</td>
+<td>The state of being away or not present.</td>
+</tr>
+<tr>
+<td>219.</td>
+<td>Abuse</td>
+<td>To use something in a wrong or harmful way.</td>
+</tr>
+<tr>
+<td>220.</td>
+<td>Accountable</td>
+<td>Responsible for one’s actions.</td>
+</tr>
+<tr>
+<td>221.</td>
+<td>Addict</td>
+<td>A person who is unable to stop using something.</td>
+</tr>
+<tr>
+<td>222;</td>
+<td>Adopt</td>
+<td>To accept or start using something.</td>
+</tr>
+<tr>
+<td>223.</td>
+<td>Advance</td>
+<td>To move forward or make progress.</td>
+</tr>
+<tr>
+<td>224.</td>
+<td>Afford</td>
+<td>To have enough money to buy or do something.</td>
+</tr>
+<tr>
+<td>225.</td>
+<td>Alert</td>
+<td>Quick to notice and understand.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>226.</th>
+<th>Allocate</th>
+<th>-</th>
+<th>To distribute or assign for a purpose.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>227.</td>
+<td>Amazing</td>
+<td>-</td>
+<td>Causing great surprise or wonder.</td>
+</tr>
+<tr>
+<td>228.</td>
+<td>Ancestor</td>
+<td></td>
+<td>A person from whom one is descended.</td>
+</tr>
+<tr>
+<td>229.</td>
+<td>Announce</td>
+<td></td>
+<td>To make something known publicly.</td>
+</tr>
+<tr>
+<td>230.</td>
+<td>Anxious</td>
+<td>-</td>
+<td>Worried or nervous about something.</td>
+</tr>
+<tr>
+<td>231.</td>
+<td>Appear</td>
+<td>-</td>
+<td>To come into sight or become visible.</td>
+</tr>
+<tr>
+<td>232.</td>
+<td>Appreciate</td>
+<td>-</td>
+<td>To understand the value of something.</td>
+</tr>
+<tr>
+<td>233.</td>
+<td>Approach</td>
+<td></td>
+<td>To come near or deal with a problem.</td>
+</tr>
+<tr>
+<td>234.</td>
+<td>Argue</td>
+<td>—</td>
+<td>To express different opinions in a strong way.</td>
+</tr>
+<tr>
+<td>235.</td>
+<td>Arrange</td>
+<td>—</td>
+<td>To put things in a particular order.</td>
+</tr>
+<tr>
+<td>236.</td>
+<td>Arrest</td>
+<td>—</td>
+<td>To take someone into official custody.</td>
+</tr>
+<tr>
+<td>237.</td>
+<td>Assign</td>
+<td>—</td>
+<td>To give a task or responsibility to someone.</td>
+</tr>
+<tr>
+<td>238.</td>
+<td>Assist</td>
+<td>—</td>
+<td>To help or support someone.</td>
+</tr>
+<tr>
+<td>239.</td>
+<td>Assume</td>
+<td>-</td>
+<td>To think or accept something as true.</td>
+</tr>
+<tr>
+<td>240.</td>
+<td>Attach</td>
+<td>—</td>
+<td>To connect or fasten something.</td>
+</tr>
+<tr>
+<td>241.</td>
+<td>Attend</td>
+<td>—</td>
+<td>To be present at an event or place.</td>
+</tr>
+<tr>
+<td>242.</td>
+<td>Attract</td>
+<td>—</td>
+<td>To draw attention or interest.</td>
+</tr>
+<tr>
+<td>243.</td>
+<td>Avoid</td>
+<td>—</td>
+<td>To stay away from something.</td>
+</tr>
+<tr>
+<td>244.</td>
+<td>Balance</td>
+<td>—</td>
+<td>Aneven amount ora state of stability.</td>
+</tr>
+<tr>
+<td>245.</td>
+<td>Benefit</td>
+<td>—</td>
+<td>An advantage or improvement.</td>
+</tr>
+<tr>
+<td>246.</td>
+<td>Blind</td>
+<td>—</td>
+<td>Unable to see.</td>
+</tr>
+<tr>
+<td>247.</td>
+<td>Brief</td>
+<td>—</td>
+<td>Short in duration or length.</td>
+</tr>
+<tr>
+<td>248.</td>
+<td>Capture</td>
+<td>—</td>
+<td>To catch or take control of.</td>
+</tr>
+<tr>
+<td>249.</td>
+<td>Careful</td>
+<td></td>
+<td>Taking attention to avoid mistakes or danger.</td>
+</tr>
+<tr>
+<td>250.</td>
+<td>Challenge</td>
+<td></td>
+<td>A difficult task that tests ability.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>251.</th>
+<th>Change</th>
+<th>To become different or make different.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>252.</td>
+<td>Choose</td>
+<td>To select from options.</td>
+</tr>
+<tr>
+<td>253.</td>
+<td>Claim</td>
+<td>To say that something is true or yours.</td>
+</tr>
+<tr>
+<td>254.</td>
+<td>Clear</td>
+<td>Easy to see, hear or understand.</td>
+</tr>
+<tr>
+<td>255.</td>
+<td>Collect</td>
+<td>To gather things together.</td>
+</tr>
+<tr>
+<td>256.</td>
+<td>Combine</td>
+<td>To join two or more things.</td>
+</tr>
+<tr>
+<td>257.</td>
+<td>Comfort</td>
+<td>A feeling of relief or peace.</td>
+</tr>
+<tr>
+<td>258.</td>
+<td>Commit</td>
+<td>To do something wrong or illegal.</td>
+</tr>
+<tr>
+<td>259.</td>
+<td>Compare</td>
+<td>To look at the similarities and differences.</td>
+</tr>
+<tr>
+<td>260.</td>
+<td>Compliment</td>
+<td>A nice remark or praise.</td>
+</tr>
+<tr>
+<td>261.</td>
+<td>Complete</td>
+<td>To finish something.</td>
+</tr>
+<tr>
+<td>262.</td>
+<td>Concern</td>
+<td>To worry about someone or something.</td>
+</tr>
+<tr>
+<td>263.</td>
+<td>Consider</td>
+<td>To think carefully about something.</td>
+</tr>
+<tr>
+<td>264.</td>
+<td>Contact</td>
+<td>To communicate or get in touch.</td>
+</tr>
+<tr>
+<td>265.</td>
+<td>Control</td>
+<td>To manage or direct something.</td>
+</tr>
+<tr>
+<td>266.</td>
+<td>Convince</td>
+<td>To make someone believe or agree.</td>
+</tr>
+<tr>
+<td>267.</td>
+<td>Correct</td>
+<td>To make right or accurate.</td>
+</tr>
+<tr>
+<td>268.</td>
+<td>Create</td>
+<td>To bring something into existence.</td>
+</tr>
+<tr>
+<td>269.</td>
+<td>Curious</td>
+<td>Eager to know or learn something.</td>
+</tr>
+<tr>
+<td>270.</td>
+<td>Decide</td>
+<td>To make a choice or reach a conclusion.</td>
+</tr>
+<tr>
+<td>271.</td>
+<td>Defend</td>
+<td>To protect from attack or criticism.</td>
+</tr>
+<tr>
+<td>272.</td>
+<td>Define</td>
+<td>To explain the exact meaning.</td>
+</tr>
+<tr>
+<td>273.</td>
+<td>Demand</td>
+<td>To ask for something strongly.</td>
+</tr>
+<tr>
+<td>274.</td>
+<td>Depend</td>
+<td>To rely on someone or something.</td>
+</tr>
+<tr>
+<td>275.</td>
+<td>Describe</td>
+<td>To explain or tell about something.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>276.</th>
+<th>Develop</th>
+<th>To grow or improve over time.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>277.</td>
+<td>Different</td>
+<td>Not the same.</td>
+</tr>
+<tr>
+<td>278.</td>
+<td>Difficult</td>
+<td>Hard to do, understand or deal with.</td>
+</tr>
+<tr>
+<td>279.</td>
+<td>Discuss</td>
+<td>To talk about or examine in detail.</td>
+</tr>
+<tr>
+<td>280.</td>
+<td>Discover</td>
+<td>To find or learn something for the first time.</td>
+</tr>
+<tr>
+<td>281.</td>
+<td>Disagree</td>
+<td>To have a different opinion.</td>
+</tr>
+<tr>
+<td>282.</td>
+<td>Disappear</td>
+<td>To go out of sight or stop existing.</td>
+</tr>
+<tr>
+<td>283.</td>
+<td>Disappoint</td>
+<td>To cause someone to feel sad or let down.</td>
+</tr>
+<tr>
+<td>284.</td>
+<td>Discipline</td>
+<td>Self-control and training to behave well.</td>
+</tr>
+<tr>
+<td>285.</td>
+<td>Display</td>
+<td>To show or exhibit something.</td>
+</tr>
+<tr>
+<td>286.</td>
+<td>Doubt</td>
+<td>To feel uncertain about something,</td>
+</tr>
+<tr>
+<td>287.</td>
+<td>Draft</td>
+<td>A rough version of something.</td>
+</tr>
+<tr>
+<td>288.</td>
+<td>Earn</td>
+<td>To receive money for work.</td>
+</tr>
+<tr>
+<td>289.</td>
+<td>Educate</td>
+<td>To teach and develop knowledge.</td>
+</tr>
+<tr>
+<td>290.</td>
+<td>Encourage</td>
+<td>To give support, confidence or hope.</td>
+</tr>
+<tr>
+<td>291.</td>
+<td>Ensure</td>
+<td>To make sure something happens.</td>
+</tr>
+<tr>
+<td>292.</td>
+<td>Enter</td>
+<td>To go into a place.</td>
+</tr>
+<tr>
+<td>293.</td>
+<td>Environment</td>
+<td>The natural world around us.</td>
+</tr>
+<tr>
+<td>294.</td>
+<td>Equal</td>
+<td>The same in value, size or amount.</td>
+</tr>
+<tr>
+<td>295.</td>
+<td>Establish</td>
+<td>To start or set up something.</td>
+</tr>
+<tr>
+<td>296.</td>
+<td>Estimate</td>
+<td>To guess or calculate roughly.</td>
+</tr>
+<tr>
+<td>297.</td>
+<td>Evaluate</td>
+<td>To judge or assess the value.</td>
+</tr>
+<tr>
+<td>298.</td>
+<td>Evidence</td>
+<td>Proof or facts used to support something.</td>
+</tr>
+<tr>
+<td>299.</td>
+<td>Expand</td>
+<td>To increase in size, number or range.</td>
+</tr>
+<tr>
+<td>300.</td>
+<td>Expect</td>
+<td>To think that something will happen.</td>
+</tr>
+</tbody>
+</table>
+    </div>
+  </article>
+  <script type="application/json" id="doc-meta">{"slug": "009-300-important-words-with-meanings", "number": 9, "theme": "slate", "engine": "docling", "source": "009 - 300 Important Words With Meanings.pdf", "pages": 12, "words": 2222, "sections": 0, "tables": 7, "reading_min": 13, "date": "2026-10-21", "teaser": ""}</script>
+</main>
+</body>
+</html>

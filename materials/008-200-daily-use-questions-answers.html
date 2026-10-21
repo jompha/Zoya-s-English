@@ -1,0 +1,2010 @@
+<!doctype html>
+<html lang="en" data-theme="clay">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>200 Daily Use Questions &amp; Answers · Zoya's English — Study Module</title>
+<meta name="description" content="200 Daily Use Questions &amp; Answers — study module from Zoya&#39;s English learning library: speaking and confidence coaching materials.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>/* ═══════════════════════════════════════════════════════════════════════════
+   ZOYA'S ENGLISH — MASTER LAYOUT STYLESHEET
+   Design language: FORGE-inspired, light edition — warm paper ground,
+   near-black ink, electric-lime energy, sharp edges, grotesk discipline.
+   Beat structure: tokens → chapter themes → base → components → prose → print
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────── 1 · DESIGN TOKENS (single source) */
+
+:root {
+  /* Palette — light Forge: paper, ink, electric lime */
+  --bg: #fafaf7;                 /* warm paper ground                    */
+  --bg-deep: #f2f1ea;            /* deeper wash for bands                */
+  --surface: #ffffff;
+  --ink: #17181a;                /* near-black body typography           */
+  --ink-soft: #55584f;
+  --ink-faint: #8b8d82;
+  --line: #e6e4da;
+  --line-strong: #d4d2c6;
+  --lime: #b5f030;               /* electric lime — the brand spark      */
+  --lime-deep: #8fc413;          /* lime pressed onto paper hover        */
+  --accent: #34352f;             /* neutral chrome accent (links et al.) */
+  --accent-ink: #17181a;
+  --accent-soft: #f4f3ec;
+  --accent-glow: rgba(181, 240, 48, 0.35);
+  --glow: rgba(181, 240, 48, 0.45);
+  --warm: #f6f3e4;
+
+  /* Typography */
+  --font-display: "Space Grotesk", "Inter Tight", system-ui, sans-serif;
+  --font-body: "Inter Tight", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Courier New", monospace;
+
+  /* Shape & depth — Forge is sharp: nothing rounded, glow instead of shadow */
+  --r-lg: 0px;
+  --r-md: 0px;
+  --r-sm: 0px;
+  --r-pill: 999px;               /* reserved: badges only                */
+  --shadow-1: 0 1px 0 var(--line);
+  --shadow-2: 0 0 0 1px var(--line);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─────────────────────────── 2 · CHAPTER DESIGN LANGUAGES (per-theme accents)
+
+   Every compiled chapter receives its own stable accent family, applied via
+   `data-theme` on the page root, so each module feels designed — not stamped.
+   The dashboard (materials.html) mirrors these values for its cards.        */
+
+[data-theme="slate"] { --accent: #4a6b82; --accent-ink: #375266; --accent-soft: #edf2f6; --accent-glow: rgba(74, 107, 130, 0.16); }
+[data-theme="ink"]   { --accent: #46474b; --accent-ink: #33353a; --accent-soft: #f1efe9; --accent-glow: rgba(70, 71, 75, 0.14); }
+[data-theme="clay"]  { --accent: #b06a48; --accent-ink: #8f5438; --accent-soft: #f9efe7; --accent-glow: rgba(176, 106, 72, 0.15); }
+[data-theme="sage"]  { --accent: #5f7c60; --accent-ink: #49614a; --accent-soft: #eff5ef; --accent-glow: rgba(95, 124, 96, 0.15); }
+[data-theme="plum"]  { --accent: #7d5a72; --accent-ink: #64485a; --accent-soft: #f6eff4; --accent-glow: rgba(125, 90, 114, 0.15); }
+[data-theme="mist"]  { --accent: #3f7a75; --accent-ink: #2f605c; --accent-soft: #ebf4f2; --accent-glow: rgba(63, 122, 117, 0.15); }
+[data-theme="ember"] { --accent: #a8543f; --accent-ink: #8a4232; --accent-soft: #f9ece8; --accent-glow: rgba(168, 84, 63, 0.15); }
+[data-theme="moss"]  { --accent: #72783f; --accent-ink: #5a5f31; --accent-soft: #f5f6e9; --accent-glow: rgba(114, 120, 63, 0.15); }
+
+/* ────────────────────────────────────────────────────────── 3 · BASE RESET */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 0.6em;
+}
+
+::selection { background: var(--lime); color: var(--ink); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  z-index: 100;
+  background: var(--lime);
+  color: var(--ink);
+  font-weight: 500;
+  padding: 0.55rem 1.1rem;
+}
+.skip-link:focus { left: 12px; color: var(--ink); }
+
+/* ───────────────────────────────────────────────────────── 4 · LAYOUT CORE */
+
+.shell { width: min(1140px, 92vw); margin-inline: auto; }
+.shell-wide { width: min(1240px, 94vw); margin-inline: auto; }
+
+.section { padding: 5.5rem 0; position: relative; }
+.section + .section { padding-top: 0; }
+.grid { display: grid; gap: 1.4rem; }
+.grid.cards { grid-template-columns: repeat(auto-fill, minmax(305px, 1fr)); }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: center; }
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.1rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.kicker::before {
+  content: "";
+  width: 22px;
+  height: 10px;
+  background: var(--lime);
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.section-lede { max-width: 62ch; color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 2.4rem; }
+.display-xl {
+  font-size: clamp(2.9rem, 6.2vw, 5.2rem);
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* ─────────────────────────────────────────────────────── 5 · NAV BAR */
+
+.site-nav {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 60;
+  padding: 0.85rem 0;
+  background: transparent;
+  transition: background 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+  border-bottom: 1px solid transparent;
+}
+.site-nav.scrolled {
+  background: rgba(250, 250, 247, 0.95);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom-color: var(--line);
+}
+.site-nav .bar { display: flex; align-items: center; gap: 1.6rem; }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 700;
+  background: var(--lime);
+}
+
+.nav-links { display: flex; align-items: center; gap: 1.5rem; margin-left: auto; }
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s var(--ease);
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a[aria-current="page"] { color: var(--ink); border-bottom: 2px solid var(--lime); }
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+}
+
+/* ─────────────────────────────────────────────────── 6 · BUTTONS · CHIPS */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid transparent;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.25s var(--ease), background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.25s var(--ease);
+}
+.btn-solid {
+  color: var(--ink);
+  background: var(--lime);
+}
+.btn-solid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px var(--accent-glow), 0 0 60px rgba(181, 240, 48, 0.18);
+}
+.btn-ghost {
+  color: var(--ink);
+  background: transparent;
+  border-color: var(--ink);
+}
+.btn-ghost:hover {
+  border-color: var(--lime-deep);
+  background: var(--lime);
+}
+.btn.is-disabled,
+.btn[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+.btn-sm { padding: 0.5rem 1rem; font-size: 0.74rem; }
+.btn-note {
+  margin-left: 0.1rem;
+  padding-left: 0.55rem;
+  border-left: 1px solid rgba(23, 24, 26, 0.3);
+  font-size: 0.72rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.9rem;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.chip::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--lime);
+  transform: rotate(45deg);
+}
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+/* ─────────────────────────────────────────────────── 7 · SHARP CARDS */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.7rem 1.7rem 1.5rem;
+  border: 1px solid var(--line-strong);
+  border-top: 3px solid var(--ink);
+  background: var(--surface);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+.card-hover:hover,
+.card-chapter:hover {
+  transform: translateY(-4px);
+  border-color: rgba(181, 240, 48, 0.55);
+  border-top-color: var(--lime);
+  box-shadow: 0 0 30px var(--accent-glow), 0 0 64px rgba(181, 240, 48, 0.14);
+  background: var(--card-tint, var(--surface));
+}
+.card-kicker {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--card-accent, var(--accent));
+  margin-bottom: 0.3rem;
+}
+.card-title { font-family: var(--font-display); font-weight: 700; font-size: 1.18rem; letter-spacing: -0.01em; margin: 0.15rem 0 0.35rem; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { color: var(--card-accent, var(--accent)); }
+.card-teaser { color: var(--ink-soft); font-size: 0.94rem; margin: 0 0 0.9rem; }
+.card-empty {
+  grid-column: 1 / -1;
+  align-items: flex-start;
+  border-style: dashed;
+  border-color: var(--line-strong);
+  background: transparent;
+  box-shadow: none;
+}
+.card-empty code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  padding: 0.05em 0.4em;
+}
+
+.material-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  background: var(--lime);
+  margin-bottom: 0.8rem;
+}
+.material-icon svg { width: 22px; height: 22px; }
+
+/* Chapter cards — materials.html dashboard */
+.card-chapter { --card-accent: var(--accent); border-top-color: var(--card-accent, var(--ink)); }
+.chapter-num {
+  position: absolute;
+  top: 1rem;
+  right: 1.4rem;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--card-accent);
+  opacity: 0.35;
+  user-select: none;
+}
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.card-meta li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.card-meta li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  transform: rotate(45deg);
+  background: var(--lime);
+  opacity: 0.9;
+}
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.filter-row { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 1.6rem 0 2.2rem; }
+.filter-chip { cursor: pointer; transition: all 0.2s var(--ease); opacity: 0.7; }
+.filter-chip:hover { opacity: 1; color: var(--ink); }
+.filter-chip.is-active {
+  opacity: 1;
+  color: var(--ink);
+  background: var(--lime);
+  border-color: var(--lime);
+}
+.filter-chip.is-active::before { background: var(--ink); }
+
+/* ─────────────────────────────────────────────────────────────── 8 · HERO */
+
+.hero {
+  position: relative;
+  padding: 9.5rem 0 4.5rem;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: min(4vw, 60px);
+  width: clamp(90px, 12vw, 150px);
+  height: clamp(90px, 12vw, 150px);
+  background:
+    repeating-linear-gradient(0deg, rgba(23, 24, 26, 0.09) 0 1.5px, transparent 1.5px 9px),
+    repeating-linear-gradient(90deg, rgba(23, 24, 26, 0.09) 0 1.5px, transparent 1.5px 9px);
+  pointer-events: none;
+}
+.hero .grid.two { gap: 3.5rem; }
+.hero-lede {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 54ch;
+  margin: 1.4rem 0 2rem;
+}
+.hero-lede em { font-style: normal; box-shadow: inset 0 -0.5em 0 var(--lime); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 2.4rem; }
+
+/* Stats — Forge's animated counters, honest numbers only */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.6rem 3.2rem;
+  margin-top: 0.4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--line-strong);
+}
+.stat { display: flex; flex-direction: column; gap: 0.15rem; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--ink);
+}
+.stat-num b { color: inherit; font-weight: inherit; }
+.stat-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.portrait { position: relative; margin: 0; }
+.portrait-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-deep);
+}
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(23, 24, 26, 0.08);
+  pointer-events: none;
+}
+.portrait-mono {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 14vw, 10rem);
+  font-weight: 700;
+  color: var(--ink);
+  opacity: 0.1;
+}
+.portrait-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portrait-chip {
+  position: absolute;
+  z-index: 2;
+  font-size: 0.72rem;
+  padding: 0.45rem 0.8rem;
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+.portrait-chip::before { background: var(--lime); }
+.portrait-chip.c1 { top: 8%; left: -4%; }
+.portrait-chip.c2 { bottom: 20%; right: -3%; }
+.portrait-chip.c3 { bottom: -3%; left: 8%; }
+@media (max-width: 760px) {
+  .portrait-chip.c1 { left: 4%; }
+  .portrait-chip.c2 { right: 4%; }
+}
+
+/* ───────────────────────────────────────────── 9 · TICKER · STATEMENT · METHOD */
+
+.ticker {
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 0.85rem 0;
+  background: var(--bg);
+}
+.ticker-track {
+  display: inline-flex;
+  animation: ticker-scroll 26s linear infinite;
+}
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-right: 1.6rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.ticker-track span::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--lime);
+  transform: rotate(45deg);
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.pull-quote {
+  margin: 1rem 0 0;
+  padding: 0.9rem 0 0 1.5rem;
+  border-left: 4px solid var(--lime);
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.prose-copy p { color: var(--ink-soft); margin: 0 0 1.05rem; max-width: 62ch; }
+.prose-copy strong { font-weight: 500; color: var(--ink); }
+
+.steps { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.step-num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--ink);
+  opacity: 0.35;
+  margin-bottom: 0.7rem;
+}
+.steps .card h3 { text-transform: uppercase; letter-spacing: 0.02em; font-size: 1.05rem; }
+.steps .card p { color: var(--ink-soft); font-size: 0.93rem; margin: 0; }
+
+/* ───────────────────────────────────────── 10 · CALLOUTS — the .tip-box system */
+
+.tip-box {
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 1.05rem 1.3rem 1.05rem 1.4rem;
+  border: 1px solid var(--line-strong);
+  border-left: 4px solid var(--card-accent, var(--accent));
+  background: var(--accent-soft);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.tip-box p, .tip-box ul { margin: 0.2rem 0 0; font-size: 0.96rem; color: var(--ink-soft); }
+.tip-box .tip-title,
+.tip-box > p:first-child strong:first-child {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent-ink);
+}
+.tip-box[data-tone="note"]  { border-left-color: #b98a4b; background: #faf4e8; }
+.tip-box[data-tone="warn"]  { border-left-color: #a8503f; background: #f9ecea; }
+.tip-box[data-tone="ok"]    { border-left-color: #3e7c74; background: #ecf4f1; }
+
+/* ─────────────────────────────────────────────── 11 · DOC PAGES (materials/*) */
+
+.doc-page body { background: var(--bg); }
+.doc-crumbs {
+  width: min(880px, 92vw);
+  margin: 6.5rem auto 1.2rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.doc-crumbs a { color: var(--ink); text-decoration: none; }
+.doc-crumbs a:hover { box-shadow: inset 0 -0.4em 0 var(--lime); }
+
+.doc-frame {
+  width: min(880px, 92vw);
+  margin: 0 auto 4.5rem;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.doc-cover {
+  position: relative;
+  overflow: hidden;
+  padding: 2.8rem 3.2rem 2.4rem;
+  border-bottom: 1px solid var(--ink);
+  border-top: 8px solid var(--accent);
+  background: var(--accent-soft);
+}
+.doc-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+/* one quiet motif per chapter design language */
+[data-theme="slate"] .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="ink"]   .doc-cover::after { background-image: repeating-linear-gradient(135deg, var(--accent-glow) 0 1px, transparent 1px 16px); }
+[data-theme="clay"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 22px); }
+[data-theme="sage"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="plum"]  .doc-cover::after { background-image: radial-gradient(420px 260px at 92% 100%, var(--accent-glow) 0%, transparent 70%); }
+[data-theme="mist"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 30px); }
+[data-theme="ember"] .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 13px), repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 13px); }
+[data-theme="moss"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 18px); }
+
+.doc-kicker {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.doc-kicker::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 9px;
+  margin-top: 0.55rem;
+  background: var(--lime);
+}
+.doc-title {
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+.doc-subtitle { margin: 0.4rem 0 1.4rem; max-width: 58ch; color: var(--ink-soft); font-size: 1.02rem; }
+.doc-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.2rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.doc-body { padding: 2.6rem 3.2rem 3.4rem; }
+@media (max-width: 640px) {
+  .doc-cover, .doc-body { padding-inline: 1.4rem; }
+}
+
+/* ──────────────────────────────────────────────── 12 · PROSE (lesson content) */
+
+.prose { font-size: 1.02rem; color: #2b2d26; }
+.prose > * + * { margin-top: 0.9em; }
+.prose h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-top: 2.2em;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--card-accent, var(--accent));
+}
+.prose h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; margin-top: 1.9em; }
+.prose h4 { font-family: var(--font-display); font-size: 1.02rem; font-weight: 600; margin-top: 1.6em; }
+.prose blockquote { margin: 1.4rem 0; padding: 1rem 1.3rem 1rem 1.4rem; border: 1px solid var(--line-strong); border-left: 4px solid var(--card-accent, var(--accent)); background: var(--accent-soft); color: var(--ink-soft); break-inside: avoid; page-break-inside: avoid; }
+.prose blockquote p { margin: 0.2rem 0 0; }
+.prose blockquote p:first-child { margin-top: 0; font-weight: 500; color: var(--ink); }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.6rem 0; font-size: 0.93rem; break-inside: avoid; page-break-inside: avoid; }
+.prose th { background: var(--card-accent, var(--accent)); color: #fff; font-family: var(--font-display); font-weight: 600; text-align: left; letter-spacing: 0.03em; }
+.prose th, .prose td { border: 1px solid var(--line-strong); padding: 0.55rem 0.8rem; }
+.prose tbody tr:nth-child(even) td { background: var(--accent-soft); }
+.prose ul, .prose ol { padding-left: 1.4rem; }
+.prose li { margin: 0.35rem 0; }
+.prose li::marker { color: var(--accent); font-weight: 600; }
+.prose strong { color: var(--ink); font-weight: 500; }
+.prose code { font-family: var(--font-mono); font-size: 0.88em; background: var(--accent-soft); border: 1px solid var(--line); padding: 0.08em 0.42em; }
+.prose hr { border: 0; border-top: 1px dashed var(--line-strong); margin: 2.2rem auto; width: 55%; }
+.prose figure { margin: 1.6rem 0; break-inside: avoid; page-break-inside: avoid; }
+
+/* ────────────────────────────────────────────────────────────── 13 · FOOTER */
+
+.site-footer {
+  padding: 3rem 0 3.6rem;
+  border-top: 2px solid var(--ink);
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+}
+.site-footer .bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-footer a { color: var(--ink-soft); text-decoration: none; }
+.site-footer a:hover { box-shadow: inset 0 -0.4em 0 var(--lime); }
+.site-footer .brand { font-size: 0.95rem; }
+
+/* ────────────────────────────────────────────────── 14 · MOTION & RESPONSIVE */
+
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (max-width: 760px) {
+  .section { padding: 3.6rem 0; }
+  .hero { padding-top: 7.5rem; }
+  .hero::after { display: none; }
+  .stats { gap: 1.8rem 2.2rem; }
+  .stat-num { font-size: 2.1rem; }
+  .doc-meta { gap: 0.3rem 0.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .ticker-track { animation: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ═══════════════════════════════════════════════ 15 · PRINT — A4 CHOREOGRAPHY
+   Hard pagination contract: no orphan headings, no splintered callouts,
+   no split table rows. Chromium prints exactly what these rules promise.     */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 14mm 18mm 14mm;
+  }
+
+  html, body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .site-nav, .site-footer, .no-print, .skip-link,
+  .hero-cta, .chip-row, .filter-row, .card-actions,
+  .ticker, .portrait-chip, .doc-crumbs, .doc-backbar {
+    display: none !important;
+  }
+
+  .hero, .section { padding: 0 !important; min-height: 0 !important; background: none !important; }
+  .hero::after { display: none !important; }
+  .shell, .shell-wide { width: 100% !important; max-width: none !important; }
+  main { padding-top: 0 !important; margin: 0 !important; }
+
+  /* — content-keep = never leave a single widow line — */
+  p, li { orphans: 3; widows: 3; }
+
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .tip-box, blockquote, table, tr, img, figure,
+  .doc-cover, .doc-frame, .card, .prose figure {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  thead { display: table-header-group; }  /* column headers repeat on every page */
+  tfoot { display: table-footer-group; }
+
+  a { color: inherit; text-decoration: none; }
+  a[href^="http"]::after {
+    content: " (" attr(href) ") ";
+    font-size: 0.82em;
+    color: #77777a;
+  }
+
+  /* Chapter pages unwrap from their web chrome and print edge-to-edge calm */
+  .doc-frame {
+    box-shadow: none !important;
+    border: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    background: #fff !important;
+  }
+  .doc-cover { margin-bottom: 1.4rem; }
+  .doc-body { padding: 0 !important; }
+  .prose table { font-size: 0.88rem; }
+  .prose th { background: var(--card-accent, #444540) !important; }
+  .prose tbody tr:nth-child(even) td { background: var(--accent-soft); }
+
+  .card, .steps .card { box-shadow: none; border-color: var(--line-strong); border-top-width: 2px; }
+  .page-break, .break-before {
+    break-before: page;
+    page-break-before: always;
+  }
+}
+</style>
+</head>
+<body class="doc-page">
+<a class="skip-link" href="#doc-main">Skip to content</a>
+<main id="doc-main">
+  <div class="doc-crumbs no-print">
+    <a href="../index.html">&larr; Portfolio</a><span aria-hidden="true">/</span>
+    <a href="../materials.html">Learning library</a>
+  </div>
+  <article class="doc-frame chapter-doc" data-chapter="008-200-daily-use-questions-answers" data-theme="clay">
+    <header class="doc-cover">
+      <p class="doc-kicker">Zoya&#39;s English — Study Module 08</p>
+      <h1 class="doc-title">200 Daily Use Questions &amp; Answers</h1>
+      <p class="doc-subtitle">Rebuilt from the original source — interactive web edition plus print-ready A4.</p>
+      <div class="doc-meta">
+        <span>Source: 008 - 200 Daily Use Questions &amp; Answers.pdf</span>
+        <span>8 source pages</span>
+        <span>2171 words</span>
+        <span>~13 min read</span>
+      </div>
+    </header>
+    <div class="doc-body prose">
+<table>
+<thead>
+<tr>
+<th>1.</th>
+<th>What are you doing?</th>
+<th>—</th>
+<th>I’m just finishing some work.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.</td>
+<td>Where are you going?</td>
+<td>—</td>
+<td>I’m heading to college.</td>
+</tr>
+<tr>
+<td>3.</td>
+<td>Are you free today?</td>
+<td>&gt;</td>
+<td>Yes, Pm free after 6. i</td>
+</tr>
+<tr>
+<td>4.</td>
+<td>What do you mean?</td>
+<td>—</td>
+<td>Could you explain what you mean?</td>
+</tr>
+<tr>
+<td>5.</td>
+<td>ie was your day?</td>
+<td>—</td>
+<td>It was pretty good.</td>
+</tr>
+<tr>
+<td>6.</td>
+<td>What’s up?</td>
+<td>—</td>
+<td>Not much, just relaxing.</td>
+</tr>
+<tr>
+<td>7.</td>
+<td>Can son beldaenish</td>
+<td>+</td>
+<td>Sure, rd be Baily - help. 7</td>
+</tr>
+<tr>
+<td>8.</td>
+<td>What’s your plan for the weekend?</td>
+<td>—</td>
+<td>I’m planning to study and maybe watch a movie.</td>
+</tr>
+<tr>
+<td>9.</td>
+<td>What do you do?</td>
+<td>&gt;</td>
+<td>I’ma student.</td>
+</tr>
+<tr>
+<td>10.</td>
+<td>Can we catch up later?</td>
+<td>—</td>
+<td>Ofcourse! Let’s do that.</td>
+</tr>
+<tr>
+<td>11.</td>
+<td>How do I get hin?</td>
+<td>—</td>
+<td>You can take a = ane -_</td>
+</tr>
+<tr>
+<td>12.</td>
+<td>What time is it?</td>
+<td>—</td>
+<td>It’s 10:30.</td>
+</tr>
+<tr>
+<td>13.</td>
+<td>Can I call you later?</td>
+<td>—</td>
+<td>Yes, of course.</td>
+</tr>
+<tr>
+<td>14.</td>
+<td>What’s wrong?</td>
+<td>—</td>
+<td>Nothing serious, just a bit tired.</td>
+</tr>
+<tr>
+<td>15.</td>
+<td>eT 2 going?</td>
+<td>—</td>
+<td>Everything’s going well, thanks.</td>
+</tr>
+<tr>
+<td>16.</td>
+<td>Do you like it? &#124;</td>
+<td>&gt;</td>
+<td>Yes, I really like it. _</td>
+</tr>
+<tr>
+<td>17.</td>
+<td>Why are you late?</td>
+<td>&gt;</td>
+<td>Sorry, there as ict of traffic. =</td>
+</tr>
+<tr>
+<td>18.</td>
+<td>Can you dpe that?</td>
+<td>—</td>
+<td>Sure, let me repeat it.</td>
+</tr>
+<tr>
+<td>19.</td>
+<td>What should I do?</td>
+<td>&gt;</td>
+<td>Ithink you should talk to her.</td>
+</tr>
+<tr>
+<td>20.</td>
+<td>Is that okay?</td>
+<td>&gt;</td>
+<td>Ves that’s completely fine.</td>
+</tr>
+<tr>
+<td>21.</td>
+<td>Do you have time?</td>
+<td>—</td>
+<td>Yes, I have some time.</td>
+</tr>
+<tr>
+<td>22.</td>
+<td>What do veil think?</td>
+<td>&gt;</td>
+<td>I think it’s a good idea.</td>
+</tr>
+<tr>
+<td>23.</td>
+<td>Who is that?</td>
+<td>—</td>
+<td>He is my best friend.</td>
+</tr>
+<tr>
+<td>24.</td>
+<td>When will you be back?</td>
+<td>—</td>
+<td>I'll be back by 8 PM.</td>
+</tr>
+<tr>
+<td>25.</td>
+<td>How was the movie?</td>
+<td>—</td>
+<td>It was fantastic!</td>
+</tr>
+</tbody>
+</table>
+<ol start="26">
+<li>Can I help you?</li>
+<li>&gt; Yes, I'm looking for a pen.</li>
+<li>Where is the washroom?</li>
+<li>— It's down the hall on the left.</li>
+<li>How much does it cost?</li>
+<li>— It costs $20.</li>
+<li>Could you do mea favor?</li>
+<li>—- Sure, what is it?</li>
+<li>What are you up to?</li>
+<li>— Just working on some assignments.</li>
+<li>I'm dali</li>
+<li>Congratulations!</li>
+<li>— No worries, it's okay.</li>
+<li>&gt; Thank you so much!</li>
+<li>Good luck!</li>
+<li>Take care!</li>
+<li>— Thank you! You too!</li>
+<li>— You too! Take care.</li>
+<li>How can I reach you?</li>
+<li>— You can call me anytime.</li>
+<li>What's your name?</li>
+<li>— My name is</li>
+<li>Nice to meet you!</li>
+<li>— Nice to meet you too!</li>
+<li>Where do you live?</li>
+<li>What's your hobby?</li>
+<li>7 I live in</li>
+<li>— I love reading books.</li>
+<li>Are you busy now?</li>
+<li>&gt; Yes, a little. What's up?</li>
+<li>Can you wait a minute?</li>
+<li>— Sure, I'll wait.</li>
+<li>Let's go!</li>
+<li>—&gt; Great! Let's go.</li>
+<li>What's for lunch?</li>
+<li>Do you want something to drink?</li>
+<li>—&gt; I'm not sure yet.</li>
+<li>— Yes, I'd like a glass of water.</li>
+<li>lappreciate it.</li>
+<li>That's amazing!</li>
+<li>— You're welcome!</li>
+<li>&gt; Iknow, right!</li>
+<li>lagree with you.</li>
+<li>— Glad we're on the same page.</li>
+<li>I don't understand.</li>
+<li>What's the plan?</li>
+<li>— Let me explain it again.</li>
+<li>— We're planning to go out.</li>
+<li>See you later!</li>
+<li>— See you! Take care.</li>
+</ol>
+<p>_</p>
+<p>/</p>
+<table>
+<thead>
+<tr>
+<th>51.</th>
+<th>What did you do today?</th>
+<th>~</th>
+<th>I studied and finished my homework.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>52.</td>
+<td>How do you feel?</td>
+<td>—</td>
+<td>I'm feeling much better now.</td>
+</tr>
+<tr>
+<td>53.</td>
+<td>What’s going on?</td>
+<td>—</td>
+<td>Nothing much, just chilling.</td>
+</tr>
+<tr>
+<td>54.</td>
+<td>Can you speak slowly?</td>
+<td>=</td>
+<td>Sure, I'll speak slowly.</td>
+</tr>
+<tr>
+<td>55.</td>
+<td>Can you write it Zui -</td>
+<td>&#124; &gt;</td>
+<td>Yes, of wien</td>
+</tr>
+<tr>
+<td>56.</td>
+<td>What do you need?</td>
+<td>—</td>
+<td>Ineed some rest. —</td>
+</tr>
+<tr>
+<td>57.</td>
+<td>Howare you so good at this?</td>
+<td>—</td>
+<td>Practice and patience.</td>
+</tr>
+<tr>
+<td>58.</td>
+<td>Can I take your pen?</td>
+<td>—</td>
+<td>Yes, sure. Here you go. a</td>
+</tr>
+<tr>
+<td>59.</td>
+<td>Can we meet tomorrow?</td>
+<td>-</td>
+<td>Yes, let’s meet tomorrow. a</td>
+</tr>
+<tr>
+<td>60.</td>
+<td>What’s your favorite food?</td>
+<td>-—</td>
+<td>[I love pizza.</td>
+</tr>
+<tr>
+<td>61.</td>
+<td>Do you have any ies</td>
+<td>—</td>
+<td>Not really, I’m free.</td>
+</tr>
+<tr>
+<td>62.</td>
+<td>What are you thinking about?</td>
+<td>., ;</td>
+<td>I'm thinking about my future.</td>
+</tr>
+<tr>
+<td>63.</td>
+<td>rm you coming?</td>
+<td>&gt;</td>
+<td>Yes, I’m on my way. os</td>
+</tr>
+<tr>
+<td>64,</td>
+<td>What do you ical .</td>
+<td>—</td>
+<td>I suggest we watch a movie.</td>
+</tr>
+<tr>
+<td>65.</td>
+<td>Can you bisadad ahand?</td>
+<td>-</td>
+<td>Sure, Pll help you.</td>
+</tr>
+<tr>
+<td>66.</td>
+<td>What’s the matter?</td>
+<td>—</td>
+<td>[have a headache.</td>
+</tr>
+<tr>
+<td>67.</td>
+<td>Could you open the door?</td>
+<td>-</td>
+<td>Yes, sure.</td>
+</tr>
+<tr>
+<td>68.</td>
+<td>How was your trip?</td>
+<td>—</td>
+<td>It was wonderful!</td>
+</tr>
+<tr>
+<td>69.</td>
+<td>Did - understand?</td>
+<td>2s</td>
+<td>Yes, I understood everything.</td>
+</tr>
+<tr>
+<td>70.</td>
+<td>What should we do?</td>
+<td>—</td>
+<td>Ithink we should go now.</td>
+</tr>
+<tr>
+<td>7A,</td>
+<td>ie it fat fats ered</td>
+<td>oe</td>
+<td>No, it’s nearby.</td>
+</tr>
+<tr>
+<td>72.</td>
+<td>Can you send me the notes?</td>
+<td>—</td>
+<td>Yes, I'll send them.</td>
+</tr>
+<tr>
+<td>73.</td>
+<td>What’s the weather like?</td>
+<td>-—</td>
+<td>It’s sunny and nice.</td>
+</tr>
+<tr>
+<td>74.</td>
+<td>Do you mind if I sit here?</td>
+<td>—</td>
+<td>Not at all.</td>
+</tr>
+<tr>
+<td>75.</td>
+<td>What time do you wake up?</td>
+<td>—</td>
+<td>I usually wake up at 6 AM.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>76.</th>
+<th>Can I sit here?</th>
+<th>Yes, please.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>77.</td>
+<td>What are the rules?</td>
+<td>There are no strict rules.</td>
+</tr>
+<tr>
+<td>78.</td>
+<td>Why are you sad?</td>
+<td>I eves family.</td>
+</tr>
+<tr>
+<td>79.</td>
+<td>What makes you happy?</td>
+<td>My family and my goals.</td>
+</tr>
+<tr>
+<td>80.</td>
+<td>Can you listen to me?</td>
+<td>Yes, I’m listening.</td>
+</tr>
+<tr>
+<td>81.</td>
+<td>Base side ane atts /</td>
+<td>Yes, I play badminton.</td>
+</tr>
+<tr>
+<td>82.</td>
+<td>What did you eat?</td>
+<td>I had rice and dal.</td>
+</tr>
+<tr>
+<td>os</td>
+<td>Ray long hae yee Been studying?</td>
+<td>I’ve been studying for 3 hours.</td>
+</tr>
+<tr>
+<td>84.</td>
+<td>Can you promise me?</td>
+<td>Yes, I promise.</td>
+</tr>
+<tr>
+<td>85.</td>
+<td>What's your goal?</td>
+<td>My goal is to become an officer.</td>
+</tr>
+<tr>
+<td>86.</td>
+<td>dhe: sis satisfied? ce</td>
+<td>Yes, bm saciid, re</td>
+</tr>
+<tr>
+<td>87.</td>
+<td>Can we discuss sift seins</td>
+<td>4 let’s discuss it later.</td>
+</tr>
+<tr>
+<td>88.</td>
+<td>What do you want to do?</td>
+<td>I want to help people.</td>
+</tr>
+<tr>
+<td>89.</td>
+<td>Do you have a brother?</td>
+<td>_ I seas one —</td>
+</tr>
+<tr>
+<td>90.</td>
+<td>Where are you from?</td>
+<td>I’m from ra</td>
+</tr>
+<tr>
+<td>91.</td>
+<td>How often do you study?</td>
+<td>I study aux day.</td>
+</tr>
+<tr>
+<td>92.</td>
+<td>Can you understand me?</td>
+<td>Yes, I understand you clearly.</td>
+</tr>
+<tr>
+<td>93.</td>
+<td>What are you afraid of?</td>
+<td>I’m afraid of losing time.</td>
+</tr>
+<tr>
+<td>94,</td>
+<td>Did aa) finish your ener</td>
+<td>Yes, I finished it.</td>
+</tr>
+<tr>
+<td>95.</td>
+<td>What did he say?</td>
+<td>He said he will call me later. 7</td>
+</tr>
+<tr>
+<td>96.</td>
+<td>Are you feeling sleepy?</td>
+<td>A little, but I’ll manage.</td>
+</tr>
+<tr>
+<td>97.</td>
+<td>Can you give me some time?</td>
+<td>Sure, how much time do you need?</td>
+</tr>
+<tr>
+<td>98.</td>
+<td>What should I bring?</td>
+<td>Just bring your notebook. Pa</td>
+</tr>
+<tr>
+<td>99.</td>
+<td>Will you help me?</td>
+<td>Of course, I will.</td>
+</tr>
+<tr>
+<td>100.</td>
+<td>Do you have any questions?</td>
+<td>No, that’s all. Thank you!</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>100.</th>
+<th>Do you have any questions?</th>
+<th>~</th>
+<th>No, that’s all. Thank you!</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>101.</td>
+<td>What did you do yesterday?</td>
+<td>§~</td>
+<td>I went to the library and studied.</td>
+</tr>
+<tr>
+<td>102.</td>
+<td>How do you usually go to college?</td>
+<td>&gt;</td>
+<td>I usually go by bus.</td>
+</tr>
+<tr>
+<td>103.</td>
+<td>Can I ask you something?</td>
+<td>&gt;</td>
+<td>Yes, of course.</td>
+</tr>
+<tr>
+<td>104.</td>
+<td>What’s your favorite color?</td>
+<td>&gt;</td>
+<td>My favorite color is blue.</td>
+</tr>
+<tr>
+<td>105.</td>
+<td>Do you like traveling?</td>
+<td>4</td>
+<td>Yes, Love traveling.</td>
+</tr>
+<tr>
+<td>106.</td>
+<td>Can we talk in private?</td>
+<td>&gt;</td>
+<td>Sure, let’s go somewhere quiet.</td>
+</tr>
+<tr>
+<td>107.</td>
+<td>What’s the settle</td>
+<td>&gt;</td>
+<td>I’m having trouble with my studies.</td>
+</tr>
+<tr>
+<td>108.</td>
+<td>Do you understand now?</td>
+<td>&gt;</td>
+<td>Yes, I understand now.</td>
+</tr>
+<tr>
+<td>109.</td>
+<td>Can you give me an example?</td>
+<td>~~</td>
+<td>Sure, here’s an example.</td>
+</tr>
+<tr>
+<td>1 10.</td>
+<td>How wall time do sissies</td>
+<td>&gt; ‘</td>
+<td>We have about 30 minutes.</td>
+</tr>
+<tr>
+<td>111.</td>
+<td>Are you sure about that?</td>
+<td>sh</td>
+<td>Yes, I'm maine sure.</td>
+</tr>
+<tr>
+<td>112.</td>
+<td>What are you good at?</td>
+<td>&gt;</td>
+<td>I’m good at writing.</td>
+</tr>
+<tr>
+<td>113.</td>
+<td>Can you please lower your voice?</td>
+<td>&gt;</td>
+<td>Sure, I'll lower it.</td>
+</tr>
+<tr>
+<td>114.</td>
+<td>What's on your mind?</td>
+<td>4</td>
+<td>I’m just thinking about my future.</td>
+</tr>
+<tr>
+<td>115.</td>
+<td>Do you want to join us?</td>
+<td>&gt;</td>
+<td>Yes, I'd love to.</td>
+</tr>
+<tr>
+<td>116.</td>
+<td>What should I do first?</td>
+<td>&gt;</td>
+<td>You should finish your homework first.</td>
+</tr>
+<tr>
+<td>117.</td>
+<td>iets difficult? _</td>
+<td>&gt;</td>
+<td>Yes, it’s a little difficult.</td>
+</tr>
+<tr>
+<td>118.</td>
+<td>How often do you read books? /</td>
+<td>- ;</td>
+<td>[&#124; read books ae</td>
+</tr>
+<tr>
+<td>119.</td>
+<td>Did you have becakifast?</td>
+<td>&gt;</td>
+<td>Yes, I had breakfast.</td>
+</tr>
+<tr>
+<td>120.</td>
+<td>What do you prefer, tea or coffee?</td>
+<td>&gt;</td>
+<td>&#124; prefer coffee.</td>
+</tr>
+<tr>
+<td>121.</td>
+<td>What time dea the rm ry</td>
+<td>&gt;</td>
+<td>The class starts at 10 AM.</td>
+</tr>
+<tr>
+<td>122.</td>
+<td>Can you lend me your book?</td>
+<td>3</td>
+<td>Yes, I'll lend it to you.</td>
+</tr>
+<tr>
+<td>123.</td>
+<td>What do you do in your free time?</td>
+<td>=</td>
+<td>1 listen to music and read novels. -</td>
+</tr>
+<tr>
+<td>124,</td>
+<td>Are you happy with the result?</td>
+<td>&gt;</td>
+<td>Yes, I’m very happy.</td>
+</tr>
+<tr>
+<td>125.</td>
+<td>Can you help me with this?</td>
+<td>&gt;</td>
+<td>Yes, I’ll help you.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>126.</th>
+<th>Could you wait outside?</th>
+<th>&gt;</th>
+<th>Sure, I'll wait outside.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>127.</td>
+<td>What are you wearing?</td>
+<td>&gt;</td>
+<td>I’m wearing a blue shirt.</td>
+</tr>
+<tr>
+<td>128.</td>
+<td>Do you have a pen?</td>
+<td>&gt;</td>
+<td>Yes, I have a pen.</td>
+</tr>
+<tr>
+<td>129.</td>
+<td>What’s your phone number?</td>
+<td>~ _</td>
+<td>It’s 9876543210.</td>
+</tr>
+<tr>
+<td>130.</td>
+<td>Can I trust you?</td>
+<td>+</td>
+<td>Yes, you can trust me.</td>
+</tr>
+<tr>
+<td>131.</td>
+<td>What should we prepare?</td>
+<td>—</td>
+<td>We should prepare seriously.</td>
+</tr>
+<tr>
+<td>132.</td>
+<td>How do you relax?</td>
+<td>+</td>
+<td>[listen to music and meditate.</td>
+</tr>
+<tr>
+<td>133.</td>
+<td>Do you celebrate birthdays?</td>
+<td>&gt;</td>
+<td>Yes, I celebrate with my family.</td>
+</tr>
+<tr>
+<td>134.</td>
+<td>Can you wake me up tomorrow?</td>
+<td>~</td>
+<td>Sure, I'll wake you up.</td>
+</tr>
+<tr>
+<td>135.</td>
+<td>What do you dislike?</td>
+<td>&gt;</td>
+<td>I dislike laziness.</td>
+</tr>
+<tr>
+<td>136.</td>
+<td>What’s the next step?</td>
+<td>&gt;</td>
+<td>The next step is practice.</td>
+</tr>
+<tr>
+<td>137.</td>
+<td>Are you ready?</td>
+<td>&gt;</td>
+<td>Yes, I’m ready.</td>
+</tr>
+<tr>
+<td>138.</td>
+<td>Do you like animals?</td>
+<td>&gt;</td>
+<td>Yes, I love animals.</td>
+</tr>
+<tr>
+<td>139.</td>
+<td>How was your weekend?</td>
+<td>&gt;</td>
+<td>It was relaxing and fun.</td>
+</tr>
+<tr>
+<td>140.</td>
+<td>What did you learn today?</td>
+<td>&gt;</td>
+<td>I learned something new.</td>
+</tr>
+<tr>
+<td>141.</td>
+<td>Do you take coffee?</td>
+<td>&gt;</td>
+<td>No, I don’t take coffee.</td>
+</tr>
+<tr>
+<td>142.</td>
+<td>What motivates you?</td>
+<td>—</td>
+<td>My goals motivate me.</td>
+</tr>
+<tr>
+<td>143.</td>
+<td>Can we change the plan?</td>
+<td>—</td>
+<td>Yes, we can change it.</td>
+</tr>
+<tr>
+<td>144.</td>
+<td>What’s your dream?</td>
+<td>-~</td>
+<td>Mydream is to become an IAS officer.</td>
+</tr>
+<tr>
+<td>145.</td>
+<td>Do you prefer reading or watching?</td>
+<td>—</td>
+<td>I prefer reading books.</td>
+</tr>
+<tr>
+<td>146.</td>
+<td>How long does it take?</td>
+<td>&gt; —</td>
+<td>It takes about 20 minutes.</td>
+</tr>
+<tr>
+<td>147.</td>
+<td>Could you explain it simply?</td>
+<td>&gt;</td>
+<td>Sure, I'll explain it simply.</td>
+</tr>
+<tr>
+<td>148.</td>
+<td>What are your strengths?</td>
+<td>&gt;</td>
+<td>[m hardworking and honest.</td>
+</tr>
+<tr>
+<td>149.</td>
+<td>Do you like teamwork?</td>
+<td>&gt;</td>
+<td>Yes, I enjoy working in a team.</td>
+</tr>
+<tr>
+<td>150.</td>
+<td>Is everything clear?</td>
+<td>=</td>
+<td>Yes; eeeydine is dese -</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>151.</th>
+<th>Can I get a glass of water?</th>
+<th>—</th>
+<th>Yes, of course.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>152.</td>
+<td>Where did you go last night?</td>
+<td>-—</td>
+<td>I went toa friend’s house.</td>
+</tr>
+<tr>
+<td>153.</td>
+<td>Do you speak any other language?</td>
+<td>—</td>
+<td>Yes, I speak a little Hindi.</td>
+</tr>
+<tr>
+<td>154.</td>
+<td>What’s your favorite subject?</td>
+<td>—</td>
+<td>My favorite subject is English.</td>
+</tr>
+<tr>
+<td>155.</td>
+<td>Did you sleep well?</td>
+<td>—</td>
+<td>Yes, I slept very well.</td>
+</tr>
+<tr>
+<td>156.</td>
+<td>Can you help me with this?</td>
+<td>&gt;</td>
+<td>Sure, I'll help you.</td>
+</tr>
+<tr>
+<td>157.</td>
+<td>What did you buy?</td>
+<td>—</td>
+<td>I bought a new notebook.</td>
+</tr>
+<tr>
+<td>158.</td>
+<td>Are you feeling better now?</td>
+<td>&gt;</td>
+<td>Yes, I’m feeling much better.</td>
+</tr>
+<tr>
+<td>159.</td>
+<td>What time is it?</td>
+<td>—</td>
+<td>It’s 10:30 AM.</td>
+</tr>
+<tr>
+<td>160.</td>
+<td>Do you like spicy food?</td>
+<td>—</td>
+<td>Yes, I love spicy food.</td>
+</tr>
+<tr>
+<td>161.</td>
+<td>What are you afraid of?</td>
+<td>—</td>
+<td>I’m afraid of heights.</td>
+</tr>
+<tr>
+<td>162.</td>
+<td>Can you repeat that, please?</td>
+<td>—</td>
+<td>Sure, I'll repeat it.</td>
+</tr>
+<tr>
+<td>163.</td>
+<td>What’s your opinion?</td>
+<td>—</td>
+<td>I think it’s a good idea.</td>
+</tr>
+<tr>
+<td>164.</td>
+<td>How do you spend your day?</td>
+<td>~- I</td>
+<td>study, read and exercise.</td>
+</tr>
+<tr>
+<td>165.</td>
+<td>Do you have any siblings?</td>
+<td>—</td>
+<td>Yes, I have one sister.</td>
+</tr>
+<tr>
+<td>166.</td>
+<td>What’s your favorite movie?</td>
+<td>—</td>
+<td>My favorite movie is 3 Idiots.</td>
+</tr>
+<tr>
+<td>167.</td>
+<td>Can I borrow your notes?</td>
+<td>=</td>
+<td>Yes, you can borrow them.</td>
+</tr>
+<tr>
+<td>168.</td>
+<td>What did you say?</td>
+<td>—</td>
+<td>I said I'll be there soon.</td>
+</tr>
+<tr>
+<td>169.</td>
+<td>Do you like your job?</td>
+<td>—</td>
+<td>Yes, I enjoy my job.</td>
+</tr>
+<tr>
+<td>170.</td>
+<td>How was your day?</td>
+<td>—</td>
+<td>It was productive and good.</td>
+</tr>
+<tr>
+<td>171.</td>
+<td>What are your hobbies?</td>
+<td>—</td>
+<td>My hobbies are reading and painting.</td>
+</tr>
+<tr>
+<td>172.</td>
+<td>Can I have your number?</td>
+<td>&gt;</td>
+<td>Sure, here it is.</td>
+</tr>
+<tr>
+<td>173.</td>
+<td>Do you prefer summer or winter?</td>
+<td>&gt;</td>
+<td>_ &#124; prefer winter.</td>
+</tr>
+<tr>
+<td>174,</td>
+<td>What do you think about this?</td>
+<td>&gt;</td>
+<td>I shi it’s really helpful.</td>
+</tr>
+<tr>
+<td>175.</td>
+<td>sai we go for a walk?</td>
+<td>a</td>
+<td>Yes, mr saat great.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>176.</th>
+<th>Where are my keys?</th>
+<th>—</th>
+<th>They are on the table.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>177.</td>
+<td>What’s the date today?</td>
+<td>&gt;</td>
+<td>Today is 20th May.</td>
+</tr>
+<tr>
+<td>178.</td>
+<td>Can you do this for me?</td>
+<td>&gt;</td>
+<td>Yes, I can % it for a =</td>
+</tr>
+<tr>
+<td>179.</td>
+<td>Do you believe in yourself?</td>
+<td>—</td>
+<td>Yes, I believe in myself.</td>
+</tr>
+<tr>
+<td>180.</td>
+<td>What did you think?</td>
+<td>&gt;</td>
+<td>I thought i was okay.</td>
+</tr>
+<tr>
+<td>181.</td>
+<td>Seeker close the window?</td>
+<td>~</td>
+<td>Sure, I'll close it.</td>
+</tr>
+<tr>
+<td>182.</td>
+<td>How do I get there?</td>
+<td>&gt;</td>
+<td>You can take a bus.</td>
+</tr>
+<tr>
+<td>183.</td>
+<td>What shot I wear?</td>
+<td>—</td>
+<td>You should wear something comfortable.</td>
+</tr>
+<tr>
+<td>184,</td>
+<td>Did ™ segs</td>
+<td>&gt;</td>
+<td>Yes, 1 cfne! ~wA a lot.</td>
+</tr>
+<tr>
+<td>185.</td>
+<td>What brings you here?</td>
+<td>7 —</td>
+<td>Icame to meet you.</td>
+</tr>
+<tr>
+<td>186.</td>
+<td>Can I call you eae</td>
+<td>&gt;</td>
+<td>Yes, » call - ek i</td>
+</tr>
+<tr>
+<td>187.</td>
+<td>What are you doing now?</td>
+<td>_</td>
+<td>I am studying right now.</td>
+</tr>
+<tr>
+<td>188.</td>
+<td>Do you want something to eat?</td>
+<td>—</td>
+<td>Yes, I’m a little hungry.</td>
+</tr>
+<tr>
+<td>189.</td>
+<td>How much does this cost?</td>
+<td>4</td>
+<td>It costs $20. a2)</td>
+</tr>
+<tr>
+<td>190.</td>
+<td>Can re a wi</td>
+<td>a”</td>
+<td>Yes, I can drive. or ae</td>
+</tr>
+<tr>
+<td>191.</td>
+<td>What do you eR Aaend?</td>
+<td>=&lt;</td>
+<td>I recommend this book.</td>
+</tr>
+<tr>
+<td>192.</td>
+<td>Is it okay if I leave early?</td>
+<td>&gt;</td>
+<td>Yes, that’s okay.</td>
+</tr>
+<tr>
+<td>193.</td>
+<td>Can you pass me the salt? }</td>
+<td>&gt;</td>
+<td>acti you go.</td>
+</tr>
+<tr>
+<td>194.</td>
+<td>What do ” plan to do?</td>
+<td>2</td>
+<td>I plan to study for the exam.</td>
+</tr>
+<tr>
+<td>195.</td>
+<td>How do you stay positive?</td>
+<td>—</td>
+<td>I meditate and stay focused.</td>
+</tr>
+<tr>
+<td>196.</td>
+<td>Did you enjoy the party?</td>
+<td>&gt;</td>
+<td>Yes, I really enjoyed 7</td>
+</tr>
+<tr>
+<td>197.</td>
+<td>What's: si teen goal?</td>
+<td>_</td>
+<td>My Bigoaxe goal is eer</td>
+</tr>
+<tr>
+<td>198.</td>
+<td>Do you have a laptop?</td>
+<td>&gt;</td>
+<td>Yes, I have a laptop. _</td>
+</tr>
+<tr>
+<td>199.</td>
+<td>What did you learn in class?</td>
+<td>~—</td>
+<td>[&#124; learned about photosynthesis.</td>
+</tr>
+<tr>
+<td>200.</td>
+<td>Do you think we can win?</td>
+<td>&gt;</td>
+<td>Yes, I think we can win.</td>
+</tr>
+</tbody>
+</table>
+    </div>
+  </article>
+  <script type="application/json" id="doc-meta">{"slug": "008-200-daily-use-questions-answers", "number": 8, "theme": "clay", "engine": "docling", "source": "008 - 200 Daily Use Questions & Answers.pdf", "pages": 8, "words": 2171, "sections": 0, "tables": 7, "reading_min": 13, "date": "2026-10-21", "teaser": ""}</script>
+</main>
+</body>
+</html>

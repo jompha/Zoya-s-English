@@ -1,0 +1,1712 @@
+<!doctype html>
+<html lang="en" data-theme="ember">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Essential Phrasal Verbs · Zoya's English — Study Module</title>
+<meta name="description" content="Essential Phrasal Verbs — study module from Zoya&#39;s English learning library: speaking and confidence coaching materials.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>/* ═══════════════════════════════════════════════════════════════════════════
+   ZOYA'S ENGLISH — MASTER LAYOUT STYLESHEET
+   Design language: FORGE-inspired, light edition — warm paper ground,
+   near-black ink, electric-lime energy, sharp edges, grotesk discipline.
+   Beat structure: tokens → chapter themes → base → components → prose → print
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────── 1 · DESIGN TOKENS (single source) */
+
+:root {
+  /* Palette — light Forge: paper, ink, electric lime */
+  --bg: #fafaf7;                 /* warm paper ground                    */
+  --bg-deep: #f2f1ea;            /* deeper wash for bands                */
+  --surface: #ffffff;
+  --ink: #17181a;                /* near-black body typography           */
+  --ink-soft: #55584f;
+  --ink-faint: #8b8d82;
+  --line: #e6e4da;
+  --line-strong: #d4d2c6;
+  --lime: #b5f030;               /* electric lime — the brand spark      */
+  --lime-deep: #8fc413;          /* lime pressed onto paper hover        */
+  --accent: #34352f;             /* neutral chrome accent (links et al.) */
+  --accent-ink: #17181a;
+  --accent-soft: #f4f3ec;
+  --accent-glow: rgba(181, 240, 48, 0.35);
+  --glow: rgba(181, 240, 48, 0.45);
+  --warm: #f6f3e4;
+
+  /* Typography */
+  --font-display: "Space Grotesk", "Inter Tight", system-ui, sans-serif;
+  --font-body: "Inter Tight", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Courier New", monospace;
+
+  /* Shape & depth — Forge is sharp: nothing rounded, glow instead of shadow */
+  --r-lg: 0px;
+  --r-md: 0px;
+  --r-sm: 0px;
+  --r-pill: 999px;               /* reserved: badges only                */
+  --shadow-1: 0 1px 0 var(--line);
+  --shadow-2: 0 0 0 1px var(--line);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─────────────────────────── 2 · CHAPTER DESIGN LANGUAGES (per-theme accents)
+
+   Every compiled chapter receives its own stable accent family, applied via
+   `data-theme` on the page root, so each module feels designed — not stamped.
+   The dashboard (materials.html) mirrors these values for its cards.        */
+
+[data-theme="slate"] { --accent: #4a6b82; --accent-ink: #375266; --accent-soft: #edf2f6; --accent-glow: rgba(74, 107, 130, 0.16); }
+[data-theme="ink"]   { --accent: #46474b; --accent-ink: #33353a; --accent-soft: #f1efe9; --accent-glow: rgba(70, 71, 75, 0.14); }
+[data-theme="clay"]  { --accent: #b06a48; --accent-ink: #8f5438; --accent-soft: #f9efe7; --accent-glow: rgba(176, 106, 72, 0.15); }
+[data-theme="sage"]  { --accent: #5f7c60; --accent-ink: #49614a; --accent-soft: #eff5ef; --accent-glow: rgba(95, 124, 96, 0.15); }
+[data-theme="plum"]  { --accent: #7d5a72; --accent-ink: #64485a; --accent-soft: #f6eff4; --accent-glow: rgba(125, 90, 114, 0.15); }
+[data-theme="mist"]  { --accent: #3f7a75; --accent-ink: #2f605c; --accent-soft: #ebf4f2; --accent-glow: rgba(63, 122, 117, 0.15); }
+[data-theme="ember"] { --accent: #a8543f; --accent-ink: #8a4232; --accent-soft: #f9ece8; --accent-glow: rgba(168, 84, 63, 0.15); }
+[data-theme="moss"]  { --accent: #72783f; --accent-ink: #5a5f31; --accent-soft: #f5f6e9; --accent-glow: rgba(114, 120, 63, 0.15); }
+
+/* ────────────────────────────────────────────────────────── 3 · BASE RESET */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 0.6em;
+}
+
+::selection { background: var(--lime); color: var(--ink); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  z-index: 100;
+  background: var(--lime);
+  color: var(--ink);
+  font-weight: 500;
+  padding: 0.55rem 1.1rem;
+}
+.skip-link:focus { left: 12px; color: var(--ink); }
+
+/* ───────────────────────────────────────────────────────── 4 · LAYOUT CORE */
+
+.shell { width: min(1140px, 92vw); margin-inline: auto; }
+.shell-wide { width: min(1240px, 94vw); margin-inline: auto; }
+
+.section { padding: 5.5rem 0; position: relative; }
+.section + .section { padding-top: 0; }
+.grid { display: grid; gap: 1.4rem; }
+.grid.cards { grid-template-columns: repeat(auto-fill, minmax(305px, 1fr)); }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: center; }
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.1rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.kicker::before {
+  content: "";
+  width: 22px;
+  height: 10px;
+  background: var(--lime);
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.section-lede { max-width: 62ch; color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 2.4rem; }
+.display-xl {
+  font-size: clamp(2.9rem, 6.2vw, 5.2rem);
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* ─────────────────────────────────────────────────────── 5 · NAV BAR */
+
+.site-nav {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 60;
+  padding: 0.85rem 0;
+  background: transparent;
+  transition: background 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+  border-bottom: 1px solid transparent;
+}
+.site-nav.scrolled {
+  background: rgba(250, 250, 247, 0.95);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom-color: var(--line);
+}
+.site-nav .bar { display: flex; align-items: center; gap: 1.6rem; }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 700;
+  background: var(--lime);
+}
+
+.nav-links { display: flex; align-items: center; gap: 1.5rem; margin-left: auto; }
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s var(--ease);
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a[aria-current="page"] { color: var(--ink); border-bottom: 2px solid var(--lime); }
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+}
+
+/* ─────────────────────────────────────────────────── 6 · BUTTONS · CHIPS */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid transparent;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.25s var(--ease), background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.25s var(--ease);
+}
+.btn-solid {
+  color: var(--ink);
+  background: var(--lime);
+}
+.btn-solid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px var(--accent-glow), 0 0 60px rgba(181, 240, 48, 0.18);
+}
+.btn-ghost {
+  color: var(--ink);
+  background: transparent;
+  border-color: var(--ink);
+}
+.btn-ghost:hover {
+  border-color: var(--lime-deep);
+  background: var(--lime);
+}
+.btn.is-disabled,
+.btn[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+.btn-sm { padding: 0.5rem 1rem; font-size: 0.74rem; }
+.btn-note {
+  margin-left: 0.1rem;
+  padding-left: 0.55rem;
+  border-left: 1px solid rgba(23, 24, 26, 0.3);
+  font-size: 0.72rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.9rem;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.chip::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--lime);
+  transform: rotate(45deg);
+}
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+/* ─────────────────────────────────────────────────── 7 · SHARP CARDS */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.7rem 1.7rem 1.5rem;
+  border: 1px solid var(--line-strong);
+  border-top: 3px solid var(--ink);
+  background: var(--surface);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+.card-hover:hover,
+.card-chapter:hover {
+  transform: translateY(-4px);
+  border-color: rgba(181, 240, 48, 0.55);
+  border-top-color: var(--lime);
+  box-shadow: 0 0 30px var(--accent-glow), 0 0 64px rgba(181, 240, 48, 0.14);
+  background: var(--card-tint, var(--surface));
+}
+.card-kicker {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--card-accent, var(--accent));
+  margin-bottom: 0.3rem;
+}
+.card-title { font-family: var(--font-display); font-weight: 700; font-size: 1.18rem; letter-spacing: -0.01em; margin: 0.15rem 0 0.35rem; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { color: var(--card-accent, var(--accent)); }
+.card-teaser { color: var(--ink-soft); font-size: 0.94rem; margin: 0 0 0.9rem; }
+.card-empty {
+  grid-column: 1 / -1;
+  align-items: flex-start;
+  border-style: dashed;
+  border-color: var(--line-strong);
+  background: transparent;
+  box-shadow: none;
+}
+.card-empty code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  padding: 0.05em 0.4em;
+}
+
+.material-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  background: var(--lime);
+  margin-bottom: 0.8rem;
+}
+.material-icon svg { width: 22px; height: 22px; }
+
+/* Chapter cards — materials.html dashboard */
+.card-chapter { --card-accent: var(--accent); border-top-color: var(--card-accent, var(--ink)); }
+.chapter-num {
+  position: absolute;
+  top: 1rem;
+  right: 1.4rem;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--card-accent);
+  opacity: 0.35;
+  user-select: none;
+}
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.card-meta li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.card-meta li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  transform: rotate(45deg);
+  background: var(--lime);
+  opacity: 0.9;
+}
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.filter-row { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 1.6rem 0 2.2rem; }
+.filter-chip { cursor: pointer; transition: all 0.2s var(--ease); opacity: 0.7; }
+.filter-chip:hover { opacity: 1; color: var(--ink); }
+.filter-chip.is-active {
+  opacity: 1;
+  color: var(--ink);
+  background: var(--lime);
+  border-color: var(--lime);
+}
+.filter-chip.is-active::before { background: var(--ink); }
+
+/* ─────────────────────────────────────────────────────────────── 8 · HERO */
+
+.hero {
+  position: relative;
+  padding: 9.5rem 0 4.5rem;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: min(4vw, 60px);
+  width: clamp(90px, 12vw, 150px);
+  height: clamp(90px, 12vw, 150px);
+  background:
+    repeating-linear-gradient(0deg, rgba(23, 24, 26, 0.09) 0 1.5px, transparent 1.5px 9px),
+    repeating-linear-gradient(90deg, rgba(23, 24, 26, 0.09) 0 1.5px, transparent 1.5px 9px);
+  pointer-events: none;
+}
+.hero .grid.two { gap: 3.5rem; }
+.hero-lede {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 54ch;
+  margin: 1.4rem 0 2rem;
+}
+.hero-lede em { font-style: normal; box-shadow: inset 0 -0.5em 0 var(--lime); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 2.4rem; }
+
+/* Stats — Forge's animated counters, honest numbers only */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.6rem 3.2rem;
+  margin-top: 0.4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--line-strong);
+}
+.stat { display: flex; flex-direction: column; gap: 0.15rem; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--ink);
+}
+.stat-num b { color: inherit; font-weight: inherit; }
+.stat-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.portrait { position: relative; margin: 0; }
+.portrait-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-deep);
+}
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(23, 24, 26, 0.08);
+  pointer-events: none;
+}
+.portrait-mono {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 14vw, 10rem);
+  font-weight: 700;
+  color: var(--ink);
+  opacity: 0.1;
+}
+.portrait-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portrait-chip {
+  position: absolute;
+  z-index: 2;
+  font-size: 0.72rem;
+  padding: 0.45rem 0.8rem;
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+.portrait-chip::before { background: var(--lime); }
+.portrait-chip.c1 { top: 8%; left: -4%; }
+.portrait-chip.c2 { bottom: 20%; right: -3%; }
+.portrait-chip.c3 { bottom: -3%; left: 8%; }
+@media (max-width: 760px) {
+  .portrait-chip.c1 { left: 4%; }
+  .portrait-chip.c2 { right: 4%; }
+}
+
+/* ───────────────────────────────────────────── 9 · TICKER · STATEMENT · METHOD */
+
+.ticker {
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 0.85rem 0;
+  background: var(--bg);
+}
+.ticker-track {
+  display: inline-flex;
+  animation: ticker-scroll 26s linear infinite;
+}
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-right: 1.6rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.ticker-track span::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--lime);
+  transform: rotate(45deg);
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.pull-quote {
+  margin: 1rem 0 0;
+  padding: 0.9rem 0 0 1.5rem;
+  border-left: 4px solid var(--lime);
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.prose-copy p { color: var(--ink-soft); margin: 0 0 1.05rem; max-width: 62ch; }
+.prose-copy strong { font-weight: 500; color: var(--ink); }
+
+.steps { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.step-num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--ink);
+  opacity: 0.35;
+  margin-bottom: 0.7rem;
+}
+.steps .card h3 { text-transform: uppercase; letter-spacing: 0.02em; font-size: 1.05rem; }
+.steps .card p { color: var(--ink-soft); font-size: 0.93rem; margin: 0; }
+
+/* ───────────────────────────────────────── 10 · CALLOUTS — the .tip-box system */
+
+.tip-box {
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 1.05rem 1.3rem 1.05rem 1.4rem;
+  border: 1px solid var(--line-strong);
+  border-left: 4px solid var(--card-accent, var(--accent));
+  background: var(--accent-soft);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.tip-box p, .tip-box ul { margin: 0.2rem 0 0; font-size: 0.96rem; color: var(--ink-soft); }
+.tip-box .tip-title,
+.tip-box > p:first-child strong:first-child {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent-ink);
+}
+.tip-box[data-tone="note"]  { border-left-color: #b98a4b; background: #faf4e8; }
+.tip-box[data-tone="warn"]  { border-left-color: #a8503f; background: #f9ecea; }
+.tip-box[data-tone="ok"]    { border-left-color: #3e7c74; background: #ecf4f1; }
+
+/* ─────────────────────────────────────────────── 11 · DOC PAGES (materials/*) */
+
+.doc-page body { background: var(--bg); }
+.doc-crumbs {
+  width: min(880px, 92vw);
+  margin: 6.5rem auto 1.2rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.doc-crumbs a { color: var(--ink); text-decoration: none; }
+.doc-crumbs a:hover { box-shadow: inset 0 -0.4em 0 var(--lime); }
+
+.doc-frame {
+  width: min(880px, 92vw);
+  margin: 0 auto 4.5rem;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.doc-cover {
+  position: relative;
+  overflow: hidden;
+  padding: 2.8rem 3.2rem 2.4rem;
+  border-bottom: 1px solid var(--ink);
+  border-top: 8px solid var(--accent);
+  background: var(--accent-soft);
+}
+.doc-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+/* one quiet motif per chapter design language */
+[data-theme="slate"] .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="ink"]   .doc-cover::after { background-image: repeating-linear-gradient(135deg, var(--accent-glow) 0 1px, transparent 1px 16px); }
+[data-theme="clay"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 22px); }
+[data-theme="sage"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="plum"]  .doc-cover::after { background-image: radial-gradient(420px 260px at 92% 100%, var(--accent-glow) 0%, transparent 70%); }
+[data-theme="mist"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 30px); }
+[data-theme="ember"] .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 13px), repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 13px); }
+[data-theme="moss"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 18px); }
+
+.doc-kicker {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.doc-kicker::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 9px;
+  margin-top: 0.55rem;
+  background: var(--lime);
+}
+.doc-title {
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+.doc-subtitle { margin: 0.4rem 0 1.4rem; max-width: 58ch; color: var(--ink-soft); font-size: 1.02rem; }
+.doc-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.2rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.doc-body { padding: 2.6rem 3.2rem 3.4rem; }
+@media (max-width: 640px) {
+  .doc-cover, .doc-body { padding-inline: 1.4rem; }
+}
+
+/* ──────────────────────────────────────────────── 12 · PROSE (lesson content) */
+
+.prose { font-size: 1.02rem; color: #2b2d26; }
+.prose > * + * { margin-top: 0.9em; }
+.prose h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-top: 2.2em;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--card-accent, var(--accent));
+}
+.prose h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; margin-top: 1.9em; }
+.prose h4 { font-family: var(--font-display); font-size: 1.02rem; font-weight: 600; margin-top: 1.6em; }
+.prose blockquote { margin: 1.4rem 0; padding: 1rem 1.3rem 1rem 1.4rem; border: 1px solid var(--line-strong); border-left: 4px solid var(--card-accent, var(--accent)); background: var(--accent-soft); color: var(--ink-soft); break-inside: avoid; page-break-inside: avoid; }
+.prose blockquote p { margin: 0.2rem 0 0; }
+.prose blockquote p:first-child { margin-top: 0; font-weight: 500; color: var(--ink); }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.6rem 0; font-size: 0.93rem; break-inside: avoid; page-break-inside: avoid; }
+.prose th { background: var(--card-accent, var(--accent)); color: #fff; font-family: var(--font-display); font-weight: 600; text-align: left; letter-spacing: 0.03em; }
+.prose th, .prose td { border: 1px solid var(--line-strong); padding: 0.55rem 0.8rem; }
+.prose tbody tr:nth-child(even) td { background: var(--accent-soft); }
+.prose ul, .prose ol { padding-left: 1.4rem; }
+.prose li { margin: 0.35rem 0; }
+.prose li::marker { color: var(--accent); font-weight: 600; }
+.prose strong { color: var(--ink); font-weight: 500; }
+.prose code { font-family: var(--font-mono); font-size: 0.88em; background: var(--accent-soft); border: 1px solid var(--line); padding: 0.08em 0.42em; }
+.prose hr { border: 0; border-top: 1px dashed var(--line-strong); margin: 2.2rem auto; width: 55%; }
+.prose figure { margin: 1.6rem 0; break-inside: avoid; page-break-inside: avoid; }
+
+/* ────────────────────────────────────────────────────────────── 13 · FOOTER */
+
+.site-footer {
+  padding: 3rem 0 3.6rem;
+  border-top: 2px solid var(--ink);
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+}
+.site-footer .bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-footer a { color: var(--ink-soft); text-decoration: none; }
+.site-footer a:hover { box-shadow: inset 0 -0.4em 0 var(--lime); }
+.site-footer .brand { font-size: 0.95rem; }
+
+/* ────────────────────────────────────────────────── 14 · MOTION & RESPONSIVE */
+
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (max-width: 760px) {
+  .section { padding: 3.6rem 0; }
+  .hero { padding-top: 7.5rem; }
+  .hero::after { display: none; }
+  .stats { gap: 1.8rem 2.2rem; }
+  .stat-num { font-size: 2.1rem; }
+  .doc-meta { gap: 0.3rem 0.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .ticker-track { animation: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ═══════════════════════════════════════════════ 15 · PRINT — A4 CHOREOGRAPHY
+   Hard pagination contract: no orphan headings, no splintered callouts,
+   no split table rows. Chromium prints exactly what these rules promise.     */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 14mm 18mm 14mm;
+  }
+
+  html, body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .site-nav, .site-footer, .no-print, .skip-link,
+  .hero-cta, .chip-row, .filter-row, .card-actions,
+  .ticker, .portrait-chip, .doc-crumbs, .doc-backbar {
+    display: none !important;
+  }
+
+  .hero, .section { padding: 0 !important; min-height: 0 !important; background: none !important; }
+  .hero::after { display: none !important; }
+  .shell, .shell-wide { width: 100% !important; max-width: none !important; }
+  main { padding-top: 0 !important; margin: 0 !important; }
+
+  /* — content-keep = never leave a single widow line — */
+  p, li { orphans: 3; widows: 3; }
+
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .tip-box, blockquote, table, tr, img, figure,
+  .doc-cover, .doc-frame, .card, .prose figure {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  thead { display: table-header-group; }  /* column headers repeat on every page */
+  tfoot { display: table-footer-group; }
+
+  a { color: inherit; text-decoration: none; }
+  a[href^="http"]::after {
+    content: " (" attr(href) ") ";
+    font-size: 0.82em;
+    color: #77777a;
+  }
+
+  /* Chapter pages unwrap from their web chrome and print edge-to-edge calm */
+  .doc-frame {
+    box-shadow: none !important;
+    border: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    background: #fff !important;
+  }
+  .doc-cover { margin-bottom: 1.4rem; }
+  .doc-body { padding: 0 !important; }
+  .prose table { font-size: 0.88rem; }
+  .prose th { background: var(--card-accent, #444540) !important; }
+  .prose tbody tr:nth-child(even) td { background: var(--accent-soft); }
+
+  .card, .steps .card { box-shadow: none; border-color: var(--line-strong); border-top-width: 2px; }
+  .page-break, .break-before {
+    break-before: page;
+    page-break-before: always;
+  }
+}
+</style>
+</head>
+<body class="doc-page">
+<a class="skip-link" href="#doc-main">Skip to content</a>
+<main id="doc-main">
+  <div class="doc-crumbs no-print">
+    <a href="../index.html">&larr; Portfolio</a><span aria-hidden="true">/</span>
+    <a href="../materials.html">Learning library</a>
+  </div>
+  <article class="doc-frame chapter-doc" data-chapter="015-essential-phrasal-verbs" data-theme="ember">
+    <header class="doc-cover">
+      <p class="doc-kicker">Zoya&#39;s English — Study Module 15</p>
+      <h1 class="doc-title">Essential Phrasal Verbs</h1>
+      <p class="doc-subtitle">Rebuilt from the original source — interactive web edition plus print-ready A4.</p>
+      <div class="doc-meta">
+        <span>Source: 015 - Essential Phrasal Verbs.pdf</span>
+        
+        <span>2825 words</span>
+        <span>~16 min read</span>
+      </div>
+    </header>
+    <div class="doc-body prose">
+<table>
+<thead>
+<tr>
+<th>1. Give up</th>
+<th>- to stop trying She gave up smoking last year.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2. Look after</td>
+<td>– to take care of I look after my younger sister.</td>
+</tr>
+<tr>
+<td>3. Put off</td>
+<td>to postpone Don't put off your studies.</td>
+</tr>
+<tr>
+<td>4. Carry on</td>
+<td>- to continue Please carry on with your work.</td>
+</tr>
+<tr>
+<td>5. Run out of</td>
+<td>– to have no more left We have run out of time.</td>
+</tr>
+<tr>
+<td>Find out</td>
+<td>– to discover I will find out the truth.</td>
+</tr>
+<tr>
+<td>7. Turn on</td>
+<td>- to switch on She turned on the light.</td>
+</tr>
+<tr>
+<td>8. Turn off</td>
+<td>- to switch off Please turn off your phone.</td>
+</tr>
+<tr>
+<td>9. Take off</td>
+<td>- to remove He took off his shoes.</td>
+</tr>
+<tr>
+<td>10. Pick up</td>
+<td>- to lift or collect I picked up the book from the table.</td>
+</tr>
+<tr>
+<td>11. Set up</td>
+<td>– to arrange or start They set up a new business.</td>
+</tr>
+<tr>
+<td></td>
+<td>12. Break down - to stop working My car broke down on the way.</td>
+</tr>
+<tr>
+<td>13. Look for</td>
+<td>- to search I am looking for my keys.</td>
+</tr>
+<tr>
+<td>14. Bring up</td>
+<td>to raise (a child) or to mention She brought up an important point.</td>
+</tr>
+<tr>
+<td>15. Give in</td>
+<td>to accept or stop resisting He finally gave in to their demands.</td>
+</tr>
+<tr>
+<td>16. Hold on</td>
+<td>- to wait Hold on a moment, please.</td>
+</tr>
+<tr>
+<td>17. Pass on</td>
+<td>– to give to someone else Please pass on this message.</td>
+</tr>
+<tr>
+<td>18. Fill in</td>
+<td>– to complete a form I filled in the form carefully.</td>
+</tr>
+<tr>
+<td>19. Keep up</td>
+<td>- to maintain It is hard to keep up with the competition.</td>
+</tr>
+<tr>
+<td>20. Get over</td>
+<td>- to recover from She is slowly getting over her illness.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>21. Look up</th>
+<th>- to search for information I looked up the word in the dictionary.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22. Take up</td>
+<td>- to start a new activity She took up yoga last year.</td>
+</tr>
+<tr>
+<td>23. Give out</td>
+<td>- to distribute The teacher gave out the test papers.</td>
+</tr>
+<tr>
+<td>24. Work out</td>
+<td>– to find a solution or to exercise Let's work out a plan.</td>
+</tr>
+<tr>
+<td>25. Figure out</td>
+<td>– to understand I couldn't figure out the problem.</td>
+</tr>
+<tr>
+<td>26. Call off</td>
+<td>- to cancel They called off the meeting.</td>
+</tr>
+<tr>
+<td>27. Cut off</td>
+<td>– to stop a supply or connection The power was cut off due to rain.</td>
+</tr>
+<tr>
+<td>28. Pay off</td>
+<td>– to be successful or to finish paying His hard work finally paid off.</td>
+</tr>
+<tr>
+<td>29. Back up</td>
+<td>– to support or make a copy Always back up your important files.</td>
+</tr>
+<tr>
+<td>30. Show up</td>
+<td>- to arrive She showed up late for the class.</td>
+</tr>
+<tr>
+<td>31. Get along</td>
+<td>- to have a good relationship I get along well with my classmates.</td>
+</tr>
+<tr>
+<td>32. Put up with - to tolerate</td>
+<td>It is hard to put up with such behaviour.</td>
+</tr>
+<tr>
+<td></td>
+<td>33. Come across - to meet by chance or to find I came across an old friend yesterday.</td>
+</tr>
+<tr>
+<td>34. Go over</td>
+<td>to review or check Let's go over the notes again.</td>
+</tr>
+<tr>
+<td>35. Try on</td>
+<td>– to wear to see if it fits She tried on the dress before buying it.</td>
+</tr>
+<tr>
+<td></td>
+<td>36. Come up with– to suggest an idea He came up with a new plan.</td>
+</tr>
+<tr>
+<td>37. Point out</td>
+<td>- to mention or indicate She pointed out a mistake in the report.</td>
+</tr>
+<tr>
+<td>38. Set aside</td>
+<td>– to keep for future use I set aside some money for my travel.</td>
+</tr>
+<tr>
+<td>39. Look into</td>
+<td>- to investigate The police are looking into the matter.</td>
+</tr>
+<tr>
+<td>40. Get rid of</td>
+<td>to remove or eliminate I want to get rid of old clothes.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>41. Put together - to assemble</th>
+<th>We put together a small team for the project.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>42. Take over</td>
+<td>– to gain control She will take over the family business.</td>
+</tr>
+<tr>
+<td>43. Hand in</td>
+<td>- to submit I handed in my assignment yesterday.</td>
+</tr>
+<tr>
+<td>44. Keep on</td>
+<td>- to continue doing Keep on studying, you will succeed.</td>
+</tr>
+<tr>
+<td></td>
+<td>45. Bring about - to cause to happen New laws can bring about real change.</td>
+</tr>
+<tr>
+<td>46. Look out</td>
+<td>– to be careful Look out for cars while crossing the road.</td>
+</tr>
+<tr>
+<td>47. Give away</td>
+<td>– to donate or reveal We gave away old books to charity.</td>
+</tr>
+<tr>
+<td>48. Hold back</td>
+<td>to restrain She held back her tears.</td>
+</tr>
+<tr>
+<td>49. Make up</td>
+<td>to reconcile after a disagreement They made up after a long time.</td>
+</tr>
+<tr>
+<td>50. Break up</td>
+<td>to end a relationship or divide They broke up last month.</td>
+</tr>
+<tr>
+<td>51. Check in</td>
+<td>to register at a hotel or airport We checked in at the hotel early.</td>
+</tr>
+<tr>
+<td>52. Check out</td>
+<td>– to leave a hotel or to examine We checked out of the hotel at 10 a.m.</td>
+</tr>
+<tr>
+<td>53. Get in</td>
+<td>to enter She got in the car and left.</td>
+</tr>
+<tr>
+<td>54. Get off</td>
+<td>to leave a bus, train or plane I got off at the next stop.</td>
+</tr>
+<tr>
+<td>55. Put down</td>
+<td>- to criticize Don't put others down.</td>
+</tr>
+<tr>
+<td>56. Take in</td>
+<td>– to understand or to admit It took me time to take in the news.</td>
+</tr>
+<tr>
+<td>57. Give back</td>
+<td>to return Please give back my pen.</td>
+</tr>
+<tr>
+<td>58. Turn out</td>
+<td>– to result or to switch off (lights) Everything turned out well.</td>
+</tr>
+<tr>
+<td>59. Run into</td>
+<td>- to meet unexpectedly I ran into my friend at the mall.</td>
+</tr>
+<tr>
+<td>60. Pass by</td>
+<td>to go past We passed by the old school on our way home.</td>
+</tr>
+</tbody>
+</table>
+<ol start="61">
+<li>Take down - to write something quickly She took down the important points.</li>
+<li>Write down – to record in writing Please write down your answers.</li>
+<li>Set off – to start a journey We set off early in the morning.</li>
+<li>Get through</li>
+</ol>
+<ul>
+<li>to succeed in finishing</li>
+</ul>
+<p>I finally got through the exam.</p>
+<ol start="65">
+<li>Go back – to return to a place I will go back home after class.</li>
+<li>Move on – to continue with something else It's time to move on and be positive.</li>
+<li>Look back – to think about the past I look back on my college days with happiness.</li>
+<li>Look forward to – to be excited about something I am looking forward to the holidays.</li>
+<li>Keep in touch – to stay in contact Let's keep in touch after you move.</li>
+<li>Put in – to make an effort She put in a lot of hard work.</li>
+<li>Take part in to participate in I want to take part in the competition.</li>
+<li>Come in to enter a room or building Please come in and have a seat.</li>
+<li>Go out to leave home for a social activity We are going out for dinner tonight.</li>
+<li>Stay up to remain awake I stayed up late to finish my notes.</li>
+</ol>
+<p>75.</p>
+<p>Wake up</p>
+<ul>
+<li>to stop sleeping</li>
+</ul>
+<p>I wake up at 5 a.m. every day.</p>
+<ol start="76">
+<li>Dress up to wear nice clothes She dressed up for the party.</li>
+<li>Fill out to complete a form Please fill out the application form.</li>
+<li>Sort out to solve a problem We need to sort out this issue soon.</li>
+<li>Bring back to return something Can you bring back some snacks?</li>
+<li>Give off to produce (a smell, light, etc.) The flowers give off a sweet fragrance.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>81.</th>
+<th>Find out</th>
+<th>– to learn or discover I found out the truth later.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>82.</td>
+<td>Clear up</td>
+<td>– to become clean or to explain The sky cleared up after the rain.</td>
+</tr>
+<tr>
+<td>83.</td>
+<td>Calm down</td>
+<td>– to become less angry or worried Please calm down and think.</td>
+</tr>
+<tr>
+<td>84.</td>
+<td>Cheer up</td>
+<td>to feel happier Don't be sad, cheer up!</td>
+</tr>
+<tr>
+<td>85.</td>
+<td>Carry out</td>
+<td>– to do or perform We will carry out the plan tomorrow.</td>
+</tr>
+<tr>
+<td>86.</td>
+<td>Deal with</td>
+<td>- to handle a situation She knows how to deal with difficult people.</td>
+</tr>
+<tr>
+<td>87.</td>
+<td>Come up</td>
+<td>– to be mentioned or arise A new idea came up during the meeting.</td>
+</tr>
+<tr>
+<td>88.</td>
+<td>Cut down</td>
+<td>– to reduce You should cut down on sugar.</td>
+</tr>
+<tr>
+<td>89.</td>
+<td></td>
+<td>Get along with – to have a friendly relationship I get along with my neighbours.</td>
+</tr>
+<tr>
+<td>90.</td>
+<td>Hold up</td>
+<td>- to delay The flight was held up due to bad weather.</td>
+</tr>
+<tr>
+<td>91.</td>
+<td>Let down</td>
+<td>- to disappoint I felt let down by his behaviour.</td>
+</tr>
+<tr>
+<td>92.</td>
+<td>Look through - to read quickly</td>
+<td>I looked through the notes before the test.</td>
+</tr>
+<tr>
+<td>93.</td>
+<td>Put out</td>
+<td>to extinguish or to produce He put out the fire quickly.</td>
+</tr>
+<tr>
+<td>94.</td>
+<td>Take in</td>
+<td>– to understand It took me time to take in what she said.</td>
+</tr>
+<tr>
+<td>95.</td>
+<td>Throw away</td>
+<td>– to get rid of Don't throw away old books.</td>
+</tr>
+<tr>
+<td>96.</td>
+<td>Turn up</td>
+<td>– to arrive or to increase She turned up late for the party.</td>
+</tr>
+<tr>
+<td>97.</td>
+<td>Work on</td>
+<td>– to make progress on I am working on my English.</td>
+</tr>
+<tr>
+<td>98.</td>
+<td>Rule out</td>
+<td>- to exclude We can't rule out any possibility.</td>
+</tr>
+<tr>
+<td>99.</td>
+<td>Stick to</td>
+<td>- to continue with You should stick to your routine.</td>
+</tr>
+<tr>
+<td></td>
+<td>100. Set out</td>
+<td>– to begin a journey or to explain in detail We set out early in the morning.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>101. Give up on</th>
+<th>- to stop supporting Don't give up on yourself.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>102. Hold on to</td>
+<td>- to keep She still holds on to old memories.</td>
+</tr>
+<tr>
+<td>103. Live up to</td>
+<td>- to meet expectations He lived up to everyone's hopes.</td>
+</tr>
+<tr>
+<td>104. Put off</td>
+<td>- to delay Please don't put off the meeting.</td>
+</tr>
+<tr>
+<td>105. Bring down</td>
+<td>– to reduce Exercise can bring down stress.</td>
+</tr>
+<tr>
+<td>106. Look ahead</td>
+<td>– to think about the future We must look ahead and stay focused.</td>
+</tr>
+<tr>
+<td>107. Let go of</td>
+<td>- to stop holding It's time to let go of the past.</td>
+</tr>
+<tr>
+<td>108. Make out</td>
+<td>– to understand or to see clearly I could not make out what she said.</td>
+</tr>
+<tr>
+<td>109. Check out</td>
+<td>– to examine or to leave a place Let's check out this book from the library.</td>
+</tr>
+<tr>
+<td>110. Figure out</td>
+<td>- to solve or understand I need some time to figure out this problem.</td>
+</tr>
+<tr>
+<td>111. Call on</td>
+<td>- to visit We called on our teacher yesterday.</td>
+</tr>
+<tr>
+<td>112. Depend on</td>
+<td>to rely on Success depends on hard work.</td>
+</tr>
+<tr>
+<td>113. Count on</td>
+<td>to rely on You can count on me.</td>
+</tr>
+<tr>
+<td>114. Fix up</td>
+<td>to arrange or repair We fixed up the date for the trip.</td>
+</tr>
+<tr>
+<td>115. Keep away from – to avoid</td>
+<td>You should keep away from junk food.</td>
+</tr>
+<tr>
+<td>116. Catch up on</td>
+<td>– to do something you missed I need to catch up on my studies.</td>
+</tr>
+<tr>
+<td>117. Pass out</td>
+<td>– to lose consciousness or to distribute She fainted and passed out.</td>
+</tr>
+<tr>
+<td>118. Turn down</td>
+<td>– to refuse He turned down the job offer.</td>
+</tr>
+<tr>
+<td>119. Look up to</td>
+<td>- to admire I look up to my parents.</td>
+</tr>
+<tr>
+<td></td>
+<td>120. Get along with – to have a good relationship I get along with my colleagues.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>121. Break down – to stop working or to become very upset My laptop broke down yesterday.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>122. Pick up</td>
+<td>– to collect or to improve I picked up some books from the store.</td>
+</tr>
+<tr>
+<td>123. Drop off</td>
+<td>– to leave someone at a place I dropped off my friend at the station.</td>
+</tr>
+<tr>
+<td>124. Set up</td>
+<td>- to establish They set up a new company last year.</td>
+</tr>
+<tr>
+<td>125. Go through</td>
+<td>– to experience or to examine I went through a difficult time.</td>
+</tr>
+<tr>
+<td>126. Put aside</td>
+<td>– to save or to ignore for now She put aside some money for emergencies.</td>
+</tr>
+<tr>
+<td>127. Take out</td>
+<td>to remove or to give out Please take out the documents.</td>
+</tr>
+<tr>
+<td>128. Hand over</td>
+<td>– to give to someone He handed over the keys to me.</td>
+</tr>
+<tr>
+<td>129. Look after</td>
+<td>– to take care of She looks after her younger brother.</td>
+</tr>
+<tr>
+<td>130. Run out of</td>
+<td>– to have no more left We have run out of time.</td>
+</tr>
+<tr>
+<td>131. Get rid of</td>
+<td>to remove I want to get rid of bad habits.</td>
+</tr>
+<tr>
+<td>132. Turn on</td>
+<td>to switch on Please turn on the lights.</td>
+</tr>
+<tr>
+<td>133. Turn off</td>
+<td>to switch off Don't forget to turn off the fan.</td>
+</tr>
+<tr>
+<td>134. Call back</td>
+<td>to return a phone call I will call you back later.</td>
+</tr>
+<tr>
+<td></td>
+<td>135. Keep up with – to stay at the same level It's hard to keep up with the new trends.</td>
+</tr>
+<tr>
+<td>136. Bring up</td>
+<td>– to mention or to raise a topic She brought up an interesting point.</td>
+</tr>
+<tr>
+<td>137. Give in</td>
+<td>- to finally agree He gave in after a long discussion.</td>
+</tr>
+<tr>
+<td>138. Hold on</td>
+<td>- to wait for a short time Hold on, I'll be ready in a minute.</td>
+</tr>
+<tr>
+<td>139. Move in</td>
+<td>to start living in a place We moved in last week.</td>
+</tr>
+<tr>
+<td>140. Get out</td>
+<td>– to leave a place It's time to get out of your comfort zone.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>141. Look up</th>
+<th>- to search for information I looked up the meaning in the dictionary.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>142. Look into</td>
+<td>- to investigate The police are looking into the matter.</td>
+</tr>
+<tr>
+<td></td>
+<td>143. Put through - to connect a phone call Please put me through to the manager.</td>
+</tr>
+<tr>
+<td>144. Take back</td>
+<td>to return something She took back the dress to the store.</td>
+</tr>
+<tr>
+<td>145.Work out</td>
+<td>– to find a solution or to exercise Let's work out a plan together.</td>
+</tr>
+<tr>
+<td>146. Figure out</td>
+<td>to understand or solve I'm trying to figure out this question.</td>
+</tr>
+<tr>
+<td>147. Get over</td>
+<td>- to recover from something It took her time to get over the illness.</td>
+</tr>
+<tr>
+<td>148. Turn up</td>
+<td>– to arrive or to increase He turned up at the party late.</td>
+</tr>
+<tr>
+<td>149. Turn down - to refuse</td>
+<td>She turned down the job offer.</td>
+</tr>
+<tr>
+<td>150. Carry on</td>
+<td>to continue Please carry on with your work.</td>
+</tr>
+<tr>
+<td>151. Pass on</td>
+<td>to give or share with someone else She passed on the message to me.</td>
+</tr>
+<tr>
+<td>152. Deal with</td>
+<td>- to handle I don't know how to deal with this problem.</td>
+</tr>
+<tr>
+<td></td>
+<td>153. Come across - to find by chance I came across an old photo.</td>
+</tr>
+<tr>
+<td></td>
+<td>154. Run through - to quickly review Let's run through the notes before the test.</td>
+</tr>
+<tr>
+<td>155. Sort out</td>
+<td>to organize or fix We need to sort out the documents.</td>
+</tr>
+<tr>
+<td>156. Set back</td>
+<td>to delay progress The project faced a major set back.</td>
+</tr>
+<tr>
+<td></td>
+<td>157. Make up for - to compensate I'll try to make up for my mistake.</td>
+</tr>
+<tr>
+<td>158. Give out</td>
+<td>- to distribute They gave out free masks.</td>
+</tr>
+<tr>
+<td>159. Take off</td>
+<td>to become successful or to remove Her YouTube channel really took off.</td>
+</tr>
+<tr>
+<td></td>
+<td>160. Hold together – to remain united The team held together during the crisis.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>161. Fall apart</th>
+<th>– to break into pieces or to become very upset The old building is falling apart.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>162. Pick out</td>
+<td>to choose from a group I picked out a book from the shelf.</td>
+</tr>
+<tr>
+<td>163. Point out</td>
+<td>to draw attention to She pointed out my mistake.</td>
+</tr>
+<tr>
+<td>164. Show up</td>
+<td>- to arrive He showed up at the party on time.</td>
+</tr>
+<tr>
+<td>165.Give away</td>
+<td>to give something to others We gave away old clothes to charity.</td>
+</tr>
+<tr>
+<td>166. Move out</td>
+<td>- to leave a place She will move out next month.</td>
+</tr>
+<tr>
+<td>167. Sit down</td>
+<td>- to take a seat Please sit down and relax.</td>
+</tr>
+<tr>
+<td>168. Stand up</td>
+<td>to rise to your feet Everyone stood up when the teacher entered.</td>
+</tr>
+<tr>
+<td>169. Look out</td>
+<td>- to be careful Look out! There is a car coming.</td>
+</tr>
+<tr>
+<td>170. Watch out</td>
+<td>to be careful Watch out for slippery roads.</td>
+</tr>
+<tr>
+<td>171. Hold back</td>
+<td>to prevent yourself from doing something She held back her tears.</td>
+</tr>
+<tr>
+<td>172. Let in</td>
+<td>to allow someone to enter Please let me in.</td>
+</tr>
+<tr>
+<td>173. Keep off</td>
+<td>to stay away from You should keep off the grass.</td>
+</tr>
+<tr>
+<td></td>
+<td>174.Get together - to meet socially We get together every Sunday.</td>
+</tr>
+<tr>
+<td>175. Break up</td>
+<td>to end a relationship or to divide They decided to break up after two years.</td>
+</tr>
+<tr>
+<td>176. Come back</td>
+<td>to return I will come back soon.</td>
+</tr>
+<tr>
+<td>177. Drop out</td>
+<td>to leave a course or activity He dropped out of college last year.</td>
+</tr>
+<tr>
+<td>178. Stay back</td>
+<td>to remain in a place I will stay back after the class.</td>
+</tr>
+<tr>
+<td>179. Set aside</td>
+<td>to keep for a special purpose She set aside some time for her hobbies.</td>
+</tr>
+<tr>
+<td>180. Take over</td>
+<td>to gain control The new manager will take over next month.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>181. Look forward to – to feel excited about something I am looking forward to the holiday.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>182. Get through</td>
+<td>- to complete I finally got through my exams.</td>
+</tr>
+<tr>
+<td>183. Put up with</td>
+<td>- to tolerate It's hard to put up with such behaviour.</td>
+</tr>
+<tr>
+<td>184. Turn out</td>
+<td>– to happen or to result The party turned out to be a great success.</td>
+</tr>
+<tr>
+<td>185. Work out</td>
+<td>– to calculate or to exercise She works out at the gym every day.</td>
+</tr>
+<tr>
+<td>186. Bring about</td>
+<td>to cause something to happen New policies can bring about change.</td>
+</tr>
+<tr>
+<td>187. Make up</td>
+<td>– to invent or to reconcile They made up after the argument.</td>
+</tr>
+<tr>
+<td>188. Break in</td>
+<td>– to enter by force or to become used to Someone broke in last night.</td>
+</tr>
+<tr>
+<td>189. Get in</td>
+<td>– to enter a place Please get in the car.</td>
+</tr>
+<tr>
+<td>190. Get off</td>
+<td>– to leave a bus, train or plane I got off at the next station.</td>
+</tr>
+<tr>
+<td>191. Put on</td>
+<td>to wear or to increase She put on a warm jacket.</td>
+</tr>
+<tr>
+<td>192. Take up</td>
+<td>to start a new activity I want to take up painting.</td>
+</tr>
+<tr>
+<td>193. Give up</td>
+<td>to stop doing something He gave up smoking last year.</td>
+</tr>
+<tr>
+<td>194. Stand for</td>
+<td>- to represent This flag stands for freedom.</td>
+</tr>
+<tr>
+<td>195. Speak up</td>
+<td>- to speak louder Please speak up, I can't hear you.</td>
+</tr>
+<tr>
+<td>196. Keep in touch</td>
+<td>- to stay in contact Let's keep in touch after you move.</td>
+</tr>
+<tr>
+<td>197. Run into</td>
+<td>– to meet someone by chance I ran into an old friend yesterday.</td>
+</tr>
+<tr>
+<td>198. Check in</td>
+<td>– to register at a hotel or airport We checked in at the hotel early.</td>
+</tr>
+<tr>
+<td>199. Check out</td>
+<td>– to leave a hotel or to examine We checked out at 11 a.m.</td>
+</tr>
+<tr>
+<td>200. Move on</td>
+<td>to continue or to accept and forget It's time to move on and be happy.</td>
+</tr>
+</tbody>
+</table>
+    </div>
+  </article>
+  <script type="application/json" id="doc-meta">{"slug": "015-essential-phrasal-verbs", "number": 15, "theme": "ember", "engine": "cached markdown", "source": "015 - Essential Phrasal Verbs.pdf", "pages": 0, "words": 2825, "sections": 0, "tables": 9, "reading_min": 16, "date": "2026-10-21", "teaser": ""}</script>
+</main>
+</body>
+</html>

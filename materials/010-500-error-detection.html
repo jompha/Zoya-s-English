@@ -1,0 +1,3896 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>500 Error Detection · Zoya's English — Study Module</title>
+<meta name="description" content="500 Error Detection — study module from Zoya&#39;s English learning library: speaking and confidence coaching materials.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>/* ═══════════════════════════════════════════════════════════════════════════
+   ZOYA'S ENGLISH — MASTER LAYOUT STYLESHEET
+   Design language: FORGE-inspired, light edition — warm paper ground,
+   near-black ink, electric-lime energy, sharp edges, grotesk discipline.
+   Beat structure: tokens → chapter themes → base → components → prose → print
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────── 1 · DESIGN TOKENS (single source) */
+
+:root {
+  /* Palette — light Forge: paper, ink, electric lime */
+  --bg: #fafaf7;                 /* warm paper ground                    */
+  --bg-deep: #f2f1ea;            /* deeper wash for bands                */
+  --surface: #ffffff;
+  --ink: #17181a;                /* near-black body typography           */
+  --ink-soft: #55584f;
+  --ink-faint: #8b8d82;
+  --line: #e6e4da;
+  --line-strong: #d4d2c6;
+  --lime: #b5f030;               /* electric lime — the brand spark      */
+  --lime-deep: #8fc413;          /* lime pressed onto paper hover        */
+  --accent: #34352f;             /* neutral chrome accent (links et al.) */
+  --accent-ink: #17181a;
+  --accent-soft: #f4f3ec;
+  --accent-glow: rgba(181, 240, 48, 0.35);
+  --glow: rgba(181, 240, 48, 0.45);
+  --warm: #f6f3e4;
+
+  /* Typography */
+  --font-display: "Space Grotesk", "Inter Tight", system-ui, sans-serif;
+  --font-body: "Inter Tight", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Courier New", monospace;
+
+  /* Shape & depth — Forge is sharp: nothing rounded, glow instead of shadow */
+  --r-lg: 0px;
+  --r-md: 0px;
+  --r-sm: 0px;
+  --r-pill: 999px;               /* reserved: badges only                */
+  --shadow-1: 0 1px 0 var(--line);
+  --shadow-2: 0 0 0 1px var(--line);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─────────────────────────── 2 · CHAPTER DESIGN LANGUAGES (per-theme accents)
+
+   Every compiled chapter receives its own stable accent family, applied via
+   `data-theme` on the page root, so each module feels designed — not stamped.
+   The dashboard (materials.html) mirrors these values for its cards.        */
+
+[data-theme="slate"] { --accent: #4a6b82; --accent-ink: #375266; --accent-soft: #edf2f6; --accent-glow: rgba(74, 107, 130, 0.16); }
+[data-theme="ink"]   { --accent: #46474b; --accent-ink: #33353a; --accent-soft: #f1efe9; --accent-glow: rgba(70, 71, 75, 0.14); }
+[data-theme="clay"]  { --accent: #b06a48; --accent-ink: #8f5438; --accent-soft: #f9efe7; --accent-glow: rgba(176, 106, 72, 0.15); }
+[data-theme="sage"]  { --accent: #5f7c60; --accent-ink: #49614a; --accent-soft: #eff5ef; --accent-glow: rgba(95, 124, 96, 0.15); }
+[data-theme="plum"]  { --accent: #7d5a72; --accent-ink: #64485a; --accent-soft: #f6eff4; --accent-glow: rgba(125, 90, 114, 0.15); }
+[data-theme="mist"]  { --accent: #3f7a75; --accent-ink: #2f605c; --accent-soft: #ebf4f2; --accent-glow: rgba(63, 122, 117, 0.15); }
+[data-theme="ember"] { --accent: #a8543f; --accent-ink: #8a4232; --accent-soft: #f9ece8; --accent-glow: rgba(168, 84, 63, 0.15); }
+[data-theme="moss"]  { --accent: #72783f; --accent-ink: #5a5f31; --accent-soft: #f5f6e9; --accent-glow: rgba(114, 120, 63, 0.15); }
+
+/* ────────────────────────────────────────────────────────── 3 · BASE RESET */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 0.6em;
+}
+
+::selection { background: var(--lime); color: var(--ink); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  z-index: 100;
+  background: var(--lime);
+  color: var(--ink);
+  font-weight: 500;
+  padding: 0.55rem 1.1rem;
+}
+.skip-link:focus { left: 12px; color: var(--ink); }
+
+/* ───────────────────────────────────────────────────────── 4 · LAYOUT CORE */
+
+.shell { width: min(1140px, 92vw); margin-inline: auto; }
+.shell-wide { width: min(1240px, 94vw); margin-inline: auto; }
+
+.section { padding: 5.5rem 0; position: relative; }
+.section + .section { padding-top: 0; }
+.grid { display: grid; gap: 1.4rem; }
+.grid.cards { grid-template-columns: repeat(auto-fill, minmax(305px, 1fr)); }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: center; }
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.1rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.kicker::before {
+  content: "";
+  width: 22px;
+  height: 10px;
+  background: var(--lime);
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.section-lede { max-width: 62ch; color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 2.4rem; }
+.display-xl {
+  font-size: clamp(2.9rem, 6.2vw, 5.2rem);
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* ─────────────────────────────────────────────────────── 5 · NAV BAR */
+
+.site-nav {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 60;
+  padding: 0.85rem 0;
+  background: transparent;
+  transition: background 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+  border-bottom: 1px solid transparent;
+}
+.site-nav.scrolled {
+  background: rgba(250, 250, 247, 0.95);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom-color: var(--line);
+}
+.site-nav .bar { display: flex; align-items: center; gap: 1.6rem; }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 700;
+  background: var(--lime);
+}
+
+.nav-links { display: flex; align-items: center; gap: 1.5rem; margin-left: auto; }
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s var(--ease);
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a[aria-current="page"] { color: var(--ink); border-bottom: 2px solid var(--lime); }
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+}
+
+/* ─────────────────────────────────────────────────── 6 · BUTTONS · CHIPS */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid transparent;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.25s var(--ease), background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.25s var(--ease);
+}
+.btn-solid {
+  color: var(--ink);
+  background: var(--lime);
+}
+.btn-solid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px var(--accent-glow), 0 0 60px rgba(181, 240, 48, 0.18);
+}
+.btn-ghost {
+  color: var(--ink);
+  background: transparent;
+  border-color: var(--ink);
+}
+.btn-ghost:hover {
+  border-color: var(--lime-deep);
+  background: var(--lime);
+}
+.btn.is-disabled,
+.btn[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+.btn-sm { padding: 0.5rem 1rem; font-size: 0.74rem; }
+.btn-note {
+  margin-left: 0.1rem;
+  padding-left: 0.55rem;
+  border-left: 1px solid rgba(23, 24, 26, 0.3);
+  font-size: 0.72rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.9rem;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.chip::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--lime);
+  transform: rotate(45deg);
+}
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+/* ─────────────────────────────────────────────────── 7 · SHARP CARDS */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.7rem 1.7rem 1.5rem;
+  border: 1px solid var(--line-strong);
+  border-top: 3px solid var(--ink);
+  background: var(--surface);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+.card-hover:hover,
+.card-chapter:hover {
+  transform: translateY(-4px);
+  border-color: rgba(181, 240, 48, 0.55);
+  border-top-color: var(--lime);
+  box-shadow: 0 0 30px var(--accent-glow), 0 0 64px rgba(181, 240, 48, 0.14);
+  background: var(--card-tint, var(--surface));
+}
+.card-kicker {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--card-accent, var(--accent));
+  margin-bottom: 0.3rem;
+}
+.card-title { font-family: var(--font-display); font-weight: 700; font-size: 1.18rem; letter-spacing: -0.01em; margin: 0.15rem 0 0.35rem; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { color: var(--card-accent, var(--accent)); }
+.card-teaser { color: var(--ink-soft); font-size: 0.94rem; margin: 0 0 0.9rem; }
+.card-empty {
+  grid-column: 1 / -1;
+  align-items: flex-start;
+  border-style: dashed;
+  border-color: var(--line-strong);
+  background: transparent;
+  box-shadow: none;
+}
+.card-empty code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  padding: 0.05em 0.4em;
+}
+
+.material-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  background: var(--lime);
+  margin-bottom: 0.8rem;
+}
+.material-icon svg { width: 22px; height: 22px; }
+
+/* Chapter cards — materials.html dashboard */
+.card-chapter { --card-accent: var(--accent); border-top-color: var(--card-accent, var(--ink)); }
+.chapter-num {
+  position: absolute;
+  top: 1rem;
+  right: 1.4rem;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--card-accent);
+  opacity: 0.35;
+  user-select: none;
+}
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.card-meta li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.card-meta li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  transform: rotate(45deg);
+  background: var(--lime);
+  opacity: 0.9;
+}
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.filter-row { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 1.6rem 0 2.2rem; }
+.filter-chip { cursor: pointer; transition: all 0.2s var(--ease); opacity: 0.7; }
+.filter-chip:hover { opacity: 1; color: var(--ink); }
+.filter-chip.is-active {
+  opacity: 1;
+  color: var(--ink);
+  background: var(--lime);
+  border-color: var(--lime);
+}
+.filter-chip.is-active::before { background: var(--ink); }
+
+/* ─────────────────────────────────────────────────────────────── 8 · HERO */
+
+.hero {
+  position: relative;
+  padding: 9.5rem 0 4.5rem;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: min(4vw, 60px);
+  width: clamp(90px, 12vw, 150px);
+  height: clamp(90px, 12vw, 150px);
+  background:
+    repeating-linear-gradient(0deg, rgba(23, 24, 26, 0.09) 0 1.5px, transparent 1.5px 9px),
+    repeating-linear-gradient(90deg, rgba(23, 24, 26, 0.09) 0 1.5px, transparent 1.5px 9px);
+  pointer-events: none;
+}
+.hero .grid.two { gap: 3.5rem; }
+.hero-lede {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 54ch;
+  margin: 1.4rem 0 2rem;
+}
+.hero-lede em { font-style: normal; box-shadow: inset 0 -0.5em 0 var(--lime); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 2.4rem; }
+
+/* Stats — Forge's animated counters, honest numbers only */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.6rem 3.2rem;
+  margin-top: 0.4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--line-strong);
+}
+.stat { display: flex; flex-direction: column; gap: 0.15rem; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--ink);
+}
+.stat-num b { color: inherit; font-weight: inherit; }
+.stat-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.portrait { position: relative; margin: 0; }
+.portrait-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-deep);
+}
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(23, 24, 26, 0.08);
+  pointer-events: none;
+}
+.portrait-mono {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 14vw, 10rem);
+  font-weight: 700;
+  color: var(--ink);
+  opacity: 0.1;
+}
+.portrait-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portrait-chip {
+  position: absolute;
+  z-index: 2;
+  font-size: 0.72rem;
+  padding: 0.45rem 0.8rem;
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+.portrait-chip::before { background: var(--lime); }
+.portrait-chip.c1 { top: 8%; left: -4%; }
+.portrait-chip.c2 { bottom: 20%; right: -3%; }
+.portrait-chip.c3 { bottom: -3%; left: 8%; }
+@media (max-width: 760px) {
+  .portrait-chip.c1 { left: 4%; }
+  .portrait-chip.c2 { right: 4%; }
+}
+
+/* ───────────────────────────────────────────── 9 · TICKER · STATEMENT · METHOD */
+
+.ticker {
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 0.85rem 0;
+  background: var(--bg);
+}
+.ticker-track {
+  display: inline-flex;
+  animation: ticker-scroll 26s linear infinite;
+}
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-right: 1.6rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.ticker-track span::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--lime);
+  transform: rotate(45deg);
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.pull-quote {
+  margin: 1rem 0 0;
+  padding: 0.9rem 0 0 1.5rem;
+  border-left: 4px solid var(--lime);
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.prose-copy p { color: var(--ink-soft); margin: 0 0 1.05rem; max-width: 62ch; }
+.prose-copy strong { font-weight: 500; color: var(--ink); }
+
+.steps { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.step-num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--ink);
+  opacity: 0.35;
+  margin-bottom: 0.7rem;
+}
+.steps .card h3 { text-transform: uppercase; letter-spacing: 0.02em; font-size: 1.05rem; }
+.steps .card p { color: var(--ink-soft); font-size: 0.93rem; margin: 0; }
+
+/* ───────────────────────────────────────── 10 · CALLOUTS — the .tip-box system */
+
+.tip-box {
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 1.05rem 1.3rem 1.05rem 1.4rem;
+  border: 1px solid var(--line-strong);
+  border-left: 4px solid var(--card-accent, var(--accent));
+  background: var(--accent-soft);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.tip-box p, .tip-box ul { margin: 0.2rem 0 0; font-size: 0.96rem; color: var(--ink-soft); }
+.tip-box .tip-title,
+.tip-box > p:first-child strong:first-child {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent-ink);
+}
+.tip-box[data-tone="note"]  { border-left-color: #b98a4b; background: #faf4e8; }
+.tip-box[data-tone="warn"]  { border-left-color: #a8503f; background: #f9ecea; }
+.tip-box[data-tone="ok"]    { border-left-color: #3e7c74; background: #ecf4f1; }
+
+/* ─────────────────────────────────────────────── 11 · DOC PAGES (materials/*) */
+
+.doc-page body { background: var(--bg); }
+.doc-crumbs {
+  width: min(880px, 92vw);
+  margin: 6.5rem auto 1.2rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.doc-crumbs a { color: var(--ink); text-decoration: none; }
+.doc-crumbs a:hover { box-shadow: inset 0 -0.4em 0 var(--lime); }
+
+.doc-frame {
+  width: min(880px, 92vw);
+  margin: 0 auto 4.5rem;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.doc-cover {
+  position: relative;
+  overflow: hidden;
+  padding: 2.8rem 3.2rem 2.4rem;
+  border-bottom: 1px solid var(--ink);
+  border-top: 8px solid var(--accent);
+  background: var(--accent-soft);
+}
+.doc-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+/* one quiet motif per chapter design language */
+[data-theme="slate"] .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="ink"]   .doc-cover::after { background-image: repeating-linear-gradient(135deg, var(--accent-glow) 0 1px, transparent 1px 16px); }
+[data-theme="clay"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 22px); }
+[data-theme="sage"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="plum"]  .doc-cover::after { background-image: radial-gradient(420px 260px at 92% 100%, var(--accent-glow) 0%, transparent 70%); }
+[data-theme="mist"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 30px); }
+[data-theme="ember"] .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 13px), repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 13px); }
+[data-theme="moss"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 18px); }
+
+.doc-kicker {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.doc-kicker::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 9px;
+  margin-top: 0.55rem;
+  background: var(--lime);
+}
+.doc-title {
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+.doc-subtitle { margin: 0.4rem 0 1.4rem; max-width: 58ch; color: var(--ink-soft); font-size: 1.02rem; }
+.doc-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.2rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.doc-body { padding: 2.6rem 3.2rem 3.4rem; }
+@media (max-width: 640px) {
+  .doc-cover, .doc-body { padding-inline: 1.4rem; }
+}
+
+/* ──────────────────────────────────────────────── 12 · PROSE (lesson content) */
+
+.prose { font-size: 1.02rem; color: #2b2d26; }
+.prose > * + * { margin-top: 0.9em; }
+.prose h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-top: 2.2em;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--card-accent, var(--accent));
+}
+.prose h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; margin-top: 1.9em; }
+.prose h4 { font-family: var(--font-display); font-size: 1.02rem; font-weight: 600; margin-top: 1.6em; }
+.prose blockquote { margin: 1.4rem 0; padding: 1rem 1.3rem 1rem 1.4rem; border: 1px solid var(--line-strong); border-left: 4px solid var(--card-accent, var(--accent)); background: var(--accent-soft); color: var(--ink-soft); break-inside: avoid; page-break-inside: avoid; }
+.prose blockquote p { margin: 0.2rem 0 0; }
+.prose blockquote p:first-child { margin-top: 0; font-weight: 500; color: var(--ink); }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.6rem 0; font-size: 0.93rem; break-inside: avoid; page-break-inside: avoid; }
+.prose th { background: var(--card-accent, var(--accent)); color: #fff; font-family: var(--font-display); font-weight: 600; text-align: left; letter-spacing: 0.03em; }
+.prose th, .prose td { border: 1px solid var(--line-strong); padding: 0.55rem 0.8rem; }
+.prose tbody tr:nth-child(even) td { background: var(--accent-soft); }
+.prose ul, .prose ol { padding-left: 1.4rem; }
+.prose li { margin: 0.35rem 0; }
+.prose li::marker { color: var(--accent); font-weight: 600; }
+.prose strong { color: var(--ink); font-weight: 500; }
+.prose code { font-family: var(--font-mono); font-size: 0.88em; background: var(--accent-soft); border: 1px solid var(--line); padding: 0.08em 0.42em; }
+.prose hr { border: 0; border-top: 1px dashed var(--line-strong); margin: 2.2rem auto; width: 55%; }
+.prose figure { margin: 1.6rem 0; break-inside: avoid; page-break-inside: avoid; }
+
+/* ────────────────────────────────────────────────────────────── 13 · FOOTER */
+
+.site-footer {
+  padding: 3rem 0 3.6rem;
+  border-top: 2px solid var(--ink);
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+}
+.site-footer .bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-footer a { color: var(--ink-soft); text-decoration: none; }
+.site-footer a:hover { box-shadow: inset 0 -0.4em 0 var(--lime); }
+.site-footer .brand { font-size: 0.95rem; }
+
+/* ────────────────────────────────────────────────── 14 · MOTION & RESPONSIVE */
+
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (max-width: 760px) {
+  .section { padding: 3.6rem 0; }
+  .hero { padding-top: 7.5rem; }
+  .hero::after { display: none; }
+  .stats { gap: 1.8rem 2.2rem; }
+  .stat-num { font-size: 2.1rem; }
+  .doc-meta { gap: 0.3rem 0.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .ticker-track { animation: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ═══════════════════════════════════════════════ 15 · PRINT — A4 CHOREOGRAPHY
+   Hard pagination contract: no orphan headings, no splintered callouts,
+   no split table rows. Chromium prints exactly what these rules promise.     */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 14mm 18mm 14mm;
+  }
+
+  html, body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .site-nav, .site-footer, .no-print, .skip-link,
+  .hero-cta, .chip-row, .filter-row, .card-actions,
+  .ticker, .portrait-chip, .doc-crumbs, .doc-backbar {
+    display: none !important;
+  }
+
+  .hero, .section { padding: 0 !important; min-height: 0 !important; background: none !important; }
+  .hero::after { display: none !important; }
+  .shell, .shell-wide { width: 100% !important; max-width: none !important; }
+  main { padding-top: 0 !important; margin: 0 !important; }
+
+  /* — content-keep = never leave a single widow line — */
+  p, li { orphans: 3; widows: 3; }
+
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .tip-box, blockquote, table, tr, img, figure,
+  .doc-cover, .doc-frame, .card, .prose figure {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  thead { display: table-header-group; }  /* column headers repeat on every page */
+  tfoot { display: table-footer-group; }
+
+  a { color: inherit; text-decoration: none; }
+  a[href^="http"]::after {
+    content: " (" attr(href) ") ";
+    font-size: 0.82em;
+    color: #77777a;
+  }
+
+  /* Chapter pages unwrap from their web chrome and print edge-to-edge calm */
+  .doc-frame {
+    box-shadow: none !important;
+    border: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    background: #fff !important;
+  }
+  .doc-cover { margin-bottom: 1.4rem; }
+  .doc-body { padding: 0 !important; }
+  .prose table { font-size: 0.88rem; }
+  .prose th { background: var(--card-accent, #444540) !important; }
+  .prose tbody tr:nth-child(even) td { background: var(--accent-soft); }
+
+  .card, .steps .card { box-shadow: none; border-color: var(--line-strong); border-top-width: 2px; }
+  .page-break, .break-before {
+    break-before: page;
+    page-break-before: always;
+  }
+}
+</style>
+</head>
+<body class="doc-page">
+<a class="skip-link" href="#doc-main">Skip to content</a>
+<main id="doc-main">
+  <div class="doc-crumbs no-print">
+    <a href="../index.html">&larr; Portfolio</a><span aria-hidden="true">/</span>
+    <a href="../materials.html">Learning library</a>
+  </div>
+  <article class="doc-frame chapter-doc" data-chapter="010-500-error-detection" data-theme="slate">
+    <header class="doc-cover">
+      <p class="doc-kicker">Zoya&#39;s English — Study Module 10</p>
+      <h1 class="doc-title">500 Error Detection</h1>
+      <p class="doc-subtitle">Rebuilt from the original source — interactive web edition plus print-ready A4.</p>
+      <div class="doc-meta">
+        <span>Source: 010 - 500 Error Detection.pdf</span>
+        <span>10 source pages</span>
+        <span>5069 words</span>
+        <span>~29 min read</span>
+      </div>
+    </header>
+    <div class="doc-body prose">
+<h2 id="500-ssc-pyq-error-detection">500 SSC PYQ ERROR DETECTION</h2>
+<table>
+<thead>
+<tr>
+<th>Z</th>
+<th>Sentence</th>
+<th>Error</th>
+<th>Correction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aVaAYNE</td>
+<td>Each of the boys have their own book.</td>
+<td>have</td>
+<td>has</td>
+</tr>
+<tr>
+<td></td>
+<td>Neither of the answers is correct.</td>
+<td>is</td>
+<td>are</td>
+</tr>
+<tr>
+<td></td>
+<td>She don’t like to go there.</td>
+<td>don’t</td>
+<td>doesn’t</td>
+</tr>
+<tr>
+<td></td>
+<td>I have never saw such a beautiful place.</td>
+<td>saw</td>
+<td>seen</td>
+</tr>
+<tr>
+<td></td>
+<td>He has been working here since 2010.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>They were discussing about the plan.</td>
+<td>discussing</td>
+<td>discussed</td>
+</tr>
+<tr>
+<td>PN</td>
+<td>The list of items are given below.</td>
+<td>are</td>
+<td>is</td>
+</tr>
+<tr>
+<td></td>
+<td>He neither speaks nor listen.</td>
+<td>listen</td>
+<td>listens</td>
+</tr>
+<tr>
+<td></td>
+<td>She is one of the most intelligent girl in the class.</td>
+<td>girl</td>
+<td>girls</td>
+</tr>
+<tr>
+<td>FEY</td>
+<td>Everybody knows him very well.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>No one is more honest than him.</td>
+<td>him</td>
+<td>he</td>
+</tr>
+<tr>
+<td></td>
+<td>I prefer tea than coffee.</td>
+<td>than</td>
+<td>to</td>
+</tr>
+<tr>
+<td></td>
+<td>He is senior most among all.</td>
+<td>senior most</td>
+<td>seniormost</td>
+</tr>
+<tr>
+<td></td>
+<td>The police is looking for the thief.</td>
+<td>is</td>
+<td>are</td>
+</tr>
+<tr>
+<td></td>
+<td>She has a great influence in the people.</td>
+<td>in</td>
+<td>on</td>
+</tr>
+<tr>
+<td></td>
+<td>It is high time we left.</td>
+<td>left</td>
+<td>leave</td>
+</tr>
+<tr>
+<td>ee</td>
+<td>He did not went to the party.</td>
+<td>went</td>
+<td>go</td>
+</tr>
+<tr>
+<td></td>
+<td>You should have listened to me.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>NNNN Fe</td>
+<td>The information given by him is false.</td>
+<td>him</td>
+<td>he</td>
+</tr>
+<tr>
+<td></td>
+<td>He has written a letter to his father yesterday.</td>
+<td>yesterday</td>
+<td>yesterday.</td>
+</tr>
+<tr>
+<td></td>
+<td>She is good in singing. The boy stood up and ran away.</td>
+<td>in No error</td>
+<td>at No</td>
+</tr>
+<tr>
+<td></td>
+<td>I have no objection in going there.</td>
+<td></td>
+<td>correction</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>in</td>
+<td>to</td>
+</tr>
+<tr>
+<td></td>
+<td>This is the book which I was looking for.</td>
+<td>No error</td>
+<td>No correction No</td>
+</tr>
+<tr>
+<td></td>
+<td>He neither came here nor sent any message. There is few water in the bottle.</td>
+<td>No error</td>
+<td>correction little</td>
+</tr>
+<tr>
+<td>NNN</td>
+<td></td>
+<td>few</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>He has much experience in this field.</td>
+<td>much</td>
+<td>many</td>
+</tr>
+<tr>
+<td></td>
+<td>He advised me to work hard.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>WN</td>
+<td>The teacher told the students to be quiet.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>She is the tallest of the two.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>Wk</td>
+<td>The committee have decided the matter.</td>
+<td>have</td>
+<td>has</td>
+</tr>
+<tr>
+<td>WB</td>
+<td>My brother is elder than me. He is too fat to run fast.</td>
+<td>elder fast</td>
+<td>older fast.</td>
+</tr>
+<tr>
+<td></td>
+<td>There are many books on the table.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>WWW</td>
+<td>I shall be very happy to see you.</td>
+<td>No error</td>
+<td>No correction correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He works hard so that he can pass. She is married with doctor.</td>
+<td>No error with</td>
+<td>No to</td>
+</tr>
+<tr>
+<td></td>
+<td>a The news are</td>
+<td></td>
+<td>is</td>
+</tr>
+<tr>
+<td></td>
+<td>very interesting.</td>
+<td>are</td>
+<td></td>
+</tr>
+<tr>
+<td>RWW</td>
+<td>He prefer reading to watching TV.</td>
+<td>prefer</td>
+<td>prefers</td>
+</tr>
+<tr>
+<td></td>
+<td>I am going to market.</td>
+<td>No</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>The clothes that</td>
+<td>error</td>
+<td></td>
+</tr>
+<tr>
+<td>A</td>
+<td>you bought are expensive.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>PRA</td>
+<td>He has got a little money.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>She is afraid of dog. He has the ability to solve the problem.</td>
+<td>dog No error</td>
+<td>dogs No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>The with a red dress is my</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>BRA</td>
+<td>girl sister.</td>
+<td></td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>be SSSIRGRESHESSSSSAARESRESSSSRARSRESSHIATESSH</td>
+<td>He is guilty of the crime. She the door and went inside.</td>
+<td>No error No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>opened He always tell a lie.</td>
+<td>tell</td>
+<td>tells</td>
+</tr>
+<tr>
+<td>uUubh</td>
+<td>This is one of the best movie I have ever seen.</td>
+<td>movie</td>
+<td>movies are</td>
+</tr>
+<tr>
+<td></td>
+<td>Neither you nor I am right.</td>
+<td>am</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>—</p>
+<p>—</p>
+<h2 id="500-ssc-pyq-error-detection_1">500 SSC PYQ ERROR DETECTION</h2>
+<p>-+-</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Sentence</th>
+<th>Error</th>
+<th>Correction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>51.</td>
+<td>He is one of the most honest person I know.</td>
+<td>person</td>
+<td>people</td>
+</tr>
+<tr>
+<td>52.</td>
+<td>There are many students in the class.</td>
+<td>many</td>
+<td>much</td>
+</tr>
+<tr>
+<td>53.</td>
+<td>It was the best day of my life.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>54.</td>
+<td>She don’t know the answer.</td>
+<td>don’t</td>
+<td>doesn’t</td>
+</tr>
+<tr>
+<td>55.</td>
+<td>He has been living here for five year.</td>
+<td>year</td>
+<td>years</td>
+</tr>
+<tr>
+<td>56.</td>
+<td>Please give me few minutes.</td>
+<td>few</td>
+<td>a few</td>
+</tr>
+<tr>
+<td>57.</td>
+<td>I have lost my pen somewhere.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>58.</td>
+<td>She is such a kind hearted person.</td>
+<td>kind hearted</td>
+<td>kind-hearted</td>
+</tr>
+<tr>
+<td>59.</td>
+<td>We has finished our work.</td>
+<td>has</td>
+<td>have</td>
+</tr>
+<tr>
+<td></td>
+<td>He is very poor in English.</td>
+<td>in</td>
+<td>in</td>
+</tr>
+<tr>
+<td>61.</td>
+<td>My father is a government servant.</td>
+<td>servant</td>
+<td>employee</td>
+</tr>
+<tr>
+<td>62.</td>
+<td>You must to be careful.</td>
+<td>to</td>
+<td>to be</td>
+</tr>
+<tr>
+<td>63.</td>
+<td>He is taller than me.</td>
+<td>taller</td>
+<td>taller</td>
+</tr>
+<tr>
+<td></td>
+<td>They have went to Delhi.</td>
+<td>went</td>
+<td>gone</td>
+</tr>
+<tr>
+<td>65.</td>
+<td>The dog bited the man.</td>
+<td>bited</td>
+<td>bit</td>
+</tr>
+<tr>
+<td></td>
+<td>He was absent in the meeting.</td>
+<td>in</td>
+<td>in the</td>
+</tr>
+<tr>
+<td>67.</td>
+<td>She had a beautiful smile.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>Both the boys was present.</td>
+<td>was</td>
+<td>were</td>
+</tr>
+<tr>
+<td>69.</td>
+<td>I am agree with you.</td>
+<td>am</td>
+<td>agree</td>
+</tr>
+<tr>
+<td>70.</td>
+<td>The sun rises in the east.</td>
+<td>rises</td>
+<td>rises</td>
+</tr>
+<tr>
+<td>71s</td>
+<td>He did not haved his breakfast.</td>
+<td>haved</td>
+<td>had</td>
+</tr>
+<tr>
+<td>72.</td>
+<td>She is much more intelligent.</td>
+<td>much</td>
+<td>far</td>
+</tr>
+<tr>
+<td>73.</td>
+<td>I look forward to meet you.</td>
+<td>to meet</td>
+<td>to meeting</td>
+</tr>
+<tr>
+<td>74.</td>
+<td>He has a little knowledge.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>75.</td>
+<td>The plate is made up of steel.</td>
+<td>made up of</td>
+<td>made of</td>
+</tr>
+<tr>
+<td>76.</td>
+<td>I prefer reading over watching TV.</td>
+<td>reading over watching</td>
+<td>reading to watching</td>
+</tr>
+<tr>
+<td>T7.</td>
+<td>We should respect our elders.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>78.</td>
+<td>He is good at playing cricket.</td>
+<td>at playing</td>
+<td>at cricket</td>
+</tr>
+<tr>
+<td>73:</td>
+<td>I have seen him yesterday.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>80.</td>
+<td>She always help the poor.</td>
+<td>help</td>
+<td>helps</td>
+</tr>
+<tr>
+<td>81.</td>
+<td>Neither of the options is correct.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>82.</td>
+<td>He told me that he will come.</td>
+<td>will come</td>
+<td>will come</td>
+</tr>
+<tr>
+<td>83.</td>
+<td>The manager and his team is here.</td>
+<td>is</td>
+<td>are</td>
+</tr>
+<tr>
+<td></td>
+<td>She has no wish to go there.</td>
+<td>no wish</td>
+<td>no desire</td>
+</tr>
+<tr>
+<td>85.</td>
+<td>He is used to wake up early.</td>
+<td>to wake</td>
+<td>to wake</td>
+</tr>
+<tr>
+<td>86.</td>
+<td>There are a lot of people.</td>
+<td>a lot</td>
+<td>many</td>
+</tr>
+<tr>
+<td>87.</td>
+<td>He neither plays nor sings.</td>
+<td>neither</td>
+<td>nor</td>
+</tr>
+<tr>
+<td>88.</td>
+<td>She is the most beautiful girl.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>89.</td>
+<td>The news were shocking.</td>
+<td>were</td>
+<td>was</td>
+</tr>
+<tr>
+<td></td>
+<td>I had told him not to do so.</td>
+<td>had told</td>
+<td>had told</td>
+</tr>
+<tr>
+<td>91.</td>
+<td>He cannot speaks French.</td>
+<td>speaks</td>
+<td>speak</td>
+</tr>
+<tr>
+<td>92.</td>
+<td>He has neither money nor time.</td>
+<td>nor</td>
+<td>nor</td>
+</tr>
+<tr>
+<td>93.</td>
+<td>I saw him in the market.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>94.</td>
+<td>She bought two pens for her sister and I.</td>
+<td>for her sister and I</td>
+<td>for my sister and me</td>
+</tr>
+<tr>
+<td>95.</td>
+<td>He is allergic to dust.</td>
+<td>to</td>
+<td>to</td>
+</tr>
+<tr>
+<td></td>
+<td>The teacher praised the students.</td>
+<td>No error</td>
+<td>No correction time</td>
+</tr>
+<tr>
+<td>97.</td>
+<td>It is high time to go.</td>
+<td>high time</td>
+<td>It is</td>
+</tr>
+<tr>
+<td>98.</td>
+<td>I am feeling sleepy. He has wrote a book.</td>
+<td>feeling wrote</td>
+<td>I feel written</td>
+</tr>
+<tr>
+<td></td>
+<td>Don’t make noise in the classroom.</td>
+<td>No</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>100.</td>
+<td>kk</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>error</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="500-ssc-pyq-error-detection_2">500 SSC PYQ ERROR DETECTION</h2>
+<p>+}+</p>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Sentence</th>
+<th>Error</th>
+<th>Correction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>101.</td>
+<td>He runs fast than me.</td>
+<td>fast</td>
+<td>faster</td>
+</tr>
+<tr>
+<td>102.</td>
+<td>We should keep our surrounding clean.</td>
+<td>surrounding</td>
+<td>surroundings</td>
+</tr>
+<tr>
+<td>103.</td>
+<td>She is one of the most hardworking student.</td>
+<td>student</td>
+<td>students</td>
+</tr>
+<tr>
+<td>104.</td>
+<td>&#124; My mother scolded me yesterday.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>105.</td>
+<td>He does not know nothing about it.</td>
+<td>nothing</td>
+<td>anything</td>
+</tr>
+<tr>
+<td>106.</td>
+<td>You had better to see a doctor.</td>
+<td>better to</td>
+<td>better</td>
+</tr>
+<tr>
+<td>107.</td>
+<td>_I have searched him everywhere.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>108.</td>
+<td>He is good in mathematics.</td>
+<td>in</td>
+<td>at</td>
+</tr>
+<tr>
+<td>109.</td>
+<td>She has long hair.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>110.</td>
+<td>They enjoyed their holiday very much.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>111.</td>
+<td>He is too much lazy.</td>
+<td>much</td>
+<td>very</td>
+</tr>
+<tr>
+<td>112.</td>
+<td>Do you have any pen?</td>
+<td>any</td>
+<td>a</td>
+</tr>
+<tr>
+<td>113.</td>
+<td>He is senior than I.</td>
+<td>senior</td>
+<td>than</td>
+</tr>
+<tr>
+<td>114.</td>
+<td>I have two brother.</td>
+<td>brother</td>
+<td>brothers</td>
+</tr>
+<tr>
+<td>115.</td>
+<td>He is fond of to read books.</td>
+<td>fond of to read</td>
+<td>fond of reading</td>
+</tr>
+<tr>
+<td>116.</td>
+<td>She treated me very well.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>117.</td>
+<td>This is the house where I born.</td>
+<td>born</td>
+<td>was born</td>
+</tr>
+<tr>
+<td>118.</td>
+<td>He couldn’t attend the meeting.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>119.</td>
+<td>There is a very less time.</td>
+<td>less</td>
+<td>little</td>
+</tr>
+<tr>
+<td>120.</td>
+<td>He advised me for what to do.</td>
+<td>for what to do</td>
+<td>what to do</td>
+</tr>
+<tr>
+<td>121.</td>
+<td>We must not to waste water.</td>
+<td>not to waste</td>
+<td>waste</td>
+</tr>
+<tr>
+<td>122.</td>
+<td>He has many experience.</td>
+<td>experience</td>
+<td>experiences</td>
+</tr>
+<tr>
+<td>123.</td>
+<td>She is the girl which won the prize.</td>
+<td>which</td>
+<td>who</td>
+</tr>
+<tr>
+<td>124.</td>
+<td>I am used to wake up early.</td>
+<td>to wake</td>
+<td>waking</td>
+</tr>
+<tr>
+<td>125.</td>
+<td>He always speak the truth.</td>
+<td>speak</td>
+<td>speaks</td>
+</tr>
+<tr>
+<td>126.</td>
+<td>My sister has brought a new dress.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>127.</td>
+<td>He works in a bank.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>128.</td>
+<td>Let us go to the market, shall we?</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>129.</td>
+<td>She is more intelligent than her sister.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>130.</td>
+<td>He failed because he didn’t study hard.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>131.</td>
+<td>He is the tallest in the class.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>132.</td>
+<td>She is good at dancing.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>133.</td>
+<td>There is no chair in the room.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>134.</td>
+<td>He is able to solve the problem.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>135.</td>
+<td>He has a lot of friends.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>136.</td>
+<td>She always helps others.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>137.</td>
+<td>I saw him to crossing the road.</td>
+<td>to crossing</td>
+<td>cross</td>
+</tr>
+<tr>
+<td>138.</td>
+<td>He is guilty in the case.</td>
+<td>in</td>
+<td>of</td>
+</tr>
+<tr>
+<td>139.</td>
+<td>He has not decided yet.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>140.</td>
+<td>These books are mine.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>141.</td>
+<td>He is the man with whom I spoke.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>142.</td>
+<td>Do you know where is he?</td>
+<td>is</td>
+<td>he is</td>
+</tr>
+<tr>
+<td>143.</td>
+<td>He is neither tall nor short.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>144.</td>
+<td>I like coffee better than tea.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>145.</td>
+<td>Neither of the boys are present.</td>
+<td>are</td>
+<td>is</td>
+</tr>
+<tr>
+<td>146.</td>
+<td>He hardly ever goes out.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>147.</td>
+<td>She is very much tired.</td>
+<td>much</td>
+<td>very</td>
+</tr>
+<tr>
+<td>148. 149.</td>
+<td>He has been to many countries. She is too to understand.</td>
+<td>No error</td>
+<td>No correction No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>young</td>
+<td>No error</td>
+<td></td>
+</tr>
+<tr>
+<td>150.</td>
+<td>We should not to lie.</td>
+<td>not to lie</td>
+<td>not lie</td>
+</tr>
+</tbody>
+</table>
+<p>kk</p>
+<p>*</p>
+<h2 id="500-ssc-pyq-error-detection_3">500 SSC PYQ ERROR DETECTION</h2>
+<p>——</p>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Sentence</th>
+<th>Error</th>
+<th>Correction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>151.</td>
+<td>He is the best player in the team.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>152.</td>
+<td>She don’t like spicy food.</td>
+<td>don’t</td>
+<td>doesn’t</td>
+</tr>
+<tr>
+<td>153.</td>
+<td>There was an accident yesterday.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>154.</td>
+<td>He has forgot his key.</td>
+<td>forgot</td>
+<td>forgotten</td>
+</tr>
+<tr>
+<td>155.</td>
+<td>The children are playing in the park.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>156.</td>
+<td>She has a beautiful voice.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>157.</td>
+<td>He came here to meet me.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>158.</td>
+<td>I have never been to Paris.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>159.</td>
+<td>She is expert in her work.</td>
+<td>expert</td>
+<td>an expert</td>
+</tr>
+<tr>
+<td>160.</td>
+<td>He asked me a strange question.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>161.</td>
+<td>Neither of the boys have a bike.</td>
+<td>have</td>
+<td>has</td>
+</tr>
+<tr>
+<td>162.</td>
+<td>He is looking forward to hear from you.</td>
+<td>to hear</td>
+<td>to hearing</td>
+</tr>
+<tr>
+<td>163.</td>
+<td>This is the pen which I lost.</td>
+<td>which</td>
+<td>that</td>
+</tr>
+<tr>
+<td>164.</td>
+<td>He is one of the tallest boy in the class.</td>
+<td>boy</td>
+<td>boys</td>
+</tr>
+<tr>
+<td>165.</td>
+<td>She sings good songs.</td>
+<td>good</td>
+<td>well</td>
+</tr>
+<tr>
+<td>166.</td>
+<td>I prefer reading novels to watching TV.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>167.</td>
+<td>He must to finish the work today.</td>
+<td>must to</td>
+<td>must</td>
+</tr>
+<tr>
+<td>168.</td>
+<td>They has reached the station.</td>
+<td>has</td>
+<td>have</td>
+</tr>
+<tr>
+<td>169.</td>
+<td>I am agree with you.</td>
+<td>am</td>
+<td>agree</td>
+</tr>
+<tr>
+<td>170.</td>
+<td>He is not only honest but also brave.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>471:</td>
+<td>She had went to the market.</td>
+<td>had went</td>
+<td>had gone</td>
+</tr>
+<tr>
+<td>172.</td>
+<td>It is very kind of you.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>173. He neither</td>
+<td>knows nor cares.</td>
+<td>No error</td>
+<td>No correction go</td>
+</tr>
+<tr>
+<td>174.</td>
+<td>Let him to go.</td>
+<td>to go</td>
+<td></td>
+</tr>
+<tr>
+<td>175. She has been 176.</td>
+<td>working here since morning. He is the most laziest person.</td>
+<td>since morning laziest</td>
+<td>since this morning laziest</td>
+</tr>
+<tr>
+<td></td>
+<td>The teacher praised the both students.</td>
+<td>the</td>
+<td>both</td>
+</tr>
+<tr>
+<td>177.</td>
+<td>I shall be thankful to you.</td>
+<td>both No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>178. 179.</td>
+<td>He advised me to not worry.</td>
+<td>to not</td>
+<td>not to worry</td>
+</tr>
+<tr>
+<td>180.</td>
+<td>She always comes late.</td>
+<td>worry No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>181.</td>
+<td>He has wrote many poems.</td>
+<td>wrote</td>
+<td>written</td>
+</tr>
+<tr>
+<td>182.</td>
+<td>The sun sets in the west.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>183.</td>
+<td>He will call you when he will reach.</td>
+<td>will</td>
+<td>reaches</td>
+</tr>
+<tr>
+<td>184.</td>
+<td>I have few friends in this city.</td>
+<td>few</td>
+<td>a few</td>
+</tr>
+<tr>
+<td>185.</td>
+<td>She is afraid of darkness.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>186. 187.</td>
+<td>Do you have sometime?</td>
+<td>sometime</td>
+<td>some time</td>
+</tr>
+<tr>
+<td></td>
+<td>He used to went for a morning walk.</td>
+<td>used to went</td>
+<td>used to go</td>
+</tr>
+<tr>
+<td>189.</td>
+<td>He had no choice but to agree.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>188.</td>
+<td>Neither you nor I am wrong.</td>
+<td>am</td>
+<td>are</td>
+</tr>
+<tr>
+<td>190.</td>
+<td>He stood first in the exam.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>191.</td>
+<td>We should respect our parents.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>192.</td>
+<td>She prefers tea over coffee.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>193.</td>
+<td>He works in a bank.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>This book is belongs to me.</td>
+<td>belongs</td>
+<td>belong</td>
+</tr>
+<tr>
+<td>194. 195.</td>
+<td>He is too young to drive.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>196.</td>
+<td>The story is interesting.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>197.</td>
+<td>He had better not to go.</td>
+<td>had better not to go</td>
+<td>_—had better not go</td>
+</tr>
+<tr>
+<td>198. I have been 199.</td>
+<td>waiting for you. His behavior is very rude.</td>
+<td>No error No error</td>
+<td>No correction No correction</td>
+</tr>
+<tr>
+<td>200.</td>
+<td></td>
+<td>No</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>She can speak English</td>
+<td>fluently.</td>
+<td>error</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="900-ssc-pyq-error-detection">900 SSC PYQ ERROR DETECTION</h2>
+<p>abe</p>
+<h2 id="201-to-250">201 to 250</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Sentence</th>
+<th>Error</th>
+<th>Correction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>201.</td>
+<td>He has forgotten my name.</td>
+<td>forgotten</td>
+<td>forgot</td>
+</tr>
+<tr>
+<td>202.</td>
+<td>You should be honest.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>203.</td>
+<td>She has a strong will power.</td>
+<td>will power</td>
+<td>willpower</td>
+</tr>
+<tr>
+<td></td>
+<td>He is not in favor of this plan.</td>
+<td>in favor of</td>
+<td>in favour of</td>
+</tr>
+<tr>
+<td></td>
+<td>I want to become a doctor.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>The books are on the table.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>She has passed the test.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>I don’t has a pen.</td>
+<td>has</td>
+<td>have</td>
+</tr>
+<tr>
+<td></td>
+<td>He is too much polite.</td>
+<td>too much</td>
+<td>too</td>
+</tr>
+<tr>
+<td></td>
+<td>The water in the glass is cold.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>She always tells the truth.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He is at home since morning.</td>
+<td>since morning</td>
+<td>since this morning</td>
+</tr>
+<tr>
+<td></td>
+<td>She has many admirers.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He did a great job.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>My father is reading newspaper.</td>
+<td>newspaper</td>
+<td>a newspaper</td>
+</tr>
+<tr>
+<td></td>
+<td>These chocolates are very tasty.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>I am feeling much better now.</td>
+<td>much better</td>
+<td>much</td>
+</tr>
+<tr>
+<td></td>
+<td>He is the best player in team.</td>
+<td>in team</td>
+<td>in the team</td>
+</tr>
+<tr>
+<td></td>
+<td>This is the key of the door.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He runs very fast.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>They have been married since 2015.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>She likes to listen music.</td>
+<td>listen music</td>
+<td>listen to music</td>
+</tr>
+<tr>
+<td></td>
+<td>He neither came nor called.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>I have two sisters.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He is good at maths.</td>
+<td>maths</td>
+<td>mathematics</td>
+</tr>
+<tr>
+<td></td>
+<td>I saw him in the bus.</td>
+<td>in the bus</td>
+<td>on the bus</td>
+</tr>
+<tr>
+<td></td>
+<td>She works in a hospital.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He sings good songs.</td>
+<td>sings good</td>
+<td>sings well</td>
+</tr>
+<tr>
+<td></td>
+<td>I prefer milk over juice.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He has done this work himself.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>It is time to go home.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>She is afraid from dogs.</td>
+<td>from</td>
+<td>of</td>
+</tr>
+<tr>
+<td></td>
+<td>He is all right now.</td>
+<td>all right</td>
+<td>alright</td>
+</tr>
+<tr>
+<td></td>
+<td>She is suitable for the job.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He has the habit of lying.</td>
+<td>the habit of</td>
+<td>a habit of</td>
+</tr>
+<tr>
+<td></td>
+<td>There is some milk in the fridge.</td>
+<td>some milk</td>
+<td>some</td>
+</tr>
+<tr>
+<td></td>
+<td>She is more taller than me.</td>
+<td>more taller</td>
+<td>taller</td>
+</tr>
+<tr>
+<td></td>
+<td>He has written this letter.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>I have not seen such a film.</td>
+<td>such a film</td>
+<td>such films</td>
+</tr>
+<tr>
+<td></td>
+<td>They are good swimmers.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He came late last night.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>She has no interest in cricket.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He has books.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>many She works hardly.</td>
+<td>hardly</td>
+<td>hard</td>
+</tr>
+<tr>
+<td></td>
+<td>I met him at the station.</td>
+<td>No</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He has a black colour bag.</td>
+<td>error No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>She is the most laziest girl.</td>
+<td>most laziest</td>
+<td>laziest</td>
+</tr>
+<tr>
+<td></td>
+<td>He speaks both Hindi and English. Don’t waste time.</td>
+<td>No error No error</td>
+<td>No correction No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>your She has been from Delhi.</td>
+<td>has been</td>
+<td>is</td>
+</tr>
+</tbody>
+</table>
+<p>&amp;</p>
+<h2 id="500-ssc-pyq-error-detection_4">500 SSC PYQ ERROR DETECTION</h2>
+<p>thse</p>
+<h2 id="251-to-300">251 to 300</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Sentence</th>
+<th>Error</th>
+<th>Correction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>251.</td>
+<td>He told me the truth.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>252.</td>
+<td>She go to school every day.</td>
+<td>go</td>
+<td>goes</td>
+</tr>
+<tr>
+<td>253.</td>
+<td>He doesn’t knows the answer.</td>
+<td>knows</td>
+<td>know</td>
+</tr>
+<tr>
+<td>254.</td>
+<td>I have never ate sushi.</td>
+<td>ate</td>
+<td>eaten</td>
+</tr>
+<tr>
+<td>255.</td>
+<td>My pen is not working.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>256.</td>
+<td>He has the courage to face it.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>257.</td>
+<td>I am not interested in cricket.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>258.</td>
+<td>She has a little knowledge.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>259.</td>
+<td>He looks so handsome.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>260.</td>
+<td>She don’t want to go.</td>
+<td>don’t</td>
+<td>doesn’t</td>
+</tr>
+<tr>
+<td>261.</td>
+<td>I can speak two language.</td>
+<td>language</td>
+<td>languages</td>
+</tr>
+<tr>
+<td>262.</td>
+<td>He has been ill since Monday.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>263.</td>
+<td>The baby is sleeping.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He neither writes nor speak.</td>
+<td>speak</td>
+<td>speaks</td>
+</tr>
+<tr>
+<td></td>
+<td>I shall be very glad.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>She is the girl who won the prize.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He is afraid of snake.</td>
+<td>snake</td>
+<td>snakes</td>
+</tr>
+<tr>
+<td></td>
+<td>We should take care of our health.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He made me to wait.</td>
+<td>to wait</td>
+<td>wait</td>
+</tr>
+<tr>
+<td></td>
+<td>Do you have any advise for me?</td>
+<td>advise</td>
+<td>advice</td>
+</tr>
+<tr>
+<td></td>
+<td>She has lost her phone.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He use to play football.</td>
+<td>use</td>
+<td>used</td>
+</tr>
+<tr>
+<td></td>
+<td>I wish I was a bird.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He has a good handwriting. The</td>
+<td>handwriting</td>
+<td>handwriting</td>
+</tr>
+<tr>
+<td></td>
+<td>He is used to waking up early.</td>
+<td>No error</td>
+<td>No</td>
+</tr>
+<tr>
+<td></td>
+<td>students were sitting silently.</td>
+<td>No error</td>
+<td>No correction correction</td>
+</tr>
+<tr>
+<td></td>
+<td>Neither the teacher nor the students was present.</td>
+<td>was</td>
+<td>were</td>
+</tr>
+<tr>
+<td></td>
+<td>He had better go now.</td>
+<td>g°</td>
+<td>goes</td>
+</tr>
+<tr>
+<td></td>
+<td>She has many friends.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>The train leaves at 10 AM.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He always forgot his keys.</td>
+<td>forgot</td>
+<td>forgets</td>
+</tr>
+<tr>
+<td></td>
+<td>She had a bad experience.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>I am not lazy. He ran as fast as he</td>
+<td>No error error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>could.</td>
+<td>No</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>Don’t judge a book by it’s cover. He is</td>
+<td>it’s No</td>
+<td>its No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>very punctual. The with his team is here.</td>
+<td>error is</td>
+<td>are</td>
+</tr>
+<tr>
+<td></td>
+<td>manager along She talks less.</td>
+<td>less</td>
+<td>little</td>
+</tr>
+<tr>
+<td></td>
+<td>very I don’t have much</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>money.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>291.</td>
+<td>He is ill from yesterday. She didn’t went to the</td>
+<td>from went</td>
+<td>since go</td>
+</tr>
+<tr>
+<td>292.</td>
+<td>party. The boy with his friends are playing.</td>
+<td>are</td>
+<td>is</td>
+</tr>
+<tr>
+<td>293.</td>
+<td>I have no time to waste.</td>
+<td>No</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>error</td>
+<td></td>
+</tr>
+<tr>
+<td>294. 295.</td>
+<td>He has a white hairs. She is in</td>
+<td>hairs in</td>
+<td>hair at</td>
+</tr>
+<tr>
+<td></td>
+<td>good singing.</td>
+<td>singing</td>
+<td>singing</td>
+</tr>
+<tr>
+<td>296. 297.</td>
+<td>He has not finished his work yet. The food tastes delicious.</td>
+<td>No error No error</td>
+<td>No correction No correction</td>
+</tr>
+<tr>
+<td>298.</td>
+<td>He studies in a university.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>299.</td>
+<td>She look tired today.</td>
+<td>look</td>
+<td>looks</td>
+</tr>
+<tr>
+<td>300.</td>
+<td>I am going to market.</td>
+<td>to market</td>
+<td>to the market</td>
+</tr>
+</tbody>
+</table>
+<h2 id="500-ssc-pyq-error-detection_5">500 SSC PYQ ERROR DETECTION</h2>
+<h2 id="301-to-350">301 to 350</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Sentence</th>
+<th>Error</th>
+<th>Correction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>301.</td>
+<td>He is honest and hard working.</td>
+<td>hard working</td>
+<td>hard-working</td>
+</tr>
+<tr>
+<td>302.</td>
+<td>She has a kind hearted nature.</td>
+<td>kind hearted</td>
+<td>kind-hearted</td>
+</tr>
+<tr>
+<td>303.</td>
+<td>I have a lot of work to do.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He don’t understand English.</td>
+<td>don’t</td>
+<td>doesn’t</td>
+</tr>
+<tr>
+<td></td>
+<td>She never tells a lie.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He was fell down from the stairs.</td>
+<td>fell</td>
+<td>fell</td>
+</tr>
+<tr>
+<td></td>
+<td>My father gave me some advices.</td>
+<td>advices</td>
+<td>advice</td>
+</tr>
+<tr>
+<td></td>
+<td>The movie was very bored.</td>
+<td>bored</td>
+<td>boring</td>
+</tr>
+<tr>
+<td></td>
+<td>She is suffering from fever since Monday.</td>
+<td>since Monday</td>
+<td>since Monday</td>
+</tr>
+<tr>
+<td></td>
+<td>He is a good football player.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>We should help the poor peoples.</td>
+<td>peoples</td>
+<td>people</td>
+</tr>
+<tr>
+<td></td>
+<td>He has lost his wallet somewhere.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>I am agree with your point.</td>
+<td>am agree</td>
+<td>agree</td>
+</tr>
+<tr>
+<td></td>
+<td>She don’t like to talk much.</td>
+<td>don’t</td>
+<td>doesn’t</td>
+</tr>
+<tr>
+<td></td>
+<td>He has been working here for two years.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>I prefer reading novels.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He is one of the most intelligent student.</td>
+<td>student</td>
+<td>students</td>
+</tr>
+<tr>
+<td></td>
+<td>The soup is too much salty.</td>
+<td>too much</td>
+<td>too</td>
+</tr>
+<tr>
+<td></td>
+<td>She look beautiful in this dress.</td>
+<td>look</td>
+<td>looks</td>
+</tr>
+<tr>
+<td></td>
+<td>We were went to the market.</td>
+<td>were went</td>
+<td>went</td>
+</tr>
+<tr>
+<td></td>
+<td>He doesn’t have much money.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>The story is very interested.</td>
+<td>interested</td>
+<td>interesting</td>
+</tr>
+<tr>
+<td></td>
+<td>She is very good in painting.</td>
+<td>in painting</td>
+<td>at painting</td>
+</tr>
+<tr>
+<td></td>
+<td>He advised me to worked hard.</td>
+<td>to worked</td>
+<td>to work</td>
+</tr>
+<tr>
+<td></td>
+<td>They have three childrens.</td>
+<td>childrens</td>
+<td>children</td>
+</tr>
+<tr>
+<td></td>
+<td>She always says truth.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He has no time for you.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>I am not able to solve this problem.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He neither eats meat nor fish.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>She has won many prizes.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He was known as a brave man.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>His behaviour is very rudely.</td>
+<td>rudely</td>
+<td>rude</td>
+</tr>
+<tr>
+<td></td>
+<td>She can’t attend the meeting.</td>
+<td>can’t</td>
+<td>cannot</td>
+</tr>
+<tr>
+<td></td>
+<td>He speak very softly.</td>
+<td>speak</td>
+<td>speaks</td>
+</tr>
+<tr>
+<td></td>
+<td>The shoes are made up of leather.</td>
+<td>made up of</td>
+<td>made of</td>
+</tr>
+<tr>
+<td></td>
+<td>He is used to waking up early.</td>
+<td>waking</td>
+<td>wake</td>
+</tr>
+<tr>
+<td></td>
+<td>I have two brother.</td>
+<td>brother</td>
+<td>brothers</td>
+</tr>
+<tr>
+<td></td>
+<td>He has a beautiful handwriting.</td>
+<td>handwriting</td>
+<td>handwriting</td>
+</tr>
+<tr>
+<td></td>
+<td>We should not waste food.</td>
+<td>waste</td>
+<td>waste</td>
+</tr>
+<tr>
+<td></td>
+<td>She likes and singing.</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td></td>
+<td>dancing</td>
+<td>error</td>
+<td>correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He has no intension to help.</td>
+<td>intension</td>
+<td>intention</td>
+</tr>
+<tr>
+<td></td>
+<td>Don’t make fun of others. He is much taller than me.</td>
+<td>No error No error</td>
+<td>No correction No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>They enjoyed their holiday happily.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>He is the one whom I met yesterday.</td>
+<td>whom</td>
+<td>who</td>
+</tr>
+<tr>
+<td></td>
+<td>I have a little money with me. She don’t know how to drive.</td>
+<td>No error don’t</td>
+<td>No correction doesn’t</td>
+</tr>
+<tr>
+<td></td>
+<td>He has been reading this book.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>348. 349.</td>
+<td>The children were playing in the ground.</td>
+<td>in the ground</td>
+<td>on the ground</td>
+</tr>
+<tr>
+<td>350.</td>
+<td>I am to Delhi tomorrow.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td></td>
+<td>going</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>——</p>
+<p>——</p>
+<p>kk</p>
+<h2 id="500-ssc-pyq-error-detection_6">500 SSC PYQ ERROR DETECTION</h2>
+<h2 id="351-to-400">351 to 400</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Sentence</th>
+<th>Error</th>
+<th>Correction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>351.</td>
+<td>He wants to be a engineer.</td>
+<td>a engineer</td>
+<td>an engineer</td>
+</tr>
+<tr>
+<td>352.</td>
+<td>She have a pen.</td>
+<td>have</td>
+<td>has</td>
+</tr>
+<tr>
+<td>353.</td>
+<td>I am not agree with you.</td>
+<td>am not agree</td>
+<td>do not agree</td>
+</tr>
+<tr>
+<td>354.</td>
+<td>He has some informations.</td>
+<td>informations</td>
+<td>information</td>
+</tr>
+<tr>
+<td>355.</td>
+<td>She sings very beautifully.</td>
+<td>beautifully</td>
+<td>beautifully</td>
+</tr>
+<tr>
+<td>356.</td>
+<td>He came here yesterday.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>357.</td>
+<td>You must to study hard.</td>
+<td>must to</td>
+<td>must</td>
+</tr>
+<tr>
+<td>358.</td>
+<td>He has broke the glass.</td>
+<td>has broke</td>
+<td>broke</td>
+</tr>
+<tr>
+<td>359.</td>
+<td>I had went to the market.</td>
+<td>had went</td>
+<td>had gone</td>
+</tr>
+<tr>
+<td>360. She don’t</td>
+<td>respect her elders.</td>
+<td>don’t</td>
+<td>doesn’t</td>
+</tr>
+<tr>
+<td>361.</td>
+<td>He is afraid of heights.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>362.</td>
+<td>She has many jewellery.</td>
+<td>jewellery</td>
+<td>jewelries</td>
+</tr>
+<tr>
+<td>363.</td>
+<td>He is the boy what won the prize.</td>
+<td>what</td>
+<td>who</td>
+</tr>
+<tr>
+<td>364.</td>
+<td>They has not finished the work.</td>
+<td>has</td>
+<td>have</td>
+</tr>
+<tr>
+<td>365.</td>
+<td>He advised me for this.</td>
+<td>for</td>
+<td>about</td>
+</tr>
+<tr>
+<td>366.</td>
+<td>The matter are very serious.</td>
+<td>are</td>
+<td>is</td>
+</tr>
+<tr>
+<td>367.</td>
+<td>He is too old for this work.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>368.</td>
+<td>She is one of them who are here.</td>
+<td>who are</td>
+<td>who is</td>
+</tr>
+<tr>
+<td>369.</td>
+<td>We shall goes now.</td>
+<td>goes</td>
+<td>go</td>
+</tr>
+<tr>
+<td>370.</td>
+<td>He neither comes nor call.</td>
+<td>call</td>
+<td>calls</td>
+</tr>
+<tr>
+<td>371.</td>
+<td>I have never see such a thing.</td>
+<td>see</td>
+<td>seen</td>
+</tr>
+<tr>
+<td>372.</td>
+<td>She has been to London last year.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>373.</td>
+<td>He did not went to school.</td>
+<td>went</td>
+<td>go</td>
+</tr>
+<tr>
+<td>374.</td>
+<td>You are making too noise.</td>
+<td>too noise</td>
+<td>too much noise</td>
+</tr>
+<tr>
+<td>375.</td>
+<td>He is not only clever but also hard working.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>376.</td>
+<td>She is looking for a job since long time.</td>
+<td>since long time</td>
+<td>for a long time</td>
+</tr>
+<tr>
+<td>377.</td>
+<td>He has read many book.</td>
+<td>book</td>
+<td>books</td>
+</tr>
+<tr>
+<td>378.</td>
+<td>They were enjoying their holidays very much.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>379.</td>
+<td>I have few friends in this city.</td>
+<td>few</td>
+<td>a few</td>
+</tr>
+<tr>
+<td>380.</td>
+<td>He is the most honest person I have met.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>381.</td>
+<td>She had better not to go.</td>
+<td>had better not to</td>
+<td>go had better not go</td>
+</tr>
+<tr>
+<td>382.</td>
+<td>He is used to drink tea.</td>
+<td>drink</td>
+<td>drinking</td>
+</tr>
+<tr>
+<td>383.</td>
+<td>Their house is larger than our.</td>
+<td>larger</td>
+<td>larger</td>
+</tr>
+<tr>
+<td>384.</td>
+<td>She is talented in music.</td>
+<td>talented</td>
+<td>talent</td>
+</tr>
+<tr>
+<td></td>
+<td>He has no any idea.</td>
+<td>no any</td>
+<td>no</td>
+</tr>
+<tr>
+<td>386.</td>
+<td>He does not knows the answer.</td>
+<td>knows</td>
+<td>know</td>
+</tr>
+<tr>
+<td>387.</td>
+<td>Let us to go.</td>
+<td>to go</td>
+<td>go</td>
+</tr>
+<tr>
+<td>388.</td>
+<td>She has the habit of speak the truth.</td>
+<td>speak</td>
+<td>speaking</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>tells</td>
+</tr>
+<tr>
+<td>389.</td>
+<td>He always tell a lie. The book what is interesting.</td>
+<td>tell what</td>
+<td>that</td>
+</tr>
+<tr>
+<td>390. 391.</td>
+<td>you gave very I prefer tea than coffee.</td>
+<td>than</td>
+<td>to</td>
+</tr>
+<tr>
+<td>392.</td>
+<td>He is so tall that he can touch the ceiling.</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>error</td>
+<td>correction</td>
+</tr>
+<tr>
+<td>393. We should not</td>
+<td>to tease animals. He has won medals in sports.</td>
+<td>not to tease No error</td>
+<td>tease No correction</td>
+</tr>
+<tr>
+<td>394. She is</td>
+<td>many dance.</td>
+<td>dance</td>
+<td></td>
+</tr>
+<tr>
+<td>395. 396. good at</td>
+<td>He was born in a poor family.</td>
+<td>No error</td>
+<td>dancing No correction</td>
+</tr>
+<tr>
+<td>397. He had</td>
+<td>I am used to wake up early. wonderful</td>
+<td>wake No</td>
+<td>waking No</td>
+</tr>
+<tr>
+<td>398. 399. a</td>
+<td>experience. She is the only person which helped me.</td>
+<td>error which</td>
+<td>correction who</td>
+</tr>
+<tr>
+<td>400.</td>
+<td>I will came tomorrow.</td>
+<td>came</td>
+<td>come</td>
+</tr>
+</tbody>
+</table>
+<p>—</p>
+<p>k</p>
+<p>k</p>
+<p>k</p>
+<p>——</p>
+<h2 id="500-ssc-pyq-error-detection_7">500 SSC PYQ ERROR DETECTION</h2>
+<h2 id="401-to-450">401 to 450</h2>
+<table>
+<thead>
+<tr>
+<th>Sentence</th>
+<th>Error</th>
+<th>Correction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>401. I don’t know where he is.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>402. She is too young to understand.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>403. He is the tallest in the class.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>404. She has enough time.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>405. We went there by bus.</td>
+<td>there</td>
+<td>their</td>
+</tr>
+<tr>
+<td>406. He is used to smoke.</td>
+<td>to smoke</td>
+<td>smoking</td>
+</tr>
+<tr>
+<td>407. She is very careful and cautious.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>I saw a incident yesterday.</td>
+<td>a incident</td>
+<td>an incident</td>
+</tr>
+<tr>
+<td>He has few friends in this city.</td>
+<td>few</td>
+<td>a few</td>
+</tr>
+<tr>
+<td>She neither likes tea nor coffee.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>I have no other option.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>He is fond of to read books.</td>
+<td>of to read</td>
+<td>of reading</td>
+</tr>
+<tr>
+<td>They are not coming today.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>She had left before I came.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>I prefer not to say anything.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>He is one of the boys who is honest.</td>
+<td>is</td>
+<td>are</td>
+</tr>
+<tr>
+<td>She used to went for a walk.</td>
+<td>to went</td>
+<td>to go</td>
+</tr>
+<tr>
+<td>Don’t believe everything he says.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>The news are very shocking.</td>
+<td>are</td>
+<td>is</td>
+</tr>
+<tr>
+<td>He has been working here since 2010.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>I am not satisfied with the result.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>She lives in a small house.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>He do not like sports.</td>
+<td>do not</td>
+<td>does not</td>
+</tr>
+<tr>
+<td>She is good in singing.</td>
+<td>in singing</td>
+<td>at singing</td>
+</tr>
+<tr>
+<td>He asked me a strange question.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>I am not able to understand it.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>She is weak in mathematics.</td>
+<td>in mathematics</td>
+<td>at mathematics</td>
+</tr>
+<tr>
+<td>We should obey our parents.</td>
+<td>No error No</td>
+<td>No correction No correction</td>
+</tr>
+<tr>
+<td>He is late by five minutes. She had a little</td>
+<td>error No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>money. I am going to visit Delhi next week.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>He has the tendency of lie.</td>
+<td>of lie</td>
+<td>to lie</td>
+</tr>
+<tr>
+<td>She is the most beautiful girl in the class.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>They were happy to see him.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>He has died of cancer.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>I can’t go because I am busy.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>He is said to be honest.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>She can solve the problem easily. He is not</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>interested in politics.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>She has the ability to do it.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>He has no knowledge about it.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>The boy with his dog is here.</td>
+<td>with his dog</td>
+<td>and his dog</td>
+</tr>
+<tr>
+<td>I hate to get up early.</td>
+<td>to get up</td>
+<td>getting up</td>
+</tr>
+<tr>
+<td>She is too tired to walk.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>He has done his work perfectly.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>I have a pen, a book and an eraser. She is not in a mood to talk.</td>
+<td>No error</td>
+<td>No correction No</td>
+</tr>
+<tr>
+<td>I am afraid of to speak in public.</td>
+<td>No error of to speak</td>
+<td>correction of speaking</td>
+</tr>
+<tr>
+<td>He has no right to say so. She</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>has a beautiful smile.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+</tbody>
+</table>
+<h2 id="500-ssc-pyq-error-detection_8">500 SSC PYQ ERROR DETECTION</h2>
+<h2 id="451-to-500">451 to 500</h2>
+<table>
+<thead>
+<tr>
+<th>Sentence</th>
+<th>Error</th>
+<th>Correction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>He is very excited about the trip.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>She can speak three language.</td>
+<td>language</td>
+<td>languages</td>
+</tr>
+<tr>
+<td>He has a lots of books.</td>
+<td>a lots</td>
+<td>a lot of</td>
+</tr>
+<tr>
+<td>I am having a headache.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>She don’t like chocolates.</td>
+<td>don’t</td>
+<td>doesn’t</td>
+</tr>
+<tr>
+<td>He always help others.</td>
+<td>help</td>
+<td>helps</td>
+</tr>
+<tr>
+<td>They were playing in the ground.</td>
+<td>the ground</td>
+<td>the grounds</td>
+</tr>
+<tr>
+<td>I have wrote a letter.</td>
+<td>wrote</td>
+<td>written</td>
+</tr>
+<tr>
+<td>He is senior to me.</td>
+<td>senior</td>
+<td>senior to</td>
+</tr>
+<tr>
+<td>She is married since 2015.</td>
+<td>since</td>
+<td>since 2015</td>
+</tr>
+<tr>
+<td>She is one of the cleverest girl.</td>
+<td>girl</td>
+<td>girls</td>
+</tr>
+<tr>
+<td>This is the most difficult question.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>He go to gym everyday.</td>
+<td>go</td>
+<td>goes</td>
+</tr>
+<tr>
+<td>She had went to market.</td>
+<td>had went</td>
+<td>had gone</td>
+</tr>
+<tr>
+<td>I do not have much time.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>He is enough strong to lift it.</td>
+<td>enough strong</td>
+<td>strong enough</td>
+</tr>
+<tr>
+<td>She is looking forward to meet you.</td>
+<td>to meet</td>
+<td>to meeting</td>
+</tr>
+<tr>
+<td>They have decided to postponed the event.</td>
+<td>postponed</td>
+<td>postpone</td>
+</tr>
+<tr>
+<td>He is not only intelligent but also honest.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>She has the better dress.</td>
+<td>the better</td>
+<td>the best</td>
+</tr>
+<tr>
+<td>I have seen him yesterday.</td>
+<td>him</td>
+<td>he</td>
+</tr>
+<tr>
+<td>He neither know the answer nor try.</td>
+<td>know</td>
+<td>knows</td>
+</tr>
+<tr>
+<td>It is getting dark now.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>She did her work careful.</td>
+<td>careful</td>
+<td>carefully</td>
+</tr>
+<tr>
+<td>He suggested me to join the class.</td>
+<td>suggested me</td>
+<td>suggested that I</td>
+</tr>
+<tr>
+<td>I am used to wake up early.</td>
+<td>to wake up</td>
+<td>waking up</td>
+</tr>
+<tr>
+<td>She is too much worried.</td>
+<td>too much</td>
+<td>too</td>
+</tr>
+<tr>
+<td>He has been a teacher since 2012.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>I will reach there by 5 o’clock.</td>
+<td>there</td>
+<td>there by 5 o'clock</td>
+</tr>
+<tr>
+<td>She don’t know the reason.</td>
+<td>don’t</td>
+<td>doesn’t</td>
+</tr>
+<tr>
+<td>He is capable of to do it.</td>
+<td>of to do</td>
+<td>of doing</td>
+</tr>
+<tr>
+<td>They are used to live here.</td>
+<td>to live</td>
+<td>living</td>
+</tr>
+<tr>
+<td>He has no money in his pocket.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>She always wears a beautiful sari.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>He had a little knowledge on this topic.</td>
+<td>on</td>
+<td>about</td>
+</tr>
+<tr>
+<td>I am eager to learn English.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>They were discussing about the plan.</td>
+<td>about</td>
+<td>about the</td>
+</tr>
+<tr>
+<td>She don’t want to go out.</td>
+<td>don’t</td>
+<td>doesn’t</td>
+</tr>
+<tr>
+<td>He is more taller than his brother. rules.</td>
+<td>more taller</td>
+<td>taller</td>
+</tr>
+<tr>
+<td>We have to follow the</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>I have been to Goa last year. He is deaf and</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>dumb.</td>
+<td>No error</td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>She is as beautiful as her sister. He told me that he will come.</td>
+<td>No error will come</td>
+<td>No correction would come</td>
+</tr>
+<tr>
+<td>She is the girl whom I met.</td>
+<td>whom</td>
+<td>who</td>
+</tr>
+<tr>
+<td>He is wearing a red colour shirt.</td>
+<td>colour</td>
+<td>colored</td>
+</tr>
+<tr>
+<td>I prefer tea rather than coffee. taller than</td>
+<td>No error taller</td>
+<td>No correction tall</td>
+</tr>
+<tr>
+<td>He is quite me. They have no where to go.</td>
+<td>quite no where</td>
+<td>quite nowhere</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>No correction</td>
+</tr>
+<tr>
+<td>I wish I was a millionaire.</td>
+<td>No error</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+    </div>
+  </article>
+  <script type="application/json" id="doc-meta">{"slug": "010-500-error-detection", "number": 10, "theme": "slate", "engine": "docling", "source": "010 - 500 Error Detection.pdf", "pages": 10, "words": 5069, "sections": 16, "tables": 10, "reading_min": 29, "date": "2026-10-21", "teaser": ""}</script>
+</main>
+</body>
+</html>

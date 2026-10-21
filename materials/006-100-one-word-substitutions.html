@@ -1,0 +1,1468 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>100 One-Word Substitutions · Zoya's English — Study Module</title>
+<meta name="description" content="100 One-Word Substitutions — study module from Zoya&#39;s English learning library: speaking and confidence coaching materials.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>/* ═══════════════════════════════════════════════════════════════════════════
+   ZOYA'S ENGLISH — MASTER LAYOUT STYLESHEET
+   Design language: FORGE-inspired, light edition — warm paper ground,
+   near-black ink, electric-lime energy, sharp edges, grotesk discipline.
+   Beat structure: tokens → chapter themes → base → components → prose → print
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────── 1 · DESIGN TOKENS (single source) */
+
+:root {
+  /* Palette — light Forge: paper, ink, electric lime */
+  --bg: #fafaf7;                 /* warm paper ground                    */
+  --bg-deep: #f2f1ea;            /* deeper wash for bands                */
+  --surface: #ffffff;
+  --ink: #17181a;                /* near-black body typography           */
+  --ink-soft: #55584f;
+  --ink-faint: #8b8d82;
+  --line: #e6e4da;
+  --line-strong: #d4d2c6;
+  --lime: #b5f030;               /* electric lime — the brand spark      */
+  --lime-deep: #8fc413;          /* lime pressed onto paper hover        */
+  --accent: #34352f;             /* neutral chrome accent (links et al.) */
+  --accent-ink: #17181a;
+  --accent-soft: #f4f3ec;
+  --accent-glow: rgba(181, 240, 48, 0.35);
+  --glow: rgba(181, 240, 48, 0.45);
+  --warm: #f6f3e4;
+
+  /* Typography */
+  --font-display: "Space Grotesk", "Inter Tight", system-ui, sans-serif;
+  --font-body: "Inter Tight", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Courier New", monospace;
+
+  /* Shape & depth — Forge is sharp: nothing rounded, glow instead of shadow */
+  --r-lg: 0px;
+  --r-md: 0px;
+  --r-sm: 0px;
+  --r-pill: 999px;               /* reserved: badges only                */
+  --shadow-1: 0 1px 0 var(--line);
+  --shadow-2: 0 0 0 1px var(--line);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─────────────────────────── 2 · CHAPTER DESIGN LANGUAGES (per-theme accents)
+
+   Every compiled chapter receives its own stable accent family, applied via
+   `data-theme` on the page root, so each module feels designed — not stamped.
+   The dashboard (materials.html) mirrors these values for its cards.        */
+
+[data-theme="slate"] { --accent: #4a6b82; --accent-ink: #375266; --accent-soft: #edf2f6; --accent-glow: rgba(74, 107, 130, 0.16); }
+[data-theme="ink"]   { --accent: #46474b; --accent-ink: #33353a; --accent-soft: #f1efe9; --accent-glow: rgba(70, 71, 75, 0.14); }
+[data-theme="clay"]  { --accent: #b06a48; --accent-ink: #8f5438; --accent-soft: #f9efe7; --accent-glow: rgba(176, 106, 72, 0.15); }
+[data-theme="sage"]  { --accent: #5f7c60; --accent-ink: #49614a; --accent-soft: #eff5ef; --accent-glow: rgba(95, 124, 96, 0.15); }
+[data-theme="plum"]  { --accent: #7d5a72; --accent-ink: #64485a; --accent-soft: #f6eff4; --accent-glow: rgba(125, 90, 114, 0.15); }
+[data-theme="mist"]  { --accent: #3f7a75; --accent-ink: #2f605c; --accent-soft: #ebf4f2; --accent-glow: rgba(63, 122, 117, 0.15); }
+[data-theme="ember"] { --accent: #a8543f; --accent-ink: #8a4232; --accent-soft: #f9ece8; --accent-glow: rgba(168, 84, 63, 0.15); }
+[data-theme="moss"]  { --accent: #72783f; --accent-ink: #5a5f31; --accent-soft: #f5f6e9; --accent-glow: rgba(114, 120, 63, 0.15); }
+
+/* ────────────────────────────────────────────────────────── 3 · BASE RESET */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 0.6em;
+}
+
+::selection { background: var(--lime); color: var(--ink); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  z-index: 100;
+  background: var(--lime);
+  color: var(--ink);
+  font-weight: 500;
+  padding: 0.55rem 1.1rem;
+}
+.skip-link:focus { left: 12px; color: var(--ink); }
+
+/* ───────────────────────────────────────────────────────── 4 · LAYOUT CORE */
+
+.shell { width: min(1140px, 92vw); margin-inline: auto; }
+.shell-wide { width: min(1240px, 94vw); margin-inline: auto; }
+
+.section { padding: 5.5rem 0; position: relative; }
+.section + .section { padding-top: 0; }
+.grid { display: grid; gap: 1.4rem; }
+.grid.cards { grid-template-columns: repeat(auto-fill, minmax(305px, 1fr)); }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: center; }
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.1rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.kicker::before {
+  content: "";
+  width: 22px;
+  height: 10px;
+  background: var(--lime);
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.section-lede { max-width: 62ch; color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 2.4rem; }
+.display-xl {
+  font-size: clamp(2.9rem, 6.2vw, 5.2rem);
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* ─────────────────────────────────────────────────────── 5 · NAV BAR */
+
+.site-nav {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 60;
+  padding: 0.85rem 0;
+  background: transparent;
+  transition: background 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+  border-bottom: 1px solid transparent;
+}
+.site-nav.scrolled {
+  background: rgba(250, 250, 247, 0.95);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom-color: var(--line);
+}
+.site-nav .bar { display: flex; align-items: center; gap: 1.6rem; }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 700;
+  background: var(--lime);
+}
+
+.nav-links { display: flex; align-items: center; gap: 1.5rem; margin-left: auto; }
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s var(--ease);
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a[aria-current="page"] { color: var(--ink); border-bottom: 2px solid var(--lime); }
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+}
+
+/* ─────────────────────────────────────────────────── 6 · BUTTONS · CHIPS */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid transparent;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.25s var(--ease), background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.25s var(--ease);
+}
+.btn-solid {
+  color: var(--ink);
+  background: var(--lime);
+}
+.btn-solid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px var(--accent-glow), 0 0 60px rgba(181, 240, 48, 0.18);
+}
+.btn-ghost {
+  color: var(--ink);
+  background: transparent;
+  border-color: var(--ink);
+}
+.btn-ghost:hover {
+  border-color: var(--lime-deep);
+  background: var(--lime);
+}
+.btn.is-disabled,
+.btn[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+.btn-sm { padding: 0.5rem 1rem; font-size: 0.74rem; }
+.btn-note {
+  margin-left: 0.1rem;
+  padding-left: 0.55rem;
+  border-left: 1px solid rgba(23, 24, 26, 0.3);
+  font-size: 0.72rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.9rem;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.chip::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--lime);
+  transform: rotate(45deg);
+}
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+/* ─────────────────────────────────────────────────── 7 · SHARP CARDS */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.7rem 1.7rem 1.5rem;
+  border: 1px solid var(--line-strong);
+  border-top: 3px solid var(--ink);
+  background: var(--surface);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+.card-hover:hover,
+.card-chapter:hover {
+  transform: translateY(-4px);
+  border-color: rgba(181, 240, 48, 0.55);
+  border-top-color: var(--lime);
+  box-shadow: 0 0 30px var(--accent-glow), 0 0 64px rgba(181, 240, 48, 0.14);
+  background: var(--card-tint, var(--surface));
+}
+.card-kicker {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--card-accent, var(--accent));
+  margin-bottom: 0.3rem;
+}
+.card-title { font-family: var(--font-display); font-weight: 700; font-size: 1.18rem; letter-spacing: -0.01em; margin: 0.15rem 0 0.35rem; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { color: var(--card-accent, var(--accent)); }
+.card-teaser { color: var(--ink-soft); font-size: 0.94rem; margin: 0 0 0.9rem; }
+.card-empty {
+  grid-column: 1 / -1;
+  align-items: flex-start;
+  border-style: dashed;
+  border-color: var(--line-strong);
+  background: transparent;
+  box-shadow: none;
+}
+.card-empty code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  padding: 0.05em 0.4em;
+}
+
+.material-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  background: var(--lime);
+  margin-bottom: 0.8rem;
+}
+.material-icon svg { width: 22px; height: 22px; }
+
+/* Chapter cards — materials.html dashboard */
+.card-chapter { --card-accent: var(--accent); border-top-color: var(--card-accent, var(--ink)); }
+.chapter-num {
+  position: absolute;
+  top: 1rem;
+  right: 1.4rem;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--card-accent);
+  opacity: 0.35;
+  user-select: none;
+}
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.card-meta li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.card-meta li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  transform: rotate(45deg);
+  background: var(--lime);
+  opacity: 0.9;
+}
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.filter-row { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 1.6rem 0 2.2rem; }
+.filter-chip { cursor: pointer; transition: all 0.2s var(--ease); opacity: 0.7; }
+.filter-chip:hover { opacity: 1; color: var(--ink); }
+.filter-chip.is-active {
+  opacity: 1;
+  color: var(--ink);
+  background: var(--lime);
+  border-color: var(--lime);
+}
+.filter-chip.is-active::before { background: var(--ink); }
+
+/* ─────────────────────────────────────────────────────────────── 8 · HERO */
+
+.hero {
+  position: relative;
+  padding: 9.5rem 0 4.5rem;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: min(4vw, 60px);
+  width: clamp(90px, 12vw, 150px);
+  height: clamp(90px, 12vw, 150px);
+  background:
+    repeating-linear-gradient(0deg, rgba(23, 24, 26, 0.09) 0 1.5px, transparent 1.5px 9px),
+    repeating-linear-gradient(90deg, rgba(23, 24, 26, 0.09) 0 1.5px, transparent 1.5px 9px);
+  pointer-events: none;
+}
+.hero .grid.two { gap: 3.5rem; }
+.hero-lede {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 54ch;
+  margin: 1.4rem 0 2rem;
+}
+.hero-lede em { font-style: normal; box-shadow: inset 0 -0.5em 0 var(--lime); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 2.4rem; }
+
+/* Stats — Forge's animated counters, honest numbers only */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.6rem 3.2rem;
+  margin-top: 0.4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--line-strong);
+}
+.stat { display: flex; flex-direction: column; gap: 0.15rem; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--ink);
+}
+.stat-num b { color: inherit; font-weight: inherit; }
+.stat-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.portrait { position: relative; margin: 0; }
+.portrait-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-deep);
+}
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(23, 24, 26, 0.08);
+  pointer-events: none;
+}
+.portrait-mono {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 14vw, 10rem);
+  font-weight: 700;
+  color: var(--ink);
+  opacity: 0.1;
+}
+.portrait-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portrait-chip {
+  position: absolute;
+  z-index: 2;
+  font-size: 0.72rem;
+  padding: 0.45rem 0.8rem;
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+.portrait-chip::before { background: var(--lime); }
+.portrait-chip.c1 { top: 8%; left: -4%; }
+.portrait-chip.c2 { bottom: 20%; right: -3%; }
+.portrait-chip.c3 { bottom: -3%; left: 8%; }
+@media (max-width: 760px) {
+  .portrait-chip.c1 { left: 4%; }
+  .portrait-chip.c2 { right: 4%; }
+}
+
+/* ───────────────────────────────────────────── 9 · TICKER · STATEMENT · METHOD */
+
+.ticker {
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 0.85rem 0;
+  background: var(--bg);
+}
+.ticker-track {
+  display: inline-flex;
+  animation: ticker-scroll 26s linear infinite;
+}
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-right: 1.6rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.ticker-track span::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--lime);
+  transform: rotate(45deg);
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.pull-quote {
+  margin: 1rem 0 0;
+  padding: 0.9rem 0 0 1.5rem;
+  border-left: 4px solid var(--lime);
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.prose-copy p { color: var(--ink-soft); margin: 0 0 1.05rem; max-width: 62ch; }
+.prose-copy strong { font-weight: 500; color: var(--ink); }
+
+.steps { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.step-num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--ink);
+  opacity: 0.35;
+  margin-bottom: 0.7rem;
+}
+.steps .card h3 { text-transform: uppercase; letter-spacing: 0.02em; font-size: 1.05rem; }
+.steps .card p { color: var(--ink-soft); font-size: 0.93rem; margin: 0; }
+
+/* ───────────────────────────────────────── 10 · CALLOUTS — the .tip-box system */
+
+.tip-box {
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 1.05rem 1.3rem 1.05rem 1.4rem;
+  border: 1px solid var(--line-strong);
+  border-left: 4px solid var(--card-accent, var(--accent));
+  background: var(--accent-soft);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.tip-box p, .tip-box ul { margin: 0.2rem 0 0; font-size: 0.96rem; color: var(--ink-soft); }
+.tip-box .tip-title,
+.tip-box > p:first-child strong:first-child {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent-ink);
+}
+.tip-box[data-tone="note"]  { border-left-color: #b98a4b; background: #faf4e8; }
+.tip-box[data-tone="warn"]  { border-left-color: #a8503f; background: #f9ecea; }
+.tip-box[data-tone="ok"]    { border-left-color: #3e7c74; background: #ecf4f1; }
+
+/* ─────────────────────────────────────────────── 11 · DOC PAGES (materials/*) */
+
+.doc-page body { background: var(--bg); }
+.doc-crumbs {
+  width: min(880px, 92vw);
+  margin: 6.5rem auto 1.2rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.doc-crumbs a { color: var(--ink); text-decoration: none; }
+.doc-crumbs a:hover { box-shadow: inset 0 -0.4em 0 var(--lime); }
+
+.doc-frame {
+  width: min(880px, 92vw);
+  margin: 0 auto 4.5rem;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.doc-cover {
+  position: relative;
+  overflow: hidden;
+  padding: 2.8rem 3.2rem 2.4rem;
+  border-bottom: 1px solid var(--ink);
+  border-top: 8px solid var(--accent);
+  background: var(--accent-soft);
+}
+.doc-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+/* one quiet motif per chapter design language */
+[data-theme="slate"] .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="ink"]   .doc-cover::after { background-image: repeating-linear-gradient(135deg, var(--accent-glow) 0 1px, transparent 1px 16px); }
+[data-theme="clay"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 22px); }
+[data-theme="sage"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="plum"]  .doc-cover::after { background-image: radial-gradient(420px 260px at 92% 100%, var(--accent-glow) 0%, transparent 70%); }
+[data-theme="mist"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 30px); }
+[data-theme="ember"] .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 13px), repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 13px); }
+[data-theme="moss"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 18px); }
+
+.doc-kicker {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.doc-kicker::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 9px;
+  margin-top: 0.55rem;
+  background: var(--lime);
+}
+.doc-title {
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+.doc-subtitle { margin: 0.4rem 0 1.4rem; max-width: 58ch; color: var(--ink-soft); font-size: 1.02rem; }
+.doc-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.2rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.doc-body { padding: 2.6rem 3.2rem 3.4rem; }
+@media (max-width: 640px) {
+  .doc-cover, .doc-body { padding-inline: 1.4rem; }
+}
+
+/* ──────────────────────────────────────────────── 12 · PROSE (lesson content) */
+
+.prose { font-size: 1.02rem; color: #2b2d26; }
+.prose > * + * { margin-top: 0.9em; }
+.prose h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-top: 2.2em;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--card-accent, var(--accent));
+}
+.prose h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; margin-top: 1.9em; }
+.prose h4 { font-family: var(--font-display); font-size: 1.02rem; font-weight: 600; margin-top: 1.6em; }
+.prose blockquote { margin: 1.4rem 0; padding: 1rem 1.3rem 1rem 1.4rem; border: 1px solid var(--line-strong); border-left: 4px solid var(--card-accent, var(--accent)); background: var(--accent-soft); color: var(--ink-soft); break-inside: avoid; page-break-inside: avoid; }
+.prose blockquote p { margin: 0.2rem 0 0; }
+.prose blockquote p:first-child { margin-top: 0; font-weight: 500; color: var(--ink); }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.6rem 0; font-size: 0.93rem; break-inside: avoid; page-break-inside: avoid; }
+.prose th { background: var(--card-accent, var(--accent)); color: #fff; font-family: var(--font-display); font-weight: 600; text-align: left; letter-spacing: 0.03em; }
+.prose th, .prose td { border: 1px solid var(--line-strong); padding: 0.55rem 0.8rem; }
+.prose tbody tr:nth-child(even) td { background: var(--accent-soft); }
+.prose ul, .prose ol { padding-left: 1.4rem; }
+.prose li { margin: 0.35rem 0; }
+.prose li::marker { color: var(--accent); font-weight: 600; }
+.prose strong { color: var(--ink); font-weight: 500; }
+.prose code { font-family: var(--font-mono); font-size: 0.88em; background: var(--accent-soft); border: 1px solid var(--line); padding: 0.08em 0.42em; }
+.prose hr { border: 0; border-top: 1px dashed var(--line-strong); margin: 2.2rem auto; width: 55%; }
+.prose figure { margin: 1.6rem 0; break-inside: avoid; page-break-inside: avoid; }
+
+/* ────────────────────────────────────────────────────────────── 13 · FOOTER */
+
+.site-footer {
+  padding: 3rem 0 3.6rem;
+  border-top: 2px solid var(--ink);
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+}
+.site-footer .bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-footer a { color: var(--ink-soft); text-decoration: none; }
+.site-footer a:hover { box-shadow: inset 0 -0.4em 0 var(--lime); }
+.site-footer .brand { font-size: 0.95rem; }
+
+/* ────────────────────────────────────────────────── 14 · MOTION & RESPONSIVE */
+
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (max-width: 760px) {
+  .section { padding: 3.6rem 0; }
+  .hero { padding-top: 7.5rem; }
+  .hero::after { display: none; }
+  .stats { gap: 1.8rem 2.2rem; }
+  .stat-num { font-size: 2.1rem; }
+  .doc-meta { gap: 0.3rem 0.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .ticker-track { animation: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ═══════════════════════════════════════════════ 15 · PRINT — A4 CHOREOGRAPHY
+   Hard pagination contract: no orphan headings, no splintered callouts,
+   no split table rows. Chromium prints exactly what these rules promise.     */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 14mm 18mm 14mm;
+  }
+
+  html, body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .site-nav, .site-footer, .no-print, .skip-link,
+  .hero-cta, .chip-row, .filter-row, .card-actions,
+  .ticker, .portrait-chip, .doc-crumbs, .doc-backbar {
+    display: none !important;
+  }
+
+  .hero, .section { padding: 0 !important; min-height: 0 !important; background: none !important; }
+  .hero::after { display: none !important; }
+  .shell, .shell-wide { width: 100% !important; max-width: none !important; }
+  main { padding-top: 0 !important; margin: 0 !important; }
+
+  /* — content-keep = never leave a single widow line — */
+  p, li { orphans: 3; widows: 3; }
+
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .tip-box, blockquote, table, tr, img, figure,
+  .doc-cover, .doc-frame, .card, .prose figure {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  thead { display: table-header-group; }  /* column headers repeat on every page */
+  tfoot { display: table-footer-group; }
+
+  a { color: inherit; text-decoration: none; }
+  a[href^="http"]::after {
+    content: " (" attr(href) ") ";
+    font-size: 0.82em;
+    color: #77777a;
+  }
+
+  /* Chapter pages unwrap from their web chrome and print edge-to-edge calm */
+  .doc-frame {
+    box-shadow: none !important;
+    border: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    background: #fff !important;
+  }
+  .doc-cover { margin-bottom: 1.4rem; }
+  .doc-body { padding: 0 !important; }
+  .prose table { font-size: 0.88rem; }
+  .prose th { background: var(--card-accent, #444540) !important; }
+  .prose tbody tr:nth-child(even) td { background: var(--accent-soft); }
+
+  .card, .steps .card { box-shadow: none; border-color: var(--line-strong); border-top-width: 2px; }
+  .page-break, .break-before {
+    break-before: page;
+    page-break-before: always;
+  }
+}
+</style>
+</head>
+<body class="doc-page">
+<a class="skip-link" href="#doc-main">Skip to content</a>
+<main id="doc-main">
+  <div class="doc-crumbs no-print">
+    <a href="../index.html">&larr; Portfolio</a><span aria-hidden="true">/</span>
+    <a href="../materials.html">Learning library</a>
+  </div>
+  <article class="doc-frame chapter-doc" data-chapter="006-100-one-word-substitutions" data-theme="slate">
+    <header class="doc-cover">
+      <p class="doc-kicker">Zoya&#39;s English — Study Module 06</p>
+      <h1 class="doc-title">100 One-Word Substitutions</h1>
+      <p class="doc-subtitle">Rebuilt from the original source — interactive web edition plus print-ready A4.</p>
+      <div class="doc-meta">
+        <span>Source: 006 - 100 One-Word Substitutions.pdf</span>
+        <span>10 source pages</span>
+        <span>1468 words</span>
+        <span>~9 min read</span>
+      </div>
+    </header>
+    <div class="doc-body prose">
+<table>
+<thead>
+<tr>
+<th>o</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>A person who loves humanity</td>
+<td>Philanthropist (e.g. She is a philanthropist.)</td>
+</tr>
+<tr>
+<td>:</td>
+<td>A person who hates mankind</td>
+<td>Misanthrope (e.g. He has become a misanthrope. )</td>
+</tr>
+<tr>
+<td>.</td>
+<td>A person who speaks many languages</td>
+<td>Polyglot (e.g. She is a polyglot.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who cannot speak</td>
+<td>Mute (e.g. He has been mute since birth.)</td>
+</tr>
+<tr>
+<td>,</td>
+<td>A person who travels by foot</td>
+<td>Pedestrian (e.g. He is a pedestrian. )</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who studies the stars</td>
+<td>Astronomer (e.g. Galileo was a great astronomer.)</td>
+</tr>
+<tr>
+<td>:</td>
+<td>A person who writes autobiography</td>
+<td>Autobiographer (e.g. She is a famous autobiographer. )</td>
+</tr>
+<tr>
+<td></td>
+<td>A place where orphaned children live</td>
+<td>Orphanage (e.g. They visited an orphanage.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A disease that spreads quickly</td>
+<td>Epidemic (e.g. An epidemic spread in the city.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who collects stamps</td>
+<td>Philatelist (e.g. He is a philatelist. )</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>cm</th>
+<th>, — A person who lives alone</th>
+<th>Hermit (e.g. He chose to live as a hermit.)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2 ,</td>
+<td>A person who works without pay</td>
+<td>Volunteer (e.g. She works as a volunteer.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who eats too much</td>
+<td>Glutton (eg, Whida pluton.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who is blindly loyal</td>
+<td>Zealot (e.g. He is a political zealot.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who knows everything</td>
+<td>Omniscient (e.g. God is considered omniscient.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A h</td>
+<td>Blind</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Deaf</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who is afraid of heights</td>
+<td>Acrophobic (e.g. She is acrophobic.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who speaks very little</td>
+<td>Taciturn (e.g. He is a taciturn person.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who studies the natural environment</td>
+<td>Ecologist (e.g. She is an ecologist.)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>2] .</th>
+<th>A person who treats animals</th>
+<th>Veterinarian (e.g. She is a veterinarian. )</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>» ,</td>
+<td>A person who believes in one god</td>
+<td>Monotheist (e.g. He is a monotheist. )</td>
+</tr>
+<tr>
+<td>3 .</td>
+<td>A place where plants are grown for study</td>
+<td>Botanical garden (e.g. We visited a botanical garden.)</td>
+</tr>
+<tr>
+<td>“4 .</td>
+<td>A person who breaks the law</td>
+<td>Criminal (e.g. He was arrested as a criminal.)</td>
+</tr>
+<tr>
+<td>25 :</td>
+<td>A person who defends in court</td>
+<td>Lawyer (e.g. She wants to become a lawyer.)</td>
+</tr>
+<tr>
+<td>% ,</td>
+<td>A person who rules a country</td>
+<td>Monarch (e.g. The king was a wise monarch. )</td>
+</tr>
+<tr>
+<td>27.</td>
+<td>— A of maps</td>
+<td>Atlas (e.g. I bought a new atlas.)</td>
+</tr>
+<tr>
+<td>28 .</td>
+<td>A person who takes photographs</td>
+<td>Photographer (e.g. She is a professional photographer.)</td>
+</tr>
+<tr>
+<td>29 .</td>
+<td>A repeated performance of a play</td>
+<td>Rehearsal (e.g. The rehearsal will start tomorrow.)</td>
+</tr>
+<tr>
+<td>30 ,</td>
+<td>A person who writes poems</td>
+<td>Poet (e.g. He is a famous poet.)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>xm</th>
+<th>[Meaning</th>
+<th>[On-site</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>31 .</td>
+<td>A person who speaks the truth</td>
+<td>Truthful (e.g. He is a truthful person.)</td>
+</tr>
+<tr>
+<td>32.</td>
+<td>A person who is always h appy</td>
+<td>Optimist a (e.g. She is an optimist.)</td>
+</tr>
+<tr>
+<td>33 "&#124;</td>
+<td>A person who is always pessimistic</td>
+<td>Pessimist (e.g. He is a pessimist about the future.)</td>
+</tr>
+<tr>
+<td>34 ,</td>
+<td>A person who looks at the good side of things</td>
+<td>Optimistic (e.g. She has an optimistic outlook on life.)</td>
+</tr>
+<tr>
+<td>35 ;</td>
+<td>A person who looks at the bad side of things</td>
+<td>Pessimistic (e.g. He has a pessimistic attitude.)</td>
+</tr>
+<tr>
+<td>36 F</td>
+<td>A person who has a great memory</td>
+<td>Retentive (e.g. She has a retentive memory.)</td>
+</tr>
+<tr>
+<td>37 .</td>
+<td>A person who forgets things easily</td>
+<td>Forgetful (e.g. He is very forgetful.)</td>
+</tr>
+<tr>
+<td>38 :</td>
+<td>A person who speaks very fast</td>
+<td>Eloquent (e.g. She is an eloquent speaker.)</td>
+</tr>
+<tr>
+<td>39 .</td>
+<td>A person who cannot speak clearly</td>
+<td>Inarticulate (e.g. He was inarticulate due to nervousness.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who is skilled in first aid</td>
+<td>Paramedic (e.g. She works as a paramedic.)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>4] ,</th>
+<th>A person who explores new places</th>
+<th>Explorer (c.g. He was a great explorer.)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>A person who invents new things</td>
+<td>Inventor (e.g. Thomas Edison was a famous inventor.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who gives financial help</td>
+<td>Benefactor (e.g. The school was built by a generous benefactor.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who studies human behaviour</td>
+<td>Psychologist (e.g. She is a clinical psychologist.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who collects books</td>
+<td>Bibliophile (e.g. He is a true bibliophile.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A place where dead bodies are buried</td>
+<td>Cemetery (e.g. They visited the cemetery.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who saves lives at sea</td>
+<td>Lifeguard (e.g. He works as a lifeguard.)</td>
+</tr>
+<tr>
+<td>48 :</td>
+<td>A person who plans buildings</td>
+<td>Architect (e.g. She wants to become an architect.)</td>
+</tr>
+<tr>
+<td>49 .</td>
+<td>A person who translates one language into another</td>
+<td>Translator (e.g. He is a professional translator.)</td>
+</tr>
+<tr>
+<td>50 :</td>
+<td>A person who is against war</td>
+<td>Pacifist (e.g. He is a pacifist and believes in peace.)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>Thief</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>: A person who advises</td>
+<td>Counsellor (e.g. Students can seek help from a counsellor.)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Instructor</td>
+</tr>
+<tr>
+<td></td>
+<td>: A person who sings</td>
+<td>Vocalist (e.g. She is a trained vocalist.)</td>
+</tr>
+<tr>
+<td>55 .</td>
+<td>A person who acts in films or plays</td>
+<td>Actor (e.g. He is a famous actor.)</td>
+</tr>
+<tr>
+<td></td>
+<td>_— A pereon Wier pelts</td>
+<td>Artist (e.g. She is a talented artist.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who studies birds</td>
+<td>Ornithologist (e.g. He is an ornithologist.)</td>
+</tr>
+<tr>
+<td></td>
+<td>ancient human history</td>
+<td>(e.g. She wants to become an archaeologist.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who grows cro</td>
+<td>Cultivator (e.g. He is a small cultivator.)</td>
+</tr>
+<tr>
+<td>o</td>
+<td>A person who rides a bicycle</td>
+<td>Cyclist (e.g. She is a professional cyclist.)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>xa</th>
+<th>__Meaning &#124;</th>
+<th>_ Onward ution amp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>&#124; A person who writes news for a newspaper or news channel</td>
+<td>Journalist ; e.g. She is a young journalist. (es youné J )</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who judges in a court</td>
+<td>Judge (e.g. He became a judge last year.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who controls aeroplanes</td>
+<td>Pilot (e.g. She is a skilled pilot.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who travels to space</td>
+<td>Astronaut (e.g. He dreams of becoming an astronaut.)</td>
+</tr>
+<tr>
+<td>65 .</td>
+<td>A person who studies stars and planets</td>
+<td>Astronomer (e.g. She is a famous astronomer.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who designs computer programs</td>
+<td>Programmer (e.g. He works as a programmer.)</td>
+</tr>
+<tr>
+<td>67.</td>
+<td>A person who checks accounts</td>
+<td>Auditor ; : : (e.g. She is a senior auditor.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who cuts hair</td>
+<td>Barber (e.g. He works as a barber.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who makes bread, cakes and pastries</td>
+<td>Baker (e.g. She is a skilled baker.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who sells goods in a shop</td>
+<td>Shopkeeper (e.g. He is a friendly shopkeeper.)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>"No</th>
+<th>Meming</th>
+<th>[One wurst a)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7 ,</td>
+<td>&#124; A person who catches fish</td>
+<td>Fisherman (e.g. He is a hardworking fisherman. )</td>
+</tr>
+<tr>
+<td>D .</td>
+<td>A person who works in a library</td>
+<td>Librarian (e.g. She is a librarian at the college.)</td>
+</tr>
+<tr>
+<td>R ,</td>
+<td>A person who takes care of a garden</td>
+<td>Gardener (e.g. He is an experienced gardener. )</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who collects stamps</td>
+<td>Philatelist (e.g. He is a philatelist and has rare stamps.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who dislikes human beings</td>
+<td>Misanthrope (e.g. He has become a misanthrope. )</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who loves theatre</td>
+<td>Thespian (e.g. She is a true thespian.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who studies insects</td>
+<td>Entomologist (e.g. He is an entomologist. )</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who studies rocks and minerals</td>
+<td>(e.g. btoaow wants to become a geologist.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who measures land</td>
+<td>Surveyor (e.g. He works as a land surveyor.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who loves their country</td>
+<td>Patriot (e.g. He is a true patriot. )</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A person who prepares food in a restaurant</th>
+<th>Chef (e.g. He is a skilled chef.)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>82.</td>
+<td>A person who designs clothes</td>
+<td>Fashion designer (e.g. She wants to become a fashion designer.)</td>
+</tr>
+<tr>
+<td>83</td>
+<td>A person who studies plants</td>
+<td>Botanist (e.g. He is a botanist and studies rare plants.)</td>
+</tr>
+<tr>
+<td>84</td>
+<td>A person who studies animals</td>
+<td>Zoologist (e.g. She is a zoologist.)</td>
+</tr>
+<tr>
+<td>85.</td>
+<td>A person who treats patients</td>
+<td>Doctor (e.g. He is a kind doctor.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who looks after nurses and patients in a hospital</td>
+<td>Nurse (e.g. She works as a nurse.)</td>
+</tr>
+<tr>
+<td>87 ‘&#124;</td>
+<td>person who fights for justice in a court</td>
+<td>Lawyer (e.g. He is a famous lawyer.)</td>
+</tr>
+<tr>
+<td></td>
+<td>. A person who writes books</td>
+<td>Author (e.g. She is a well-known author.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A ho directs fil a _</td>
+<td>Director (e.g. He is a talented director.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who plays a musical instrument</td>
+<td>Musician (e.g. She is a gifted musician.)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Meaning</th>
+<th>One-word substitution (Example)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jl.</td>
+<td>A person who takes photographs</td>
+<td>Photographer (e.g. She is a professional photographer.)</td>
+</tr>
+<tr>
+<td>Oo</td>
+<td>A person who travels to different countries</td>
+<td>Traveller (e.g. He is an avid traveller.)</td>
+</tr>
+<tr>
+<td>Oo a</td>
+<td>A person who studies weather and climate</td>
+<td>Meteorologist (e.g. She wants to become a meteorologist.)</td>
+</tr>
+<tr>
+<td>wo r=</td>
+<td>A person who makes furniture</td>
+<td>Carpenter (e.g. He is a skilled carpenter.)</td>
+</tr>
+<tr>
+<td>Oo</td>
+<td>A person who repairs machines or engines</td>
+<td>Mechanic (e.g. He works as a car mechanic.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who protects a building or area</td>
+<td>Guard (e.g. A security guard was posted at the gate.)</td>
+</tr>
+<tr>
+<td>©</td>
+<td>A person who delivers letters and parcels</td>
+<td>Postman (e.g. The postman delivered the letters.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who keeps records or accounts</td>
+<td>Clerk (e.g. She works as an office clerk.)</td>
+</tr>
+<tr>
+<td>\o</td>
+<td>A person who speaks many languages</td>
+<td>Linguist (e.g. He is a linguist and speaks five languages.)</td>
+</tr>
+<tr>
+<td></td>
+<td>A person who studies the earth and its environment</td>
+<td>Environmentalist (e.g. She is a well-known environmentalist.)</td>
+</tr>
+</tbody>
+</table>
+    </div>
+  </article>
+  <script type="application/json" id="doc-meta">{"slug": "006-100-one-word-substitutions", "number": 6, "theme": "slate", "engine": "docling", "source": "006 - 100 One-Word Substitutions.pdf", "pages": 10, "words": 1468, "sections": 0, "tables": 10, "reading_min": 9, "date": "2026-10-21", "teaser": ""}</script>
+</main>
+</body>
+</html>

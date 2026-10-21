@@ -1,0 +1,2331 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>100 English Mistakes You Should Stop Making · Zoya's English — Study Module</title>
+<meta name="description" content="100 English Mistakes You Should Stop Making — study module from Zoya&#39;s English learning library: speaking and confidence coaching materials.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>/* ═══════════════════════════════════════════════════════════════════════════
+   ZOYA'S ENGLISH — MASTER LAYOUT STYLESHEET
+   Design language: FORGE-inspired, light edition — warm paper ground,
+   near-black ink, electric-lime energy, sharp edges, grotesk discipline.
+   Beat structure: tokens → chapter themes → base → components → prose → print
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────── 1 · DESIGN TOKENS (single source) */
+
+:root {
+  /* Palette — light Forge: paper, ink, electric lime */
+  --bg: #fafaf7;                 /* warm paper ground                    */
+  --bg-deep: #f2f1ea;            /* deeper wash for bands                */
+  --surface: #ffffff;
+  --ink: #17181a;                /* near-black body typography           */
+  --ink-soft: #55584f;
+  --ink-faint: #8b8d82;
+  --line: #e6e4da;
+  --line-strong: #d4d2c6;
+  --lime: #b5f030;               /* electric lime — the brand spark      */
+  --lime-deep: #8fc413;          /* lime pressed onto paper hover        */
+  --accent: #34352f;             /* neutral chrome accent (links et al.) */
+  --accent-ink: #17181a;
+  --accent-soft: #f4f3ec;
+  --accent-glow: rgba(181, 240, 48, 0.35);
+  --glow: rgba(181, 240, 48, 0.45);
+  --warm: #f6f3e4;
+
+  /* Typography */
+  --font-display: "Space Grotesk", "Inter Tight", system-ui, sans-serif;
+  --font-body: "Inter Tight", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Courier New", monospace;
+
+  /* Shape & depth — Forge is sharp: nothing rounded, glow instead of shadow */
+  --r-lg: 0px;
+  --r-md: 0px;
+  --r-sm: 0px;
+  --r-pill: 999px;               /* reserved: badges only                */
+  --shadow-1: 0 1px 0 var(--line);
+  --shadow-2: 0 0 0 1px var(--line);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─────────────────────────── 2 · CHAPTER DESIGN LANGUAGES (per-theme accents)
+
+   Every compiled chapter receives its own stable accent family, applied via
+   `data-theme` on the page root, so each module feels designed — not stamped.
+   The dashboard (materials.html) mirrors these values for its cards.        */
+
+[data-theme="slate"] { --accent: #4a6b82; --accent-ink: #375266; --accent-soft: #edf2f6; --accent-glow: rgba(74, 107, 130, 0.16); }
+[data-theme="ink"]   { --accent: #46474b; --accent-ink: #33353a; --accent-soft: #f1efe9; --accent-glow: rgba(70, 71, 75, 0.14); }
+[data-theme="clay"]  { --accent: #b06a48; --accent-ink: #8f5438; --accent-soft: #f9efe7; --accent-glow: rgba(176, 106, 72, 0.15); }
+[data-theme="sage"]  { --accent: #5f7c60; --accent-ink: #49614a; --accent-soft: #eff5ef; --accent-glow: rgba(95, 124, 96, 0.15); }
+[data-theme="plum"]  { --accent: #7d5a72; --accent-ink: #64485a; --accent-soft: #f6eff4; --accent-glow: rgba(125, 90, 114, 0.15); }
+[data-theme="mist"]  { --accent: #3f7a75; --accent-ink: #2f605c; --accent-soft: #ebf4f2; --accent-glow: rgba(63, 122, 117, 0.15); }
+[data-theme="ember"] { --accent: #a8543f; --accent-ink: #8a4232; --accent-soft: #f9ece8; --accent-glow: rgba(168, 84, 63, 0.15); }
+[data-theme="moss"]  { --accent: #72783f; --accent-ink: #5a5f31; --accent-soft: #f5f6e9; --accent-glow: rgba(114, 120, 63, 0.15); }
+
+/* ────────────────────────────────────────────────────────── 3 · BASE RESET */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 0.6em;
+}
+
+::selection { background: var(--lime); color: var(--ink); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  z-index: 100;
+  background: var(--lime);
+  color: var(--ink);
+  font-weight: 500;
+  padding: 0.55rem 1.1rem;
+}
+.skip-link:focus { left: 12px; color: var(--ink); }
+
+/* ───────────────────────────────────────────────────────── 4 · LAYOUT CORE */
+
+.shell { width: min(1140px, 92vw); margin-inline: auto; }
+.shell-wide { width: min(1240px, 94vw); margin-inline: auto; }
+
+.section { padding: 5.5rem 0; position: relative; }
+.section + .section { padding-top: 0; }
+.grid { display: grid; gap: 1.4rem; }
+.grid.cards { grid-template-columns: repeat(auto-fill, minmax(305px, 1fr)); }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: center; }
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.1rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.kicker::before {
+  content: "";
+  width: 22px;
+  height: 10px;
+  background: var(--lime);
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.section-lede { max-width: 62ch; color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 2.4rem; }
+.display-xl {
+  font-size: clamp(2.9rem, 6.2vw, 5.2rem);
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* ─────────────────────────────────────────────────────── 5 · NAV BAR */
+
+.site-nav {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 60;
+  padding: 0.85rem 0;
+  background: transparent;
+  transition: background 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+  border-bottom: 1px solid transparent;
+}
+.site-nav.scrolled {
+  background: rgba(250, 250, 247, 0.95);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom-color: var(--line);
+}
+.site-nav .bar { display: flex; align-items: center; gap: 1.6rem; }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 700;
+  background: var(--lime);
+}
+
+.nav-links { display: flex; align-items: center; gap: 1.5rem; margin-left: auto; }
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s var(--ease);
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a[aria-current="page"] { color: var(--ink); border-bottom: 2px solid var(--lime); }
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+}
+
+/* ─────────────────────────────────────────────────── 6 · BUTTONS · CHIPS */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid transparent;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.25s var(--ease), background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.25s var(--ease);
+}
+.btn-solid {
+  color: var(--ink);
+  background: var(--lime);
+}
+.btn-solid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px var(--accent-glow), 0 0 60px rgba(181, 240, 48, 0.18);
+}
+.btn-ghost {
+  color: var(--ink);
+  background: transparent;
+  border-color: var(--ink);
+}
+.btn-ghost:hover {
+  border-color: var(--lime-deep);
+  background: var(--lime);
+}
+.btn.is-disabled,
+.btn[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+.btn-sm { padding: 0.5rem 1rem; font-size: 0.74rem; }
+.btn-note {
+  margin-left: 0.1rem;
+  padding-left: 0.55rem;
+  border-left: 1px solid rgba(23, 24, 26, 0.3);
+  font-size: 0.72rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.9rem;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.chip::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--lime);
+  transform: rotate(45deg);
+}
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+/* ─────────────────────────────────────────────────── 7 · SHARP CARDS */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.7rem 1.7rem 1.5rem;
+  border: 1px solid var(--line-strong);
+  border-top: 3px solid var(--ink);
+  background: var(--surface);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+.card-hover:hover,
+.card-chapter:hover {
+  transform: translateY(-4px);
+  border-color: rgba(181, 240, 48, 0.55);
+  border-top-color: var(--lime);
+  box-shadow: 0 0 30px var(--accent-glow), 0 0 64px rgba(181, 240, 48, 0.14);
+  background: var(--card-tint, var(--surface));
+}
+.card-kicker {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--card-accent, var(--accent));
+  margin-bottom: 0.3rem;
+}
+.card-title { font-family: var(--font-display); font-weight: 700; font-size: 1.18rem; letter-spacing: -0.01em; margin: 0.15rem 0 0.35rem; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { color: var(--card-accent, var(--accent)); }
+.card-teaser { color: var(--ink-soft); font-size: 0.94rem; margin: 0 0 0.9rem; }
+.card-empty {
+  grid-column: 1 / -1;
+  align-items: flex-start;
+  border-style: dashed;
+  border-color: var(--line-strong);
+  background: transparent;
+  box-shadow: none;
+}
+.card-empty code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  padding: 0.05em 0.4em;
+}
+
+.material-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  background: var(--lime);
+  margin-bottom: 0.8rem;
+}
+.material-icon svg { width: 22px; height: 22px; }
+
+/* Chapter cards — materials.html dashboard */
+.card-chapter { --card-accent: var(--accent); border-top-color: var(--card-accent, var(--ink)); }
+.chapter-num {
+  position: absolute;
+  top: 1rem;
+  right: 1.4rem;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--card-accent);
+  opacity: 0.35;
+  user-select: none;
+}
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.card-meta li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.card-meta li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  transform: rotate(45deg);
+  background: var(--lime);
+  opacity: 0.9;
+}
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.filter-row { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 1.6rem 0 2.2rem; }
+.filter-chip { cursor: pointer; transition: all 0.2s var(--ease); opacity: 0.7; }
+.filter-chip:hover { opacity: 1; color: var(--ink); }
+.filter-chip.is-active {
+  opacity: 1;
+  color: var(--ink);
+  background: var(--lime);
+  border-color: var(--lime);
+}
+.filter-chip.is-active::before { background: var(--ink); }
+
+/* ─────────────────────────────────────────────────────────────── 8 · HERO */
+
+.hero {
+  position: relative;
+  padding: 9.5rem 0 4.5rem;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: min(4vw, 60px);
+  width: clamp(90px, 12vw, 150px);
+  height: clamp(90px, 12vw, 150px);
+  background:
+    repeating-linear-gradient(0deg, rgba(23, 24, 26, 0.09) 0 1.5px, transparent 1.5px 9px),
+    repeating-linear-gradient(90deg, rgba(23, 24, 26, 0.09) 0 1.5px, transparent 1.5px 9px);
+  pointer-events: none;
+}
+.hero .grid.two { gap: 3.5rem; }
+.hero-lede {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 54ch;
+  margin: 1.4rem 0 2rem;
+}
+.hero-lede em { font-style: normal; box-shadow: inset 0 -0.5em 0 var(--lime); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 2.4rem; }
+
+/* Stats — Forge's animated counters, honest numbers only */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.6rem 3.2rem;
+  margin-top: 0.4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--line-strong);
+}
+.stat { display: flex; flex-direction: column; gap: 0.15rem; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--ink);
+}
+.stat-num b { color: inherit; font-weight: inherit; }
+.stat-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.portrait { position: relative; margin: 0; }
+.portrait-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-deep);
+}
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(23, 24, 26, 0.08);
+  pointer-events: none;
+}
+.portrait-mono {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 14vw, 10rem);
+  font-weight: 700;
+  color: var(--ink);
+  opacity: 0.1;
+}
+.portrait-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portrait-chip {
+  position: absolute;
+  z-index: 2;
+  font-size: 0.72rem;
+  padding: 0.45rem 0.8rem;
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+.portrait-chip::before { background: var(--lime); }
+.portrait-chip.c1 { top: 8%; left: -4%; }
+.portrait-chip.c2 { bottom: 20%; right: -3%; }
+.portrait-chip.c3 { bottom: -3%; left: 8%; }
+@media (max-width: 760px) {
+  .portrait-chip.c1 { left: 4%; }
+  .portrait-chip.c2 { right: 4%; }
+}
+
+/* ───────────────────────────────────────────── 9 · TICKER · STATEMENT · METHOD */
+
+.ticker {
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 0.85rem 0;
+  background: var(--bg);
+}
+.ticker-track {
+  display: inline-flex;
+  animation: ticker-scroll 26s linear infinite;
+}
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-right: 1.6rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.ticker-track span::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--lime);
+  transform: rotate(45deg);
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.pull-quote {
+  margin: 1rem 0 0;
+  padding: 0.9rem 0 0 1.5rem;
+  border-left: 4px solid var(--lime);
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.prose-copy p { color: var(--ink-soft); margin: 0 0 1.05rem; max-width: 62ch; }
+.prose-copy strong { font-weight: 500; color: var(--ink); }
+
+.steps { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.step-num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--ink);
+  opacity: 0.35;
+  margin-bottom: 0.7rem;
+}
+.steps .card h3 { text-transform: uppercase; letter-spacing: 0.02em; font-size: 1.05rem; }
+.steps .card p { color: var(--ink-soft); font-size: 0.93rem; margin: 0; }
+
+/* ───────────────────────────────────────── 10 · CALLOUTS — the .tip-box system */
+
+.tip-box {
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 1.05rem 1.3rem 1.05rem 1.4rem;
+  border: 1px solid var(--line-strong);
+  border-left: 4px solid var(--card-accent, var(--accent));
+  background: var(--accent-soft);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.tip-box p, .tip-box ul { margin: 0.2rem 0 0; font-size: 0.96rem; color: var(--ink-soft); }
+.tip-box .tip-title,
+.tip-box > p:first-child strong:first-child {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent-ink);
+}
+.tip-box[data-tone="note"]  { border-left-color: #b98a4b; background: #faf4e8; }
+.tip-box[data-tone="warn"]  { border-left-color: #a8503f; background: #f9ecea; }
+.tip-box[data-tone="ok"]    { border-left-color: #3e7c74; background: #ecf4f1; }
+
+/* ─────────────────────────────────────────────── 11 · DOC PAGES (materials/*) */
+
+.doc-page body { background: var(--bg); }
+.doc-crumbs {
+  width: min(880px, 92vw);
+  margin: 6.5rem auto 1.2rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.doc-crumbs a { color: var(--ink); text-decoration: none; }
+.doc-crumbs a:hover { box-shadow: inset 0 -0.4em 0 var(--lime); }
+
+.doc-frame {
+  width: min(880px, 92vw);
+  margin: 0 auto 4.5rem;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.doc-cover {
+  position: relative;
+  overflow: hidden;
+  padding: 2.8rem 3.2rem 2.4rem;
+  border-bottom: 1px solid var(--ink);
+  border-top: 8px solid var(--accent);
+  background: var(--accent-soft);
+}
+.doc-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+/* one quiet motif per chapter design language */
+[data-theme="slate"] .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="ink"]   .doc-cover::after { background-image: repeating-linear-gradient(135deg, var(--accent-glow) 0 1px, transparent 1px 16px); }
+[data-theme="clay"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 22px); }
+[data-theme="sage"]  .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 26px); }
+[data-theme="plum"]  .doc-cover::after { background-image: radial-gradient(420px 260px at 92% 100%, var(--accent-glow) 0%, transparent 70%); }
+[data-theme="mist"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 30px); }
+[data-theme="ember"] .doc-cover::after { background-image: repeating-linear-gradient(0deg, var(--accent-glow) 0 1px, transparent 1px 13px), repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 13px); }
+[data-theme="moss"]  .doc-cover::after { background-image: repeating-linear-gradient(90deg, var(--accent-glow) 0 1px, transparent 1px 18px); }
+
+.doc-kicker {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.doc-kicker::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 9px;
+  margin-top: 0.55rem;
+  background: var(--lime);
+}
+.doc-title {
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+.doc-subtitle { margin: 0.4rem 0 1.4rem; max-width: 58ch; color: var(--ink-soft); font-size: 1.02rem; }
+.doc-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.2rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.doc-body { padding: 2.6rem 3.2rem 3.4rem; }
+@media (max-width: 640px) {
+  .doc-cover, .doc-body { padding-inline: 1.4rem; }
+}
+
+/* ──────────────────────────────────────────────── 12 · PROSE (lesson content) */
+
+.prose { font-size: 1.02rem; color: #2b2d26; }
+.prose > * + * { margin-top: 0.9em; }
+.prose h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-top: 2.2em;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--card-accent, var(--accent));
+}
+.prose h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; margin-top: 1.9em; }
+.prose h4 { font-family: var(--font-display); font-size: 1.02rem; font-weight: 600; margin-top: 1.6em; }
+.prose blockquote { margin: 1.4rem 0; padding: 1rem 1.3rem 1rem 1.4rem; border: 1px solid var(--line-strong); border-left: 4px solid var(--card-accent, var(--accent)); background: var(--accent-soft); color: var(--ink-soft); break-inside: avoid; page-break-inside: avoid; }
+.prose blockquote p { margin: 0.2rem 0 0; }
+.prose blockquote p:first-child { margin-top: 0; font-weight: 500; color: var(--ink); }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.6rem 0; font-size: 0.93rem; break-inside: avoid; page-break-inside: avoid; }
+.prose th { background: var(--card-accent, var(--accent)); color: #fff; font-family: var(--font-display); font-weight: 600; text-align: left; letter-spacing: 0.03em; }
+.prose th, .prose td { border: 1px solid var(--line-strong); padding: 0.55rem 0.8rem; }
+.prose tbody tr:nth-child(even) td { background: var(--accent-soft); }
+.prose ul, .prose ol { padding-left: 1.4rem; }
+.prose li { margin: 0.35rem 0; }
+.prose li::marker { color: var(--accent); font-weight: 600; }
+.prose strong { color: var(--ink); font-weight: 500; }
+.prose code { font-family: var(--font-mono); font-size: 0.88em; background: var(--accent-soft); border: 1px solid var(--line); padding: 0.08em 0.42em; }
+.prose hr { border: 0; border-top: 1px dashed var(--line-strong); margin: 2.2rem auto; width: 55%; }
+.prose figure { margin: 1.6rem 0; break-inside: avoid; page-break-inside: avoid; }
+
+/* ────────────────────────────────────────────────────────────── 13 · FOOTER */
+
+.site-footer {
+  padding: 3rem 0 3.6rem;
+  border-top: 2px solid var(--ink);
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+}
+.site-footer .bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-footer a { color: var(--ink-soft); text-decoration: none; }
+.site-footer a:hover { box-shadow: inset 0 -0.4em 0 var(--lime); }
+.site-footer .brand { font-size: 0.95rem; }
+
+/* ────────────────────────────────────────────────── 14 · MOTION & RESPONSIVE */
+
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (max-width: 760px) {
+  .section { padding: 3.6rem 0; }
+  .hero { padding-top: 7.5rem; }
+  .hero::after { display: none; }
+  .stats { gap: 1.8rem 2.2rem; }
+  .stat-num { font-size: 2.1rem; }
+  .doc-meta { gap: 0.3rem 0.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .ticker-track { animation: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ═══════════════════════════════════════════════ 15 · PRINT — A4 CHOREOGRAPHY
+   Hard pagination contract: no orphan headings, no splintered callouts,
+   no split table rows. Chromium prints exactly what these rules promise.     */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 14mm 18mm 14mm;
+  }
+
+  html, body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .site-nav, .site-footer, .no-print, .skip-link,
+  .hero-cta, .chip-row, .filter-row, .card-actions,
+  .ticker, .portrait-chip, .doc-crumbs, .doc-backbar {
+    display: none !important;
+  }
+
+  .hero, .section { padding: 0 !important; min-height: 0 !important; background: none !important; }
+  .hero::after { display: none !important; }
+  .shell, .shell-wide { width: 100% !important; max-width: none !important; }
+  main { padding-top: 0 !important; margin: 0 !important; }
+
+  /* — content-keep = never leave a single widow line — */
+  p, li { orphans: 3; widows: 3; }
+
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .tip-box, blockquote, table, tr, img, figure,
+  .doc-cover, .doc-frame, .card, .prose figure {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  thead { display: table-header-group; }  /* column headers repeat on every page */
+  tfoot { display: table-footer-group; }
+
+  a { color: inherit; text-decoration: none; }
+  a[href^="http"]::after {
+    content: " (" attr(href) ") ";
+    font-size: 0.82em;
+    color: #77777a;
+  }
+
+  /* Chapter pages unwrap from their web chrome and print edge-to-edge calm */
+  .doc-frame {
+    box-shadow: none !important;
+    border: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    background: #fff !important;
+  }
+  .doc-cover { margin-bottom: 1.4rem; }
+  .doc-body { padding: 0 !important; }
+  .prose table { font-size: 0.88rem; }
+  .prose th { background: var(--card-accent, #444540) !important; }
+  .prose tbody tr:nth-child(even) td { background: var(--accent-soft); }
+
+  .card, .steps .card { box-shadow: none; border-color: var(--line-strong); border-top-width: 2px; }
+  .page-break, .break-before {
+    break-before: page;
+    page-break-before: always;
+  }
+}
+</style>
+</head>
+<body class="doc-page">
+<a class="skip-link" href="#doc-main">Skip to content</a>
+<main id="doc-main">
+  <div class="doc-crumbs no-print">
+    <a href="../index.html">&larr; Portfolio</a><span aria-hidden="true">/</span>
+    <a href="../materials.html">Learning library</a>
+  </div>
+  <article class="doc-frame chapter-doc" data-chapter="004-100-english-mistakes-you-should-stop-making-pdf" data-theme="slate">
+    <header class="doc-cover">
+      <p class="doc-kicker">Zoya&#39;s English — Study Module 04</p>
+      <h1 class="doc-title">100 English Mistakes You Should Stop Making</h1>
+      <p class="doc-subtitle">Rebuilt from the original source — interactive web edition plus print-ready A4.</p>
+      <div class="doc-meta">
+        <span>Source: 004 - 100 English Mistakes You Should Stop Making pdf.pdf</span>
+        <span>8 source pages</span>
+        <span>2597 words</span>
+        <span>~15 min read</span>
+      </div>
+    </header>
+    <div class="doc-body prose">
+<table>
+<thead>
+<tr>
+<th>1.</th>
+<th>X</th>
+<th>I am having a doubt.</th>
+<th>&#124; v</th>
+<th>I have a question.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.</td>
+<td>xX</td>
+<td>I didn’t understood.</td>
+<td>&#124; v</td>
+<td>I didn’t understand.</td>
+</tr>
+<tr>
+<td>3.</td>
+<td>X</td>
+<td>He is knowing me.</td>
+<td>&#124; ¥</td>
+<td>He knows me.</td>
+</tr>
+<tr>
+<td>4.</td>
+<td>xX</td>
+<td>Iam agree.</td>
+<td>&#124; v</td>
+<td>I agree.</td>
+</tr>
+<tr>
+<td>5.</td>
+<td>X</td>
+<td>Discuss about it.</td>
+<td>&#124; ¥</td>
+<td>Discuss it.</td>
+</tr>
+<tr>
+<td>6.</td>
+<td>X</td>
+<td>She is more smarter than her sister.</td>
+<td>&#124;</td>
+<td>Y She is smarter than her sister.</td>
+</tr>
+<tr>
+<td>7.</td>
+<td>X</td>
+<td>I didn’t went there.</td>
+<td>&#124;</td>
+<td>¥ I didn’t go there.</td>
+</tr>
+<tr>
+<td>8.</td>
+<td>xX</td>
+<td>Ihave no informations.</td>
+<td>&#124;</td>
+<td>¥ I have no information.</td>
+</tr>
+<tr>
+<td>9.</td>
+<td>X</td>
+<td>He don’t like coffee.</td>
+<td>&#124;</td>
+<td>¥ He doesn’t like coffee.</td>
+</tr>
+<tr>
+<td>10.</td>
+<td>X</td>
+<td>This is the very best movie.</td>
+<td>&#124;</td>
+<td>VY This is the best movie.</td>
+</tr>
+<tr>
+<td>11.</td>
+<td>x</td>
+<td>I have seen him yesterday.</td>
+<td>&#124;</td>
+<td>v I saw him yesterday.</td>
+</tr>
+<tr>
+<td>12.</td>
+<td>x</td>
+<td>I am doing my homework.</td>
+<td>&#124;</td>
+<td>v I do my homework.</td>
+</tr>
+<tr>
+<td>13.</td>
+<td>X</td>
+<td>She is a very good singer.</td>
+<td>&#124;</td>
+<td>v She is a good singer.</td>
+</tr>
+<tr>
+<td>14.</td>
+<td>xX</td>
+<td>Iam looking forward to meet you.</td>
+<td>&#124;</td>
+<td>¥ I am looking forward to meeting you.</td>
+</tr>
+<tr>
+<td>15.</td>
+<td>xX</td>
+<td>I am belonging to India.</td>
+<td>&#124;</td>
+<td>v I belong to India.</td>
+</tr>
+<tr>
+<td>16.</td>
+<td>X</td>
+<td>I am feeling hungry.</td>
+<td>&#124;</td>
+<td>v I feel hungry.</td>
+</tr>
+<tr>
+<td>17.</td>
+<td>X</td>
+<td>We was late.</td>
+<td>&#124; Y</td>
+<td>We were late.</td>
+</tr>
+<tr>
+<td>18.</td>
+<td>X</td>
+<td>Ihave a headache since morning.</td>
+<td>&#124;</td>
+<td>Vv I have had a headache since morning.</td>
+</tr>
+<tr>
+<td>19.</td>
+<td>xX</td>
+<td>Please wait for sometime.</td>
+<td>&#124;</td>
+<td>¥ Please wait for some time.</td>
+</tr>
+<tr>
+<td>20.</td>
+<td>x</td>
+<td>I want to go at home.</td>
+<td>&#124; v</td>
+<td>I want to go home.</td>
+</tr>
+<tr>
+<td>21.</td>
+<td>X</td>
+<td>He is a honest person.</td>
+<td>&#124; ¥</td>
+<td>He is an honest person.</td>
+</tr>
+<tr>
+<td>22.</td>
+<td>X</td>
+<td>I don’t have any money.</td>
+<td>&#124;</td>
+<td>¥ I don’t have any money.</td>
+</tr>
+<tr>
+<td>23.</td>
+<td>X</td>
+<td>Don’t forget to bring the book.</td>
+<td>&#124;</td>
+<td>Y Don’t forget to bring the book.</td>
+</tr>
+<tr>
+<td>24.</td>
+<td>X</td>
+<td>I am a 20 years old boy.</td>
+<td>&#124;</td>
+<td>¥v Iam a 20-year-old boy.</td>
+</tr>
+<tr>
+<td>25.</td>
+<td>X</td>
+<td>It’s very cold today.</td>
+<td>&#124; v</td>
+<td>It is very cold today.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>26.</th>
+<th></th>
+<th>I couldn’t able to solve it.</th>
+<th></th>
+<th></th>
+<th>I couldn’t solve it.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>27.</td>
+<td></td>
+<td>She is married with him.</td>
+<td>&#124;</td>
+<td>v</td>
+<td>She is married to him.</td>
+</tr>
+<tr>
+<td>20.</td>
+<td>#</td>
+<td>lame dikitig dian you</td>
+<td></td>
+<td></td>
+<td>kit</td>
+</tr>
+<tr>
+<td>29.</td>
+<td>X</td>
+<td>It is consist of six chapters.</td>
+<td>&#124;</td>
+<td>v</td>
+<td>It consists of six chapters.</td>
+</tr>
+<tr>
+<td>30.</td>
+<td>X</td>
+<td>You should respect your teachers.</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>You should respect your teachers.</td>
+</tr>
+<tr>
+<td>Zi,</td>
+<td>&amp;</td>
+<td>Durie dam eae</td>
+<td>&#124;</td>
+<td></td>
+<td>if geelie sex moictiler</td>
+</tr>
+<tr>
+<td>43,</td>
+<td>%</td>
+<td>1 stu sewed of dog</td>
+<td>&#124;</td>
+<td>7</td>
+<td>Tae searediol digs</td>
+</tr>
+<tr>
+<td>33.</td>
+<td></td>
+<td>She is my best friend since childhood.</td>
+<td>&#124;</td>
+<td>v</td>
+<td>She has been my best friend since childhood.</td>
+</tr>
+<tr>
+<td>34.</td>
+<td>X</td>
+<td>Iam good in mathematics.</td>
+<td>&#124;</td>
+<td>v</td>
+<td>I am good at mathematics.</td>
+</tr>
+<tr>
+<td>35.</td>
+<td></td>
+<td>He is suffered from fever.</td>
+<td>&#124;</td>
+<td>Vv</td>
+<td>He is suffering from fever.</td>
+</tr>
+<tr>
+<td>36.</td>
+<td>X</td>
+<td>I want these type of shoes.</td>
+<td>&#124;</td>
+<td>v</td>
+<td>I want this type of shoes.</td>
+</tr>
+<tr>
+<td>37,</td>
+<td>X</td>
+<td>He iy a call boy.</td>
+<td>hay,</td>
+<td></td>
+<td>He is a wall boy</td>
+</tr>
+<tr>
+<td>38,</td>
+<td>X</td>
+<td>She tna veey besudhl gal</td>
+<td></td>
+<td>Vv</td>
+<td>She avery bematil gid.</td>
+</tr>
+<tr>
+<td>0,</td>
+<td>©</td>
+<td>ties wed indie, YW</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>Thee peel i aoe</td>
+</tr>
+<tr>
+<td>40.</td>
+<td></td>
+<td>It doesn’t matter for me.</td>
+<td>&#124;</td>
+<td>v</td>
+<td>It doesn’t matter to me.</td>
+</tr>
+<tr>
+<td>41.</td>
+<td></td>
+<td>I am not interested in it.</td>
+<td>&#124;</td>
+<td>v</td>
+<td>Iam not interested in this.</td>
+</tr>
+<tr>
+<td>42,</td>
+<td>X</td>
+<td>He behateotsbedly.</td>
+<td>(</td>
+<td></td>
+<td>Sie thes ew tl</td>
+</tr>
+<tr>
+<td>43.</td>
+<td></td>
+<td>I love to listen musics.</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>I love to listen to music.</td>
+</tr>
+<tr>
+<td>44,</td>
+<td>xX</td>
+<td>I have many works to do.</td>
+<td>&#124;</td>
+<td>v</td>
+<td>I have a lot of work to do.</td>
+</tr>
+<tr>
+<td>45.</td>
+<td></td>
+<td>She don’t know anything.</td>
+<td>&#124;</td>
+<td>v</td>
+<td>She doesn’t know anything.</td>
+</tr>
+<tr>
+<td>é,</td>
+<td>4</td>
+<td>lGidlyewwmaseix</td>
+<td>&#124;</td>
+<td>4</td>
+<td>llalyws oan wad</td>
+</tr>
+<tr>
+<td>47.</td>
+<td></td>
+<td>He has a bad habit.</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>He has a bad habit.</td>
+</tr>
+<tr>
+<td>de,</td>
+<td></td>
+<td>1 dik shitnew good fe.</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>T dink tly i a good ites,</td>
+</tr>
+<tr>
+<td>40.</td>
+<td>%</td>
+<td>I heveen dae</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>I don’t have any time:</td>
+</tr>
+<tr>
+<td>i,</td>
+<td>#</td>
+<td>heb euerds</td>
+<td>&#124;</td>
+<td>+</td>
+<td>Vee beeen ds</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>51,</th>
+<th>I have got a pencil.</th>
+<th></th>
+<th>v</th>
+<th>I have a pencil.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>52.</td>
+<td>I want to buy a new furniture.</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>I want to buy new furniture.</td>
+</tr>
+<tr>
+<td>53.</td>
+<td>He has went to Delhi.</td>
+<td></td>
+<td>Y</td>
+<td>He has gone to Delhi.</td>
+</tr>
+<tr>
+<td>54.</td>
+<td>I will be there in five minutes.</td>
+<td></td>
+<td>Y</td>
+<td>I will be there in five minutes.</td>
+</tr>
+<tr>
+<td>a0;</td>
+<td>She is playing very good.</td>
+<td></td>
+<td>Vv</td>
+<td>She is playing very well.</td>
+</tr>
+<tr>
+<td>56.</td>
+<td>I don’t feel like to eat.</td>
+<td></td>
+<td>¥</td>
+<td>I don’t feel like eating.</td>
+</tr>
+<tr>
+<td>57.</td>
+<td>It is raining since morning.</td>
+<td></td>
+<td>¥</td>
+<td>It has been raining since morning.</td>
+</tr>
+<tr>
+<td>58.</td>
+<td>Please let me know if you came.</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>Please let me know if you come.</td>
+</tr>
+<tr>
+<td>59.</td>
+<td>I need to talk with you.</td>
+<td></td>
+<td>Y</td>
+<td>I need to talk to you.</td>
+</tr>
+<tr>
+<td>60.</td>
+<td>We enjoyed a lot.</td>
+<td></td>
+<td>Y¥</td>
+<td>We enjoyed a lot.</td>
+</tr>
+<tr>
+<td>61.</td>
+<td>He had lost his bag.</td>
+<td></td>
+<td>Y</td>
+<td>He lost his bag.</td>
+</tr>
+<tr>
+<td>62.</td>
+<td>I am used to wake up early.</td>
+<td></td>
+<td>¥</td>
+<td>I am used to waking up early.</td>
+</tr>
+<tr>
+<td>63.</td>
+<td>There is many books on the table.</td>
+<td>&#124;</td>
+<td>W</td>
+<td>There are many books on the table.</td>
+</tr>
+<tr>
+<td>64.</td>
+<td>I look forward to meet you.</td>
+<td></td>
+<td>YI</td>
+<td>look forward to meeting you.</td>
+</tr>
+<tr>
+<td>65.</td>
+<td>She gets up in the morning at 6 am.</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>She gets up at 6 am in the morning,</td>
+</tr>
+<tr>
+<td>66.</td>
+<td>I prefer travelling by car.</td>
+<td></td>
+<td>¥</td>
+<td>I prefer to travel by car.</td>
+</tr>
+<tr>
+<td>67.</td>
+<td>This pen is cheaper then that one.</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>This pen is cheaper than that one.</td>
+</tr>
+<tr>
+<td>68.</td>
+<td>You mustn’t to be late.</td>
+<td></td>
+<td>¥</td>
+<td>You mustn’t be late.</td>
+</tr>
+<tr>
+<td>69.</td>
+<td>I have sent the email already.</td>
+<td></td>
+<td>Vv</td>
+<td>I have already sent the email.</td>
+</tr>
+<tr>
+<td>70.</td>
+<td>He is one of the tallest boy in class.</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>He is one of the tallest boys in class.</td>
+</tr>
+<tr>
+<td>ws</td>
+<td>I have nothing to do.</td>
+<td></td>
+<td>¥</td>
+<td>I have nothing to do.</td>
+</tr>
+<tr>
+<td>72.</td>
+<td>Let’s go to somewhere nice.</td>
+<td></td>
+<td>¥_</td>
+<td>Let’s go somewhere nice.</td>
+</tr>
+<tr>
+<td>73:</td>
+<td>Please close the door behind you.</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>Please close the door behind you.</td>
+</tr>
+<tr>
+<td>74.</td>
+<td>I will inform you later on.</td>
+<td></td>
+<td>¥</td>
+<td>I will inform you later.</td>
+</tr>
+<tr>
+<td>75.</td>
+<td>It was too much cold yesterday.</td>
+<td></td>
+<td>Vv</td>
+<td>It was too cold yesterday.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>76.</th>
+<th></th>
+<th>He don’t know the answer.</th>
+<th></th>
+<th>v</th>
+<th>He doesn’t know the answer.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rae</td>
+<td></td>
+<td>I have to go for coaching.</td>
+<td>&#124;</td>
+<td>v</td>
+<td>I have to go to coaching.</td>
+</tr>
+<tr>
+<td>78.</td>
+<td>X</td>
+<td>This bag is very expensive.</td>
+<td>&#124;</td>
+<td>v</td>
+<td>This bag is very expensive.</td>
+</tr>
+<tr>
+<td>79,</td>
+<td>I am tired</td>
+<td>because of a long walk.</td>
+<td>&#124;</td>
+<td>v</td>
+<td>I am tired because of a long walk.</td>
+</tr>
+<tr>
+<td>80.</td>
+<td>X</td>
+<td>She had a little money.</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>She had little money.</td>
+</tr>
+<tr>
+<td>81.</td>
+<td></td>
+<td>I am not going to school today.</td>
+<td>&#124;</td>
+<td>v¥</td>
+<td>I am not going to school today.</td>
+</tr>
+<tr>
+<td>82.</td>
+<td>X</td>
+<td>He has broken the plas.</td>
+<td>&#124;</td>
+<td>Vv</td>
+<td>He broke the glass.</td>
+</tr>
+<tr>
+<td>83.</td>
+<td>X</td>
+<td>Iwill reach there at 5pm.</td>
+<td>&#124;</td>
+<td></td>
+<td>¥_I will reachothere by 5 pm.</td>
+</tr>
+<tr>
+<td>84.</td>
+<td>X</td>
+<td>Iam waiting for you since moming. &#124;</td>
+<td></td>
+<td>v</td>
+<td>Ihave been waiting for you since moming,</td>
+</tr>
+<tr>
+<td>85.</td>
+<td></td>
+<td>She told me that a story.</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>She told me a story.</td>
+</tr>
+<tr>
+<td>86.</td>
+<td>X</td>
+<td>Can you lend me some money?</td>
+<td>&#124;</td>
+<td></td>
+<td>V""Gan you lend me any money?</td>
+</tr>
+<tr>
+<td>87.</td>
+<td></td>
+<td>I should to study hard.</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>I should study hard.</td>
+</tr>
+<tr>
+<td>88.</td>
+<td></td>
+<td>I have to go at the market.</td>
+<td>&#124;</td>
+<td>v</td>
+<td>I have to go to the market.</td>
+</tr>
+<tr>
+<td>89,</td>
+<td>X</td>
+<td>This is such a beautififplace!</td>
+<td>&#124;</td>
+<td>v</td>
+<td>This is such a beautiful place!</td>
+</tr>
+<tr>
+<td>90.</td>
+<td>X</td>
+<td>He works very Kad</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>He works hard.</td>
+</tr>
+<tr>
+<td>91.</td>
+<td></td>
+<td>I didn’t saw him there.</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>I didn’t see him there.</td>
+</tr>
+<tr>
+<td>92.</td>
+<td>I am not</td>
+<td>agree with you.</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>I do not agree with you.</td>
+</tr>
+<tr>
+<td>93.</td>
+<td></td>
+<td>I used to play cricket.</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>I used to playing cricket.</td>
+</tr>
+<tr>
+<td>94.</td>
+<td>X You</td>
+<td>are making lot of mistakes.</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>You are making a lot of mistakes.</td>
+</tr>
+<tr>
+<td>95.</td>
+<td>X</td>
+<td>Hes looking for his keys,</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>He‘is locking ‘for his ley.</td>
+</tr>
+<tr>
+<td>96.</td>
+<td></td>
+<td>I have two sister.</td>
+<td>&#124;</td>
+<td>v</td>
+<td>Ihave two sisters.</td>
+</tr>
+<tr>
+<td>97.</td>
+<td>Let’s</td>
+<td>discuss about it.</td>
+<td>&#124;</td>
+<td>Vv</td>
+<td>Let’s discuss it.</td>
+</tr>
+<tr>
+<td>98.</td>
+<td>X</td>
+<td>Iam feeling sleepy.</td>
+<td>&#124;</td>
+<td>v</td>
+<td>Tam feeling sleepy.</td>
+</tr>
+<tr>
+<td>99,</td>
+<td></td>
+<td>It is very hot in here.</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>It is very hot here.</td>
+</tr>
+<tr>
+<td>100.</td>
+<td>X</td>
+<td>Thank you for help.</td>
+<td>&#124;</td>
+<td>¥</td>
+<td>Thank you for your help.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>101.</th>
+<th>I</th>
+<th>have got ‘a new laptop.</th>
+<th>I</th>
+<th>have a new laptop.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>She was born in 1995.</td>
+<td></td>
+<td>She was born in 1995.</td>
+<td>102.</td>
+</tr>
+<tr>
+<td></td>
+<td>I am having breakfast.</td>
+<td></td>
+<td>I am having breakfast.</td>
+<td>103.</td>
+</tr>
+<tr>
+<td>104.</td>
+<td>He don’t want to go.</td>
+<td></td>
+<td>He doesn’t want to go.</td>
+<td></td>
+</tr>
+<tr>
+<td>105.</td>
+<td>We was happy to see you.</td>
+<td></td>
+<td>We were happy to see you.</td>
+<td></td>
+</tr>
+<tr>
+<td>106.</td>
+<td>I am not used to it.</td>
+<td></td>
+<td>I am not used to it.</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>She don’t like spicy food.</td>
+<td></td>
+<td>She doesn’t like spicy food.</td>
+<td>107.</td>
+</tr>
+<tr>
+<td></td>
+<td>I am going at home.</td>
+<td></td>
+<td>I am going home.</td>
+<td>108.</td>
+</tr>
+<tr>
+<td></td>
+<td>He can able to solve it.</td>
+<td></td>
+<td>He is able to solve it.</td>
+<td>109.</td>
+</tr>
+<tr>
+<td></td>
+<td>This is my own house.</td>
+<td></td>
+<td>This is my house.</td>
+<td>110.</td>
+</tr>
+<tr>
+<td>111.</td>
+<td>They haven’t arrived yet.</td>
+<td></td>
+<td>They haven’t arrived yet.</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>I will be greatful to you.</td>
+<td></td>
+<td>I will be grateful to you.</td>
+<td>112.</td>
+</tr>
+<tr>
+<td></td>
+<td>She didn’t told me.</td>
+<td></td>
+<td>She didn’t tell me.</td>
+<td>113,</td>
+</tr>
+<tr>
+<td></td>
+<td>It is necessary that you go.</td>
+<td></td>
+<td>It is necessary for you to go.</td>
+<td>114.</td>
+</tr>
+<tr>
+<td></td>
+<td>I have much work to do.</td>
+<td></td>
+<td>I have a lot of work to do,</td>
+<td>115.</td>
+</tr>
+<tr>
+<td>116.</td>
+<td>He has strong believe in God.</td>
+<td></td>
+<td>He has strong God.</td>
+<td>belief in</td>
+</tr>
+<tr>
+<td>117.</td>
+<td>We need more informations.</td>
+<td></td>
+<td>We need more information.</td>
+<td></td>
+</tr>
+<tr>
+<td>118.</td>
+<td>I am not in a mood to talk.</td>
+<td></td>
+<td>I</td>
+<td>am not in the mood to talk.</td>
+</tr>
+<tr>
+<td>119.</td>
+<td>She smiled to me.</td>
+<td></td>
+<td>She smiled at</td>
+<td>me.</td>
+</tr>
+<tr>
+<td>120.</td>
+<td>I wish to become a doctor.</td>
+<td></td>
+<td>I wish to become a</td>
+<td>doctor.</td>
+</tr>
+<tr>
+<td>121.</td>
+<td>He is always speak the truth.</td>
+<td></td>
+<td>He always speaks the</td>
+<td>truth.</td>
+</tr>
+<tr>
+<td>122.</td>
+<td>You should take rest.</td>
+<td></td>
+<td>You should rest.</td>
+<td></td>
+</tr>
+<tr>
+<td>123.</td>
+<td>I am writing an email.</td>
+<td></td>
+<td>I am writing an</td>
+<td>email.</td>
+</tr>
+<tr>
+<td>124.</td>
+<td>I saw him yesterday night.</td>
+<td></td>
+<td>I saw him last night.</td>
+<td></td>
+</tr>
+<tr>
+<td>125.</td>
+<td>Please don’t make noise.</td>
+<td></td>
+<td>Please don’t make any</td>
+<td>noise.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>126.</th>
+<th>X</th>
+<th>I need to go toilet.</th>
+<th>&#124;</th>
+<th>v I need to go to the toilet.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>127.</td>
+<td>xX</td>
+<td>He is very intelligent boy.</td>
+<td>&#124;</td>
+<td>v He is a very intelligent boy.</td>
+</tr>
+<tr>
+<td>128.</td>
+<td>xX</td>
+<td>She is good in singing.</td>
+<td>&#124;</td>
+<td>v She is good at singing.</td>
+</tr>
+<tr>
+<td>129.</td>
+<td>x</td>
+<td>I am sony for to be late.</td>
+<td>&#124;</td>
+<td>v Iam sorry for being late.</td>
+</tr>
+<tr>
+<td>130.</td>
+<td>X</td>
+<td>Don’t worried about it.</td>
+<td>&#124;</td>
+<td>¥ Don’t worry about it.</td>
+</tr>
+<tr>
+<td>131.</td>
+<td></td>
+<td>I am going to market.</td>
+<td>&#124;</td>
+<td>v I am going to the market.</td>
+</tr>
+<tr>
+<td>132.</td>
+<td>x</td>
+<td>He has two brother.</td>
+<td>&#124;</td>
+<td>v He hes two brothers</td>
+</tr>
+<tr>
+<td>133.</td>
+<td>X</td>
+<td>I am thinking to quit.</td>
+<td>&#124;</td>
+<td>v I am thinking of quitting.</td>
+</tr>
+<tr>
+<td>134,</td>
+<td>%</td>
+<td>Shep ucd to wchugup ently.</td>
+<td>&#124;</td>
+<td>© She Mygollo waking apically.</td>
+</tr>
+<tr>
+<td>135.</td>
+<td></td>
+<td>This dress is beautiful on me.</td>
+<td>&#124;</td>
+<td>Vv This dress looks beautiful on me.</td>
+</tr>
+<tr>
+<td>136.</td>
+<td>X</td>
+<td>I’m afraid from dog.</td>
+<td>&#124;</td>
+<td>¥ I’m afraid of dogs.</td>
+</tr>
+<tr>
+<td>137.</td>
+<td>X</td>
+<td>I want to improve my English skill.</td>
+<td>&#124;</td>
+<td>v I want to improve my English skills.</td>
+</tr>
+<tr>
+<td>138.</td>
+<td></td>
+<td>He isn’t knowing the answer.</td>
+<td>&#124;</td>
+<td>v¥ He doesn’t know the answer.</td>
+</tr>
+<tr>
+<td>139.</td>
+<td>Xx</td>
+<td>Let’s go and swimming.</td>
+<td>&#124;</td>
+<td>v Let’s go swimming.</td>
+</tr>
+<tr>
+<td>140,</td>
+<td>x</td>
+<td>I bene GPa a mene</td>
+<td>&#124;</td>
+<td>« U have never eo ach a ome</td>
+</tr>
+<tr>
+<td>141.</td>
+<td></td>
+<td>She is elder than me.</td>
+<td>&#124;</td>
+<td>v She is older than me.</td>
+</tr>
+<tr>
+<td>142.</td>
+<td>X</td>
+<td>It belongs to me.</td>
+<td>&#124;</td>
+<td>v It is mine.</td>
+</tr>
+<tr>
+<td>143.</td>
+<td>x</td>
+<td>I have no one to talk.</td>
+<td>&#124;</td>
+<td>v I have no one to talk to.</td>
+</tr>
+<tr>
+<td>144.</td>
+<td>x</td>
+<td>He is suffering with fever.</td>
+<td>&#124;</td>
+<td>v He is suffering from fever.</td>
+</tr>
+<tr>
+<td>145.</td>
+<td></td>
+<td>I enjoy to read books.</td>
+<td>&#124;</td>
+<td>Vv I enjoy reading books.</td>
+</tr>
+<tr>
+<td>146.</td>
+<td>Xx</td>
+<td>Please give me a pen to write.</td>
+<td>&#124;</td>
+<td>V Please give me a pen to write with.</td>
+</tr>
+<tr>
+<td>147,</td>
+<td>X</td>
+<td>Lan ladee he aph tee ee,</td>
+<td>&#124;</td>
+<td>7 The eer hie br a ee eet</td>
+</tr>
+<tr>
+<td>148.</td>
+<td></td>
+<td>I couldn’t understand what he said.</td>
+<td>&#124;</td>
+<td>¥ I couldn’t understand what he said.</td>
+</tr>
+<tr>
+<td>149.</td>
+<td></td>
+<td>We was in Delhi last week.</td>
+<td>&#124;</td>
+<td>v We were in Delhi last week.</td>
+</tr>
+<tr>
+<td>150.</td>
+<td></td>
+<td>He does not likes ice cream.</td>
+<td>&#124;</td>
+<td>v He does not like ice cream.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>151,</th>
+<th>I</th>
+<th>have to submit the assignment in last date.</th>
+<th>&#124; I have to submit the assignment on the last date.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>152,</td>
+<td>©</td>
+<td>ebay aidbowiediited</td>
+<td>&#124; o Hila kereyattinn decddiiend</td>
+</tr>
+<tr>
+<td>153. X</td>
+<td>Iam very happy</td>
+<td>to meet &#124;</td>
+<td>you. VY I am very happy to meet you.</td>
+</tr>
+<tr>
+<td>154.</td>
+<td>You are stonger than me.</td>
+<td></td>
+<td>&#124; ¥ You are stronger than me.</td>
+</tr>
+<tr>
+<td>155. *</td>
+<td>Vhwes bnde nae.</td>
+<td>&#124;</td>
+<td># Whiave lode anneey:</td>
+</tr>
+<tr>
+<td>(56, X</td>
+<td>Hehwepee wei,</td>
+<td>&#124;</td>
+<td>¥ Sle traweqedand wade.</td>
+</tr>
+<tr>
+<td>157.</td>
+<td>I am not agree with your decision.</td>
+<td>&#124;</td>
+<td>¥ I do not agree with your decision.</td>
+</tr>
+<tr>
+<td>ici, ©</td>
+<td>Tweed teth,</td>
+<td>(&#124;</td>
+<td>¥ Typepad eats,</td>
+</tr>
+<tr>
+<td></td>
+<td>It is too much expensive.</td>
+<td></td>
+<td>159. &#124; v It is too expensive.</td>
+</tr>
+<tr>
+<td>160.</td>
+<td>I can’t able to finish this work.</td>
+<td>&#124;</td>
+<td>VY Iam not able to finish this work.</td>
+</tr>
+<tr>
+<td>161. X</td>
+<td>Please don’t forget to call me.</td>
+<td></td>
+<td>&#124; VY Please don’t forget to call me.</td>
+</tr>
+<tr>
+<td>162.</td>
+<td>He is used to</td>
+<td>smoke.</td>
+<td>&#124;v He is used to smoking.</td>
+</tr>
+<tr>
+<td>163. X</td>
+<td>She is my favourite singet!</td>
+<td></td>
+<td>&#124; ¥ Sheis my favourite singer.</td>
+</tr>
+<tr>
+<td></td>
+<td>I have passed out from college.</td>
+<td>&#124;</td>
+<td>164. Vv I have graduated from college.</td>
+</tr>
+<tr>
+<td>165. x</td>
+<td>1am keling beet</td>
+<td></td>
+<td>&#124; # Pow Bley tod</td>
+</tr>
+<tr>
+<td>166.</td>
+<td>Heieieag lige tat litades:</td>
+<td>&#124;</td>
+<td>7 He's mce tindliore dan be leoden,</td>
+</tr>
+<tr>
+<td>167.</td>
+<td>Let me know when</td>
+<td>you will come. &#124;</td>
+<td>¥ Let me know when you will be coming.</td>
+</tr>
+<tr>
+<td>168. %</td>
+<td>Vhad'ven witeuall yond</td>
+<td></td>
+<td>&#124; ¢ Ieee deel yeunly</td>
+</tr>
+<tr>
+<td>169: *</td>
+<td>lnwxmdewndeend</td>
+<td></td>
+<td>= [&#124; ¢ lew an ade dead</td>
+</tr>
+<tr>
+<td>170. X</td>
+<td>I want to learning guitar.</td>
+<td></td>
+<td>&#124; ¥ I want to learn guitar.</td>
+</tr>
+<tr>
+<td>171. x</td>
+<td>We both of us are</td>
+<td>going.</td>
+<td>&#124; ¥ Both of us are going.</td>
+</tr>
+<tr>
+<td>172. *</td>
+<td>Tithe exeegeia</td>
+<td></td>
+<td>&#124; + Thy xdecdes cee</td>
+</tr>
+<tr>
+<td>173. *</td>
+<td>iditibedagedinn</td>
+<td></td>
+<td>«&#124; + Idbte Goa phi</td>
+</tr>
+<tr>
+<td>fd. *®</td>
+<td>Fe ache waltak</td>
+<td></td>
+<td>&#124; + Hewels wate</td>
+</tr>
+<tr>
+<td>i.</td>
+<td>« becateek.</td>
+<td></td>
+<td>&#124; + imeGilel alee</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>176.</th>
+<th>I</th>
+<th>have forgot the password.</th>
+<th>I have forgotten the password.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>177.</td>
+<td>She is going to college in bus.</td>
+<td></td>
+<td>She is going to college by bus.</td>
+</tr>
+<tr>
+<td>178.</td>
+<td>He don’t know how to drive.</td>
+<td></td>
+<td>He doesn’t know how to drive.</td>
+</tr>
+<tr>
+<td>179.</td>
+<td>I will call you as soon as I reach.</td>
+<td></td>
+<td>I will call you as soon as I reach there.</td>
+</tr>
+<tr>
+<td>180.</td>
+<td>You should to say sorry.</td>
+<td></td>
+<td>You should say sorry.</td>
+</tr>
+<tr>
+<td>181.</td>
+<td>This story is very interesting.</td>
+<td></td>
+<td>This story is very interesting.</td>
+</tr>
+<tr>
+<td>182.</td>
+<td>I am going to park.</td>
+<td></td>
+<td>I am going to the park.</td>
+</tr>
+<tr>
+<td>183.</td>
+<td>He suggested me a movie.</td>
+<td></td>
+<td>He suggested a movie to me.</td>
+</tr>
+<tr>
+<td></td>
+<td>I have less time.</td>
+<td></td>
+<td>184. I have little time.</td>
+</tr>
+<tr>
+<td>185.</td>
+<td>She has visited many countries.</td>
+<td></td>
+<td>She has visited many countries.</td>
+</tr>
+<tr>
+<td>186.</td>
+<td>I am always waking up late.</td>
+<td></td>
+<td>I am always late in waking up.</td>
+</tr>
+<tr>
+<td>187.</td>
+<td>He is master in his field.</td>
+<td></td>
+<td>He is a master in his field.</td>
+</tr>
+<tr>
+<td>188.</td>
+<td>I feel like to sleep now.</td>
+<td></td>
+<td>I feel like sleeping now.</td>
+</tr>
+<tr>
+<td>189.</td>
+<td>They have went to Goa.</td>
+<td></td>
+<td>They have gone to Goa.</td>
+</tr>
+<tr>
+<td>190.</td>
+<td>My father is very busy in work.</td>
+<td></td>
+<td>My father is very busy with work.</td>
+</tr>
+<tr>
+<td>191.</td>
+<td>I have no idea about it.</td>
+<td></td>
+<td>I have no idea about it.</td>
+</tr>
+<tr>
+<td>192.</td>
+<td>She is doing good in studies.</td>
+<td></td>
+<td>She is doing well in studies.</td>
+</tr>
+<tr>
+<td>193.</td>
+<td>Let’s go to home.</td>
+<td></td>
+<td>Let’s go home.</td>
+</tr>
+<tr>
+<td>194.</td>
+<td>I am not feeling well.</td>
+<td></td>
+<td>I am not feeling well.</td>
+</tr>
+<tr>
+<td>195.</td>
+<td>I have read this book last week.</td>
+<td></td>
+<td>I read this book last week.</td>
+</tr>
+<tr>
+<td>196.</td>
+<td>He is too fat to run.</td>
+<td></td>
+<td>He is too fat to run.</td>
+</tr>
+<tr>
+<td>197.</td>
+<td>We reached the station at 9 AM.</td>
+<td></td>
+<td>We reached at the station at 9 AM.</td>
+</tr>
+<tr>
+<td>198.</td>
+<td>I am in search of a pen.</td>
+<td></td>
+<td>I am searching for a pen.</td>
+</tr>
+<tr>
+<td>199.</td>
+<td>It’s raining since yesterday.</td>
+<td></td>
+<td>It has been raining since yesterday.</td>
+</tr>
+<tr>
+<td>200.</td>
+<td>Please pass the salt to me.</td>
+<td></td>
+<td>Please pass me the salt.</td>
+</tr>
+</tbody>
+</table>
+    </div>
+  </article>
+  <script type="application/json" id="doc-meta">{"slug": "004-100-english-mistakes-you-should-stop-making-pdf", "number": 4, "theme": "slate", "engine": "docling", "source": "004 - 100 English Mistakes You Should Stop Making pdf.pdf", "pages": 8, "words": 2597, "sections": 0, "tables": 8, "reading_min": 15, "date": "2026-10-21", "teaser": ""}</script>
+</main>
+</body>
+</html>
